@@ -1,0 +1,93 @@
+# --- Unity core ---
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild*/
+[Ll]ogs/
+UserSettings/
+MemoryCaptures/
+.sysinfo
+*.svd
+*.user
+*.userprefs
+*.unitypackage
+*.DS_Store
+
+# Burst / DOTS
+[Bb]urst/
+*.burst
+
+# IDE: VS / VSCode / Rider / JetBrains
+.vs/
+.vscode/
+.idea/
+*.sln
+*.csproj
+*.vcxproj*
+*.props
+*.targets
+*.DotSettings.user
+
+# Caches
+[Aa]rtifacts/
+ShaderCache/
+Compiled*Shaders/
+
+# Android / iOS build artifacts
+*.apk
+*.aab
+*.ipa
+*.xcworkspace/
+*.xcodeproj/
+DerivedData/
+Pods/
+
+# Crash / profiler dumps
+*.dmp
+*.ecodmp
+*.heap
+*.memgraph
+
+# glTFast / KTX
+KtxUnityCache/
+
+# Vuforia ----------------------------------------------------------------
+# Jika pakai tarball lokal untuk engine, jangan commit:
+Packages/com.ptc.vuforia.engine-*.tgz
+
+# Sampel Vuforia yang di-import (boleh diabaikan agar repo bersih)
+Assets/Samples/**
+
+# (Opsional) JANGAN commit license key ke repo publik.
+# Jika license key tersimpan di asset berikut, ignore baris di bawah.
+# HATI-HATI: meng-ignore ini akan bikin build CI gagal kalau key hanya ada di file ini.
+#Assets/Resources/VuforiaConfiguration.asset
+
+# -----------------------------------------------------------------------
+
+# Gambar preview yang dihasilkan editor (opsional)
+
+
+# (Default: Unity pakai Visible Meta Files, jadi tidak perlu aturan khusus)
+
+# --- Security: signing credentials ---
+*.keystore
+*.jks
+*.p12
+*.mobileprovision
+local.properties
+
+# --- Windows OS artifacts ---
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+
+# --- Unity build artifacts ---
+il2cpp-build-cache/
+BackUpThisFolder_ButDontShipItWithYourGame/
+[Cc]rashes/
+ExportedObj/
+*.pidb.meta
+
+# --- Project-specific: large external sample content ---
+Assets/_External/

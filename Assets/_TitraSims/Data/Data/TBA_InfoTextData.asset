@@ -1,0 +1,133 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3ee2a15907047c580176d5a46f87986, type: 3}
+  m_Name: TBA_InfoTextData
+  m_EditorClassIdentifier: 
+  textData:
+  - Key: Preparasi Alat dan Bahan
+    Value: 'Alat:
+
+      - Beaker glass
+
+      - Botol coklat
+
+      - Botol pencuci
+
+      -
+      Buret
+
+      - Corong kaca
+
+      - Erlenmeyer
+
+      - Gelas ukur
+
+      -
+      Kaca arloji
+
+      - Labu ukur
+
+      - Pipet tetes
+
+      - Spatel
+
+      -
+      Statif dan klem
+
+      - Timbangan analitik
+
+      \n
+
+      Bahan:
+
+      -
+      Indikator kristal violet
+
+      - Larutan aseton
+
+      - Larutan asam asetat
+      glasial
+
+      - Larutan anhidrida asetat
+
+      - Larutan benzene
+
+      -
+      Larutan standar asam perklorat
+
+      - Serbuk kafein
+
+      - Serbuk baku
+      primer kalium biftalat'
+  - Key: Preparasi Buret
+    Value: '1. Pastikan buret kering sebelum digunakan!
+
+      2. Bilas buret dengan
+      larutan standar asam perklorat!
+
+      3. Masukkan larutan standar asam perklorat
+      pada buret!'
+  - Key: Preparasi Larutan Baku Primer
+    Value: '1. Masukkan 700 mg kalium biftalat ke dalam Erlenmeyer!
+
+      2. Masukkan
+      50 mL asam asetat glasial ke dalam Erlenmeyer!
+
+      3. Aduk Erlenmeyer!'
+  - Key: Preparasi Larutan Blanko
+    Value: '1. Masukkan 40 mL anhidrida asetat ke dalam Erlenmeyer!
+
+      2. Masukkan
+      80 mL benzene ke dalam Erlenmeyer!
+
+      3. Aduk Erlenmeyer!'
+  - Key: Penimbangan Sampel
+    Value: Timbang sebanyak 400 mg sampel kafein!
+  - Key: Preparasi Larutan Sampel
+    Value: '1. Masukkan sampel ke dalam Erlenmeyer!
+
+      2. Masukkan 40 mL anhidrida
+      asetat ke dalam Erlenmeyer!
+
+      3. Masukkan 80 mL benzene ke dalam Erlenmeyer!
+
+      4.
+      Larutkan sampel dengan mengaduk Erlenmeyer!'
+  - Key: Penambahan Indikator
+    Value: '1. Ambil indikator kristal violet dengan pipet!
+
+      2. Tambahkan
+      2-3 tetes indikator kristal violet dalam masing-masing Erlenmeyer!'
+  - Key: Simulasi Pembakuan Secara Triplo (3x)
+    Value: '1. Perhatikan dan catat volume awal buret sebelum titrasi pada activity
+      book!
+
+      2. Lakukan titrasi terhadap larutan baku primer kalium biftalat!
+
+      3.
+      Perhatikan dan catat volume akhir buret setelah titrasi pada activity book!'
+  - Key: Simulasi Titrasi Blanko
+    Value: '1. Perhatikan dan catat volume awal buret sebelum titrasi pada activity
+      book!
+
+      2. Lakukan titrasi terhadap larutan blanko!
+
+      3. Perhatikan
+      dan catat volume akhir buret setelah titrasi pada activity book!'
+  - Key: Simulasi Titrasi Sampel Secara Triplo (3x)
+    Value: '1. Perhatikan dan catat volume awal buret sebelum titrasi pada activity
+      book!
+
+      2. Lakukan titrasi terhadap larutan sampel kafein!
+
+      3.
+      Perhatikan dan catat volume akhir buret setelah titrasi pada activity book!'

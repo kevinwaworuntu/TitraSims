@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd679309f85b6384b8e2261169d41246, type: 3}
+  m_Name: Default_InfoStyleConfig
+  m_EditorClassIdentifier: 
+  style:
+    Font: {fileID: 11400000, guid: 08b4ead3ec5bf1c49a7af9616f6858f8, type: 2}
+    FontSize: 30
+    Alignment: 520
+    IsBold: 0
+    LineSpacing: 4
+    ParagraphSpacing: 10
+    MarginLeft: 35
+    MarginTop: 100
+    MarginRight: 25
+    MarginBottom: 28

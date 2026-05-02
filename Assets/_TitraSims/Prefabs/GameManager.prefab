@@ -1,0 +1,149 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5986580887397016950
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2092772659462708096}
+  - component: {fileID: 2725533295005454670}
+  - component: {fileID: 2715625287351626081}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2092772659462708096
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5986580887397016950}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 150.2431, y: 234.08815, z: -1.7747247}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2725533295005454670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5986580887397016950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52a1f70f67ecc6448a5ff889920fd455, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentMode: 0
+  tahapanTBA:
+  - namaTahapan: t1
+    namaMarkerVuforia: marker-bebasair-1
+    panelInfo: {fileID: 0}
+  - namaTahapan: t2
+    namaMarkerVuforia: marker-bebasair-2
+    panelInfo: {fileID: 0}
+  - namaTahapan: t3
+    namaMarkerVuforia: marker-bebasair-3
+    panelInfo: {fileID: 0}
+  - namaTahapan: t4
+    namaMarkerVuforia: marker-bebasair-4
+    panelInfo: {fileID: 0}
+  - namaTahapan: t5
+    namaMarkerVuforia: marker-bebasair-5
+    panelInfo: {fileID: 0}
+  - namaTahapan: t6
+    namaMarkerVuforia: marker-bebasair-6
+    panelInfo: {fileID: 0}
+  - namaTahapan: t7
+    namaMarkerVuforia: marker-bebasair-7
+    panelInfo: {fileID: 0}
+  - namaTahapan: t8
+    namaMarkerVuforia: marker-bebasair-8
+    panelInfo: {fileID: 0}
+  - namaTahapan: t9
+    namaMarkerVuforia: marker-bebasair-9
+    panelInfo: {fileID: 0}
+  - namaTahapan: t10
+    namaMarkerVuforia: marker-bebasair-10
+    panelInfo: {fileID: 0}
+  tahapanKompleksometri:
+  - namaTahapan: t1
+    namaMarkerVuforia: marker-kompleksometri-1
+    panelInfo: {fileID: 0}
+  - namaTahapan: t2
+    namaMarkerVuforia: marker-kompleksometri-2
+    panelInfo: {fileID: 0}
+  - namaTahapan: t3
+    namaMarkerVuforia: marker-kompleksometri-3
+    panelInfo: {fileID: 0}
+  - namaTahapan: t4
+    namaMarkerVuforia: marker-kompleksometri-4
+    panelInfo: {fileID: 0}
+  - namaTahapan: t5
+    namaMarkerVuforia: marker-kompleksometri-5
+    panelInfo: {fileID: 0}
+  - namaTahapan: t6
+    namaMarkerVuforia: marker-kompleksometri-6
+    panelInfo: {fileID: 0}
+  - namaTahapan: t7
+    namaMarkerVuforia: marker-kompleksometri-7
+    panelInfo: {fileID: 0}
+  - namaTahapan: t8
+    namaMarkerVuforia: marker-kompleksometri-8
+    panelInfo: {fileID: 0}
+  - namaTahapan: t9
+    namaMarkerVuforia: marker-kompleksometri-9
+    panelInfo: {fileID: 0}
+  - namaTahapan: t10
+    namaMarkerVuforia: marker-kompleksometri-10
+    panelInfo: {fileID: 0}
+  markerTBAMapping:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  markerTKMapping:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  currentAttemptingTahapIndex: -1
+  animationConfig: {fileID: 11400000, guid: f3f8c3eef3f6c024ab082dad28a23265, type: 2}
+  styleConfigDefault: {fileID: 11400000, guid: ed426c440e749f04ba493dcde322d486, type: 2}
+  styleConfigTBA: {fileID: 11400000, guid: ed426c440e749f04ba493dcde322d486, type: 2}
+  styleConfigTK: {fileID: 11400000, guid: ed426c440e749f04ba493dcde322d486, type: 2}
+--- !u!114 &2715625287351626081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5986580887397016950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a9d7ab152434b89ace66c860f4a033c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

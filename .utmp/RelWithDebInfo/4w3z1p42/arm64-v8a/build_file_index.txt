@@ -1,0 +1,2 @@
+C:\AIDAN\SEM 5\MAGANG\PharmaAR\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\CMakeLists.txt
+C:\AIDAN\SEM 5\MAGANG\PharmaAR\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\CMakeLists.txt

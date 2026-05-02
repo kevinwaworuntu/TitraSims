@@ -1,0 +1,4 @@
+repository "PharmaAR/PharmaAR@20067481050735@cloud"
+  path "/"
+    br "/main"
+    co "/main"

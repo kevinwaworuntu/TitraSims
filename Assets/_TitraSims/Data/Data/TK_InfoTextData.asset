@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3ee2a15907047c580176d5a46f87986, type: 3}
+  m_Name: TK_InfoTextData
+  m_EditorClassIdentifier: 
+  textData:
+  - Key: Preparasi Alat dan Bahan
+    Value: "Alat:\r\n- Beaker glass\r\n- Botol coklat\r\n- Buret\r\n- Corong kaca\r\n-
+      Erlenmeyer\r\n- Gelas ukur\r\n- Kaca arloji\r\n- Labu ukur\r\n- Pipet tetes\r\n-
+      Spatel\r\n- Statif dan klem\r\n- Timbangan analitik\r\n\\n\r\nBahan:\r\n- Indikator
+      biru hidroksinaftol P (300 mg)\r\n- Aquades\r\n- larutan NaOH 1N\r\n- larutan
+      HCl 3N\r\n- larutan standar EDTA 0,05M \r\n- Serbuk sampel CaCO3"
+  - Key: Preparasi Buret
+    Value: '1. Bilas buret dengan larutan standar EDTA!
+
+      2. Masukkan larutan
+      standar pada buret!'
+  - Key: Preparasi Larutan Baku Primer
+    Value: '1. Masukkan 200 mg baku primer CaCO3 ke dalam Erlenmeyer!
+
+      2.
+      Masukkan 10 mL aquades ke dalam Erlenmeyer!
+
+      3. Masukkan 2 mL HCl 1
+      N ke dalam Erlenmeyer!
+
+      4. Aduk Erlenmeyer!
+
+      4. Masukkan 100
+      mL aquades ke dalam Erlenmeyer!
+
+      5. Masukkan 30 mL larutan standar EDTA
+      melalui buret ke dalam Erlenmeyer!
+
+      6. Masukkan 15 mL NaOH 1N ke dalam
+      Erlenmeyer!
+
+      7. Aduk Erlenmeyer!'
+  - Key: Preparasi Larutan Blanko
+    Value: '1. Masukkan beberapa mL aquades ke dalam Erlenmeyer!
+
+      2. Masukkan
+      beberapa tetes HCl 3N ke dalam Erlenmeyer!
+
+      3. Masukkan 100 mL aquades
+      ke dalam Erlenmeyer!
+
+      4. Masukkan 15 mL NaOH 1N ke dalam Erlenmeyer!
+
+      5.
+      Aduk Erlenmeyer!'
+  - Key: Penimbangan Sampel
+    Value: 1. Timbang sebanyak 200 mg sampel CaCO3!
+  - Key: Preparasi Larutan Sampel
+    Value: '1. Masukkan sampel yang telah ditimbang ke dalam Erlenmeyer!
+
+      2.
+      Masukkan beberapa tetes aquades ke dalam Erlenmeyer!
+
+      3. Masukkan beberapa
+      tetes HCl 3N ke dalam Erlenmeyer!
+
+      4. Masukkan 100 mL aquades ke dalam
+      Erlenmeyer!
+
+      5. Masukkan 15 mL NaOH 1N ke dalam Erlenmeyer!
+
+      6.
+      Larutkan sampel dengan mengaduk Erlenmeyer!'
+  - Key: Penambahan Indikator
+    Value: '1. Timbang sebanyak 300 mg indikator biru hidroksinfatol!
+
+      2.
+      Tambahkan indikator biru hidroksinaftol yang telah ditimbang ke dalam Erlenmeyer!'
+  - Key: Simulasi Pembakuan Secara Triplo (3x)
+    Value: '1. Perhatikan dan catat volume awal buret sebelum titrasi pada activity
+      book!
+
+      2. Lakukan titrasi terhadap larutan baku primer CaCO3!
+
+      3.
+      Perhatikan dan catat volume akhir buret setelah titrasi pada activity book!'
+  - Key: Simulasi Titrasi Blanko
+    Value: '1. Perhatikan dan catat volume awal buret sebelum titrasi pada activity
+      book!
+
+      2. Lakukan titrasi terhadap larutan blanko!
+
+      3. Perhatikan
+      dan catat volume akhir buret setelah titrasi pada activity book!'
+  - Key: Simulasi Titrasi Sampel Secara Triplo (3x)
+    Value: 'Perhatikan dan catat volume awal buret sebelum titrasi pada activity
+      book!
+
+      2. Lakukan titrasi terhadap larutan sampel CaCO3!
+
+      3.
+      Perhatikan dan catat volume akhir buret setelah titrasi pada activity book!'

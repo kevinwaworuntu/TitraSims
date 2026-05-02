@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1819e2047b134a21bf1a62e48e3dcb1d, type: 3}
+  m_Name: AnimationConfig
+  m_EditorClassIdentifier: 
+  PlayAnimationParamName: PlayAnimation
+  StopAnimationParamName: StopAnimation
+  GenericAnimController: {fileID: 22100000, guid: 655f0a184bc0f8542bbbd2d6d4a86b04,
+    type: 2}
+  animGenericClipEntry: {fileID: 7400000, guid: ee598031b6bf42143986a1ebf41bc653,
+    type: 2}
