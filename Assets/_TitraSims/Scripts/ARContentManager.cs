@@ -1,4 +1,3 @@
-using System;
 using Gameplay;
 using UI;
 using UnityEngine;
@@ -14,6 +13,12 @@ public class ARContentManager : MonoBehaviour
 
     protected virtual void OnEnable()
     {
+        DefaultObserverEventHandler defaultObserverEventHandler = GetComponent<DefaultObserverEventHandler>();
+        if (defaultObserverEventHandler)
+        {
+            defaultObserverEventHandler.OnTargetFound.AddListener(OnTargetFound);
+            defaultObserverEventHandler.OnTargetLost.AddListener(OnTargetLost);
+        }
         if (!tahapanInteractionController)
         {
             tahapanInteractionController = GetComponent<TahapanInteractionController>();
@@ -33,6 +38,12 @@ public class ARContentManager : MonoBehaviour
 
     protected virtual void OnDisable()
     {
+        DefaultObserverEventHandler defaultObserverEventHandler = GetComponent<DefaultObserverEventHandler>();
+        if (defaultObserverEventHandler)
+        {
+            defaultObserverEventHandler.OnTargetFound.RemoveListener(OnTargetFound);
+            defaultObserverEventHandler.OnTargetLost.RemoveListener(OnTargetLost);
+        }
         if (tahapanInteractionController != null)
         {
             tahapanInteractionController.OnStartWaitingForPlayerInputToContinue -= OnStartWaitingForPlayerInputToContinueHandler;
@@ -103,7 +114,7 @@ public class ARContentManager : MonoBehaviour
         {
             return;
         }
-        UIManager.Instance.NarationPanel.gameObject.SetActive(false);
+        UIManager.Instance.GetPanelByType(PanelType.PanelNaration)?.SetActive(false);
         ToggleNavigationButtons(false, true);
 
         UIManager.Instance.btnCompleteTahapan.onClick.RemoveAllListeners();

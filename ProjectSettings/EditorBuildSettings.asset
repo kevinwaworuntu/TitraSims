@@ -6,20 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_TitraSims/Scenes/ARPharma.unity
-    guid: 3fee1d6f1664fe74191f5a79342ced72
+    path: Assets/SamplesResources/Scenes/0-Main.unity
+    guid: a09cb257d566c489595b16ab37547666
   m_configObjects:
-    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 6b1d76c41a5236045bcb30c7382906e6,
-      type: 2}
-    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: e23a4301b74adbf48879b13953e8f967,
-      type: 2}
-    com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000,
-      guid: 36840f95751462443ae30f0004d74c54, type: 2}
-    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000,
-      guid: cd73cf3e460b10f40a95288d038e0a1f, type: 2}
-    com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 22dbdd5ddad90ce408bbf10e6e6170cb,
-      type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 977f9d551d2036744bff6d7a55838bce,
-      type: 2}
-    xr.sdk.mock-hmd.settings: {fileID: 11400000, guid: 9248bae56e6425b4f9f91f14603ae286,
       type: 2}

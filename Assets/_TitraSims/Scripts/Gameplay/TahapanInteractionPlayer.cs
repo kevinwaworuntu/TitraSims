@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using Config;
+using UI;
 
 namespace Gameplay
 {
@@ -37,12 +38,17 @@ namespace Gameplay
             {
                 if (string.IsNullOrEmpty(data.Title) && string.IsNullOrEmpty(data.Description))
                 {
-                    UIManager.Instance.NarationPanel.gameObject.SetActive(false);
+                    UIManager.Instance.GetPanelByType(PanelType.PanelNaration)?.SetActive(false); ;
                 }
                 else
                 {
-                    UIManager.Instance.NarationPanel.SetTitleText(data.Title);
-                    UIManager.Instance.NarationPanel.SetDescriptionText(data.Description);     
+                    GameObject panelNarationGO = UIManager.Instance.GetPanelByType(PanelType.PanelNaration);
+                    if (panelNarationGO)
+                    {
+                        var narationPanel = panelNarationGO.GetComponent<NarationPanel>();
+                        narationPanel?.SetTitleText(data.Title);
+                        narationPanel?.SetDescriptionText(data.Description);   
+                    }
                 }
             }
 

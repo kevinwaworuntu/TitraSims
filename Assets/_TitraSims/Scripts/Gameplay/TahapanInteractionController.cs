@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using UI;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -99,7 +100,9 @@ namespace Gameplay
             {
                 return;
             }
-            UIManager.Instance.NarationPanel.SetVisibility(HasNarationText());
+
+            var narationPanel = UIManager.Instance.GetPanelByType(PanelType.PanelNaration);
+            narationPanel?.GetComponent<NarationPanel>()?.SetVisibility(HasNarationText());
             if (HasAnimationClip())
             {
                 if (UIManager.Instance)
@@ -151,7 +154,8 @@ namespace Gameplay
             {
                 if (UIManager.Instance)
                 {
-                    UIManager.Instance.NarationPanel.SetVisibility(false);
+                    GameObject narationPanel = UIManager.Instance.GetPanelByType(PanelType.PanelNaration);
+                    narationPanel?.GetComponent<NarationPanel>()?.SetVisibility(false);
                 }
                 OnInteractionComplete?.Invoke();
             }

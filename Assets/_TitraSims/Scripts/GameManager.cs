@@ -78,12 +78,10 @@ public class GameManager : MonoBehaviour
         if (UIManager.Instance != null)
         {
             UIManager.Instance.ForceHideInfoPanel();
-            var panelToOpen = (currentMode == GameMode.TBA)
-                ? UIManager.Instance.panelTBA
-                : UIManager.Instance.panelTK;
+            PanelType panelToOpen = (currentMode == GameMode.TBA) ? PanelType.PanelTBA : PanelType.PanelTK;
 
             UIManager.Instance.ShowPanelAndAddToHistory(panelToOpen);
-            UIManager.Instance.UpdateTahapButtonStates();
+            UIManager.Instance.UpdateTahapButtonStates(GetLastCompletedTahapIndex(), currentMode);
         }
     }
     
@@ -110,7 +108,7 @@ public class GameManager : MonoBehaviour
         if (UIManager.Instance != null)
         {
             UIManager.Instance.ForceHideInfoPanel();
-            UIManager.Instance.ShowPanelAndAddToHistory(UIManager.Instance.panelScanAR);
+            UIManager.Instance.ShowPanelAndAddToHistory(PanelType.PanelScanAR);
         }
 
         SetARCameraActive(true);
@@ -139,7 +137,7 @@ public class GameManager : MonoBehaviour
         {
             UIManager.Instance.ForceHideInfoPanel();
             UIManager.Instance.GoBack();
-            UIManager.Instance.UpdateTahapButtonStates();
+            UIManager.Instance.UpdateTahapButtonStates(GetLastCompletedTahapIndex(), currentMode);
         }
     }
     public void CompleteCurrentTahap()
@@ -171,7 +169,7 @@ public class GameManager : MonoBehaviour
         {
             UIManager.Instance.ForceHideInfoPanel();
             UIManager.Instance.GoBack();
-            UIManager.Instance.UpdateTahapButtonStates();
+            UIManager.Instance.UpdateTahapButtonStates(GetLastCompletedTahapIndex(), currentMode);
         }
     }
 
@@ -264,7 +262,7 @@ public class GameManager : MonoBehaviour
         if (UIManager.Instance != null)
         {
             UIManager.Instance.ForceHideInfoPanel();
-            UIManager.Instance.UpdateTahapButtonStates();
+            UIManager.Instance.UpdateTahapButtonStates(GetLastCompletedTahapIndex(), currentMode);
         }
     }
 }

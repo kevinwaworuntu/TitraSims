@@ -1,0 +1,464 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2920288191931388374
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2192282092772344083}
+  - component: {fileID: 2605806542139998796}
+  - component: {fileID: 852829144338738726}
+  - component: {fileID: 8345225128655792286}
+  - component: {fileID: 116335912217368814}
+  - component: {fileID: 2370143325601450390}
+  m_Layer: 0
+  m_Name: Stage_TK_10_TirasiSampel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2192282092772344083
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2920288191931388374}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -562.005, y: -1951.8, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1298780990487643103}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2605806542139998796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2920288191931388374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1631628248, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PreviewVisible: 1
+  RuntimeOcclusion: 0
+  RuntimeCollider: 0
+  mTrackableName: tk10
+  mInitializedInEditor: 1
+  mDataSetPath: 
+  mAspectRatio: 1
+  mImageTargetType: 3
+  mWidth: 0.2
+  mHeight: 0.2
+  mRuntimeTexture: {fileID: 2800000, guid: d5ef2027c076ebf4da5d3b36745c640d, type: 3}
+  mMotionHint: 1
+  mTrackingOptimization: 0
+  mTrackingOptimizationNeedsUpgrade: 0
+  mPreview: {fileID: 116335912217368814}
+--- !u!114 &852829144338738726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2920288191931388374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 886328de6a5c14cbb85854fdf1a5085b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StatusFilter: 1
+  UsePoseSmoothing: 0
+  AnimationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 3.3333333
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.3
+      value: 1
+      inSlope: 3.3333333
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  OnTargetFound:
+    m_PersistentCalls:
+      m_Calls: []
+  OnTargetLost:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &8345225128655792286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2920288191931388374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af41a865faa2404aa9ceb4ebe5916d07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionDataActionMappings:
+  - InteractionData: {fileID: 11400000, guid: cf333dceef6a62247b78e569a4494c5e, type: 2}
+    IsNeedPlayerInputToContinue: 1
+    UniqueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - InteractionData: {fileID: 11400000, guid: bef9b314735860d48880a060c553bebf, type: 2}
+    IsNeedPlayerInputToContinue: 1
+    UniqueEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2370143325601450390}
+          m_TargetAssemblyTypeName: Gameplay.TK8Manager, Assembly-CSharp
+          m_MethodName: SetIsCheckWeightToContinue
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 2370143325601450390}
+          m_TargetAssemblyTypeName: Gameplay.TK8Manager, Assembly-CSharp
+          m_MethodName: CreateButtonInteraction
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 2370143325601450390}
+          m_TargetAssemblyTypeName: Gameplay.TK8Manager, Assembly-CSharp
+          m_MethodName: SetCurrentWeightIndex
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - InteractionData: {fileID: 11400000, guid: 027c0d9a2e7bb1048992c58f0c7139b9, type: 2}
+    IsNeedPlayerInputToContinue: 1
+    UniqueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - InteractionData: {fileID: 11400000, guid: 88b54ec2a2c1a6f44a79c8f06a84e7dc, type: 2}
+    IsNeedPlayerInputToContinue: 1
+    UniqueEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2370143325601450390}
+          m_TargetAssemblyTypeName: Gameplay.BuretteFillInteractionManager, Assembly-CSharp
+          m_MethodName: ResetBuretteFill
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 2370143325601450390}
+          m_TargetAssemblyTypeName: Gameplay.BuretteFillInteractionManager, Assembly-CSharp
+          m_MethodName: RestartErlenmeyerVisual
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - InteractionData: {fileID: 11400000, guid: 195b2a868a928d343a31482cd26cb9f6, type: 2}
+    IsNeedPlayerInputToContinue: 1
+    UniqueEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2370143325601450390}
+          m_TargetAssemblyTypeName: Gameplay.TK8Manager, Assembly-CSharp
+          m_MethodName: SetIsCheckWeightToContinue
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 2370143325601450390}
+          m_TargetAssemblyTypeName: Gameplay.TK8Manager, Assembly-CSharp
+          m_MethodName: CreateButtonInteraction
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 2370143325601450390}
+          m_TargetAssemblyTypeName: Gameplay.TK8Manager, Assembly-CSharp
+          m_MethodName: SetCurrentWeightIndex
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - InteractionData: {fileID: 11400000, guid: 5ee65e27569ff194ab8c123e1e24bbd9, type: 2}
+    IsNeedPlayerInputToContinue: 1
+    UniqueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - InteractionData: {fileID: 11400000, guid: c8c54b4c3b88c0b49b0c38bdb3447ae3, type: 2}
+    IsNeedPlayerInputToContinue: 1
+    UniqueEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2370143325601450390}
+          m_TargetAssemblyTypeName: Gameplay.BuretteFillInteractionManager, Assembly-CSharp
+          m_MethodName: ResetBuretteFill
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 2370143325601450390}
+          m_TargetAssemblyTypeName: Gameplay.BuretteFillInteractionManager, Assembly-CSharp
+          m_MethodName: RestartErlenmeyerVisual
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - InteractionData: {fileID: 11400000, guid: fe3ceea785791454cb43a211e72e87b7, type: 2}
+    IsNeedPlayerInputToContinue: 1
+    UniqueEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2370143325601450390}
+          m_TargetAssemblyTypeName: Gameplay.TK8Manager, Assembly-CSharp
+          m_MethodName: CreateButtonInteraction
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 2370143325601450390}
+          m_TargetAssemblyTypeName: Gameplay.TK8Manager, Assembly-CSharp
+          m_MethodName: SetIsCheckWeightToContinue
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 2370143325601450390}
+          m_TargetAssemblyTypeName: Gameplay.TK8Manager, Assembly-CSharp
+          m_MethodName: SetCurrentWeightIndex
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 2
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - InteractionData: {fileID: 11400000, guid: 5425d50a9190bfc4e851c60efa3f8477, type: 2}
+    IsNeedPlayerInputToContinue: 0
+    UniqueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  animator: {fileID: 4979688805311366525}
+  audioSource: {fileID: 0}
+--- !u!114 &116335912217368814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2920288191931388374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 2605806542139998796}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: tk10
+  mDatasetName: 
+  mCastedBehaviour: {fileID: 2605806542139998796}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
+--- !u!114 &2370143325601450390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2920288191931388374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d33a5177b5549f48dccbf33146e4d6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  config: {fileID: 0}
+  animClipOpenKeran: {fileID: 7400000, guid: f568fd48f48c9e9478a7b84f0cbd8e3f, type: 2}
+  animClipTetes: {fileID: 7400000, guid: b93ca09fb6135e241be1dbadd9b5e7b2, type: 2}
+  animClipTetesBanyak: {fileID: 7400000, guid: 411c216d8b9c1ca45b8de2e6baf89ab1, type: 2}
+  animator: {fileID: 4979688805311366525}
+  titrasiRenderer: {fileID: 4205410076472034557}
+  textSampelWeight: {fileID: 0}
+  buretteFillObject: {fileID: 6407423673412929371}
+  buretteMeniskusObject: {fileID: 4883200637058308800}
+--- !u!1001 &8085050716239821431
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2192282092772344083}
+    m_Modifications:
+    - target: {fileID: 4987191870430644873, guid: dc8b745a78379b145b733455f2fc0ce1,
+        type: 3}
+      propertyPath: m_Name
+      value: AnimKompleksometri10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076822594832710056, guid: dc8b745a78379b145b733455f2fc0ce1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076822594832710056, guid: dc8b745a78379b145b733455f2fc0ce1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0970459
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076822594832710056, guid: dc8b745a78379b145b733455f2fc0ce1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.15799999
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076822594832710056, guid: dc8b745a78379b145b733455f2fc0ce1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076822594832710056, guid: dc8b745a78379b145b733455f2fc0ce1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076822594832710056, guid: dc8b745a78379b145b733455f2fc0ce1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076822594832710056, guid: dc8b745a78379b145b733455f2fc0ce1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076822594832710056, guid: dc8b745a78379b145b733455f2fc0ce1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076822594832710056, guid: dc8b745a78379b145b733455f2fc0ce1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7076822594832710056, guid: dc8b745a78379b145b733455f2fc0ce1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dc8b745a78379b145b733455f2fc0ce1, type: 3}
+--- !u!4 &1298780990487643103 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7076822594832710056, guid: dc8b745a78379b145b733455f2fc0ce1,
+    type: 3}
+  m_PrefabInstance: {fileID: 8085050716239821431}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &4205410076472034557 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5363577032750612106, guid: dc8b745a78379b145b733455f2fc0ce1,
+    type: 3}
+  m_PrefabInstance: {fileID: 8085050716239821431}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4883200637058308800 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3744536181563433143, guid: dc8b745a78379b145b733455f2fc0ce1,
+    type: 3}
+  m_PrefabInstance: {fileID: 8085050716239821431}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &4979688805311366525 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: -5392860032474857718, guid: dc8b745a78379b145b733455f2fc0ce1,
+    type: 3}
+  m_PrefabInstance: {fileID: 8085050716239821431}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6407423673412929371 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2943211380864007468, guid: dc8b745a78379b145b733455f2fc0ce1,
+    type: 3}
+  m_PrefabInstance: {fileID: 8085050716239821431}
+  m_PrefabAsset: {fileID: 0}
