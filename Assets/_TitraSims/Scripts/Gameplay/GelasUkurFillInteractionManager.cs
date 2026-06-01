@@ -1,5 +1,6 @@
 using System.Collections;
 using System;
+using Animation;
 using Data;
 using UI;
 using UnityEngine;
@@ -37,7 +38,8 @@ namespace Gameplay
         [FormerlySerializedAs("container1")]
         [Header("Liquid Containers")]
         [SerializeField] private LiquidContainer larutan1Container;
-        [SerializeField] private LiquidContainer Larutan2Container;
+        [FormerlySerializedAs("Larutan2Container")]
+        [SerializeField] private LiquidContainer larutan2Container;
 
         private int currentWeight;
         private bool isCheckWeightToContinue;
@@ -45,7 +47,7 @@ namespace Gameplay
         private int targetML;
 
         private LiquidContainer CurrentContainer =>
-            currentLarutanType == LarutanType.Larutan1 ? larutan1Container : Larutan2Container;
+            currentLarutanType == LarutanType.Larutan1 ? larutan1Container : larutan2Container;
 
         protected override void OnEnable()
         {
@@ -55,7 +57,7 @@ namespace Gameplay
                 animNotify = transform.GetComponentInChildren<AnimNotify>();
 
             if (animNotify)
-                animNotify.OnNotifyHit += OnStartUpdateVisualFill;
+                animNotify.OnNotify += OnStartUpdateVisualFill;
         }
 
         protected override void OnDisable()
@@ -64,10 +66,10 @@ namespace Gameplay
 
             targetML = 0;
             if (animNotify)
-                animNotify.OnNotifyHit -= OnStartUpdateVisualFill;
+                animNotify.OnNotify -= OnStartUpdateVisualFill;
 
             ResetLarutanContainer(larutan1Container);
-            ResetLarutanContainer(Larutan2Container);
+            ResetLarutanContainer(larutan2Container);
         }
 
         public void CreatePenambahanLarutan1Button()
@@ -131,6 +133,7 @@ namespace Gameplay
             tahapanInteractionController.RestartInteraction();
         }
 
+        // ReSharper disable Unity.PerformanceAnalysis
         private void PlayAnimation(AnimationClip clip)
         {
             var animationConfig = GameManager.Instance.AnimationConfig;
@@ -155,6 +158,7 @@ namespace Gameplay
             }
         }
 
+        // ReSharper disable Unity.PerformanceAnalysis
         protected override void OnStartWaitingForPlayerInputToContinueHandler()
         {
             if (isCheckWeightToContinue && !IsCurrentWeightComplete())
@@ -184,7 +188,7 @@ namespace Gameplay
 
         private void ResetLarutanContainer(LiquidContainer container)
         {
-            if (!container.fillObject || !container.meniskusObject)
+            if (!config || !container.fillObject || !container.meniskusObject)
                 return;
 
             Vector3 scale = container.fillObject.localScale;
@@ -196,7 +200,7 @@ namespace Gameplay
             container.meniskusObject.localPosition = pos;
         }
 
-        private void OnStartUpdateVisualFill()
+        private void OnStartUpdateVisualFill(string value)
         {
             UpdateVisualFill(CurrentContainer, targetML);
         }

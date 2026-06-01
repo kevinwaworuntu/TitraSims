@@ -6,6 +6,7 @@ using UnityEngine.Events;
 
 namespace Gameplay
 {
+    [RequireComponent(typeof(TahapanInteractionUI))]
     public class TahapanInteractionController : MonoBehaviour
     {
         [Serializable]
@@ -19,12 +20,12 @@ namespace Gameplay
         [SerializeField] private TahapanInteractionMappingStruct[] interactionDataActionMappings;
 
         [SerializeField] private Animator animator;
-        [SerializeField] private AudioSource audioSource;
 
         private int currentInteractionIndex;
         private bool isPlaying;
         private TahapanInteractionPlayer interactionPlayer;
 
+        public event Action<TahapanInteractionData, bool> OnInteractionEnter;
         public event Action OnStartWaitingForPlayerInputToContinue;
         public event Action OnInteractionComplete;
         public event Action OnFinishPlayingInteraction;
@@ -40,21 +41,12 @@ namespace Gameplay
             {
                 return;
             }
-            interactionPlayer.Initialize(this, animator, audioSource, GameManager.Instance.AnimationConfig);
+            interactionPlayer.Initialize(this, animator, GameManager.Instance.AnimationConfig);
         }
 
         private void OnEnable()
         {
             ResetState();
-        }
-        
-        private void OnDisable()
-        {
-            if (UIManager.Instance)
-            {
-                if (UIManager.Instance.btnPlayAnimation) UIManager.Instance.btnPlayAnimation.onClick.RemoveAllListeners();
-                if (UIManager.Instance.btnStopAnimation) UIManager.Instance.btnStopAnimation.onClick.RemoveAllListeners();
-            }
         }
         
         public void StartInteraction()
@@ -96,49 +88,29 @@ namespace Gameplay
             currentInteractionIndex = targetIndex;
             isPlaying = true;
 
-            if (!UIManager.Instance)
-            {
-                return;
-            }
+            var mapping = interactionDataActionMappings[currentInteractionIndex];
+            OnInteractionEnter?.Invoke(mapping.InteractionData, HasAnimationClip());
 
-            var narationPanel = UIManager.Instance.GetPanelByType(PanelType.PanelNaration);
-            narationPanel?.GetComponent<NarationPanel>()?.SetVisibility(HasNarationText());
-            if (HasAnimationClip())
-            {
-                if (UIManager.Instance)
-                {
-                    UIManager.Instance.SetButtonAnimationVisibility(true);
-                    if (UIManager.Instance.btnPlayAnimation)
-                    {
-                        UIManager.Instance.btnPlayAnimation.onClick.RemoveAllListeners();
-                        UIManager.Instance.btnPlayAnimation.onClick.AddListener(RequestPlayAnimation);
-                    }
-                    if (UIManager.Instance.btnStopAnimation)
-                    {
-                        UIManager.Instance.btnStopAnimation.onClick.RemoveAllListeners();
-                        UIManager.Instance.btnStopAnimation.onClick.AddListener(RequestStopAnimation);
-                    }
-                }   
-            }
-            
             ExecuteInteractionState();
         }
 
         private void ExecuteInteractionState()
         {
-            interactionDataActionMappings[currentInteractionIndex].UniqueEvent?.Invoke();
-            interactionPlayer.Play(interactionDataActionMappings[currentInteractionIndex].InteractionData, () =>
+            var mapping = interactionDataActionMappings[currentInteractionIndex];
+            mapping.UniqueEvent?.Invoke();
+            interactionPlayer.Play(mapping.InteractionData, () =>
             {
-                if (interactionDataActionMappings[currentInteractionIndex].IsNeedPlayerInputToContinue)
+                if (mapping.IsNeedPlayerInputToContinue)
                 {
                     OnStartWaitingForPlayerInputToContinue?.Invoke();
                     return;
                 }
 
-                StartCoroutine(WorkaroundEndTahapanDelay());
-                IEnumerator WorkaroundEndTahapanDelay()
+                StartCoroutine(EndTahapanDelay());
+                IEnumerator EndTahapanDelay()
                 {
-                    yield return new WaitForSeconds(2f); // ToDo : Workaround
+                    float delay = GameManager.Instance?.AnimationConfig != null ? GameManager.Instance.AnimationConfig.InteractionEndDelay : 0f;
+                    yield return new WaitForSeconds(delay);
                     ExitInteractionState();
                 }
             });
@@ -149,16 +121,7 @@ namespace Gameplay
             isPlaying = false;
             currentInteractionIndex++;
             OnFinishPlayingInteraction?.Invoke();
-            UIManager.Instance.SetButtonAnimationVisibility(false);
-            if (currentInteractionIndex >= interactionDataActionMappings.Length)
-            {
-                if (UIManager.Instance)
-                {
-                    GameObject narationPanel = UIManager.Instance.GetPanelByType(PanelType.PanelNaration);
-                    narationPanel?.GetComponent<NarationPanel>()?.SetVisibility(false);
-                }
-                OnInteractionComplete?.Invoke();
-            }
+            if (currentInteractionIndex >= interactionDataActionMappings.Length) OnInteractionComplete?.Invoke();
         }
 
         private bool CanEnterState(int targetIndex)
@@ -183,29 +146,19 @@ namespace Gameplay
             return true;
         }
 
-        private bool HasNarationText()
-        {
-            return !string.IsNullOrEmpty(interactionDataActionMappings[currentInteractionIndex].InteractionData.Title) && !string.IsNullOrEmpty(interactionDataActionMappings[currentInteractionIndex].InteractionData.Description);
-        }
-
         private bool HasAnimationClip()
         {
             return interactionDataActionMappings[currentInteractionIndex].InteractionData.AnimationClip;
         }
 
-        private void RequestPlayAnimation()
+        public void PlayAnimation()
         {
             if (currentInteractionIndex >= interactionDataActionMappings.Length)
-            {
                 return;
-            }
             interactionPlayer.Play(interactionDataActionMappings[currentInteractionIndex].InteractionData);
         }
 
-        private void RequestStopAnimation()
-        {
-            interactionPlayer.Stop();
-        }
+        public void StopAnimation() => interactionPlayer.Stop();
 
         public bool IsPlayingLastIndex()
         {

@@ -97,6 +97,7 @@ namespace Gameplay
 
         private void ResetPowderFill()
         {
+            if (!config || !powderFillObject) return;
             powderFillObject.localScale = Vector3.one * config.InitialScale;
         }
     }

@@ -14,13 +14,14 @@ GameObject:
   - component: {fileID: 1625355470142292797}
   - component: {fileID: 1922000632993502258}
   - component: {fileID: 2210520412032133209}
+  - component: {fileID: 9219580251501380017}
   m_Layer: 0
   m_Name: Stage_TK_01_PersiapanAlat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2725881030350650179
 Transform:
   m_ObjectHideFlags: 0
@@ -164,7 +165,6 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   animator: {fileID: 5180640460194066661}
-  audioSource: {fileID: 0}
 --- !u!114 &2210520412032133209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,6 +184,18 @@ MonoBehaviour:
   mCastedBehaviour: {fileID: 222820306095639471}
   mMeshFilter: {fileID: 0}
   mMeshRenderer: {fileID: 0}
+--- !u!114 &9219580251501380017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5845703223541622902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d19bb3b44f8925c4f9fb94703d1dc6ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI.TahapanInteractionUI
 --- !u!1001 &4583037329772266181
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -9,13 +9,18 @@ public class TahapanControllerButton : MonoBehaviour
     
     private Button myButton;
     private CanvasGroup myCanvasGroup;
-    private const float buttonActiveAplhaValue = 1;
+    private const float buttonActiveAlphaValue = 1f;
     private const float buttonInactiveAlphaValue = 0.75f;
-    
+
     void Awake()
     {
         myButton = GetComponent<Button>();
         myCanvasGroup = GetComponent<CanvasGroup>();
+    }
+
+    private void Start()
+    {
+        RefreshVisualState();
     }
 
     private void OnEnable()
@@ -28,14 +33,41 @@ public class TahapanControllerButton : MonoBehaviour
                 OnInfoButtonClicked();
             });
         }
+
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.OnModeSet       += HandleProgressChanged;
+            GameManager.Instance.OnTahapCompleted += HandleProgressChanged;
+            GameManager.Instance.OnProgressReset  += RefreshVisualState;
+        }
     }
 
     private void OnDisable()
     {
         if (myButton != null)
         {
-            myButton.onClick.RemoveAllListeners(); 
+            myButton.onClick.RemoveAllListeners();
         }
+
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.OnModeSet        -= HandleProgressChanged;
+            GameManager.Instance.OnTahapCompleted -= HandleProgressChanged;
+            GameManager.Instance.OnProgressReset  -= RefreshVisualState;
+        }
+    }
+
+    private void HandleProgressChanged(GameMode mode, int lastCompleted)
+    {
+        if (ButtonGameMode != mode) return;
+        UpdateVisualState(TahapIndex <= lastCompleted + 1);
+    }
+
+    private void RefreshVisualState()
+    {
+        if (GameManager.Instance == null) return;
+        int lastCompleted = GameManager.Instance.GetLastCompletedTahapIndex(ButtonGameMode);
+        UpdateVisualState(TahapIndex <= lastCompleted + 1);
     }
 
     private void OnTahapClicked()
@@ -45,28 +77,26 @@ public class TahapanControllerButton : MonoBehaviour
             Debug.LogError("[TahapanController] GameManager.Instance is null!");
             return;
         }
-        TahapanData data = GameManager.Instance.GetCurrentTahapanData(TahapIndex);
-        if (data == null)
-        {
-            return;
-        }
+        //TahapanData data = GameManager.Instance.GetCurrentTahapanData(TahapIndex);
+        // if (data == null)
+        // {
+        //     return;
+        // }
         GameManager.Instance.StartTahap(TahapIndex);
-        GameManager.Instance.HideInfoPopup(data.panelInfo);
+        UIManager.Instance.ForceHideInfoPanel();
+        // GameManager.Instance.HideInfoPopup(info);
     }
 
     private void OnInfoButtonClicked()
     {
-        if (GameManager.Instance != null)
-        {
-            UIManager.Instance.ShowInfoPanel();  
-        }
+        UIManager.Instance?.ShowInfoPanel();  
     }
     
     public void UpdateVisualState(bool isInteractable)
     {
         if (myCanvasGroup != null)
         {
-            myCanvasGroup.alpha = isInteractable ? buttonActiveAplhaValue : buttonInactiveAlphaValue;
+            myCanvasGroup.alpha = isInteractable ? buttonActiveAlphaValue : buttonInactiveAlphaValue;
             myCanvasGroup.interactable = isInteractable;
             myCanvasGroup.blocksRaycasts = isInteractable;
         }

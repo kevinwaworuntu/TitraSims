@@ -14,13 +14,14 @@ GameObject:
   - component: {fileID: 6221418690724699248}
   - component: {fileID: 92400625045227348}
   - component: {fileID: 7040551470969846936}
+  - component: {fileID: 8804828512409544601}
   m_Layer: 0
   m_Name: Stage_TK_07_PenambahanIndikator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4025894400163314120
 Transform:
   m_ObjectHideFlags: 0
@@ -152,7 +153,6 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   animator: {fileID: 5133026031367975058}
-  audioSource: {fileID: 0}
 --- !u!114 &92400625045227348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,6 +184,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f590ac86a3433cf4e8d04a5468d32245, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8804828512409544601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7999113872945394263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d19bb3b44f8925c4f9fb94703d1dc6ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI.TahapanInteractionUI
 --- !u!1001 &3249217670614102546
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -37,12 +37,13 @@ namespace Gameplay
         private static readonly int SideColorID = Shader.PropertyToID("_Side_Color");
         private static readonly int TopColorID = Shader.PropertyToID("_TopColor");
 
-        protected void Awake()
+        protected override void Awake()
         {
+            base.Awake();
             titrasiMatInstance = titrasiRenderer.material;
         }
 
-        protected void OnEnable()
+        protected override void OnEnable()
         {
             base.OnEnable();
             ResetBuretteFill();

@@ -14,13 +14,14 @@ GameObject:
   - component: {fileID: 8873245747921213772}
   - component: {fileID: 5150949248874473773}
   - component: {fileID: 5767539223404582313}
+  - component: {fileID: 7041061230170942991}
   m_Layer: 0
   m_Name: Stage_TBA_04_PenambahanPelarut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7504586815546769509
 Transform:
   m_ObjectHideFlags: 0
@@ -135,7 +136,7 @@ MonoBehaviour:
     fillObject: {fileID: 3027801208289867359}
     meniskusObject: {fileID: 7706248404391979354}
     targetVolume: 0
-  Larutan2Container:
+  larutan2Container:
     fillObject: {fileID: 8171348861263118585}
     meniskusObject: {fileID: 3571503277529391100}
     targetVolume: 0
@@ -231,7 +232,6 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   animator: {fileID: 6403651771895674930}
-  audioSource: {fileID: 0}
 --- !u!114 &5767539223404582313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,6 +251,18 @@ MonoBehaviour:
   mCastedBehaviour: {fileID: 6226892332851795849}
   mMeshFilter: {fileID: 0}
   mMeshRenderer: {fileID: 0}
+--- !u!114 &7041061230170942991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2688009289951648467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d19bb3b44f8925c4f9fb94703d1dc6ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI.TahapanInteractionUI
 --- !u!1001 &8919522011359840099
 PrefabInstance:
   m_ObjectHideFlags: 0

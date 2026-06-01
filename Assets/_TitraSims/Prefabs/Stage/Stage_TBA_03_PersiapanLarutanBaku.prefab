@@ -14,13 +14,14 @@ GameObject:
   - component: {fileID: 2995577895237918612}
   - component: {fileID: 8735638057986321677}
   - component: {fileID: 9147145126140237810}
+  - component: {fileID: 5956863785782496572}
   m_Layer: 0
   m_Name: Stage_TBA_03_PersiapanLarutanBaku
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2942496673271528729
 Transform:
   m_ObjectHideFlags: 0
@@ -174,7 +175,6 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   animator: {fileID: 2841141385119688319}
-  audioSource: {fileID: 0}
 --- !u!114 &9147145126140237810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,6 +194,18 @@ MonoBehaviour:
   mCastedBehaviour: {fileID: 3304409092058151565}
   mMeshFilter: {fileID: 0}
   mMeshRenderer: {fileID: 0}
+--- !u!114 &5956863785782496572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534006759216576832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d19bb3b44f8925c4f9fb94703d1dc6ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI.TahapanInteractionUI
 --- !u!1001 &5729681819802928662
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -8,7 +8,11 @@ namespace Config
         public string PlayAnimationParamName = "PlayAnimation"; 
         public string StopAnimationParamName = "StopAnimation"; 
         public AnimatorOverrideController GenericAnimController;
-        [SerializeField] private AnimationClip animGenericClipEntry; // ToDo : reference to object aja langsung jangan string
+        [SerializeField] private AnimationClip animGenericClipEntry;
+
+        [Header("Interaction Timing")]
+        [Tooltip("Seconds to wait after an auto-completing interaction before advancing to the next step.")]
+        public float InteractionEndDelay = 2f;
 
         public string GetAnimGenericClipEntryName()
         {

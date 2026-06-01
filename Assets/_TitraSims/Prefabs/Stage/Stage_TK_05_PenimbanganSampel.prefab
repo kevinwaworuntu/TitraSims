@@ -14,13 +14,14 @@ GameObject:
   - component: {fileID: 2249979479895819100}
   - component: {fileID: 1509800830696412483}
   - component: {fileID: 6923846367216033771}
+  - component: {fileID: 5587491030287407955}
   m_Layer: 0
   m_Name: Stage_TK_05_PenimbanganSampel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8621663509180557061
 Transform:
   m_ObjectHideFlags: 0
@@ -178,7 +179,6 @@ MonoBehaviour:
             m_BoolArgument: 1
           m_CallState: 2
   animator: {fileID: 1817433132485779989}
-  audioSource: {fileID: 0}
 --- !u!114 &1509800830696412483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,6 +215,18 @@ MonoBehaviour:
   animator: {fileID: 1817433132485779989}
   animClipBalance: {fileID: 7400000, guid: eab5f0bfa19f6074c97d06472d42d714, type: 2}
   powderFillObject: {fileID: 7382289717270870011}
+--- !u!114 &5587491030287407955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2470600392034769467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d19bb3b44f8925c4f9fb94703d1dc6ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI.TahapanInteractionUI
 --- !u!1001 &1855137246921994010
 PrefabInstance:
   m_ObjectHideFlags: 0

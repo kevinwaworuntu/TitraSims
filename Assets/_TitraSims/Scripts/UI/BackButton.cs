@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 namespace UI
@@ -48,7 +47,8 @@ namespace UI
                 case PanelType.PanelScanAR :
                     uiInstance.GetPanelByType(PanelType.PanelNaration)?.SetActive(false);
                     contextualButtonController.DestroyButtons();
-                    GameManager.Instance?.BackFrromCurrentTahap();
+                    UIManager.Instance?.ForceHideInfoPanel();
+                    GameManager.Instance?.BackFromCurrentTahap();
                     GameManager.Instance?.SetARCameraActive(false);
                     break;
             }

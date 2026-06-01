@@ -14,13 +14,14 @@ GameObject:
   - component: {fileID: 5517778628114741481}
   - component: {fileID: 8307865599143820297}
   - component: {fileID: 167751177729739357}
+  - component: {fileID: 6573235427564023909}
   m_Layer: 0
   m_Name: Stage_TBA_08_Kalibrasi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4592536986804239462
 Transform:
   m_ObjectHideFlags: 0
@@ -323,7 +324,6 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   animator: {fileID: 6920028769381608884}
-  audioSource: {fileID: 0}
 --- !u!114 &8307865599143820297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -364,6 +364,18 @@ MonoBehaviour:
   mCastedBehaviour: {fileID: 8163913585635185453}
   mMeshFilter: {fileID: 0}
   mMeshRenderer: {fileID: 0}
+--- !u!114 &6573235427564023909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7820265711004225899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d19bb3b44f8925c4f9fb94703d1dc6ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI.TahapanInteractionUI
 --- !u!1001 &4098545426371621584
 PrefabInstance:
   m_ObjectHideFlags: 0

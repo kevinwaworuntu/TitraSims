@@ -14,13 +14,14 @@ GameObject:
   - component: {fileID: 8345225128655792286}
   - component: {fileID: 116335912217368814}
   - component: {fileID: 2370143325601450390}
+  - component: {fileID: 5995857978659208010}
   m_Layer: 0
   m_Name: Stage_TK_10_TirasiSampel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2192282092772344083
 Transform:
   m_ObjectHideFlags: 0
@@ -323,7 +324,6 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   animator: {fileID: 4979688805311366525}
-  audioSource: {fileID: 0}
 --- !u!114 &116335912217368814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -364,6 +364,18 @@ MonoBehaviour:
   textSampelWeight: {fileID: 0}
   buretteFillObject: {fileID: 6407423673412929371}
   buretteMeniskusObject: {fileID: 4883200637058308800}
+--- !u!114 &5995857978659208010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2920288191931388374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d19bb3b44f8925c4f9fb94703d1dc6ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI.TahapanInteractionUI
 --- !u!1001 &8085050716239821431
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -14,13 +14,14 @@ GameObject:
   - component: {fileID: 7341564420503706816}
   - component: {fileID: 6880944475919394046}
   - component: {fileID: 3460858213396597225}
+  - component: {fileID: 1529773247539962614}
   m_Layer: 0
   m_Name: Stage_TK_09_TitrasiBlanko
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3169204269009972333
 Transform:
   m_ObjectHideFlags: 0
@@ -173,7 +174,6 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   animator: {fileID: 7924750272239293373}
-  audioSource: {fileID: 0}
 --- !u!114 &6880944475919394046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,6 +214,18 @@ MonoBehaviour:
   textSampelWeight: {fileID: 0}
   buretteFillObject: {fileID: 7911019667503100280}
   buretteMeniskusObject: {fileID: 8567736003152850147}
+--- !u!114 &1529773247539962614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8668802403459687106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d19bb3b44f8925c4f9fb94703d1dc6ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI.TahapanInteractionUI
 --- !u!1001 &8303654417818091513
 PrefabInstance:
   m_ObjectHideFlags: 0

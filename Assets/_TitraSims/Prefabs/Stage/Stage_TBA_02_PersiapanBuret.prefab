@@ -14,13 +14,14 @@ GameObject:
   - component: {fileID: 1750273543351029136}
   - component: {fileID: 2489105318850324314}
   - component: {fileID: 5466342636526125580}
+  - component: {fileID: 3201638783409154494}
   m_Layer: 0
   m_Name: Stage_TBA_02_PersiapanBuret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &676832379972856864
 Transform:
   m_ObjectHideFlags: 0
@@ -164,7 +165,6 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   animator: {fileID: 3412318948619893240}
-  audioSource: {fileID: 0}
 --- !u!114 &5466342636526125580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,6 +184,18 @@ MonoBehaviour:
   mCastedBehaviour: {fileID: 2106081783738997942}
   mMeshFilter: {fileID: 0}
   mMeshRenderer: {fileID: 0}
+--- !u!114 &3201638783409154494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4265277453642384058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d19bb3b44f8925c4f9fb94703d1dc6ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI.TahapanInteractionUI
 --- !u!1001 &2766620381181065506
 PrefabInstance:
   m_ObjectHideFlags: 0

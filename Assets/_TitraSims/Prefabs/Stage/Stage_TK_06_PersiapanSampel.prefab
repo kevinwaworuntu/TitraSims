@@ -14,13 +14,14 @@ GameObject:
   - component: {fileID: 7858626945223863574}
   - component: {fileID: 7134988883507846544}
   - component: {fileID: 2548460428061434657}
+  - component: {fileID: 3318347250923538244}
   m_Layer: 0
   m_Name: Stage_TK_06_PersiapanSampel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2832252212103773697
 Transform:
   m_ObjectHideFlags: 0
@@ -250,7 +251,6 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   animator: {fileID: 1941978341428305761}
-  audioSource: {fileID: 0}
 --- !u!114 &7134988883507846544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -278,7 +278,7 @@ MonoBehaviour:
     fillObject: {fileID: 5348409986295050614}
     meniskusObject: {fileID: 779034481111428723}
     targetVolume: 0
-  Larutan2Container:
+  larutan2Container:
     fillObject: {fileID: 2944054139453577806}
     meniskusObject: {fileID: 7506815120124659019}
     targetVolume: 0
@@ -301,6 +301,18 @@ MonoBehaviour:
   mCastedBehaviour: {fileID: 1423414343168926738}
   mMeshFilter: {fileID: 0}
   mMeshRenderer: {fileID: 0}
+--- !u!114 &3318347250923538244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2717858440080403802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d19bb3b44f8925c4f9fb94703d1dc6ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI.TahapanInteractionUI
 --- !u!1001 &8366927860864589888
 PrefabInstance:
   m_ObjectHideFlags: 0

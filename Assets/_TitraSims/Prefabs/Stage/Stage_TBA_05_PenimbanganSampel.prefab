@@ -14,13 +14,14 @@ GameObject:
   - component: {fileID: 8327509294287199507}
   - component: {fileID: 7766691909535579304}
   - component: {fileID: 2495209339808774894}
+  - component: {fileID: 7622700643428602747}
   m_Layer: 0
   m_Name: Stage_TBA_05_PenimbanganSampel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7197790285970324490
 Transform:
   m_ObjectHideFlags: 0
@@ -207,7 +208,6 @@ MonoBehaviour:
             m_BoolArgument: 1
           m_CallState: 2
   animator: {fileID: 9176077339769541033}
-  audioSource: {fileID: 0}
 --- !u!114 &2495209339808774894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,6 +227,18 @@ MonoBehaviour:
   mCastedBehaviour: {fileID: 3171893971724008705}
   mMeshFilter: {fileID: 0}
   mMeshRenderer: {fileID: 0}
+--- !u!114 &7622700643428602747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2888481107013980688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d19bb3b44f8925c4f9fb94703d1dc6ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI.TahapanInteractionUI
 --- !u!1001 &7179769875048026279
 PrefabInstance:
   m_ObjectHideFlags: 0

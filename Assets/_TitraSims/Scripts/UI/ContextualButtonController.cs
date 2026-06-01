@@ -26,7 +26,7 @@ namespace UI
         {
             foreach (ContextualButton contextualButton in contextualButtons)
             {
-                Destroy(contextualButton);
+                Destroy(contextualButton.gameObject);
             }
             contextualButtons.Clear();
             for (int i = 0; i < size; i++)
@@ -50,13 +50,13 @@ namespace UI
         
         public void RegisterAction(int targetButtonIndex, Action action)
         {
-            // ToDo : Check if index valid
+            if (targetButtonIndex < 0 || targetButtonIndex >= contextualButtons.Count) return;
             contextualButtons[targetButtonIndex].RegisterAction(action);
         }
-        
+
         public void RegisterTextToButton(int targetButtonIndex, string text)
         {
-            // ToDo : Check if index valid
+            if (targetButtonIndex < 0 || targetButtonIndex >= contextualButtons.Count) return;
             contextualButtons[targetButtonIndex].RegisterText(text);
         }
 

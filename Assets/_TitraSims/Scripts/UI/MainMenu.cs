@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
-    public void StartButton()
+    public void GoToModeSelection()
     {
         if (UIManager.Instance != null)
         {
@@ -11,15 +11,15 @@ public class MainMenu : MonoBehaviour
         }
     }
     
-    public void HowToPlayButton()
+    public void GoToHowToPlay()
     {
         if (UIManager.Instance != null)
         {
-            UIManager.Instance.ShowPanelAndAddToHistory(PanelType.PanelModeSelection);
+            UIManager.Instance.ShowPanelAndAddToHistory(PanelType.PanelHowToPlay);
         }
     }
     
-    public void InfoButton()
+    public void GoToCredits()
     {
         if (UIManager.Instance != null)
         {
@@ -29,11 +29,10 @@ public class MainMenu : MonoBehaviour
     
     public void ExitButton()
     {
-        Debug.Log("Aplikasi akan ditutup.");
         Application.Quit();
     }
     
-    public void PilihModeTBA()
+    public void SetGameModeTBA()
     {
         if (GameManager.Instance != null)
         {
@@ -41,19 +40,11 @@ public class MainMenu : MonoBehaviour
         }
     }
     
-    public void PilihModeTK()
+    public void SetGameModeTK()
     {
         if (GameManager.Instance != null)
         {
             GameManager.Instance.SetMode(GameMode.Kompleksometri);
-        }
-    }
-    
-    public void BackButtonTrigger()
-    {
-        if (UIManager.Instance != null)
-        {
-            UIManager.Instance.GoBack();
         }
     }
 
@@ -62,7 +53,6 @@ public class MainMenu : MonoBehaviour
         if (GameManager.Instance != null)
         {
             GameManager.Instance.ResetAllProgress();
-            Debug.Log("Tombol Reset ditekan. Progres dihapus.");
         }
     }
 }
