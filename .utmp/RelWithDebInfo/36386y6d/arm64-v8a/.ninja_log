@@ -1,0 +1,10 @@
+# ninja log v5
+28	1151	8027250145689824	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	510e9b5b1b480664
+37	1166	8027250145881565	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	497973ade7bd54b2
+14	1186	8027250146077561	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	311bd6188cc6c676
+47	1195	8027250146163251	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	71bc4417f6e8639a
+7	1231	8027250146526418	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	642238ce7b289d24
+56	1370	8027250147904393	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	2c661c62e73c058d
+21	1422	8027250148402306	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	f0a7fe695fc4d10b
+0	1521	8027250149375767	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	345aa7a413a7ca1
+1522	1673	8027250150911696	D:/Others/Unity/TitraSims/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/36386y6d/obj/arm64-v8a/libgame.so	1799879970a6f772

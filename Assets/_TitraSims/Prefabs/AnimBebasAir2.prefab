@@ -114,6 +114,8 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -135,9 +137,11 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &844977496961814811
 GameObject:
@@ -362,9 +366,6 @@ GameObject:
   - component: {fileID: 5721821087248671453}
   - component: {fileID: 7007368366375906500}
   - component: {fileID: 6943965114563436711}
-  - component: {fileID: 4612810508881073400}
-  - component: {fileID: 4674526294112471225}
-  - component: {fileID: 4188905741758604713}
   m_Layer: 0
   m_Name: AnimBebasAir2
   m_TagString: Untagged
@@ -428,51 +429,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particleSystem: {fileID: 7845528824513204019}
---- !u!65 &4612810508881073400
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7756013667737431923}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.27742004, y: 0.40169436, z: 0.102891326}
-  m_Center: {x: 0.008705139, y: 0.19893351, z: -0.010272205}
---- !u!114 &4674526294112471225
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7756013667737431923}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2953cd83c0cde2241a44b3bf91fe6beb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &4188905741758604713
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7756013667737431923}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d040188dd3529e1439ca7952eee1d46d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &187921801168708303
 PrefabInstance:
   m_ObjectHideFlags: 0

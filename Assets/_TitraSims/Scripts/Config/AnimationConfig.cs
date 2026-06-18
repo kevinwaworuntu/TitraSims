@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Config
 {
@@ -9,6 +10,10 @@ namespace Config
         public string StopAnimationParamName = "StopAnimation"; 
         public AnimatorOverrideController GenericAnimController;
         [SerializeField] private AnimationClip animGenericClipEntry;
+        [SerializeField] private AnimationClip customAnimClipEntry;
+        [SerializeField] private string animGenericClipEntryStateName = "AnimEntry";
+        [SerializeField] private string customAnimEntryStateName = "CustomAnim";
+
 
         [Header("Interaction Timing")]
         [Tooltip("Seconds to wait after an auto-completing interaction before advancing to the next step.")]
@@ -17,6 +22,18 @@ namespace Config
         public string GetAnimGenericClipEntryName()
         {
             return animGenericClipEntry == null ? "AnimClipGenericEntry" : animGenericClipEntry.name;
+        }
+        public string GetCustomAnimGenericClipEntryName()
+        {
+            return customAnimClipEntry == null ? "CustomAnimGenericEntry" : customAnimClipEntry.name;
+        }
+        public string GetAnimGenericClipEntryStateName()
+        {
+            return animGenericClipEntryStateName;
+        }
+        public string GetCustomAnimEntryStateName()
+        {
+            return customAnimEntryStateName;
         }
     }
 }

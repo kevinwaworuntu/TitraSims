@@ -83,13 +83,13 @@ public class TahapanControllerButton : MonoBehaviour
         //     return;
         // }
         GameManager.Instance.StartTahap(TahapIndex);
-        UIManager.Instance.ForceHideInfoPanel();
+        //UIManager.Instance.ForceHideInfoPanel();
         // GameManager.Instance.HideInfoPopup(info);
     }
 
     private void OnInfoButtonClicked()
     {
-        UIManager.Instance?.ShowInfoPanel();  
+        //UIManager.Instance?.ShowInfoPanel();  
     }
     
     public void UpdateVisualState(bool isInteractable)

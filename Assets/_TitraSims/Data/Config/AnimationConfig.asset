@@ -18,3 +18,6 @@ MonoBehaviour:
     type: 2}
   animGenericClipEntry: {fileID: 7400000, guid: ee598031b6bf42143986a1ebf41bc653,
     type: 2}
+  customAnimGenericClipEntry: {fileID: 7400000, guid: 992cc6a5d0f8ebd45ac2e280da5b613a,
+    type: 2}
+  InteractionEndDelay: 2

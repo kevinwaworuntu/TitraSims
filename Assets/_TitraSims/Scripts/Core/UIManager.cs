@@ -20,7 +20,7 @@ public class UIManager : MonoBehaviour
     public PanelMapping[] Panels;
     private Dictionary<PanelType, GameObject> PanelsDict = new();
     
-    [Header("AR Popup References")] 
+    [Header("Panel Scanning AR")] 
     public GameObject[] allARPopups;
     public Button btnARNext;
     public Button btnARPrev;
@@ -86,7 +86,7 @@ public class UIManager : MonoBehaviour
         GameManager.Instance.OnProgressReset  -= HandleProgressReset;
     }
 
-    public void ShowPanelAndAddToHistory(PanelType panelType)
+    public void ShowPanelAndAddToHistory(PanelType panelType, bool hidePanelUnderStack = true)
     {
         ForceHideInfoPanel();
         if (currentActivePanelType == panelType) return;
@@ -94,7 +94,9 @@ public class UIManager : MonoBehaviour
 
         currentActivePanelType = panelType;
         OnPanelTypeChanged?.Invoke(panelType);
-        SetOnlyOnePanelActive(panelType);
+
+        if (hidePanelUnderStack) SetOnlyOnePanelActive(panelType);
+        else SetPanelToActive(panelType);
     }
 
     public GameObject GetPanelByType(PanelType targetType)
@@ -109,6 +111,12 @@ public class UIManager : MonoBehaviour
         {
             if (kvp.Value != null) kvp.Value.SetActive(false);
         }
+        var panel = GetPanelByType(panelToShow);
+        if (panel != null) panel.SetActive(true);
+    }
+
+    private void SetPanelToActive(PanelType panelToShow)
+    {
         var panel = GetPanelByType(panelToShow);
         if (panel != null) panel.SetActive(true);
     }
@@ -188,7 +196,19 @@ public class UIManager : MonoBehaviour
 
     public bool IsPanelInfoActive()
     {
-        return GetPanelByType(PanelType.PanelInfo).activeInHierarchy;
+        return GetPanelByType(PanelType.PanelInfo).activeSelf;
+    }
+
+    public void ToggleInfoPanel()
+    {
+        if (IsPanelInfoActive())
+        {
+            ForceHideInfoPanel();
+        }
+        else
+        {
+            ShowInfoPanel();
+        }
     }
 
     public void ForceHideInfoPanel()
@@ -208,7 +228,7 @@ public class UIManager : MonoBehaviour
                 ApplyInfoTextStyle(textComponent, GameManager.Instance.currentMode);
             }
         }
-        ShowPanelAndAddToHistory(PanelType.PanelInfo);
+        ShowPanelAndAddToHistory(PanelType.PanelInfo, false);
     }
 
     private void ApplyInfoTextStyle(TextMeshProUGUI textComponent, GameMode mode)
@@ -223,5 +243,35 @@ public class UIManager : MonoBehaviour
         textComponent.margin          = new Vector4(style.MarginLeft, style.MarginTop, style.MarginRight, style.MarginBottom);
     }
 
+    #endregion
+    
+    #region Naration Panel
+
+    private bool IsPanelNarationActive()
+    {
+        return GetPanelByType(PanelType.PanelNaration).activeSelf;
+    }
+
+    public void ToggleNarationPanel()
+    {
+        if (IsPanelNarationActive())
+        {
+            ForceHideNarationPanel();
+        }
+        else
+        {
+            ShowNarationPanel();
+        }
+    }
+
+    public void ForceHideNarationPanel()
+    {
+        GetPanelByType(PanelType.PanelNaration)?.SetActive(false);
+    }
+    
+    public void ShowNarationPanel()
+    {
+        ShowPanelAndAddToHistory(PanelType.PanelNaration, false);
+    }
     #endregion
 }
