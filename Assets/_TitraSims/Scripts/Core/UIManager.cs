@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Config;
 using TMPro;
+using UI;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -24,8 +25,7 @@ public class UIManager : MonoBehaviour
     public GameObject[] allARPopups;
     public Button btnARNext;
     public Button btnARPrev;
-
-    public Button btnInfo;
+    
     public Button btnNextInteraction;
     public Button btnCompleteTahapan;
 
@@ -73,7 +73,7 @@ public class UIManager : MonoBehaviour
         }
 
         ShowPanelAndAddToHistory(PanelType.PanelHomePage);
-        if (btnInfo != null) btnInfo.onClick.AddListener(ShowInfoPanel);
+      
         HideAllARPopups();
     }
 
@@ -89,7 +89,7 @@ public class UIManager : MonoBehaviour
     public void ShowPanelAndAddToHistory(PanelType panelType, bool hidePanelUnderStack = true)
     {
         ForceHideInfoPanel();
-        if (currentActivePanelType == panelType) return;
+        if (currentActivePanelType == panelType && currentActivePanelType != panelType) return;
         if (currentActivePanelType != PanelType.PanelHomePage && currentActivePanelType != PanelType.PanelInfo) panelHistory.Push(currentActivePanelType);
 
         currentActivePanelType = panelType;
@@ -221,14 +221,21 @@ public class UIManager : MonoBehaviour
         if (GameManager.Instance != null)
         {
             var panelInfoGameObject = GetPanelByType(PanelType.PanelInfo);
-            var textComponent = panelInfoGameObject.GetComponent<TextMeshProUGUI>();
-            if (textComponent != null)
+            // var textComponent = panelInfoGameObject.GetComponent<TextMeshProUGUI>();
+            // if (textComponent != null)
+            // {
+            //     textComponent.SetText(GameManager.Instance.GetInfoText());
+            //     ApplyInfoTextStyle(textComponent, GameManager.Instance.currentMode);
+            // } 
+            var infoPanel = panelInfoGameObject.GetComponent<InfoPanel>();
+            if (infoPanel != null)
             {
-                textComponent.SetText(GameManager.Instance.GetInfoText());
-                ApplyInfoTextStyle(textComponent, GameManager.Instance.currentMode);
+                infoPanel.SetTitleText(GameManager.Instance.GetInfoTitle());
+                infoPanel.SetDescriptionText(GameManager.Instance.GetInfoText());
+                //ApplyInfoTextStyle(infoPanel, GameManager.Instance.currentMode);
             }
         }
-        ShowPanelAndAddToHistory(PanelType.PanelInfo, false);
+        GetPanelByType(PanelType.PanelInfo)?.SetActive(true);
     }
 
     private void ApplyInfoTextStyle(TextMeshProUGUI textComponent, GameMode mode)
@@ -271,7 +278,7 @@ public class UIManager : MonoBehaviour
     
     public void ShowNarationPanel()
     {
-        ShowPanelAndAddToHistory(PanelType.PanelNaration, false);
+        GetPanelByType(PanelType.PanelNaration)?.SetActive(true);
     }
     #endregion
 }

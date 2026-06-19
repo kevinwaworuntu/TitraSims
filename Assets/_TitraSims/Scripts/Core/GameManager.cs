@@ -129,7 +129,16 @@ public class GameManager : MonoBehaviour
         SetARCameraActive(false);
         OnTahapCompleted?.Invoke(currentMode, GetLastCompletedTahapIndex());
     }
-
+    public string GetInfoTitle()
+    {
+        int idx = currentAttemptingTahapIndex;
+        if (currentMode == GameMode.TBA)
+        {
+            return (idx >= 0 && idx < InfoTextBank.TBA_Title.Length) ? InfoTextBank.TBA_Title[idx] : "";
+        }
+        return (idx >= 0 && idx < InfoTextBank.TK_Title.Length) ? InfoTextBank.TK_Title[idx] : "";
+    }
+    
     public string GetInfoText()
     {
         int idx = currentAttemptingTahapIndex;

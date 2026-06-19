@@ -3,6 +3,7 @@ using System.Collections;
 using UI;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 namespace Gameplay
 {
@@ -13,8 +14,15 @@ namespace Gameplay
         private struct TahapanInteractionMappingStruct
         {
             public TahapanInteractionData InteractionData;
-            public bool IsNeedPlayerInputToContinue;
+            [FormerlySerializedAs("IsNeedPlayerInputToContinue")] public bool IsAutoContinue;
             public UnityEvent UniqueEvent;
+        }
+        
+        [Serializable]
+        private struct TahapanInteractionDoneConditionsStruct
+        {
+            public bool IsNeedPlayerInputToContinue;
+            public UnityEvent DoneCondition;
         }
 
         [SerializeField] private TahapanInteractionMappingStruct[] interactionDataActionMappings;
@@ -71,7 +79,7 @@ namespace Gameplay
             {
                 return;
             }
-            if (!interactionDataActionMappings[currentInteractionIndex].IsNeedPlayerInputToContinue)
+            if (interactionDataActionMappings[currentInteractionIndex].IsAutoContinue)
             {
                 return;
             }
@@ -100,7 +108,7 @@ namespace Gameplay
             mapping.UniqueEvent?.Invoke();
             interactionPlayer.Play(mapping.InteractionData, () =>
             {
-                if (mapping.IsNeedPlayerInputToContinue)
+                if (!mapping.IsAutoContinue)
                 {
                     OnStartWaitingForPlayerInputToContinue?.Invoke();
                     return;

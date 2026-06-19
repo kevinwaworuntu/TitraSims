@@ -1,17 +1,21 @@
 using Config;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Serialization;
 
 public class PlayAnimByProgression : MonoBehaviour
 {
+    [Header("References")]
     [SerializeField] private Animator        _animator;
     [SerializeField] private AnimationConfig _animationConfig;
     [SerializeField] private AnimationClip   _animationClip;
 
+    [Header("Progression")]
     [SerializeField] private float progressionIncrement = 1f;
     [SerializeField] private int loopCountNeeded = 4;
     [SerializeField] private float lerpStep = 1;
-
+    [SerializeField] UnityEvent OnComplete;
+    
     private AnimatorOverrideController _runtimeOverride;
     private float _targetProgression = 0f;
     private float currentProgression = 0;
