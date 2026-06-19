@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Config;
+using DG.Tweening;
 using TMPro;
 using UI;
 using UnityEngine;
@@ -20,6 +21,8 @@ public class UIManager : MonoBehaviour
     [Header("Main Panels")]
     public PanelMapping[] Panels;
     private Dictionary<PanelType, GameObject> PanelsDict = new();
+    private InfoPanel infoPanelComponent;
+    private NarationPanel narationPanelComponent;
     
     [Header("Panel Scanning AR")] 
     public GameObject[] allARPopups;
@@ -72,8 +75,11 @@ public class UIManager : MonoBehaviour
             GameManager.Instance.OnProgressReset  += HandleProgressReset;
         }
 
+        infoPanelComponent     = GetPanelByType(PanelType.PanelInfo)?.GetComponent<InfoPanel>();
+        narationPanelComponent = GetPanelByType(PanelType.PanelNaration)?.GetComponent<NarationPanel>();
+
         ShowPanelAndAddToHistory(PanelType.PanelHomePage);
-      
+
         HideAllARPopups();
     }
 
@@ -203,11 +209,14 @@ public class UIManager : MonoBehaviour
     {
         if (IsPanelInfoActive())
         {
-            ForceHideInfoPanel();
+            infoPanelComponent?.Hide();
         }
         else
         {
-            ForceHideNarationPanel();
+            if (IsPanelNarationActive())
+            {
+                narationPanelComponent?.Hide();
+            }
             ShowInfoPanel();
         }
         // Todo use observer pattern at least
@@ -223,24 +232,21 @@ public class UIManager : MonoBehaviour
     
     public void ForceHideInfoPanel()
     {
-        GetPanelByType(PanelType.PanelInfo)?.SetActive(false);
+        var panel = GetPanelByType(PanelType.PanelInfo);
+        if (panel == null) return;
+        panel.GetComponent<RectTransform>()?.DOKill();
+        panel.SetActive(false);
     }
-    
+
     public void ShowInfoPanel()
     {
-        if (GameManager.Instance != null)
+        if (GameManager.Instance != null && infoPanelComponent != null)
         {
-            var panelInfoGameObject = GetPanelByType(PanelType.PanelInfo);
-            var infoPanel = panelInfoGameObject.GetComponent<InfoPanel>();
-            if (infoPanel != null)
-            {
-                infoPanel.SetTitleText(GameManager.Instance.GetInfoTitle());
-                infoPanel.SetDescriptionText(GameManager.Instance.GetInfoText());
-                //ApplyInfoTextStyle(infoPanel, GameManager.Instance.currentMode);
-            }
+            infoPanelComponent.SetTitleText(GameManager.Instance.GetInfoTitle());
+            infoPanelComponent.SetDescriptionText(GameManager.Instance.GetInfoText());
         }
-        GetPanelByType(PanelType.PanelInfo)?.SetActive(true);
-        
+        infoPanelComponent?.Show();
+
         // Todo use observer pattern at least
         SetButtonNarationVisibility(!Instance.IsPanelInfoActive());
     }
@@ -270,23 +276,29 @@ public class UIManager : MonoBehaviour
     {
         if (IsPanelNarationActive())
         {
-            ForceHideNarationPanel();
+            narationPanelComponent?.Hide();
         }
         else
         {
-            ForceHideInfoPanel();
+            if (IsPanelInfoActive())
+            {
+                infoPanelComponent?.Hide();
+            }
             ShowNarationPanel();
         }
     }
 
     public void ForceHideNarationPanel()
     {
-        GetPanelByType(PanelType.PanelNaration)?.SetActive(false);
+        var panel = GetPanelByType(PanelType.PanelNaration);
+        if (panel == null) return;
+        panel.GetComponent<RectTransform>()?.DOKill();
+        panel.SetActive(false);
     }
-    
+
     public void ShowNarationPanel()
     {
-        GetPanelByType(PanelType.PanelNaration)?.SetActive(true);
+        narationPanelComponent?.Show();
     }
     #endregion
  

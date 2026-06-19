@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using DG.Tweening;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace UI
@@ -8,12 +9,14 @@ namespace UI
         private Button button;
         private CanvasGroup canvasGroup;
         private ContextualButtonController contextualButtonController;
-       
+        private RectTransform rectTransform;
+
         private void Awake()
         {
             button = GetComponent<Button>();
             canvasGroup = GetComponent<CanvasGroup>();
             contextualButtonController = FindAnyObjectByType<ContextualButtonController>();
+            rectTransform = GetComponent<RectTransform>();
         }
 
         private void Start()
@@ -35,24 +38,27 @@ namespace UI
 
         private void OnClicked()
         {
-            var uiInstance = UIManager.Instance;
-            if (!uiInstance)
+            UIAnimator.ButtonPress(rectTransform).OnComplete(() =>
             {
-                return;
-            }
+                var uiInstance = UIManager.Instance;
+                if (!uiInstance)
+                {
+                    return;
+                }
 
-            var currentPanelType = uiInstance.CurrentActivePanelType;
-            switch (currentPanelType)
-            {
-                case PanelType.PanelScanAR :
-                    uiInstance.GetPanelByType(PanelType.PanelNaration)?.SetActive(false);
-                    contextualButtonController.DestroyButtons();
-                    UIManager.Instance?.ForceHideInfoPanel();
-                    GameManager.Instance?.BackFromCurrentTahap();
-                    GameManager.Instance?.SetARCameraActive(false);
-                    break;
-            }
-            uiInstance.GoBack();
+                var currentPanelType = uiInstance.CurrentActivePanelType;
+                switch (currentPanelType)
+                {
+                    case PanelType.PanelScanAR :
+                        uiInstance.GetPanelByType(PanelType.PanelNaration)?.SetActive(false);
+                        contextualButtonController.DestroyButtons();
+                        UIManager.Instance?.ForceHideInfoPanel();
+                        GameManager.Instance?.BackFromCurrentTahap();
+                        GameManager.Instance?.SetARCameraActive(false);
+                        break;
+                }
+                uiInstance.GoBack();
+            });
         }
 
         private void OnCurrentPanelChanged(PanelType panelType)

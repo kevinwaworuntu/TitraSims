@@ -1,4 +1,5 @@
 ﻿using System;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -10,12 +11,14 @@ namespace UI
     {
         private Button button;
         private TextMeshProUGUI text;
+        private RectTransform rt;
         private Action currentActionCached;
 
         private void Awake()
         {
             button = GetComponent<Button>();
             text = GetComponentInChildren<TextMeshProUGUI>();
+            rt = GetComponent<RectTransform>();
             if (button)
             {
                 button.onClick.AddListener(InvokeCurrentAction);
@@ -50,7 +53,7 @@ namespace UI
         
         private void InvokeCurrentAction()
         {
-            currentActionCached?.Invoke();
+            UIAnimator.ButtonPress(rt).OnComplete(() => currentActionCached?.Invoke());
         }
 
         public void SetEnabled(bool enabled)

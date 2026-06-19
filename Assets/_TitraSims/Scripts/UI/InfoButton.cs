@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using DG.Tweening;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace UI
@@ -6,26 +7,30 @@ namespace UI
     public class InfoButton : MonoBehaviour
     {
         private Button button;
+        private RectTransform rt;
 
         private void Awake()
         {
             button = GetComponent<Button>();
+            rt = GetComponent<RectTransform>();
         }
 
         private void OnEnable()
         {
-            if (button)
-            {
-                button.onClick.AddListener(OnButtonClick);
-            }
+            if (button) button.onClick.AddListener(OnButtonClick);
+        }
+
+        private void OnDisable()
+        {
+            if (button) button.onClick.RemoveListener(OnButtonClick);
         }
 
         private void OnButtonClick()
         {
-            if (UIManager.Instance)
+            UIAnimator.ButtonPress(rt).OnComplete(() =>
             {
-                UIManager.Instance.ToggleInfoPanel();
-            }
+                if (UIManager.Instance) UIManager.Instance.ToggleInfoPanel();
+            });
         }
     }
 }

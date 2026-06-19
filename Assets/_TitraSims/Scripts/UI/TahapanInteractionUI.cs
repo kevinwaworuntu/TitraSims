@@ -1,3 +1,4 @@
+using DG.Tweening;
 using Gameplay;
 using UnityEngine;
 using UnityEngine.UI;
@@ -29,8 +30,10 @@ namespace UI
             controller.OnFinishPlayingInteraction += HandleExit;
             controller.OnInteractionComplete += HandleComplete;
 
-            if (playButton) playButton.onClick.AddListener(controller.PlayAnimation);
-            if (stopButton) stopButton.onClick.AddListener(controller.StopAnimation);
+            if (playButton) playButton.onClick.AddListener(() =>
+                UIAnimator.ButtonPress(playButton.GetComponent<RectTransform>()).OnComplete(controller.PlayAnimation));
+            if (stopButton) stopButton.onClick.AddListener(() =>
+                UIAnimator.ButtonPress(stopButton.GetComponent<RectTransform>()).OnComplete(controller.StopAnimation));
         }
 
         private void OnDisable()

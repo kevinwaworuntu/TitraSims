@@ -1,3 +1,4 @@
+using DG.Tweening;
 using Gameplay;
 using UI;
 using UnityEngine;
@@ -106,10 +107,14 @@ public class ARContentManager : MonoBehaviour
             return;
         }
         UIManager.Instance.btnNextInteraction.onClick.RemoveAllListeners();
-        UIManager.Instance.btnNextInteraction.onClick.AddListener(tahapanInteractionController.PlayerInteractToFinishInteraction);
         UIManager.Instance.btnNextInteraction.onClick.AddListener(() =>
         {
-            ToggleNavigationButtons(false, false);
+            var rt = UIManager.Instance.btnNextInteraction.GetComponent<RectTransform>();
+            UIAnimator.ButtonPress(rt).OnComplete(() =>
+            {
+                tahapanInteractionController.PlayerInteractToFinishInteraction();
+                ToggleNavigationButtons(false, false);
+            });
         });
     }
     
@@ -137,10 +142,14 @@ public class ARContentManager : MonoBehaviour
         ToggleNavigationButtons(false, true);
 
         UIManager.Instance.btnCompleteTahapan.onClick.RemoveAllListeners();
-        UIManager.Instance.btnCompleteTahapan.onClick.AddListener(() => 
+        UIManager.Instance.btnCompleteTahapan.onClick.AddListener(() =>
         {
-            GameManager.Instance.CompleteCurrentTahap();
-            ContextualButtonController.Instance?.DestroyButtons();
+            var rt = UIManager.Instance.btnCompleteTahapan.GetComponent<RectTransform>();
+            UIAnimator.ButtonPress(rt).OnComplete(() =>
+            {
+                GameManager.Instance.CompleteCurrentTahap();
+                ContextualButtonController.Instance?.DestroyButtons();
+            });
         });
     }
     

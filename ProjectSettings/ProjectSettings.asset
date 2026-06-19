@@ -883,9 +883,24 @@ PlayerSettings:
   webWasm2023: 0
   webEnableSubmoduleStrippingCompatibility: 0
   scriptingDefineSymbols:
-    Android: VUFORIA_ANDROID_SETTINGS
-    Windows Store Apps: VUFORIA_WSA_SETTINGS
-    iPhone: VUFORIA_IOS_SETTINGS
+    Android: VUFORIA_ANDROID_SETTINGS;DOTWEEN
+    EmbeddedLinux: DOTWEEN
+    GameCoreScarlett: DOTWEEN
+    GameCoreXboxOne: DOTWEEN
+    Kepler: DOTWEEN
+    LinuxHeadlessSimulation: DOTWEEN
+    Nintendo Switch: DOTWEEN
+    Nintendo Switch 2: DOTWEEN
+    PS4: DOTWEEN
+    PS5: DOTWEEN
+    QNX: DOTWEEN
+    Standalone: DOTWEEN
+    VisionOS: DOTWEEN
+    WebGL: DOTWEEN
+    Windows Store Apps: VUFORIA_WSA_SETTINGS;DOTWEEN
+    XboxOne: DOTWEEN
+    iPhone: VUFORIA_IOS_SETTINGS;DOTWEEN
+    tvOS: DOTWEEN
   additionalCompilerArguments: {}
   platformArchitecture:
     iPhone: 1

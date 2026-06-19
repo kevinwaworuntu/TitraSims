@@ -622,6 +622,72 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 56078481}
   m_CullTransparentMesh: 1
+--- !u!1 &57390360
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 57390361}
+  - component: {fileID: 57390362}
+  m_Layer: 0
+  m_Name: UIAnimator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &57390361
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 57390360}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1616617073}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &57390362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 57390360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c00bcc18e7b7124f9a335443976fc21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIAnimationTrigger
+  canvasGroup: {fileID: 0}
+  punchAmount: 0.25
+  popDuration: 0.4
+  slideDirection: 3
+  slideDistance: 80
+  slideDuration: 0.4
+  shakeDuration: 0.4
+  shakeStrength: 25
+  flashColor:
+    r: 1
+    g: 1
+    b: 1
+    a: 1
+  flashTarget: {fileID: 0}
+  listContainer: {fileID: 0}
+  listStagger: 0.06
+  listItemDuration: 0.3
+  _rt: {fileID: 0}
 --- !u!1 &63690790 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5812122325704171721, guid: 5fa9dcb641c82134c9580a56213ffe58,
@@ -1329,6 +1395,7 @@ GameObject:
   - component: {fileID: 108886654}
   - component: {fileID: 108886653}
   - component: {fileID: 108886652}
+  - component: {fileID: 108886655}
   m_Layer: 5
   m_Name: CompleteButton
   m_TagString: Untagged
@@ -1450,6 +1517,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 108886650}
   m_CullTransparentMesh: 1
+--- !u!114 &108886655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108886650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14a5d16eacc842641b8931aa323dbe66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CompleteTahapanButton
+  interval: 0.5
+  angle: 1
+  duration: 0.5
 --- !u!1 &123507066
 GameObject:
   m_ObjectHideFlags: 0
@@ -2060,6 +2142,7 @@ GameObject:
   - component: {fileID: 162108802}
   - component: {fileID: 162108804}
   - component: {fileID: 162108803}
+  - component: {fileID: 162108805}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -2137,6 +2220,18 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &162108805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 162108801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d534a8106b5172543b0a99749e249a27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI.TahapanControllerParent
 --- !u!1 &179315074 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7820265711004225899, guid: 9c54363f0910a4e45a098c2ebc0d5fcf,
@@ -8271,6 +8366,7 @@ GameObject:
   - component: {fileID: 835617918}
   - component: {fileID: 835617920}
   - component: {fileID: 835617921}
+  - component: {fileID: 835617922}
   m_Layer: 5
   m_Name: NarationPanel
   m_TagString: Untagged
@@ -8322,6 +8418,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   titleText: {fileID: 424916050}
   descriptionText: {fileID: 543219818}
+--- !u!225 &835617922
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 835617917}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &855819555
 GameObject:
   m_ObjectHideFlags: 0
@@ -10375,6 +10483,7 @@ GameObject:
   - component: {fileID: 1196315863}
   - component: {fileID: 1196315865}
   - component: {fileID: 1196315864}
+  - component: {fileID: 1196315866}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -10452,6 +10561,18 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &1196315866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1196315862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d534a8106b5172543b0a99749e249a27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI.TahapanControllerParent
 --- !u!1 &1197825756
 GameObject:
   m_ObjectHideFlags: 0
@@ -11086,6 +11207,7 @@ GameObject:
   - component: {fileID: 1260033864}
   - component: {fileID: 1260033866}
   - component: {fileID: 1260033867}
+  - component: {fileID: 1260033868}
   m_Layer: 5
   m_Name: panelInfo
   m_TagString: Untagged
@@ -11135,6 +11257,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InfoPanel
   TitleText: {fileID: 2023758430}
   DescriptionText: {fileID: 53339260}
+--- !u!225 &1260033868
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260033863}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1273362660
 GameObject:
   m_ObjectHideFlags: 0
@@ -13114,6 +13248,7 @@ GameObject:
   - component: {fileID: 1423064223}
   - component: {fileID: 1423064222}
   - component: {fileID: 1423064221}
+  - component: {fileID: 1423064224}
   - component: {fileID: 1423064220}
   - component: {fileID: 1423064219}
   m_Layer: 5
@@ -13162,7 +13297,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1423064217}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cffce92bc4e24cf49c656dc597cf5dfc, type: 3}
   m_Name: 
@@ -13249,6 +13384,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1423064217}
   m_CullTransparentMesh: 1
+--- !u!114 &1423064224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1423064217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a2408ef24cc1e64d81196c8d99ce558, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NextTahapanButton
+  targetScaleModifier: 1.06
+  inhaleTime: 1.2
+  exhaleTime: 1.5
 --- !u!1 &1424002901
 GameObject:
   m_ObjectHideFlags: 0
@@ -14940,6 +15090,7 @@ Transform:
   - {fileID: 1419026049}
   - {fileID: 150136121}
   - {fileID: 2059107133}
+  - {fileID: 57390361}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1621452914

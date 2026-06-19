@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,11 +12,13 @@ public class TahapanControllerButton : MonoBehaviour
     private CanvasGroup myCanvasGroup;
     private const float buttonActiveAlphaValue = 1f;
     private const float buttonInactiveAlphaValue = 0.75f;
+    private RectTransform rectTransform;
 
     void Awake()
     {
         myButton = GetComponent<Button>();
         myCanvasGroup = GetComponent<CanvasGroup>();
+        rectTransform = GetComponent<RectTransform>();
     }
 
     private void Start()
@@ -30,7 +33,6 @@ public class TahapanControllerButton : MonoBehaviour
             myButton.onClick.AddListener(() =>
             {
                 OnTahapClicked();
-                OnInfoButtonClicked();
             });
         }
 
@@ -74,25 +76,16 @@ public class TahapanControllerButton : MonoBehaviour
 
     private void OnTahapClicked()
     {
-        if (GameManager.Instance == null)
+        UIAnimator.ButtonPress(rectTransform).OnComplete(() =>
         {
-            Debug.LogError("[TahapanController] GameManager.Instance is null!");
-            return;
-        }
-        //TahapanData data = GameManager.Instance.GetCurrentTahapanData(TahapIndex);
-        // if (data == null)
-        // {
-        //     return;
-        // }
-        GameManager.Instance.StartTahap(TahapIndex);
-        UIManager.Instance.ShowInfoPanel();
-        //UIManager.Instance.ForceHideInfoPanel();
-        // GameManager.Instance.HideInfoPopup(info);
-    }
-
-    private void OnInfoButtonClicked()
-    {
-        //UIManager.Instance?.ShowInfoPanel();  
+            if (GameManager.Instance == null)
+            {
+                Debug.LogError("[TahapanController] GameManager.Instance is null!");
+                return;
+            }
+            GameManager.Instance.StartTahap(TahapIndex);
+            UIManager.Instance.ShowInfoPanel();
+        });
     }
     
     public void UpdateVisualState(bool isInteractable)
