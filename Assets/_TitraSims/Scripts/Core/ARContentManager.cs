@@ -54,19 +54,33 @@ public class ARContentManager : MonoBehaviour
 
     public void OnTargetFound()
     {
-        if (!UIManager.Instance || UIManager.Instance.IsPanelInfoActive())
+        if (UIManager.Instance) // Todo : Revisit move to better place
         {
-            return;
+            UIManager.Instance.SetScanMarkerTextVisibility(false);
         }
+        // if (!UIManager.Instance || UIManager.Instance.IsPanelInfoActive())
+        // {
+        //     return;
+        // }
         if (!tahapanInteractionController)
         {
             return;
         }
-        tahapanInteractionController.StartInteraction();
+        tahapanInteractionController.StartInteraction(); // Todo : need revisit, wrong gated logic
+        
+        if (UIManager.Instance) // Todo : Revisit move to better place
+        {
+            UIManager.Instance.ForceHideInfoPanel();
+            UIManager.Instance.SetButtonNarationVisibility(true);
+        }
     }
 
     public void OnTargetLost()
     {
+        if (UIManager.Instance) // Todo : Revisit move to better place
+        {
+            UIManager.Instance.SetScanMarkerTextVisibility(true); // Todo : Check if current tahapan complete or not
+        }
         if (!UIManager.Instance)
         {
             return;
@@ -114,6 +128,11 @@ public class ARContentManager : MonoBehaviour
         {
             return;
         }
+        
+        // Todo : move this to better place
+        UIManager.Instance.SetScanMarkerTextVisibility(false);
+        UIManager.Instance.SetButtonNarationVisibility(false);
+            
         UIManager.Instance.GetPanelByType(PanelType.PanelNaration)?.SetActive(false);
         ToggleNavigationButtons(false, true);
 

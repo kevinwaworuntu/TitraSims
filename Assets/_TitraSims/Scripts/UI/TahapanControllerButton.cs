@@ -40,6 +40,8 @@ public class TahapanControllerButton : MonoBehaviour
             GameManager.Instance.OnTahapCompleted += HandleProgressChanged;
             GameManager.Instance.OnProgressReset  += RefreshVisualState;
         }
+
+        RefreshVisualState();
     }
 
     private void OnDisable()

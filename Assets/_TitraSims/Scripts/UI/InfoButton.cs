@@ -22,7 +22,10 @@ namespace UI
 
         private void OnButtonClick()
         {
-            UIManager.Instance.ToggleInfoPanel();
+            if (UIManager.Instance)
+            {
+                UIManager.Instance.ToggleInfoPanel();
+            }
         }
     }
 }

@@ -207,10 +207,20 @@ public class UIManager : MonoBehaviour
         }
         else
         {
+            ForceHideNarationPanel();
             ShowInfoPanel();
         }
+        // Todo use observer pattern at least
+        SetButtonNarationVisibility(!Instance.IsPanelInfoActive());
     }
 
+    //Todo : Move to better place
+    [SerializeField] private Button narationButton;
+    public void SetButtonNarationVisibility(bool enabled)
+    {
+        narationButton.interactable = enabled;
+    }
+    
     public void ForceHideInfoPanel()
     {
         GetPanelByType(PanelType.PanelInfo)?.SetActive(false);
@@ -221,12 +231,6 @@ public class UIManager : MonoBehaviour
         if (GameManager.Instance != null)
         {
             var panelInfoGameObject = GetPanelByType(PanelType.PanelInfo);
-            // var textComponent = panelInfoGameObject.GetComponent<TextMeshProUGUI>();
-            // if (textComponent != null)
-            // {
-            //     textComponent.SetText(GameManager.Instance.GetInfoText());
-            //     ApplyInfoTextStyle(textComponent, GameManager.Instance.currentMode);
-            // } 
             var infoPanel = panelInfoGameObject.GetComponent<InfoPanel>();
             if (infoPanel != null)
             {
@@ -236,6 +240,9 @@ public class UIManager : MonoBehaviour
             }
         }
         GetPanelByType(PanelType.PanelInfo)?.SetActive(true);
+        
+        // Todo use observer pattern at least
+        SetButtonNarationVisibility(!Instance.IsPanelInfoActive());
     }
 
     private void ApplyInfoTextStyle(TextMeshProUGUI textComponent, GameMode mode)
@@ -254,7 +261,7 @@ public class UIManager : MonoBehaviour
     
     #region Naration Panel
 
-    private bool IsPanelNarationActive()
+    public bool IsPanelNarationActive()
     {
         return GetPanelByType(PanelType.PanelNaration).activeSelf;
     }
@@ -267,6 +274,7 @@ public class UIManager : MonoBehaviour
         }
         else
         {
+            ForceHideInfoPanel();
             ShowNarationPanel();
         }
     }
@@ -281,4 +289,12 @@ public class UIManager : MonoBehaviour
         GetPanelByType(PanelType.PanelNaration)?.SetActive(true);
     }
     #endregion
+ 
+    [SerializeField] private GameObject ScanMarkerTextGO;
+    // TODO : TEMP Move to proper place
+    public void SetScanMarkerTextVisibility(bool visible)
+    {
+        ScanMarkerTextGO.SetActive(visible);
+    }
+    
 }

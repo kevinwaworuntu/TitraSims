@@ -3116,6 +3116,8 @@ MonoBehaviour:
   btnPlayAnimation: {fileID: 2009285230}
   btnStopAnimation: {fileID: 1384396056}
   styleConfigDefault: {fileID: 11400000, guid: ed426c440e749f04ba493dcde322d486, type: 2}
+  narationButton: {fileID: 868710117}
+  ScanMarkerTextGO: {fileID: 391378557}
 --- !u!1 &289455569
 GameObject:
   m_ObjectHideFlags: 0
@@ -4168,7 +4170,7 @@ GameObject:
   - component: {fileID: 390567473}
   - component: {fileID: 390567476}
   m_Layer: 5
-  m_Name: InfoButton
+  m_Name: ToggleInfoButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8604,7 +8606,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -193.00098, y: -0.0009765625}
+  m_AnchoredPosition: {x: -193.00098, y: -12.499023}
   m_SizeDelta: {x: 386, y: -679.2737}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &884393914
@@ -14860,7 +14862,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1627922236}
   m_HandleRect: {fileID: 1627922235}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -20095,6 +20097,16 @@ PrefabInstance:
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 1705230721}
+    - target: {fileID: 2489105318850324314, guid: 57ba72c521ee0ac4d9fcd64cbb5ec8b1,
+        type: 3}
+      propertyPath: interactionDataActionMappings.Array.data[0].IsAutoContinue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2489105318850324314, guid: 57ba72c521ee0ac4d9fcd64cbb5ec8b1,
+        type: 3}
+      propertyPath: interactionDataActionMappings.Array.data[1].IsAutoContinue
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4265277453642384058, guid: 57ba72c521ee0ac4d9fcd64cbb5ec8b1,
         type: 3}
       propertyPath: m_Name
