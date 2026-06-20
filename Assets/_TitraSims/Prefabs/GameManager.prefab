@@ -46,71 +46,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentMode: 0
-  tahapanTBA:
-  - namaTahapan: t1
-    namaMarkerVuforia: marker-bebasair-1
-    panelInfo: {fileID: 0}
-  - namaTahapan: t2
-    namaMarkerVuforia: marker-bebasair-2
-    panelInfo: {fileID: 0}
-  - namaTahapan: t3
-    namaMarkerVuforia: marker-bebasair-3
-    panelInfo: {fileID: 0}
-  - namaTahapan: t4
-    namaMarkerVuforia: marker-bebasair-4
-    panelInfo: {fileID: 0}
-  - namaTahapan: t5
-    namaMarkerVuforia: marker-bebasair-5
-    panelInfo: {fileID: 0}
-  - namaTahapan: t6
-    namaMarkerVuforia: marker-bebasair-6
-    panelInfo: {fileID: 0}
-  - namaTahapan: t7
-    namaMarkerVuforia: marker-bebasair-7
-    panelInfo: {fileID: 0}
-  - namaTahapan: t8
-    namaMarkerVuforia: marker-bebasair-8
-    panelInfo: {fileID: 0}
-  - namaTahapan: t9
-    namaMarkerVuforia: marker-bebasair-9
-    panelInfo: {fileID: 0}
-  - namaTahapan: t10
-    namaMarkerVuforia: marker-bebasair-10
-    panelInfo: {fileID: 0}
-  tahapanKompleksometri:
-  - namaTahapan: t1
-    namaMarkerVuforia: marker-kompleksometri-1
-    panelInfo: {fileID: 0}
-  - namaTahapan: t2
-    namaMarkerVuforia: marker-kompleksometri-2
-    panelInfo: {fileID: 0}
-  - namaTahapan: t3
-    namaMarkerVuforia: marker-kompleksometri-3
-    panelInfo: {fileID: 0}
-  - namaTahapan: t4
-    namaMarkerVuforia: marker-kompleksometri-4
-    panelInfo: {fileID: 0}
-  - namaTahapan: t5
-    namaMarkerVuforia: marker-kompleksometri-5
-    panelInfo: {fileID: 0}
-  - namaTahapan: t6
-    namaMarkerVuforia: marker-kompleksometri-6
-    panelInfo: {fileID: 0}
-  - namaTahapan: t7
-    namaMarkerVuforia: marker-kompleksometri-7
-    panelInfo: {fileID: 0}
-  - namaTahapan: t8
-    namaMarkerVuforia: marker-kompleksometri-8
-    panelInfo: {fileID: 0}
-  - namaTahapan: t9
-    namaMarkerVuforia: marker-kompleksometri-9
-    panelInfo: {fileID: 0}
-  - namaTahapan: t10
-    namaMarkerVuforia: marker-kompleksometri-10
-    panelInfo: {fileID: 0}
   markerTBAMapping:
   - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 4265277453642384058, guid: 57ba72c521ee0ac4d9fcd64cbb5ec8b1, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -130,11 +68,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  currentAttemptingTahapIndex: -1
+  marker: []
   animationConfig: {fileID: 11400000, guid: f3f8c3eef3f6c024ab082dad28a23265, type: 2}
-  styleConfigDefault: {fileID: 11400000, guid: ed426c440e749f04ba493dcde322d486, type: 2}
-  styleConfigTBA: {fileID: 11400000, guid: ed426c440e749f04ba493dcde322d486, type: 2}
-  styleConfigTK: {fileID: 11400000, guid: ed426c440e749f04ba493dcde322d486, type: 2}
 --- !u!114 &2715625287351626081
 MonoBehaviour:
   m_ObjectHideFlags: 0

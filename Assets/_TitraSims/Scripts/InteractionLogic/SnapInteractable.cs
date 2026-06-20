@@ -47,17 +47,17 @@ namespace InteractionLogic
         private Vector3    _lerpTargetPos;
         private Quaternion _lerpTargetRot;
 
-        private Vector3    _originPos;
-        private Quaternion _originRot;
+        private Vector3    _originLocalPos;
+        private Quaternion _originLocalRot;
 
         // ── Unity lifecycle ──────────────────────────────────────────────────────
 
         private void Awake() => _manipulator = GetComponent<ObjectManipulator>();
 
-        private void Start()
+        private void OnEnable()
         {
-            _originPos = transform.position;
-            _originRot = transform.rotation;
+            _originLocalPos = transform.localPosition;
+            _originLocalRot = transform.localRotation;
 
             if (GestureController.Instance == null)
             {
@@ -66,6 +66,13 @@ namespace InteractionLogic
             }
             GestureController.Instance.OnManipulatorGrabbed  += HandleGrabbed;
             GestureController.Instance.OnManipulatorReleased += HandleReleased;
+        }
+
+        private void OnDisable()
+        {
+            if (GestureController.Instance == null) return;
+            GestureController.Instance.OnManipulatorGrabbed  -= HandleGrabbed;
+            GestureController.Instance.OnManipulatorReleased -= HandleReleased;
         }
 
         private void OnDestroy()
@@ -130,9 +137,10 @@ namespace InteractionLogic
 
         private void StartReturnToOrigin()
         {
-            _isLerping     = true;
-            _lerpTargetPos = _originPos;
-            _lerpTargetRot = _originRot;
+            _isLerping = true;
+            Transform parentTransform = transform.parent;
+            _lerpTargetPos = parentTransform != null ? parentTransform.TransformPoint(_originLocalPos) : _originLocalPos;
+            _lerpTargetRot = parentTransform != null ? parentTransform.rotation * _originLocalRot      : _originLocalRot;
         }
 
         // ── Highlight (during drag) ──────────────────────────────────────────────

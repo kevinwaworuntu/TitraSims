@@ -12,44 +12,43 @@ namespace InteractionLogic
     /// and dispatches to the focused ObjectManipulator or fires public events
     /// for other systems (CameraZoom, SwirlDetector, SnapInteractable, etc.).
     ///
-    /// Gesture map:
+    /// Default gesture map (matches GestureSettings defaults):
     ///   1 finger  →  rotate focused object
     ///   2 fingers spreading/pinching  →  scale focused object  (or OnPinchUpdate if no focus)
     ///   2 fingers translating         →  drag  focused object  (or OnTwoFingerDragDelta if no focus)
     ///
-    /// Setup: add to a persistent GameObject in the scene. Objects must have a
-    /// Collider so the raycast can find them; put ObjectManipulator anywhere in
-    /// their hierarchy.
+    /// Assign a GestureSettings asset to _settings to override per-gesture finger counts.
     /// </summary>
-    [DefaultExecutionOrder(-10)]   // run before ObjectManipulators and SnapInteractables
+    [DefaultExecutionOrder(-10)]
     public class GestureController : MonoBehaviour
     {
         public static GestureController Instance { get; private set; }
 
         // ── Public events ────────────────────────────────────────────────────────
 
-        /// Fired on first touch contact with an ObjectManipulator (finger down or mouse down).
-        /// Not re-fired when a second finger is added to an already-focused object.
+        /// Fired on first touch contact with an ObjectManipulator.
         public event Action<ObjectManipulator> OnManipulatorGrabbed;
 
-        /// Fired when all contact with a focused ObjectManipulator ends (all fingers lifted).
+        /// Fired when all contact with a focused ObjectManipulator ends.
         public event Action<ObjectManipulator> OnManipulatorReleased;
 
-        /// Fired once when a two-touch pinch begins. Arg: initial finger distance in pixels.
+        /// Fired once when a multi-touch gesture begins. Arg: initial finger distance in pixels.
         public event Action<float> OnPinchBegin;
 
         /// Fired every frame during a pinch that has no focused object.
-        /// Arg: current finger distance in pixels — compute your own delta.
         public event Action<float> OnPinchUpdate;
 
         /// Fired when a pinch gesture ends.
         public event Action OnPinchEnd;
 
-        /// Fired every frame during a two-finger drag that has no focused object.
-        /// Arg: screen-space delta in pixels.
+        /// Fired every frame during a drag gesture that has no focused object.
         public event Action<Vector2> OnTwoFingerDragDelta;
 
         // ── Inspector ────────────────────────────────────────────────────────────
+
+        [Header("Gesture Settings")]
+        [Tooltip("Optional asset to configure per-gesture finger counts. Leave empty for defaults (rotate=1, drag=2, scale=2).")]
+        [SerializeField] private GestureSettings _settings;
 
         [Header("Raycast")]
         [SerializeField] private LayerMask _interactableLayer = ~0;
@@ -64,28 +63,34 @@ namespace InteractionLogic
 
         // ── Internal types ───────────────────────────────────────────────────────
 
-        private enum State          { Idle, Single, Two }
+        private enum State          { Idle, SingleTouch, Multi }
         private enum TwoGestureKind { Undecided, Pinch, Drag }
 
         // ── State ────────────────────────────────────────────────────────────────
 
-        private State             _state   = State.Idle;
-        private TwoGestureKind    _twoKind = TwoGestureKind.Undecided;
+        private State             _state         = State.Idle;
+        private TwoGestureKind    _twoKind       = TwoGestureKind.Undecided;
         private ObjectManipulator _focused;
         private Camera            _cam;
+        private int               _prevLiveCount;
 
-        // Single-touch
+        // Single-touch prev position (shared between rotate, single-finger drag, and mouse)
         private Vector2 _singlePrev;
 
-        // Two-touch
+        // Multi-touch
         private float   _twoPrevDist;
         private Vector2 _twoPrevCenter;
         private float   _twoBaseDist;
         private Vector2 _twoBaseCenter;
 
-        // Mouse fallback (editor / desktop)
-        private Vector2 _mousePrev;
-        private bool    _mouseWasDown;
+        // Mouse fallback
+        private bool _mouseWasDown;
+
+        // ── Settings accessors with defaults ─────────────────────────────────────
+
+        private int RotateCount => _settings != null ? _settings.rotateFingersNeeded : 1;
+        private int DragCount   => _settings != null ? _settings.dragFingersNeeded   : 2;
+        private int ScaleCount  => _settings != null ? _settings.scaleFingersNeeded  : 2;
 
         // ── Unity lifecycle ──────────────────────────────────────────────────────
 
@@ -101,8 +106,7 @@ namespace InteractionLogic
 
         private void Update()
         {
-            // Collect live touches — skip Ended/Canceled to avoid off-by-one-frame errors.
-            Touch live0 = default, live1 = default;
+            Touch live0 = default, live1 = default, live2 = default;
             int   liveCount = 0;
 
             foreach (var t in Touch.activeTouches)
@@ -110,88 +114,170 @@ namespace InteractionLogic
                 if (t.phase == TouchPhase.Ended || t.phase == TouchPhase.Canceled) continue;
                 if      (liveCount == 0) live0 = t;
                 else if (liveCount == 1) live1 = t;
+                else if (liveCount == 2) live2 = t;
                 liveCount++;
             }
 
-            // Mouse acts as a single synthetic touch when no real touches are present.
             var mouse = Mouse.current;
             if (liveCount == 0 && mouse != null && mouse.leftButton.isPressed)
             {
                 UpdateMouseFallback(mouse);
                 return;
             }
-
             _mouseWasDown = false;
 
-            switch (liveCount)
+            DispatchGesture(liveCount, live0, live1, live2);
+            _prevLiveCount = liveCount;
+        }
+
+        // ── Gesture dispatch ─────────────────────────────────────────────────────
+
+        private void DispatchGesture(int count, Touch t0, Touch t1, Touch t2)
+        {
+            if (count == 0) { HandleIdle(); return; }
+
+            int rotC  = RotateCount;
+            int dragC = DragCount;
+            int scaC  = ScaleCount;
+
+            // Scale requires ≥2 touches (pinch needs two distinct points).
+            bool canScale  = count == scaC && count >= 2;
+            bool canDrag   = count == dragC;
+            bool canRotate = count == rotC && !canScale && !canDrag;
+
+            if (canScale || canDrag)
             {
-                case 0:  HandleIdle();            break;
-                case 1:  HandleSingle(live0);     break;
-                default: HandleTwo(live0, live1); break;
+                if (count >= 2)
+                {
+                    // Multi-touch path: handles pinch / drag disambiguation.
+                    if (_state == State.SingleTouch)
+                        EnterMultiFromSingle(count, t0, t1, t2);
+                    else
+                        HandleMulti(count, t0, t1, t2);
+                }
+                else
+                {
+                    // Single-finger drag (dragC == 1).
+                    HandleSingleDrag(t0);
+                }
+            }
+            else if (canRotate)
+            {
+                if (_state == State.Multi)
+                    EnterSingleFromMulti(t0);
+                else
+                    HandleRotate(t0);
+            }
+            else
+            {
+                // Finger count doesn't match any gesture.
+                HandleIdle();
             }
         }
 
-        // ── Touch handlers ───────────────────────────────────────────────────────
+        // ── Idle ─────────────────────────────────────────────────────────────────
 
         private void HandleIdle()
         {
             if (_state == State.Idle) return;
-            if (_state == State.Two)  OnPinchEnd?.Invoke();
+            if (_state == State.Multi) OnPinchEnd?.Invoke();
             ResetState();
         }
 
-        private void HandleSingle(Touch t)
-        {
-            // One finger lifted from a two-touch gesture — transition back to single.
-            if (_state == State.Two)
-            {
-                OnPinchEnd?.Invoke();
-                _twoKind = TwoGestureKind.Undecided;
-                _state   = State.Idle;
-                // _focused is preserved so the object stays tracked across the transition.
-                // OnManipulatorGrabbed is NOT re-fired; the grab is still in progress.
-            }
+        // ── Rotate ───────────────────────────────────────────────────────────────
 
+        private void HandleRotate(Touch t)
+        {
             if (_state == State.Idle)
             {
-                // Track whether we already had a focused object (from a prior Two-touch phase).
                 bool hadFocused = _focused != null;
                 _focused    = Raycast(t.screenPosition);
                 _singlePrev = t.screenPosition;
-                _state      = State.Single;
+                _state      = State.SingleTouch;
 
-                // Fire Grabbed only on genuinely fresh contact, not Two→Single handoffs.
                 if (!hadFocused && _focused != null)
                     OnManipulatorGrabbed?.Invoke(_focused);
                 return;
             }
 
-            // Ongoing single touch — route horizontal delta as rotation.
             if (t.phase == TouchPhase.Moved)
                 _focused?.ReceiveRotateDelta(t.screenPosition - _singlePrev);
 
             _singlePrev = t.screenPosition;
         }
 
-        private void HandleTwo(Touch t0, Touch t1)
+        private void EnterSingleFromMulti(Touch t)
         {
-            bool justEntered    = _state != State.Two;
+            OnPinchEnd?.Invoke();
+            _twoKind    = TwoGestureKind.Undecided;
+            _state      = State.Idle;
+            // _focused is preserved; treat this as continuing the grab.
+            _singlePrev = t.screenPosition;
+            _state      = State.SingleTouch;
+        }
+
+        // ── Single-finger drag ───────────────────────────────────────────────────
+
+        private void HandleSingleDrag(Touch t)
+        {
+            // Transition from multi-touch (e.g. going from 2 fingers → 1 finger drag).
+            if (_state == State.Multi)
+            {
+                OnPinchEnd?.Invoke();
+                _twoKind = TwoGestureKind.Undecided;
+                _state   = State.Idle;
+            }
+
+            if (_state == State.Idle)
+            {
+                bool hadFocused = _focused != null;
+                _focused    = Raycast(t.screenPosition);
+                _singlePrev = t.screenPosition;
+                _state      = State.SingleTouch;
+
+                if (!hadFocused && _focused != null)
+                    OnManipulatorGrabbed?.Invoke(_focused);
+                return;
+            }
+
+            if (t.phase == TouchPhase.Moved)
+            {
+                Vector2 delta = t.screenPosition - _singlePrev;
+                if (_focused != null) _focused.ReceiveDragDelta(delta);
+                else                  OnTwoFingerDragDelta?.Invoke(delta);
+            }
+
+            _singlePrev = t.screenPosition;
+        }
+
+        // ── Multi-touch (drag / scale) ───────────────────────────────────────────
+
+        private void EnterMultiFromSingle(int count, Touch t0, Touch t1, Touch t2)
+        {
+            // Inherit focus from single-touch; do NOT re-fire OnManipulatorGrabbed.
+            Vector2 mid = GetCenter(t0, t1, t2, count);
+            _twoBaseDist   = _twoPrevDist   = Vector2.Distance(t0.screenPosition, t1.screenPosition);
+            _twoBaseCenter = _twoPrevCenter = mid;
+            _twoKind       = TwoGestureKind.Undecided;
+            _state         = State.Multi;
+            OnPinchBegin?.Invoke(_twoBaseDist);
+        }
+
+        private void HandleMulti(int count, Touch t0, Touch t1, Touch t2)
+        {
+            bool justEntered    = _state != State.Multi;
             bool comingFromIdle = _state == State.Idle;
 
             if (justEntered)
             {
-                Vector2 mid = (t0.screenPosition + t1.screenPosition) * 0.5f;
-
-                // Inherit the focused object from single-touch if available;
-                // otherwise raycast from the midpoint.
+                Vector2 mid = GetCenter(t0, t1, t2, count);
                 if (_focused == null) _focused = Raycast(mid);
 
                 _twoBaseDist   = _twoPrevDist   = Vector2.Distance(t0.screenPosition, t1.screenPosition);
-                _twoBaseCenter = _twoPrevCenter  = mid;
+                _twoBaseCenter = _twoPrevCenter = mid;
                 _twoKind       = TwoGestureKind.Undecided;
-                _state         = State.Two;
+                _state         = State.Multi;
 
-                // Fire Grabbed only if both fingers landed simultaneously (no prior Single grab).
                 if (comingFromIdle && _focused != null)
                     OnManipulatorGrabbed?.Invoke(_focused);
 
@@ -199,19 +285,42 @@ namespace InteractionLogic
                 return;
             }
 
-            float   curDist   = Vector2.Distance(t0.screenPosition, t1.screenPosition);
-            Vector2 curCenter = (t0.screenPosition + t1.screenPosition) * 0.5f;
+            // Finger count changed while already in multi-touch — re-baseline.
+            if (count != _prevLiveCount)
+            {
+                _twoKind       = TwoGestureKind.Undecided;
+                Vector2 mid    = GetCenter(t0, t1, t2, count);
+                _twoBaseDist   = _twoPrevDist   = Vector2.Distance(t0.screenPosition, t1.screenPosition);
+                _twoBaseCenter = _twoPrevCenter = mid;
+                return;
+            }
 
-            // Commit to a gesture kind on first significant movement.
+            float   curDist   = Vector2.Distance(t0.screenPosition, t1.screenPosition);
+            Vector2 curCenter = GetCenter(t0, t1, t2, count);
+
+            int dragC = DragCount;
+            int scaC  = ScaleCount;
+
             if (_twoKind == TwoGestureKind.Undecided)
             {
-                float distChange   = Mathf.Abs(curDist - _twoBaseDist) / _twoBaseDist;
-                float centerTravel = Vector2.Distance(curCenter, _twoBaseCenter);
+                bool bothMatch = count == dragC && count == scaC;
 
-                if (distChange >= _pinchCommitRatio)
-                    _twoKind = TwoGestureKind.Pinch;
-                else if (centerTravel >= _dragCommitPixels)
-                    _twoKind = TwoGestureKind.Drag;
+                if (bothMatch)
+                {
+                    // Disambiguate: pinch vs drag.
+                    float distChange   = Mathf.Abs(curDist - _twoBaseDist) / Mathf.Max(_twoBaseDist, 0.001f);
+                    float centerTravel = Vector2.Distance(curCenter, _twoBaseCenter);
+
+                    if (distChange >= _pinchCommitRatio)
+                        _twoKind = TwoGestureKind.Pinch;
+                    else if (centerTravel >= _dragCommitPixels)
+                        _twoKind = TwoGestureKind.Drag;
+                }
+                else
+                {
+                    // No ambiguity — assign directly.
+                    _twoKind = (count == scaC) ? TwoGestureKind.Pinch : TwoGestureKind.Drag;
+                }
             }
 
             switch (_twoKind)
@@ -241,24 +350,31 @@ namespace InteractionLogic
 
             if (!_mouseWasDown)
             {
-                if (_state == State.Two) OnPinchEnd?.Invoke();
+                if (_state == State.Multi) OnPinchEnd?.Invoke();
                 _twoKind      = TwoGestureKind.Undecided;
                 _focused      = Raycast(pos);
-                _mousePrev    = pos;
-                _state        = State.Single;
+                _singlePrev   = pos;
+                _state        = State.SingleTouch;
                 _mouseWasDown = true;
                 if (_focused != null) OnManipulatorGrabbed?.Invoke(_focused);
                 return;
             }
 
-            Vector2 delta = pos - _mousePrev;
+            Vector2 delta = pos - _singlePrev;
             if (delta.sqrMagnitude > 0f)
                 _focused?.ReceiveRotateDelta(delta);
 
-            _mousePrev = pos;
+            _singlePrev = pos;
         }
 
         // ── Helpers ──────────────────────────────────────────────────────────────
+
+        private static Vector2 GetCenter(Touch t0, Touch t1, Touch t2, int count)
+        {
+            if (count >= 3)
+                return (t0.screenPosition + t1.screenPosition + t2.screenPosition) / 3f;
+            return (t0.screenPosition + t1.screenPosition) * 0.5f;
+        }
 
         private ObjectManipulator Raycast(Vector2 screenPos)
         {
@@ -269,7 +385,6 @@ namespace InteractionLogic
                 : null;
         }
 
-        /// Fires OnManipulatorReleased then clears all tracked state.
         private void ResetState()
         {
             if (_focused != null) OnManipulatorReleased?.Invoke(_focused);
