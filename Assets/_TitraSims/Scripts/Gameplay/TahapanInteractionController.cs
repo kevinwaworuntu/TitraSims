@@ -15,6 +15,7 @@ namespace Gameplay
         {
             public TahapanInteractionData InteractionData;
             [FormerlySerializedAs("IsNeedPlayerInputToContinue")] public bool IsAutoContinue;
+            public bool IsContinueByOtherEvent;
             public UnityEvent UniqueEvent;
         }
         
@@ -108,6 +109,10 @@ namespace Gameplay
             mapping.UniqueEvent?.Invoke();
             interactionPlayer.Play(mapping.InteractionData, () =>
             {
+                if (mapping.IsContinueByOtherEvent)
+                {
+                    return;
+                }
                 if (!mapping.IsAutoContinue)
                 {
                     OnStartWaitingForPlayerInputToContinue?.Invoke();

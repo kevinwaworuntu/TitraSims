@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class NextTahapanButton : MonoBehaviour
 {
-   [SerializeField] private float targetScaleModifier = 1.06f;
+   [SerializeField] private float targetScaleModifier = 1.08f;
    [SerializeField] private float inhaleTime = 1f;
    [SerializeField] private float exhaleTime = 1f;
    

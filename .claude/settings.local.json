@@ -5,7 +5,8 @@
       "Bash(Get-ChildItem -Recurse -File -Name)",
       "Bash(findstr /I \"tahapan\")",
       "Bash(Get-ChildItem -Path \"Assets\\\\_TitraSims\\\\Scripts\" -Directory)",
-      "Artifact"
+      "Artifact",
+      "Bash(python -c \"import uuid; guid=uuid.uuid4\\(\\).hex; content='fileFormatVersion: 2\\\\nguid: '+guid+'\\\\nMonoImporter:\\\\n  externalObjects: {}\\\\n  serializedVersion: 2\\\\n  defaultReferences: []\\\\n  executionOrder: 0\\\\n  icon: {instanceID: 0}\\\\n  userData: \\\\n  assetBundleName: \\\\n  assetBundleVariant: \\\\n'; open\\('GestureSettings.cs.meta','w'\\).write\\(content\\); print\\('Created with guid:', guid\\)\")"
     ]
   }
 }

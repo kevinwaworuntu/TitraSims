@@ -10,9 +10,12 @@ public class GameManager : MonoBehaviour
     [Header("Mode Saat Ini")]
     public GameMode currentMode;
 
-    [Header("Marker Mapping")]
+    [Header("Marker Object Mapping")]
     public GameObject[] markerTBAMapping;
     public GameObject[] markerTKMapping;
+    
+    [Header("Marker Mapping")]
+    [SerializeField] private GameObject[] marker;
     
     [Header("Runtime State")]
     private int currentAttemptingTahapIndex = -1;
@@ -34,6 +37,8 @@ public class GameManager : MonoBehaviour
     public event Action                OnProgressReset;
     // ─────────────────────────────────────────────────────────────────────────
 
+    private GameObject currentActiveMarkerObject;
+   
     private string CurrentProgressKey
     {
         get
@@ -96,10 +101,37 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-        SetCurrentMarkerActive(tahapIndex, true);
+        if (!SpawnMarkerObject(tahapIndex))
+        {
+            return;
+        }
         currentAttemptingTahapIndex = tahapIndex;
         SetARCameraActive(true);
         OnTahapStarted?.Invoke();
+    }
+
+    public bool SpawnMarkerObject(int tahapIndex)
+    {
+        if (tahapIndex >= markerTBAMapping.Length || markerTBAMapping[tahapIndex] == null)
+        {
+            return false;
+        }
+        currentActiveMarkerObject = Instantiate(markerTBAMapping[tahapIndex], marker[tahapIndex].transform, false);
+        currentActiveMarkerObject.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
+        currentActiveMarkerObject.transform.localScale = Vector3.one;
+        return true;
+    }
+
+    public bool DestroyMarkerObject()
+    {
+        if (currentActiveMarkerObject)
+        {
+            Destroy(currentActiveMarkerObject);
+            currentActiveMarkerObject = null;
+            return true;
+        }
+        
+        return false;
     }
 
     public void BackFromCurrentTahap()
@@ -108,7 +140,11 @@ public class GameManager : MonoBehaviour
         {
             return;
         }
-        SetCurrentMarkerActive(currentAttemptingTahapIndex, false);
+
+        if (!DestroyMarkerObject())
+        {
+            Debug.LogError("Failed to destroy marker object!");
+        }
         currentAttemptingTahapIndex = -1;
         SetARCameraActive(false);
     }
@@ -118,7 +154,10 @@ public class GameManager : MonoBehaviour
         {
             return;
         }
-        SetCurrentMarkerActive(currentAttemptingTahapIndex, false);
+        if (!DestroyMarkerObject())
+        {
+            Debug.LogError("Failed to destroy marker object!");
+        }
         if (PlayerPrefs.GetInt(CurrentProgressKey, -1) <= currentAttemptingTahapIndex)
         {
             PlayerPrefs.SetInt(CurrentProgressKey, currentAttemptingTahapIndex);
@@ -158,18 +197,5 @@ public class GameManager : MonoBehaviour
         currentAttemptingTahapIndex = -1;
         SetARCameraActive(false);
         OnProgressReset?.Invoke();
-    }
-
-    private void SetCurrentMarkerActive(int index, bool active)
-    {
-        switch (currentMode)
-        {
-            case GameMode.TBA:
-                if (index < markerTBAMapping.Length) markerTBAMapping[index].SetActive(active);
-                break;
-            case GameMode.Kompleksometri:
-                if (index < markerTKMapping.Length) markerTKMapping[index].SetActive(active);
-                break;
-        }
     }
 }

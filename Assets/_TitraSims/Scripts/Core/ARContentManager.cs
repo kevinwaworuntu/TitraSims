@@ -14,7 +14,12 @@ public class ARContentManager : MonoBehaviour
 
     protected virtual void OnEnable()
     {
-        DefaultObserverEventHandler defaultObserverEventHandler = GetComponent<DefaultObserverEventHandler>();
+        var parentObject = transform.parent.gameObject;
+        if (!parentObject)
+        {
+            return;
+        }
+        DefaultObserverEventHandler defaultObserverEventHandler = parentObject.GetComponent<DefaultObserverEventHandler>();
         if (defaultObserverEventHandler)
         {
             defaultObserverEventHandler.OnTargetFound.AddListener(OnTargetFound);
@@ -39,7 +44,12 @@ public class ARContentManager : MonoBehaviour
 
     protected virtual void OnDisable()
     {
-        DefaultObserverEventHandler defaultObserverEventHandler = GetComponent<DefaultObserverEventHandler>();
+        var parentObject = transform.parent.gameObject;
+        if (!parentObject)
+        {
+            return;
+        }
+        DefaultObserverEventHandler defaultObserverEventHandler = parentObject.GetComponent<DefaultObserverEventHandler>();
         if (defaultObserverEventHandler)
         {
             defaultObserverEventHandler.OnTargetFound.RemoveListener(OnTargetFound);
@@ -87,6 +97,12 @@ public class ARContentManager : MonoBehaviour
             return;
         }
         UIManager.Instance.HideAllARPopups();
+    }
+
+    //TODO :MOVE THIS SOMEWHERE ELSE
+    public void RequestContinue()
+    {
+        OnStartWaitingForPlayerInputToContinueHandler();
     }
     
     protected virtual void OnStartWaitingForPlayerInputToContinueHandler()
