@@ -670,24 +670,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c00bcc18e7b7124f9a335443976fc21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIAnimationTrigger
-  canvasGroup: {fileID: 0}
-  punchAmount: 0.25
-  popDuration: 0.4
-  slideDirection: 3
-  slideDistance: 80
-  slideDuration: 0.4
-  shakeDuration: 0.4
-  shakeStrength: 25
-  flashColor:
-    r: 1
-    g: 1
-    b: 1
-    a: 1
-  flashTarget: {fileID: 0}
-  listContainer: {fileID: 0}
-  listStagger: 0.06
-  listItemDuration: 0.3
-  _rt: {fileID: 0}
 --- !u!1 &63690790 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5812122325704171721, guid: 5fa9dcb641c82134c9580a56213ffe58,
@@ -1219,7 +1201,6 @@ GameObject:
   - component: {fileID: 104283244}
   - component: {fileID: 104283243}
   - component: {fileID: 104283242}
-  - component: {fileID: 104283245}
   m_Layer: 5
   m_Name: start
   m_TagString: Untagged
@@ -1341,21 +1322,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 104283240}
   m_CullTransparentMesh: 1
---- !u!114 &104283245
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 104283240}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a2408ef24cc1e64d81196c8d99ce558, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NextTahapanButton
-  targetScaleModifier: 1.06
-  inhaleTime: 1
-  exhaleTime: 1
 --- !u!1 &106856107 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8668802403459687106, guid: 267969b0242acb540bb991d4993cc9ea,
@@ -3407,6 +3373,56 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 390993206856399058}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &294954553 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2106081783738997942, guid: 57ba72c521ee0ac4d9fcd64cbb5ec8b1,
+    type: 3}
+  m_PrefabInstance: {fileID: 390993206856399058}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 294954545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1631628248, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &294954558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 294954545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
+  mObserverBehaviour: {fileID: 294954553}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: tba 2
+  mDatasetName: 
+  mCastedBehaviour: {fileID: 294954553}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
+--- !u!114 &294954559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 294954545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
+  mObserverBehaviour: {fileID: 294954553}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: tba 2
+  mDatasetName: 
+  mCastedBehaviour: {fileID: 294954553}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &301439180
 GameObject:
   m_ObjectHideFlags: 0
@@ -5766,6 +5782,56 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8696783699555588845}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &601437293 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5910100763667348476, guid: 76c9c4324ec33994f927ee5a44d6e940,
+    type: 3}
+  m_PrefabInstance: {fileID: 8696783699555588845}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 601437285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1631628248, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &601437298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 601437285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
+  mObserverBehaviour: {fileID: 601437293}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: tba 1
+  mDatasetName: 
+  mCastedBehaviour: {fileID: 601437293}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
+--- !u!114 &601437299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 601437285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
+  mObserverBehaviour: {fileID: 601437293}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: tba 1
+  mDatasetName: 
+  mCastedBehaviour: {fileID: 601437293}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &606696035
 GameObject:
   m_ObjectHideFlags: 0
@@ -20241,6 +20307,14 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1762610486}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4265277453642384058, guid: 57ba72c521ee0ac4d9fcd64cbb5ec8b1,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 294954558}
+    - targetCorrespondingSourceObject: {fileID: 4265277453642384058, guid: 57ba72c521ee0ac4d9fcd64cbb5ec8b1,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 294954559}
     - targetCorrespondingSourceObject: {fileID: 4101175795476214297, guid: 57ba72c521ee0ac4d9fcd64cbb5ec8b1,
         type: 3}
       insertIndex: -1
@@ -22749,7 +22823,15 @@ PrefabInstance:
     - {fileID: 3806368177528589087, guid: 76c9c4324ec33994f927ee5a44d6e940, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8256442093100834575, guid: 76c9c4324ec33994f927ee5a44d6e940,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 601437298}
+    - targetCorrespondingSourceObject: {fileID: 8256442093100834575, guid: 76c9c4324ec33994f927ee5a44d6e940,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 601437299}
   m_SourcePrefab: {fileID: 100100000, guid: 76c9c4324ec33994f927ee5a44d6e940, type: 3}
 --- !u!224 &9172881502959440759
 RectTransform:
