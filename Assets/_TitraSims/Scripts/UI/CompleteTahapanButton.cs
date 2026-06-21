@@ -1,28 +1,31 @@
 using DG.Tweening;
-using UnityEngine;
 
-public class CompleteTahapanButton : MonoBehaviour
+namespace UI
 {
-    private RectTransform rt;
-    private Sequence wobble;
-
-    [SerializeField] private float interval = 0.5f;
-    [SerializeField] private float angle = 1;
-    [SerializeField] private float duration = 0.5f;
-    
-    private void Awake()
+    public class CompleteTahapanButton : TitraSims_Button
     {
-        rt = GetComponent<RectTransform>();
-    }
+        [UnityEngine.SerializeField] private float interval = 0.5f;
+        [UnityEngine.SerializeField] private float angle    = 1f;
+        [UnityEngine.SerializeField] private float duration = 0.5f;
 
-    private void OnEnable()
-    {
-        wobble = UIAnimator.Wobble(rt, -1, interval, angle, duration);
-    }
+        private Sequence _wobble;
 
-    private void OnDisable()
-    {
-        wobble?.Kill();
-        UIAnimator.StopWobble(rt, 0);
+        protected override void OnEnable()
+        {
+            base.OnEnable();
+            _wobble = UIAnimator.Wobble(RT, -1, interval, angle, duration);
+        }
+
+        protected override void OnDisable()
+        {
+            base.OnDisable();
+            _wobble?.Kill();
+            UIAnimator.StopWobble(RT, 0);
+        }
+
+        protected override void OnClick()
+        {
+            GameManager.Instance?.CompleteCurrentTahap();
+        }
     }
 }

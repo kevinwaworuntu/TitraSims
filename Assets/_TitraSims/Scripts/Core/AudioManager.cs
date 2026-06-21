@@ -16,6 +16,8 @@ public class AudioManager : MonoBehaviour
     [Range(0f, 1f)] [SerializeField] private float sfxVolume = 1f;
     [Range(0f, 1f)] [SerializeField] private float narrationVolume = 1f;
 
+    public SFXChannel SFX { get; private set; }
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -26,28 +28,10 @@ public class AudioManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
-        sfxSource.volume = sfxVolume;
+        SFX = new SFXChannel(sfxSource, soundBank, sfxVolume);
         narrationSource.volume = narrationVolume;
     }
 
-    #region SFX
-    public void PlaySFX(AudioClip clip)
-    {
-        if (clip == null) return;
-        sfxSource.PlayOneShot(clip, sfxVolume);
-    }
-
-    public void PlaySFX(string key) => PlaySFX(soundBank?.Get(key));
-
-    public void StopSFX() => sfxSource.Stop();
-
-    public void SetSFXVolume(float volume)
-    {
-        sfxVolume = Mathf.Clamp01(volume);
-        sfxSource.volume = sfxVolume;
-    }
-    #endregion
-    
     #region Narration
     public void PlayNarration(AudioClip clip)
     {

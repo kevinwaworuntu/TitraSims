@@ -73,6 +73,7 @@ public class ARContentManager : MonoBehaviour
         // {
         //     return;
         // }
+        AudioManager.Instance?.SFX.PlayNonInterrupt(SoundType.Gameplay_MarkerFound);
         if (!tahapanInteractionController)
         {
             return;
@@ -92,6 +93,7 @@ public class ARContentManager : MonoBehaviour
         {
             UIManager.Instance.SetScanMarkerTextVisibility(true); // Todo : Check if current tahapan complete or not
         }
+        AudioManager.Instance?.SFX.PlayNonInterrupt(SoundType.Gameplay_MarkerLost);
         if (!UIManager.Instance)
         {
             return;

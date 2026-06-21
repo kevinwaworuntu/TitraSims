@@ -210,6 +210,7 @@ public class UIManager : MonoBehaviour
         if (IsPanelInfoActive())
         {
             infoPanelComponent?.Hide();
+            AudioManager.Instance?.SFX.Play(SoundType.UI_PanelDown);
         }
         else
         {
@@ -221,6 +222,7 @@ public class UIManager : MonoBehaviour
         }
         // Todo use observer pattern at least
         SetButtonNarationVisibility(!Instance.IsPanelInfoActive());
+        AudioManager.Instance?.SFX.Play(SoundType.UI_PanelUp);
     }
 
     //Todo : Move to better place
@@ -277,6 +279,7 @@ public class UIManager : MonoBehaviour
         if (IsPanelNarationActive())
         {
             narationPanelComponent?.Hide();
+            AudioManager.Instance?.SFX.Play(SoundType.UI_PanelDown);
         }
         else
         {
@@ -285,6 +288,7 @@ public class UIManager : MonoBehaviour
                 infoPanelComponent?.Hide();
             }
             ShowNarationPanel();
+            AudioManager.Instance?.SFX.Play(SoundType.UI_PanelUp);
         }
     }
 

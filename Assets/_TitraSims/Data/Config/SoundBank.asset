@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 862934ad6775181479e0b729faccec80, type: 3}
+  m_Name: SoundBank
+  m_EditorClassIdentifier: 
+  entries:
+  - key: UI_Confirm
+    soundType: 0
+    priority: 0
+    clip: {fileID: 8300000, guid: 225eb33d31d6ca244aacd329b9fc383e, type: 3}
+  - key: UI_ButtonClick
+    soundType: 1
+    priority: 0
+    clip: {fileID: 8300000, guid: 0013cf95c8878ce4ba28a3b5e110460e, type: 3}
+  - key: UI_PanelUp
+    soundType: 2
+    priority: 0
+    clip: {fileID: 8300000, guid: 225eb33d31d6ca244aacd329b9fc383e, type: 3}
+  - key: UI_PanelDown
+    soundType: 3
+    priority: 0
+    clip: {fileID: 8300000, guid: 1108fa5e294b54442bf12474f1217ba0, type: 3}
+  - key: UI_DrawListEach
+    soundType: 5
+    priority: 0
+    clip: {fileID: 8300000, guid: 0013cf95c8878ce4ba28a3b5e110460e, type: 3}
+  - key: UI_DrawListEach1
+    soundType: 5
+    priority: 0
+    clip: {fileID: 8300000, guid: e03c8ae5c5a96c24bbf6112bf6b25621, type: 3}
+  - key: UI_DrawListEach2
+    soundType: 5
+    priority: 0
+    clip: {fileID: 8300000, guid: 644b35b93e25eb94f9779954f6892a4c, type: 3}
+  - key: UI_DrawListEach3
+    soundType: 5
+    priority: 0
+    clip: {fileID: 8300000, guid: eb299d0ce9c03184f94153dfd4585260, type: 3}
+  - key: Gameplay_MarkerLost
+    soundType: 8
+    priority: 0
+    clip: {fileID: 8300000, guid: b40fabfa1137fc845af856cacfaedb7b, type: 3}
+  - key: Gameplay_MarkerFound
+    soundType: 7
+    priority: 0
+    clip: {fileID: 8300000, guid: 845d0f2b4e8d98a46a74a6af2fbf0d1a, type: 3}

@@ -104,7 +104,7 @@ public static class UIAnimator
 
     // ── List ───────────────────────────────────────────────────────────────────
 
-    public static Sequence DrawList(Transform container, float stagger = 0.06f, float perItemDuration = 0.3f)
+    public static Sequence DrawList(Transform container, float stagger = 0.06f, float perItemDuration = 0.3f, System.Action onItemAppear = null)
     {
         var seq = DOTween.Sequence().SetUpdate(true);
         int index = 0;
@@ -113,7 +113,9 @@ public static class UIAnimator
             var child = container.GetChild(i) as RectTransform;
             if (child == null || !child.gameObject.activeSelf) continue;
             child.localScale = Vector3.zero;
-            seq.Insert(index++ * stagger, child.DOScale(Vector3.one, perItemDuration).SetEase(Ease.OutBack));
+            float t = index++ * stagger;
+            seq.Insert(t, child.DOScale(Vector3.one, perItemDuration).SetEase(Ease.OutBack));
+            if (onItemAppear != null) seq.InsertCallback(t, () => onItemAppear());
         }
         return seq;
     }

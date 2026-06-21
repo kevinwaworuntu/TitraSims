@@ -1,64 +1,33 @@
-﻿using System;
-using DG.Tweening;
+using System;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.UI;
 
 namespace UI
 {
-    public class ContextualButton : MonoBehaviour
+    public class ContextualButton : TitraSims_Button
     {
-        private Button button;
-        private TextMeshProUGUI text;
-        private RectTransform rt;
-        private Action currentActionCached;
+        private TextMeshProUGUI _text;
+        private Action _currentAction;
 
-        private void Awake()
+        protected override void Awake()
         {
-            button = GetComponent<Button>();
-            text = GetComponentInChildren<TextMeshProUGUI>();
-            rt = GetComponent<RectTransform>();
-            if (button)
-            {
-                button.onClick.AddListener(InvokeCurrentAction);
-            }
+            base.Awake();
+            _text = GetComponentInChildren<TextMeshProUGUI>();
         }
 
-        private void OnDisable()
+        protected override void OnDisable()
         {
+            base.OnDisable();
             ClearAction();
             ClearText();
         }
 
-        public void RegisterText(string value)
-        {
-            if(text) text.SetText(value);
-        }
-        
-        public void ClearText()
-        {
-            if(text) text.SetText(String.Empty);
-        }
-        
-        public void RegisterAction(Action action)
-        {
-            currentActionCached = action;
-        }
+        protected override void OnClick() => _currentAction?.Invoke();
 
-        public void ClearAction()
-        {
-            currentActionCached = null;
-        }
-        
-        private void InvokeCurrentAction()
-        {
-            UIAnimator.ButtonPress(rt).OnComplete(() => currentActionCached?.Invoke());
-        }
-
-        public void SetEnabled(bool enabled)
-        {
-            button.interactable = enabled;
-        }
+        public void RegisterText(string value)  => _text?.SetText(value);
+        public void ClearText()                 => _text?.SetText(String.Empty);
+        public void RegisterAction(Action action) => _currentAction = action;
+        public void ClearAction()               => _currentAction = null;
+        public void SetEnabled(bool enabled)    => interactable = enabled;
     }
 }

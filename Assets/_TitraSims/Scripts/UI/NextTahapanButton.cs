@@ -1,18 +1,23 @@
-using UnityEngine;
-
-public class NextTahapanButton : MonoBehaviour
+namespace UI
 {
-   [SerializeField] private float targetScaleModifier = 1.08f;
-   [SerializeField] private float inhaleTime = 1f;
-   [SerializeField] private float exhaleTime = 1f;
-   
-   private void OnEnable()
-   {
-      UIAnimator.ButtonPulse(GetComponent<RectTransform>(), -1, targetScaleModifier, inhaleTime, exhaleTime);
-   }
+    public class NextTahapanButton : TitraSims_Button
+    {
+        [UnityEngine.SerializeField] private float targetScaleModifier = 1.08f;
+        [UnityEngine.SerializeField] private float inhaleTime          = 1f;
+        [UnityEngine.SerializeField] private float exhaleTime          = 1f;
 
-   private void OnDisable()
-   {
-      UIAnimator.StopPulse(GetComponent<RectTransform>());
-   }
+        protected override void OnEnable()
+        {
+            base.OnEnable();
+            UIAnimator.ButtonPulse(RT, -1, targetScaleModifier, inhaleTime, exhaleTime);
+        }
+
+        protected override void OnDisable()
+        {
+            base.OnDisable();
+            UIAnimator.StopPulse(RT);
+        }
+
+        protected override void OnClick() { }
+    }
 }
