@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
     // ─────────────────────────────────────────────────────────────────────────
 
     private GameObject currentActiveMarkerObject;
+    private bool isTahapCompleted;
    
     private string CurrentProgressKey
     {
@@ -108,6 +109,7 @@ public class GameManager : MonoBehaviour
         currentAttemptingTahapIndex = tahapIndex;
         SetARCameraActive(true);
         OnTahapStarted?.Invoke();
+        isTahapCompleted = false;
     }
 
     public bool SpawnMarkerObject(int tahapIndex)
@@ -167,6 +169,12 @@ public class GameManager : MonoBehaviour
         currentAttemptingTahapIndex = -1;
         SetARCameraActive(false);
         OnTahapCompleted?.Invoke(currentMode, GetLastCompletedTahapIndex());
+        isTahapCompleted = true;
+    }
+
+    public bool IsCurrentTahapCompleted()
+    {
+        return isTahapCompleted;
     }
     public string GetInfoTitle()
     {

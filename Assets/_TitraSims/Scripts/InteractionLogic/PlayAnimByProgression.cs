@@ -69,8 +69,6 @@ public class PlayAnimByProgression : MonoBehaviour
             {
                 enabled = false;
             }
-            // _targetProgression = 0;
-            // currentProgression = 0;
         }
     }
 

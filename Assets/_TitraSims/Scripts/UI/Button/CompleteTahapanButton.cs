@@ -13,6 +13,8 @@ namespace UI
         protected override void OnEnable()
         {
             base.OnEnable();
+
+            AudioManager.Instance?.SFX.Play(SoundType.Gameplay_CompleteTahapan);
             _wobble = UIAnimator.Wobble(RT, -1, interval, angle, duration);
         }
 

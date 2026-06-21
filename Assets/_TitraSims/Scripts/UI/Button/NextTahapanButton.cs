@@ -9,6 +9,8 @@ namespace UI
         protected override void OnEnable()
         {
             base.OnEnable();
+            
+            AudioManager.Instance?.SFX.Play(SoundType.Gameplay_CanContinueTahapan);
             UIAnimator.ButtonPulse(RT, -1, targetScaleModifier, inhaleTime, exhaleTime);
         }
 

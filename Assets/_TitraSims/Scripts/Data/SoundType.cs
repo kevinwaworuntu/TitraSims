@@ -10,4 +10,6 @@ public enum SoundType
     
     Gameplay_MarkerFound,
     Gameplay_MarkerLost,
+    Gameplay_CanContinueTahapan,
+    Gameplay_CompleteTahapan,
 }

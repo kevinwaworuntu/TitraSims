@@ -53,3 +53,11 @@ MonoBehaviour:
     soundType: 7
     priority: 0
     clip: {fileID: 8300000, guid: 845d0f2b4e8d98a46a74a6af2fbf0d1a, type: 3}
+  - key: Gameplay_CanContinueTahapan
+    soundType: 9
+    priority: 0
+    clip: {fileID: 8300000, guid: 845d0f2b4e8d98a46a74a6af2fbf0d1a, type: 3}
+  - key: Gameplay_CompleteTahapan
+    soundType: 10
+    priority: 0
+    clip: {fileID: 8300000, guid: 845d0f2b4e8d98a46a74a6af2fbf0d1a, type: 3}

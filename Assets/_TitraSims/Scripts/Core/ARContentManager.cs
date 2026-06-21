@@ -69,10 +69,6 @@ public class ARContentManager : MonoBehaviour
         {
             UIManager.Instance.SetScanMarkerTextVisibility(false);
         }
-        // if (!UIManager.Instance || UIManager.Instance.IsPanelInfoActive())
-        // {
-        //     return;
-        // }
         AudioManager.Instance?.SFX.PlayNonInterrupt(SoundType.Gameplay_MarkerFound);
         if (!tahapanInteractionController)
         {
@@ -89,9 +85,12 @@ public class ARContentManager : MonoBehaviour
 
     public void OnTargetLost()
     {
-        if (UIManager.Instance) // Todo : Revisit move to better place
+        if(GameManager.Instance.IsCurrentTahapCompleted())
         {
-            UIManager.Instance.SetScanMarkerTextVisibility(true); // Todo : Check if current tahapan complete or not
+            if (UIManager.Instance) // Todo : Revisit move to better place
+            {
+                UIManager.Instance.SetScanMarkerTextVisibility(true);
+            }
         }
         AudioManager.Instance?.SFX.PlayNonInterrupt(SoundType.Gameplay_MarkerLost);
         if (!UIManager.Instance)

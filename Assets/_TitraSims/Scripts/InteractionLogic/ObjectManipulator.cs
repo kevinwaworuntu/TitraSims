@@ -21,7 +21,7 @@ namespace InteractionLogic
 
         [Header("Drag")]
         [Tooltip("World units moved per screen pixel")]
-        [SerializeField, Range(0.001f, 0.05f)] 
+        [SerializeField, Range(0.0001f, 0.05f)] 
         private float _dragSensitivity = 0.005f;
         public bool lockToHorizontalPlane;
 
