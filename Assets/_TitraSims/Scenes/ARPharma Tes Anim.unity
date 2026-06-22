@@ -3293,18 +3293,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 390993206856399058}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &294954553 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2106081783738997942, guid: 57ba72c521ee0ac4d9fcd64cbb5ec8b1,
-    type: 3}
-  m_PrefabInstance: {fileID: 390993206856399058}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 294954545}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1631628248, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &294954558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3317,11 +3305,11 @@ MonoBehaviour:
   m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
-  mObserverBehaviour: {fileID: 294954553}
+  mObserverBehaviour: {fileID: 0}
   mHiddenRoot: {fileID: 0}
-  mTargetName: tba 2
+  mTargetName: 
   mDatasetName: 
-  mCastedBehaviour: {fileID: 294954553}
+  mCastedBehaviour: {fileID: 0}
   mMeshFilter: {fileID: 0}
   mMeshRenderer: {fileID: 0}
 --- !u!114 &294954559
@@ -3336,11 +3324,11 @@ MonoBehaviour:
   m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
-  mObserverBehaviour: {fileID: 294954553}
+  mObserverBehaviour: {fileID: 0}
   mHiddenRoot: {fileID: 0}
-  mTargetName: tba 2
+  mTargetName: 
   mDatasetName: 
-  mCastedBehaviour: {fileID: 294954553}
+  mCastedBehaviour: {fileID: 0}
   mMeshFilter: {fileID: 0}
   mMeshRenderer: {fileID: 0}
 --- !u!1 &301439180
@@ -13131,6 +13119,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cffce92bc4e24cf49c656dc597cf5dfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI.BackButton
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 0}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1423064221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13872,6 +13892,101 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1489822901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489822888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
+  mObserverBehaviour: {fileID: 1489822896}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: tba4
+  mDatasetName: 
+  mCastedBehaviour: {fileID: 1489822896}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
+--- !u!114 &1489822902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489822888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
+  mObserverBehaviour: {fileID: 1489822896}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: tba4
+  mDatasetName: 
+  mCastedBehaviour: {fileID: 1489822896}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
+--- !u!114 &1489822903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489822888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
+  mObserverBehaviour: {fileID: 1489822896}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: tba4
+  mDatasetName: 
+  mCastedBehaviour: {fileID: 1489822896}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
+--- !u!114 &1489822904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489822888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
+  mObserverBehaviour: {fileID: 1489822896}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: tba4
+  mDatasetName: 
+  mCastedBehaviour: {fileID: 1489822896}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
+--- !u!114 &1489822905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489822888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
+  mObserverBehaviour: {fileID: 1489822896}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: tba4
+  mDatasetName: 
+  mCastedBehaviour: {fileID: 1489822896}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
+--- !u!114 &1489822906
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -15298,7 +15413,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1688921801}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 1
@@ -15314,6 +15429,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cffce92bc4e24cf49c656dc597cf5dfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI.BackButton
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 0
+  m_TargetGraphic: {fileID: 1688921804}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1704399229
 GameObject:
   m_ObjectHideFlags: 0
@@ -19710,6 +19857,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stage_TBA_04_PenambahanPelarut
       objectReference: {fileID: 0}
+    - target: {fileID: 2688009289951648467, guid: e3aadc63f0968924b89e9c8e0e7a5924,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5150949248874473773, guid: e3aadc63f0968924b89e9c8e0e7a5924,
         type: 3}
       propertyPath: audioSource
@@ -19735,6 +19887,11 @@ PrefabInstance:
       propertyPath: mPreview
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6403651771895674930, guid: e3aadc63f0968924b89e9c8e0e7a5924,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e3cb983380d24d041a3aeca304587343, type: 2}
     - target: {fileID: 7504586815546769509, guid: e3aadc63f0968924b89e9c8e0e7a5924,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19794,6 +19951,26 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1489822901}
+    - targetCorrespondingSourceObject: {fileID: 2688009289951648467, guid: e3aadc63f0968924b89e9c8e0e7a5924,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1489822906}
+    - targetCorrespondingSourceObject: {fileID: 2688009289951648467, guid: e3aadc63f0968924b89e9c8e0e7a5924,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1489822905}
+    - targetCorrespondingSourceObject: {fileID: 2688009289951648467, guid: e3aadc63f0968924b89e9c8e0e7a5924,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1489822904}
+    - targetCorrespondingSourceObject: {fileID: 2688009289951648467, guid: e3aadc63f0968924b89e9c8e0e7a5924,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1489822903}
+    - targetCorrespondingSourceObject: {fileID: 2688009289951648467, guid: e3aadc63f0968924b89e9c8e0e7a5924,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1489822902}
   m_SourcePrefab: {fileID: 100100000, guid: e3aadc63f0968924b89e9c8e0e7a5924, type: 3}
 --- !u!4 &1944996660857020254 stripped
 Transform:
@@ -20680,6 +20857,12 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2841141385119688319, guid: 0573f0a53bb5d4c41940f48cba80e2a9,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: 655f0a184bc0f8542bbbd2d6d4a86b04,
+        type: 2}
     - target: {fileID: 2942496673271528729, guid: 0573f0a53bb5d4c41940f48cba80e2a9,
         type: 3}
       propertyPath: m_LocalPosition.x
