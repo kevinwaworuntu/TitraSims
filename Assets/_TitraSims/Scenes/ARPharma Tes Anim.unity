@@ -780,6 +780,25 @@ MonoBehaviour:
   mCastedBehaviour: {fileID: 75254013}
   mMeshFilter: {fileID: 0}
   mMeshRenderer: {fileID: 0}
+--- !u!114 &75254019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75254004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
+  mObserverBehaviour: {fileID: 75254013}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: tk2
+  mDatasetName: 
+  mCastedBehaviour: {fileID: 75254013}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &93762567
 GameObject:
   m_ObjectHideFlags: 0
@@ -6606,6 +6625,25 @@ MonoBehaviour:
   mCastedBehaviour: {fileID: 650221013}
   mMeshFilter: {fileID: 0}
   mMeshRenderer: {fileID: 0}
+--- !u!114 &650221019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 650221004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
+  mObserverBehaviour: {fileID: 650221013}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: tk1
+  mDatasetName: 
+  mCastedBehaviour: {fileID: 650221013}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &660589473 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3944323589608970512, guid: 63887e13b83e57c4ca7fa6c825481afe,
@@ -6631,6 +6669,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &660589486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 660589473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
+  mObserverBehaviour: {fileID: 660589481}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: tk 3
+  mDatasetName: 
+  mCastedBehaviour: {fileID: 660589481}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
+--- !u!114 &660589487
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12627,6 +12684,25 @@ MonoBehaviour:
   mCastedBehaviour: {fileID: 1408983916}
   mMeshFilter: {fileID: 0}
   mMeshRenderer: {fileID: 0}
+--- !u!114 &1408983922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1408983908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
+  mObserverBehaviour: {fileID: 1408983916}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: tba5
+  mDatasetName: 
+  mCastedBehaviour: {fileID: 1408983916}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &1418737417
 GameObject:
   m_ObjectHideFlags: 0
@@ -13987,6 +14063,25 @@ MonoBehaviour:
   mMeshFilter: {fileID: 0}
   mMeshRenderer: {fileID: 0}
 --- !u!114 &1489822906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489822888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
+  mObserverBehaviour: {fileID: 1489822896}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: tba4
+  mDatasetName: 
+  mCastedBehaviour: {fileID: 1489822896}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
+--- !u!114 &1489822907
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -19817,6 +19912,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stage_TK_01_PersiapanAlat
       objectReference: {fileID: 0}
+    - target: {fileID: 5845703223541622902, guid: 402a8d86258770c47b1c1ac4fe475cb0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2210520412032133209, guid: 402a8d86258770c47b1c1ac4fe475cb0, type: 3}
     m_RemovedGameObjects: []
@@ -19826,6 +19926,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 650221018}
+    - targetCorrespondingSourceObject: {fileID: 5845703223541622902, guid: 402a8d86258770c47b1c1ac4fe475cb0,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 650221019}
   m_SourcePrefab: {fileID: 100100000, guid: 402a8d86258770c47b1c1ac4fe475cb0, type: 3}
 --- !u!114 &1463254348131014156
 MonoBehaviour:
@@ -19860,7 +19964,7 @@ PrefabInstance:
     - target: {fileID: 2688009289951648467, guid: e3aadc63f0968924b89e9c8e0e7a5924,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5150949248874473773, guid: e3aadc63f0968924b89e9c8e0e7a5924,
         type: 3}
@@ -19972,6 +20076,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1489822902}
+    - targetCorrespondingSourceObject: {fileID: 2688009289951648467, guid: e3aadc63f0968924b89e9c8e0e7a5924,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1489822907}
   m_SourcePrefab: {fileID: 100100000, guid: e3aadc63f0968924b89e9c8e0e7a5924, type: 3}
 --- !u!4 &1944996660857020254 stripped
 Transform:
@@ -20016,6 +20124,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Stage_TK_02_PersiapanBuretEDTA
+      objectReference: {fileID: 0}
+    - target: {fileID: 5966975463116463929, guid: df357fd114c8efe4ca3e6b25320fda41,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6267604829183148874, guid: df357fd114c8efe4ca3e6b25320fda41,
         type: 3}
@@ -20067,6 +20180,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8067044349680184699, guid: df357fd114c8efe4ca3e6b25320fda41,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: 655f0a184bc0f8542bbbd2d6d4a86b04,
+        type: 2}
     m_RemovedComponents:
     - {fileID: 3240170537123267282, guid: df357fd114c8efe4ca3e6b25320fda41, type: 3}
     m_RemovedGameObjects: []
@@ -20076,6 +20195,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 75254018}
+    - targetCorrespondingSourceObject: {fileID: 5966975463116463929, guid: df357fd114c8efe4ca3e6b25320fda41,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 75254019}
   m_SourcePrefab: {fileID: 100100000, guid: df357fd114c8efe4ca3e6b25320fda41, type: 3}
 --- !u!1001 &2590190586091289906
 PrefabInstance:
@@ -20160,6 +20283,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stage_TK_03_PersiapanLarutanBakuCaCO3
       objectReference: {fileID: 0}
+    - target: {fileID: 3944323589608970512, guid: 63887e13b83e57c4ca7fa6c825481afe,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5675722242392433757, guid: 63887e13b83e57c4ca7fa6c825481afe,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: ec7471e10021fa84da89b24844d2223c, type: 2}
     - target: {fileID: 5783399820748738303, guid: 63887e13b83e57c4ca7fa6c825481afe,
         type: 3}
       propertyPath: mPreview
@@ -20174,6 +20307,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 660589486}
+    - targetCorrespondingSourceObject: {fileID: 3944323589608970512, guid: 63887e13b83e57c4ca7fa6c825481afe,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 660589487}
   m_SourcePrefab: {fileID: 100100000, guid: 63887e13b83e57c4ca7fa6c825481afe, type: 3}
 --- !u!1001 &3055564836576620275
 PrefabInstance:
@@ -20672,6 +20809,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stage_TBA_05_PenimbanganSampel
       objectReference: {fileID: 0}
+    - target: {fileID: 2888481107013980688, guid: 2dff21d8327162543890f88edc5894b4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3171893971724008705, guid: 2dff21d8327162543890f88edc5894b4,
         type: 3}
       propertyPath: mPreview
@@ -20732,6 +20874,12 @@ PrefabInstance:
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 1705230721}
+    - target: {fileID: 9176077339769541033, guid: 2dff21d8327162543890f88edc5894b4,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: 655f0a184bc0f8542bbbd2d6d4a86b04,
+        type: 2}
     m_RemovedComponents:
     - {fileID: 2495209339808774894, guid: 2dff21d8327162543890f88edc5894b4, type: 3}
     m_RemovedGameObjects: []
@@ -20741,6 +20889,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1408983921}
+    - targetCorrespondingSourceObject: {fileID: 2888481107013980688, guid: 2dff21d8327162543890f88edc5894b4,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1408983922}
   m_SourcePrefab: {fileID: 100100000, guid: 2dff21d8327162543890f88edc5894b4, type: 3}
 --- !u!1001 &4890783277350880517
 PrefabInstance:
