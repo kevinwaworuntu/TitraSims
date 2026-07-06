@@ -10,9 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 696874737678737690}
   - component: {fileID: 7561025128631787625}
-  - component: {fileID: 8045106265234041916}
-  - component: {fileID: 1268411081214078543}
-  - component: {fileID: 3793988612080047278}
   m_Layer: 0
   m_Name: AnimBebasAir3
   m_TagString: Untagged
@@ -61,51 +58,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!65 &8045106265234041916
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6426963154993060987}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.20428467, y: 0.09389801, z: 0.12641737}
-  m_Center: {x: -0.024234772, y: 0.041509837, z: 0.013655109}
---- !u!114 &1268411081214078543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6426963154993060987}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2953cd83c0cde2241a44b3bf91fe6beb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &3793988612080047278
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6426963154993060987}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d040188dd3529e1439ca7952eee1d46d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &340260476381270907
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -546,7 +498,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: ca2a352a6d2c5c44a8a2e1d2810a7d5d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.0646
+      value: 0.103
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ca2a352a6d2c5c44a8a2e1d2810a7d5d,
         type: 3}
