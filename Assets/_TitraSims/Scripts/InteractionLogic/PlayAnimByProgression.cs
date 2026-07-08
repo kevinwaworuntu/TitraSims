@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
 
-public class PlayAnimByProgression : MonoBehaviour
+public class PlayAnimByProgression : MonoBehaviour, InteractionLogic.IAnimationPlaybackController
 {
     [Header("References")]
     [SerializeField] private Animator        _animator;
@@ -23,11 +23,16 @@ public class PlayAnimByProgression : MonoBehaviour
 
     private void OnEnable()
     {
+        if (_animator != null)
+        {
+            _animator.enabled = true;
+        }
+
         if (_animator == null || _animationConfig?.GenericAnimController == null)
         {
             return;
         }
-        
+
         _runtimeOverride = new AnimatorOverrideController(_animationConfig.GenericAnimController);
         _animator.runtimeAnimatorController = _runtimeOverride;
         
@@ -68,6 +73,7 @@ public class PlayAnimByProgression : MonoBehaviour
             if (_loopCount >= loopCountNeeded)
             {
                 enabled = false;
+                OnComplete?.Invoke();
             }
         }
     }
@@ -77,8 +83,28 @@ public class PlayAnimByProgression : MonoBehaviour
         _targetProgression += progressionIncrement;
     }
 
+    /// <inheritdoc />
+    public void StopPlayback()
+    {
+        _targetProgression = 0f;
+        currentProgression = 0f;
+        _loopCount = 0;
+        enabled = false;
+
+        // Disable the Animator itself — otherwise it keeps advancing/looping the
+        // already-playing state on its own and overwrites any transform reset
+        // (e.g. SnapInteractable.InstantReturnToOrigin) every frame afterward.
+        if (_animator != null)
+        {
+            _animator.enabled = false;
+        }
+    }
+
     private void OnDisable()
     {
-        _animator.runtimeAnimatorController = null;
+        if (_animator != null)
+        {
+            _animator.runtimeAnimatorController = null;
+        }
     }
 }

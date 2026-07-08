@@ -183,5 +183,22 @@ namespace Gameplay
             currentInteractionIndex = 0;
             isPlaying = false;
         }
+
+#if UNITY_EDITOR
+        public int CurrentInteractionIndex => currentInteractionIndex;
+        public int TotalInteractionCount   => interactionDataActionMappings?.Length ?? 0;
+        public bool IsCurrentlyPlaying     => isPlaying;
+        public TahapanInteractionData CurrentInteractionData =>
+            interactionDataActionMappings != null && currentInteractionIndex < interactionDataActionMappings.Length
+                ? interactionDataActionMappings[currentInteractionIndex].InteractionData
+                : null;
+
+        public void DebugForceNext()
+        {
+            interactionPlayer?.Stop();
+            StopAllCoroutines();
+            ExitInteractionState();
+        }
+#endif
     }
 }

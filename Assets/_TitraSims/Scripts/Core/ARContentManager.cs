@@ -1,12 +1,14 @@
 using DG.Tweening;
 using Gameplay;
 using UI;
+using System.Collections;
 using UnityEngine;
 
 public class ARContentManager : MonoBehaviour
 {
     protected TahapanInteractionController tahapanInteractionController;
-
+    private float autoHideNarationPanel = 3;
+    
     protected virtual void Awake()
     {
         tahapanInteractionController = GetComponent<TahapanInteractionController>();
@@ -80,9 +82,18 @@ public class ARContentManager : MonoBehaviour
         {
             UIManager.Instance.ForceHideInfoPanel();
             UIManager.Instance.SetButtonNarationVisibility(true);
+
+            StartCoroutine(AutoHideNarationPanel());
+           
         }
     }
-
+  
+    IEnumerator AutoHideNarationPanel() // Todo : Add detection also if player intended to reopen
+    {
+        yield return new WaitForSeconds(autoHideNarationPanel);
+        UIManager.Instance.ForceHideNarationPanel();
+    }
+    
     public void OnTargetLost()
     {
         if(GameManager.Instance.IsCurrentTahapCompleted())
@@ -113,7 +124,8 @@ public class ARContentManager : MonoBehaviour
             return;
         }
         ToggleNavigationButtons(true, false);
-        
+        UIManager.Instance.SetButtonNarationVisibility(false);
+
         if (!tahapanInteractionController)
         {
             return;
@@ -132,6 +144,7 @@ public class ARContentManager : MonoBehaviour
                 tahapanInteractionController.PlayerInteractToFinishInteraction();
                 ToggleNavigationButtons(false, false);
             });
+            StartCoroutine(AutoHideNarationPanel());
         });
     }
     
@@ -142,6 +155,11 @@ public class ARContentManager : MonoBehaviour
             return;
         }
         tahapanInteractionController.ContinueInteraction();
+
+        if (UIManager.Instance)
+        {
+            UIManager.Instance.SetButtonNarationVisibility(true);
+        }
     }
     
     protected void OnInteractionCompleteHandler()

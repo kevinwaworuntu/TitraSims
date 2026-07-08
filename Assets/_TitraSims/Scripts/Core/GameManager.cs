@@ -23,6 +23,13 @@ public class GameManager : MonoBehaviour
     private const string LAST_COMPLETED_TAHAP_TBA_KEY = "LastCompletedTahapTBA";
     private const string LAST_COMPLETED_TAHAP_KOMP_KEY = "LastCompletedTahapKomp";
 
+    [Header("Development Build Unlock Override")]
+    [Tooltip("Enabled: progress persists via PlayerPrefs, as normal.\nDisabled: ignores PlayerPrefs — each tahapan's unlock state comes from the checkbox masks below. Use for development/test builds.")]
+    [SerializeField] private bool usePlayerPrefsForProgress = true;
+    [Tooltip("Bitmask: bit N set = tahapan N is unlocked. Edit via the Tahap Progress Debug window's checkbox dropdown.")]
+    [SerializeField] private int devUnlockedMaskTBA = 1;
+    [SerializeField] private int devUnlockedMaskKomp = 1;
+
     [Header("Config Data")]
     [SerializeField] private AnimationConfig animationConfig;
 
@@ -76,14 +83,64 @@ public class GameManager : MonoBehaviour
     
     public int GetLastCompletedTahapIndex()
     {
-        return PlayerPrefs.GetInt(CurrentProgressKey, -1);
+        return GetLastCompletedTahapIndex(currentMode);
     }
 
     /// <summary>Returns the last completed tahap index for any given mode (not just the current one).</summary>
     public int GetLastCompletedTahapIndex(GameMode mode)
     {
+        if (!usePlayerPrefsForProgress)
+        {
+            int mask = mode == GameMode.TBA ? devUnlockedMaskTBA : devUnlockedMaskKomp;
+            return HighestSetBitIndex(mask);
+        }
+
         string key = mode == GameMode.TBA ? LAST_COMPLETED_TAHAP_TBA_KEY : LAST_COMPLETED_TAHAP_KOMP_KEY;
         return PlayerPrefs.GetInt(key, -1);
+    }
+
+    /// <summary>Whether a specific tahapan can be entered right now, under either the PlayerPrefs (sequential) or dev override (checkbox mask) model.</summary>
+    public bool IsTahapUnlocked(GameMode mode, int tahapIndex)
+    {
+        if (tahapIndex < 0) return false;
+
+        if (!usePlayerPrefsForProgress)
+        {
+            if (tahapIndex >= 32) return false;
+            int mask = mode == GameMode.TBA ? devUnlockedMaskTBA : devUnlockedMaskKomp;
+            return (mask & (1 << tahapIndex)) != 0;
+        }
+
+        return tahapIndex <= GetLastCompletedTahapIndex(mode) + 1;
+    }
+
+    private static int HighestSetBitIndex(int mask)
+    {
+        int highest = -1;
+        for (int i = 0; i < 32; i++)
+        {
+            if ((mask & (1 << i)) != 0) highest = i;
+        }
+        return highest;
+    }
+
+    /// <summary>Directly sets the last completed tahap index for a given mode, unlocking every tahap up to and including it.</summary>
+    public void SetLastCompletedTahapIndex(GameMode mode, int index)
+    {
+        if (!usePlayerPrefsForProgress)
+        {
+            Debug.LogWarning("[GameManager] usePlayerPrefsForProgress is disabled — tahapan unlock is fixed by devUnlockedMaskTBA/Komp and won't change.");
+            return;
+        }
+
+        string key = mode == GameMode.TBA ? LAST_COMPLETED_TAHAP_TBA_KEY : LAST_COMPLETED_TAHAP_KOMP_KEY;
+        PlayerPrefs.SetInt(key, index);
+        PlayerPrefs.Save();
+
+        if (mode == currentMode)
+        {
+            OnModeSet?.Invoke(currentMode, index);
+        }
     }
 
     public void SetMode(GameMode mode)
@@ -95,9 +152,7 @@ public class GameManager : MonoBehaviour
 
     public void StartTahap(int tahapIndex)
     {
-        int lastCompleted = GetLastCompletedTahapIndex();
-
-        if (tahapIndex > lastCompleted + 1)
+        if (!IsTahapUnlocked(currentMode, tahapIndex))
         {
             return;
         }
@@ -160,7 +215,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogError("Failed to destroy marker object!");
         }
-        if (PlayerPrefs.GetInt(CurrentProgressKey, -1) <= currentAttemptingTahapIndex)
+        if (usePlayerPrefsForProgress && PlayerPrefs.GetInt(CurrentProgressKey, -1) <= currentAttemptingTahapIndex)
         {
             PlayerPrefs.SetInt(CurrentProgressKey, currentAttemptingTahapIndex);
             PlayerPrefs.Save();
@@ -198,12 +253,42 @@ public class GameManager : MonoBehaviour
     
     public void ResetAllProgress()
     {
-        PlayerPrefs.DeleteKey(LAST_COMPLETED_TAHAP_TBA_KEY);
-        PlayerPrefs.DeleteKey(LAST_COMPLETED_TAHAP_KOMP_KEY);
-        PlayerPrefs.Save();
+        if (usePlayerPrefsForProgress)
+        {
+            PlayerPrefs.DeleteKey(LAST_COMPLETED_TAHAP_TBA_KEY);
+            PlayerPrefs.DeleteKey(LAST_COMPLETED_TAHAP_KOMP_KEY);
+            PlayerPrefs.Save();
+        }
 
         currentAttemptingTahapIndex = -1;
         SetARCameraActive(false);
         OnProgressReset?.Invoke();
     }
+
+#if UNITY_EDITOR
+    public int MarkerTBACount  => markerTBAMapping?.Length ?? 0;
+    public int MarkerKompCount => markerTKMapping?.Length ?? 0;
+    public GameObject CurrentActiveMarkerObject => currentActiveMarkerObject;
+    public bool UsePlayerPrefsForProgress => usePlayerPrefsForProgress;
+
+    public GameObject[] GetMarkerMapping(GameMode mode)
+    {
+        return mode == GameMode.TBA ? markerTBAMapping : markerTKMapping;
+    }
+
+    public bool DebugSpawnTahap(int tahapIndex, GameMode mode)
+    {
+        DestroyMarkerObject();
+        GameObject[] mapping = mode == GameMode.TBA ? markerTBAMapping : markerTKMapping;
+        if (mapping == null || tahapIndex >= mapping.Length || mapping[tahapIndex] == null) return false;
+        if (marker == null || tahapIndex >= marker.Length || marker[tahapIndex] == null) return false;
+        currentActiveMarkerObject = Instantiate(mapping[tahapIndex], marker[tahapIndex].transform, false);
+        currentActiveMarkerObject.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
+        currentActiveMarkerObject.transform.localScale = Vector3.one;
+        currentAttemptingTahapIndex = tahapIndex;
+        isTahapCompleted = false;
+        OnTahapStarted?.Invoke();
+        return true;
+    }
+#endif
 }

@@ -45,6 +45,7 @@ namespace Gameplay
         private bool isCheckWeightToContinue;
         private LarutanType currentLarutanType = LarutanType.Larutan1;
         private int targetML;
+        private AnimatorOverrideController _runtimeOverride;
 
         private LiquidContainer CurrentContainer =>
             currentLarutanType == LarutanType.Larutan1 ? larutan1Container : larutan2Container;
@@ -58,6 +59,13 @@ namespace Gameplay
 
             if (animNotify)
                 animNotify.OnNotify += OnStartUpdateVisualFill;
+
+            var animationConfig = GameManager.Instance.AnimationConfig;
+            if (animationConfig?.GenericAnimController != null && animator)
+            {
+                _runtimeOverride = new AnimatorOverrideController(animationConfig.GenericAnimController);
+                animator.runtimeAnimatorController = _runtimeOverride;
+            }
         }
 
         protected override void OnDisable()
@@ -67,6 +75,9 @@ namespace Gameplay
             targetML = 0;
             if (animNotify)
                 animNotify.OnNotify -= OnStartUpdateVisualFill;
+
+            if (animator)
+                animator.runtimeAnimatorController = null;
 
             ResetLarutanContainer(larutan1Container);
             ResetLarutanContainer(larutan2Container);
@@ -133,15 +144,27 @@ namespace Gameplay
             tahapanInteractionController.RestartInteraction();
         }
 
-        // ReSharper disable Unity.PerformanceAnalysis
+        [ContextMenu( "Play Animation Test" )]
+        private void PlayAnimationTest()
+        {
+            PlayAnimation(animClipLarutan1_1ml);
+        }
+
         private void PlayAnimation(AnimationClip clip)
         {
+            if (animator.runtimeAnimatorController != _runtimeOverride)
+            {
+                _runtimeOverride = animator.runtimeAnimatorController as AnimatorOverrideController;
+            }
             var animationConfig = GameManager.Instance.AnimationConfig;
             if (!animationConfig || !clip || !animator)
                 return;
-
-            if (animationConfig.GenericAnimController)
-                animationConfig.GenericAnimController[animationConfig.GetAnimGenericClipEntryName()] = clip;
+            if (!animationConfig.IsAnimGenericClipEntryNameValid())
+            {
+                return;
+            }
+            if (_runtimeOverride)
+                _runtimeOverride[animationConfig.GetAnimGenericClipEntryName()] = clip;
 
             animator.SetTrigger(animationConfig.StopAnimationParamName);
             animator.SetTrigger(animationConfig.PlayAnimationParamName);
@@ -151,6 +174,9 @@ namespace Gameplay
             {
                 yield return new WaitForSeconds(duration);
                 SetButtonEnabledState(true);
+                animator.SetTrigger(animationConfig.StopAnimationParamName);
+                _runtimeOverride[animationConfig.GetAnimGenericClipEntryName()] = animationConfig.GetAnimGenericEntryClip();
+                
                 if (IsCurrentWeightComplete())
                     OnStartWaitingForPlayerInputToContinueHandler();
                 else if (IsCurrentWeightExceedTarget())

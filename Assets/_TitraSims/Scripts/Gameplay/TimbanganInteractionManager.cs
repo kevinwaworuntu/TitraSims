@@ -20,10 +20,28 @@ namespace Gameplay
         [SerializeField] private Transform powderFillObject;
 
         private bool isCheckWeightToContinue;
+        private AnimatorOverrideController _runtimeOverride;
 
-        protected void OnDisable()
+        protected override void OnEnable()
         {
+            base.OnEnable();
+
+            var animationConfig = GameManager.Instance.AnimationConfig;
+            if (animationConfig?.GenericAnimController != null && animator)
+            {
+                _runtimeOverride = new AnimatorOverrideController(animationConfig.GenericAnimController);
+                animator.runtimeAnimatorController = _runtimeOverride;
+            }
+        }
+
+        protected override void OnDisable()
+        {
+            base.OnDisable();
+
             ResetPowderFill();
+
+            if (animator)
+                animator.runtimeAnimatorController = null;
         }
 
         protected override void OnStartWaitingForPlayerInputToContinueHandler()
@@ -64,8 +82,8 @@ namespace Gameplay
             if (!animationConfig || !clip || !animator)
                 return;
 
-            if (animationConfig.GenericAnimController)
-                animationConfig.GenericAnimController[animationConfig.GetAnimGenericClipEntryName()] = clip;
+            if (_runtimeOverride)
+                _runtimeOverride[animationConfig.GetAnimGenericClipEntryName()] = clip;
 
             animator.SetTrigger(animationConfig.StopAnimationParamName);
             animator.SetTrigger(animationConfig.PlayAnimationParamName);

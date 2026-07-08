@@ -33,6 +33,7 @@ namespace Gameplay
         protected bool isCheckWeightToContinue;
         private float currentWeight;
         private int currentIndex;
+        private AnimatorOverrideController _runtimeOverride;
 
         private static readonly int SideColorID = Shader.PropertyToID("_Side_Color");
         private static readonly int TopColorID = Shader.PropertyToID("_TopColor");
@@ -48,6 +49,21 @@ namespace Gameplay
             base.OnEnable();
             ResetBuretteFill();
             RestartErlenmeyerVisual();
+
+            var animationConfig = GameManager.Instance.AnimationConfig;
+            if (animationConfig?.GenericAnimController != null && animator)
+            {
+                _runtimeOverride = new AnimatorOverrideController(animationConfig.GenericAnimController);
+                animator.runtimeAnimatorController = _runtimeOverride;
+            }
+        }
+
+        protected override void OnDisable()
+        {
+            base.OnDisable();
+
+            if (animator)
+                animator.runtimeAnimatorController = null;
         }
 
         protected override void OnStartWaitingForPlayerInputToContinueHandler()
@@ -146,16 +162,16 @@ namespace Gameplay
             SetButtonEnabledState(false);
             var animationConfig = GameManager.Instance.AnimationConfig;
 
-            if (animationConfig.GenericAnimController)
-                animationConfig.GenericAnimController[animationConfig.GetAnimGenericClipEntryName()] = animClipOpenKeran;
+            if (_runtimeOverride)
+                _runtimeOverride[animationConfig.GetAnimGenericClipEntryName()] = animClipOpenKeran;
 
             animator.SetTrigger(animationConfig.PlayAnimationParamName);
             yield return new WaitForSeconds(animClipOpenKeran.length);
 
             if (totalTetes == 10)
             {
-                if (animationConfig.GenericAnimController)
-                    animationConfig.GenericAnimController[animationConfig.GetAnimGenericClipEntryName()] = animClipTetesBanyak;
+                if (_runtimeOverride)
+                    _runtimeOverride[animationConfig.GetAnimGenericClipEntryName()] = animClipTetesBanyak;
 
                 animator.SetTrigger(animationConfig.PlayAnimationParamName);
                 BuretteFillValue(10);
@@ -163,8 +179,8 @@ namespace Gameplay
             }
             else if (totalTetes == 1)
             {
-                if (animationConfig.GenericAnimController)
-                    animationConfig.GenericAnimController[animationConfig.GetAnimGenericClipEntryName()] = animClipTetes;
+                if (_runtimeOverride)
+                    _runtimeOverride[animationConfig.GetAnimGenericClipEntryName()] = animClipTetes;
 
                 animator.SetTrigger(animationConfig.PlayAnimationParamName);
                 BuretteFillValue(1);

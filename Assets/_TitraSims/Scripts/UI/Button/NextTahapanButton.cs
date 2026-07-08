@@ -2,7 +2,7 @@ namespace UI
 {
     public class NextTahapanButton : TitraSims_Button
     {
-        [UnityEngine.SerializeField] private float targetScaleModifier = 1.08f;
+        [UnityEngine.SerializeField] private float targetScaleModifier = 1.11f;
         [UnityEngine.SerializeField] private float inhaleTime          = 1f;
         [UnityEngine.SerializeField] private float exhaleTime          = 1f;
 

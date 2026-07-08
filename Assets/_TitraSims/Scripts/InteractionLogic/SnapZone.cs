@@ -28,6 +28,9 @@ namespace InteractionLogic
         [Header("Snap")]
         [SerializeField] private float _snapRadius = 0.1f;
 
+        [Tooltip("Local-space offset from this zone's pivot applied to the final snap position (rotates with the zone)")]
+        [SerializeField] private Vector3 _snapOffset = Vector3.zero;
+
         [Tooltip("Rotate the snapped object to match this zone's orientation")]
         public bool snapRotation = true;
 
@@ -45,6 +48,9 @@ namespace InteractionLogic
         public float SnapRadius => _snapRadius;
         public bool  IsOccupied => _snappedObject != null;
 
+        /// World-space position the snapped object should move to (zone pivot + local offset).
+        public Vector3 SnapTargetPosition => transform.TransformPoint(_snapOffset);
+
         // ── Internal state ───────────────────────────────────────────────────────
 
         private SnapInteractable _snappedObject;
@@ -53,8 +59,8 @@ namespace InteractionLogic
 
         private void Awake()
         {
-            _highlightVisual?.SetActive(false);
-            _occupiedVisual?.SetActive(false);
+            if(_highlightVisual) _highlightVisual.SetActive(false);
+            if(_occupiedVisual) _occupiedVisual.SetActive(false);
         }
 
         private void OnEnable()  => All.Add(this);
@@ -71,12 +77,14 @@ namespace InteractionLogic
 
             if (!string.IsNullOrEmpty(acceptTag) && !candidate.CompareTag(acceptTag)) return false;
 
-            return Vector3.Distance(candidate.transform.position, transform.position) <= _snapRadius;
+            return Vector3.Distance(candidate.transform.position, SnapTargetPosition) <= _snapRadius;
         }
 
         /// Toggle the highlight visual (called by SnapInteractable during drag).
-        public void SetHighlight(bool on) => _highlightVisual?.SetActive(on);
-
+        public void SetHighlight(bool on)
+        {
+            if (_highlightVisual) _highlightVisual.SetActive(on);
+        }
         // ── Called by SnapInteractable ───────────────────────────────────────────
 
         /// Attempts to accept <paramref name="candidate"/>. Returns true on success.
@@ -86,8 +94,8 @@ namespace InteractionLogic
             if (!IsInRange(candidate)) return false;
 
             _snappedObject = candidate;
-            _highlightVisual?.SetActive(false);
-            _occupiedVisual?.SetActive(true);
+            if(_highlightVisual)  _highlightVisual.SetActive(false);
+            if(_occupiedVisual) _occupiedVisual.SetActive(true);
             candidate.SnapTo(this);
             return true;
         }
@@ -96,7 +104,7 @@ namespace InteractionLogic
         public void Release()
         {
             _snappedObject = null;
-            _occupiedVisual?.SetActive(false);
+            if(_occupiedVisual) _occupiedVisual.SetActive(false);
         }
 
         // ── Editor ───────────────────────────────────────────────────────────────
@@ -107,6 +115,14 @@ namespace InteractionLogic
             Gizmos.color = IsOccupied ? new Color(0.2f, 1f, 0.2f, 0.6f)
                                       : new Color(1f, 0.9f, 0.1f, 0.6f);
             Gizmos.DrawWireSphere(transform.position, _snapRadius);
+
+            if (_snapOffset != Vector3.zero)
+            {
+                Vector3 targetPos = SnapTargetPosition;
+                Gizmos.color = Color.cyan;
+                Gizmos.DrawLine(transform.position, targetPos);
+                Gizmos.DrawSphere(targetPos, 0.01f);
+            }
         }
 #endif
     }

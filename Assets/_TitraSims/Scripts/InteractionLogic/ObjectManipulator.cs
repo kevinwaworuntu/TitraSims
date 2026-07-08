@@ -20,10 +20,14 @@ namespace InteractionLogic
         public Vector3 rotateAxis = Vector3.up;
 
         [Header("Drag")]
-        [Tooltip("World units moved per screen pixel")]
-        [SerializeField, Range(0.0001f, 0.05f)] 
-        private float _dragSensitivity = 0.005f;
         public bool lockToHorizontalPlane;
+
+        [Tooltip("Freeze this world-space axis at its value when the drag started.")]
+        public bool lockDragX;
+        [Tooltip("Freeze this world-space axis at its value when the drag started.")]
+        public bool lockDragY;
+        [Tooltip("Freeze this world-space axis at its value when the drag started.")]
+        public bool lockDragZ = true;
 
         [Header("Scale")]
         [Tooltip("Minimum and maximum scale as a multiplier of the object's original local scale")]
@@ -32,6 +36,11 @@ namespace InteractionLogic
 
         private Camera  _cam;
         private Vector3 _originalScale;
+
+        // Drag-to-pointer state
+        private Plane   _dragPlane;
+        private Vector3 _dragOffset;
+        private Vector3 _dragStartPosition;
 
         private void Awake()
         {
@@ -49,26 +58,48 @@ namespace InteractionLogic
             transform.Rotate(rotateAxis, angle, Space.World);
         }
 
-        /// <summary>2-finger translation → move in world space.</summary>
-        public void ReceiveDragDelta(Vector2 screenDelta)
+        /// <summary>
+        /// Call once when a drag gesture starts (before the first <see cref="ReceiveDragToPoint"/>).
+        /// Establishes the world-space plane the object will be dragged along, and the offset
+        /// between the object and the grab point so it doesn't jump to be centered on the pointer.
+        /// </summary>
+        public void BeginDrag(Vector2 screenPos)
         {
             if (!canDrag || _cam == null) return;
 
-            Vector3 worldDelta;
+            Vector3 planeNormal = lockToHorizontalPlane ? Vector3.up : -_cam.transform.forward;
+            _dragPlane = new Plane(planeNormal, transform.position);
 
-            if (lockToHorizontalPlane)
+            _dragStartPosition = transform.position;
+            _dragOffset        = RaycastDragPlane(screenPos, out Vector3 hit) ? transform.position - hit : Vector3.zero;
+        }
+
+        /// <summary>Moves the object so it tracks the given screen-space pointer/touch position.</summary>
+        public void ReceiveDragToPoint(Vector2 screenPos)
+        {
+            if (!canDrag || _cam == null) return;
+
+            if (RaycastDragPlane(screenPos, out Vector3 hit))
             {
-                // Project camera axes onto XZ so movement stays flat on the AR surface.
-                Vector3 right   = Vector3.ProjectOnPlane(_cam.transform.right,   Vector3.up).normalized;
-                Vector3 forward = Vector3.ProjectOnPlane(_cam.transform.forward, Vector3.up).normalized;
-                worldDelta = (right * screenDelta.x + forward * screenDelta.y) * _dragSensitivity;
+                Vector3 target = hit + _dragOffset;
+                if (lockDragX) target.x = _dragStartPosition.x;
+                if (lockDragY) target.y = _dragStartPosition.y;
+                if (lockDragZ) target.z = _dragStartPosition.z;
+                transform.position = target;
             }
-            else
+        }
+
+        private bool RaycastDragPlane(Vector2 screenPos, out Vector3 point)
+        {
+            Ray ray = _cam.ScreenPointToRay(screenPos);
+            if (_dragPlane.Raycast(ray, out float enter))
             {
-                worldDelta = (_cam.transform.right * screenDelta.x + _cam.transform.up    * screenDelta.y) * _dragSensitivity;
+                point = ray.GetPoint(enter);
+                return true;
             }
 
-            transform.position += new Vector3(worldDelta.x, worldDelta.y, 0f);
+            point = Vector3.zero;
+            return false;
         }
 
         /// <summary>2-finger pinch → scale clamped to <see cref="scaleRange"/> × original scale.</summary>

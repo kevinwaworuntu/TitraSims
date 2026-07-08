@@ -59,14 +59,13 @@ public class TahapanControllerButton : MonoBehaviour
     private void HandleProgressChanged(GameMode mode, int lastCompleted)
     {
         if (ButtonGameMode != mode) return;
-        UpdateVisualState(TahapIndex <= lastCompleted + 1);
+        UpdateVisualState(GameManager.Instance.IsTahapUnlocked(mode, TahapIndex));
     }
 
     private void RefreshVisualState()
     {
         if (GameManager.Instance == null) return;
-        int lastCompleted = GameManager.Instance.GetLastCompletedTahapIndex(ButtonGameMode);
-        UpdateVisualState(TahapIndex <= lastCompleted + 1);
+        UpdateVisualState(GameManager.Instance.IsTahapUnlocked(ButtonGameMode, TahapIndex));
     }
 
     public void UpdateVisualState(bool isInteractable)

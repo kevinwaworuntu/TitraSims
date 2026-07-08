@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70ed703590a34d649778d7a94ca0a261, type: 3}
   m_Name: TBA_2_TahapanInteractionData_1
   m_EditorClassIdentifier: 
-  title: Step 1Membilas Buret dengan Aseton
+  title: Membilas Buret dengan Aseton
   description: Geser botol pencuci ke mulut buret.
   audioNaration: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
   animationClip: {fileID: 0}

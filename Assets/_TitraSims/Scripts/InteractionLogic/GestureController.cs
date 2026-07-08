@@ -82,6 +82,7 @@ namespace InteractionLogic
         private Vector2 _twoPrevCenter;
         private float   _twoBaseDist;
         private Vector2 _twoBaseCenter;
+        private bool    _dragJustCommitted;
 
         // Mouse fallback
         private bool _mouseWasDown;
@@ -237,14 +238,15 @@ namespace InteractionLogic
 
                 if (!hadFocused && _focused != null)
                     OnManipulatorGrabbed?.Invoke(_focused);
+
+                _focused?.BeginDrag(t.screenPosition);
                 return;
             }
 
             if (t.phase == TouchPhase.Moved)
             {
-                Vector2 delta = t.screenPosition - _singlePrev;
-                if (_focused != null) _focused.ReceiveDragDelta(delta);
-                else                  OnTwoFingerDragDelta?.Invoke(delta);
+                if (_focused != null) _focused.ReceiveDragToPoint(t.screenPosition);
+                else                  OnTwoFingerDragDelta?.Invoke(t.screenPosition - _singlePrev);
             }
 
             _singlePrev = t.screenPosition;
@@ -314,12 +316,16 @@ namespace InteractionLogic
                     if (distChange >= _pinchCommitRatio)
                         _twoKind = TwoGestureKind.Pinch;
                     else if (centerTravel >= _dragCommitPixels)
-                        _twoKind = TwoGestureKind.Drag;
+                    {
+                        _twoKind           = TwoGestureKind.Drag;
+                        _dragJustCommitted = true;
+                    }
                 }
                 else
                 {
                     // No ambiguity — assign directly.
                     _twoKind = (count == scaC) ? TwoGestureKind.Pinch : TwoGestureKind.Drag;
+                    if (_twoKind == TwoGestureKind.Drag) _dragJustCommitted = true;
                 }
             }
 
@@ -332,9 +338,14 @@ namespace InteractionLogic
                     break;
 
                 case TwoGestureKind.Drag:
-                    Vector2 dragDelta = curCenter - _twoPrevCenter;
-                    if (_focused != null) _focused.ReceiveDragDelta(dragDelta);
-                    else                  OnTwoFingerDragDelta?.Invoke(dragDelta);
+                    if (_dragJustCommitted)
+                    {
+                        _focused?.BeginDrag(curCenter);
+                        _dragJustCommitted = false;
+                    }
+
+                    if (_focused != null) _focused.ReceiveDragToPoint(curCenter);
+                    else                  OnTwoFingerDragDelta?.Invoke(curCenter - _twoPrevCenter);
                     break;
             }
 
@@ -388,9 +399,10 @@ namespace InteractionLogic
         private void ResetState()
         {
             if (_focused != null) OnManipulatorReleased?.Invoke(_focused);
-            _focused = null;
-            _state   = State.Idle;
-            _twoKind = TwoGestureKind.Undecided;
+            _focused           = null;
+            _state             = State.Idle;
+            _twoKind           = TwoGestureKind.Undecided;
+            _dragJustCommitted = false;
         }
     }
 }

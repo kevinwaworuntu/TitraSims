@@ -1990,6 +1990,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c1531fad478b2d45805637639cbc907, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.GestureController
+  _settings: {fileID: 11400000, guid: a0624b59cc9c20b4c9b0671e26509704, type: 2}
   _interactableLayer:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -2818,6 +2819,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cffce92bc4e24cf49c656dc597cf5dfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI.BackButton
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 0}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &319918010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2830,6 +2863,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a2408ef24cc1e64d81196c8d99ce558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NextTahapanButton
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 0}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
   targetScaleModifier: 1.06
   inhaleTime: 1.2
   exhaleTime: 1.5
@@ -8022,6 +8087,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14a5d16eacc842641b8931aa323dbe66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CompleteTahapanButton
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 0}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
   interval: 0.5
   angle: 1
   duration: 0.5
@@ -8421,6 +8518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d534a8106b5172543b0a99749e249a27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI.TahapanControllerParent
+  soundEffectDrawMaxCount: 2
 --- !u!114 &916825886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10251,6 +10349,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 253950aaccdb4aa6bb57f4ac6898e291, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI.InfoButton
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 0}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1231983370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10741,6 +10871,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51f61ac7660946bfb402f10cfa953585, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI.NarationButton
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 0}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1257947499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13564,6 +13726,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cffce92bc4e24cf49c656dc597cf5dfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI.BackButton
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 0}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1593497338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14241,6 +14435,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d534a8106b5172543b0a99749e249a27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI.TahapanControllerParent
+  soundEffectDrawMaxCount: 2
 --- !u!114 &1675162031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14701,6 +14896,128 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1711559761}
   m_CullTransparentMesh: 1
+--- !u!1001 &1728939790
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1190913945219444036, guid: e3aadc63f0968924b89e9c8e0e7a5924,
+        type: 3}
+      propertyPath: OnSnapped.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2688009289951648467, guid: e3aadc63f0968924b89e9c8e0e7a5924,
+        type: 3}
+      propertyPath: m_Name
+      value: Stage_TBA_04_PenambahanPelarut
+      objectReference: {fileID: 0}
+    - target: {fileID: 5150949248874473773, guid: e3aadc63f0968924b89e9c8e0e7a5924,
+        type: 3}
+      propertyPath: interactionDataActionMappings.Array.data[1].UniqueEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5150949248874473773, guid: e3aadc63f0968924b89e9c8e0e7a5924,
+        type: 3}
+      propertyPath: interactionDataActionMappings.Array.data[1].UniqueEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5150949248874473773, guid: e3aadc63f0968924b89e9c8e0e7a5924,
+        type: 3}
+      propertyPath: interactionDataActionMappings.Array.data[3].UniqueEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5150949248874473773, guid: e3aadc63f0968924b89e9c8e0e7a5924,
+        type: 3}
+      propertyPath: interactionDataActionMappings.Array.data[3].UniqueEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5539335821119560034, guid: e3aadc63f0968924b89e9c8e0e7a5924,
+        type: 3}
+      propertyPath: OnSnapped.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6403651771895674930, guid: e3aadc63f0968924b89e9c8e0e7a5924,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: f10e2e11fbe7a20498cef29642df6315, type: 2}
+    - target: {fileID: 7003691529059934831, guid: e3aadc63f0968924b89e9c8e0e7a5924,
+        type: 3}
+      propertyPath: OnSnapped.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7504586815546769509, guid: e3aadc63f0968924b89e9c8e0e7a5924,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -48.999996
+      objectReference: {fileID: 0}
+    - target: {fileID: 7504586815546769509, guid: e3aadc63f0968924b89e9c8e0e7a5924,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.00000013411045
+      objectReference: {fileID: 0}
+    - target: {fileID: 7504586815546769509, guid: e3aadc63f0968924b89e9c8e0e7a5924,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.9947639
+      objectReference: {fileID: 0}
+    - target: {fileID: 7504586815546769509, guid: e3aadc63f0968924b89e9c8e0e7a5924,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7504586815546769509, guid: e3aadc63f0968924b89e9c8e0e7a5924,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7504586815546769509, guid: e3aadc63f0968924b89e9c8e0e7a5924,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7504586815546769509, guid: e3aadc63f0968924b89e9c8e0e7a5924,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7504586815546769509, guid: e3aadc63f0968924b89e9c8e0e7a5924,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7504586815546769509, guid: e3aadc63f0968924b89e9c8e0e7a5924,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7504586815546769509, guid: e3aadc63f0968924b89e9c8e0e7a5924,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8684620413120917788, guid: e3aadc63f0968924b89e9c8e0e7a5924,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8775053438714470013, guid: e3aadc63f0968924b89e9c8e0e7a5924,
+        type: 3}
+      propertyPath: OnSnapped.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5767539223404582313, guid: e3aadc63f0968924b89e9c8e0e7a5924, type: 3}
+    - {fileID: 8873245747921213772, guid: e3aadc63f0968924b89e9c8e0e7a5924, type: 3}
+    - {fileID: 5150949248874473773, guid: e3aadc63f0968924b89e9c8e0e7a5924, type: 3}
+    - {fileID: 7041061230170942991, guid: e3aadc63f0968924b89e9c8e0e7a5924, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e3aadc63f0968924b89e9c8e0e7a5924, type: 3}
 --- !u!1 &1733238914
 GameObject:
   m_ObjectHideFlags: 0
@@ -17357,6 +17674,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 26879672358167339, guid: 57ba72c521ee0ac4d9fcd64cbb5ec8b1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 72672842285348833, guid: 57ba72c521ee0ac4d9fcd64cbb5ec8b1,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -17397,6 +17719,16 @@ PrefabInstance:
       propertyPath: OnSnapped.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 384346038116606029, guid: 57ba72c521ee0ac4d9fcd64cbb5ec8b1,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 384346038116606029, guid: 57ba72c521ee0ac4d9fcd64cbb5ec8b1,
+        type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 3586ac1bd6e12ef4a9f9ed9140cd9210, type: 2}
     - target: {fileID: 676832379972856864, guid: 57ba72c521ee0ac4d9fcd64cbb5ec8b1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17451,6 +17783,11 @@ PrefabInstance:
         type: 3}
       propertyPath: mPreview
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2362013343575250376, guid: 57ba72c521ee0ac4d9fcd64cbb5ec8b1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2489105318850324314, guid: 57ba72c521ee0ac4d9fcd64cbb5ec8b1,
         type: 3}
@@ -17531,6 +17868,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Stage_TBA_02_PersiapanBuret
+      objectReference: {fileID: 0}
+    - target: {fileID: 4265277453642384058, guid: 57ba72c521ee0ac4d9fcd64cbb5ec8b1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5466342636526125580, guid: 57ba72c521ee0ac4d9fcd64cbb5ec8b1,
         type: 3}
@@ -17947,3 +18289,4 @@ SceneRoots:
   - {fileID: 1835286223}
   - {fileID: 206597103}
   - {fileID: 2042263546}
+  - {fileID: 1728939790}

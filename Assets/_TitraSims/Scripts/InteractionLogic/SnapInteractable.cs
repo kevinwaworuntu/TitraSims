@@ -37,7 +37,8 @@ namespace InteractionLogic
 
         // ── Internal state ───────────────────────────────────────────────────────
 
-        private ObjectManipulator _manipulator;
+        private ObjectManipulator             _manipulator;
+        private IAnimationPlaybackController[] _animationPlaybackControllers;
         private SnapZone          _currentZone;
         private SnapZone          _highlightedZone;
         private bool              _isBeingManipulated;
@@ -52,7 +53,11 @@ namespace InteractionLogic
 
         // ── Unity lifecycle ──────────────────────────────────────────────────────
 
-        private void Awake() => _manipulator = GetComponent<ObjectManipulator>();
+        private void Awake()
+        {
+            _manipulator                  = GetComponent<ObjectManipulator>();
+            _animationPlaybackControllers = GetComponents<IAnimationPlaybackController>();
+        }
 
         private void OnEnable()
         {
@@ -119,7 +124,7 @@ namespace InteractionLogic
         {
             _currentZone   = zone;
             _isLerping     = true;
-            _lerpTargetPos = zone.transform.position;
+            _lerpTargetPos = zone.SnapTargetPosition;
             _lerpTargetRot = zone.snapRotation ? zone.transform.rotation : transform.rotation;
 
             _manipulator.canDrag = false;   // locked in place while snapped
@@ -141,6 +146,20 @@ namespace InteractionLogic
             Transform parentTransform = transform.parent;
             _lerpTargetPos = parentTransform != null ? parentTransform.TransformPoint(_originLocalPos) : _originLocalPos;
             _lerpTargetRot = parentTransform != null ? parentTransform.rotation * _originLocalRot      : _originLocalRot;
+        }
+
+        [ContextMenu( "Instant Return to Origin")]
+        public void InstantReturnToOrigin()
+        {
+            // "Instant" — stop any in-progress playback rather than waiting for it to finish,
+            // so it doesn't keep animating out of sync with the freshly-reset transform.
+            foreach (var controller in _animationPlaybackControllers)
+            {
+                controller.StopPlayback();
+            }
+
+            transform.localPosition = _originLocalPos;
+            transform.localRotation = _originLocalRot;
         }
 
         // ── Highlight (during drag) ──────────────────────────────────────────────
@@ -171,7 +190,7 @@ namespace InteractionLogic
             foreach (var zone in SnapZone.All)
             {
                 if (!zone.IsInRange(this)) continue;
-                float d = Vector3.Distance(transform.position, zone.transform.position);
+                float d = Vector3.Distance(transform.position, zone.SnapTargetPosition);
                 if (d < nearestDist) { nearest = zone; nearestDist = d; }
             }
 
