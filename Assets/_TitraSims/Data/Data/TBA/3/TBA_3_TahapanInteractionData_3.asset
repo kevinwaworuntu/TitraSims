@@ -15,4 +15,4 @@ MonoBehaviour:
   title: 'Step 2 '
   description: Tap layar untuk memasukkan 700 mg kalium biftalat ke dalam Erlenmeyer!
   audioNaration: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
-  animationClip: {fileID: 7400000, guid: 65761d29c5e475f4583da13999e23649, type: 2}
+  animationClip: {fileID: 7400000, guid: a8354d8f3335ec94b8dbb580181384fc, type: 2}
