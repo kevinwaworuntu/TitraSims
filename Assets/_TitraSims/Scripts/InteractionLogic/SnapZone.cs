@@ -14,6 +14,8 @@ namespace InteractionLogic
     /// Setup:
     ///   • Set <see cref="acceptTag"/> to restrict which objects can snap here
     ///     (leave empty to accept any SnapInteractable).
+    ///   • Set <see cref="acceptedGameObjectName"/> to restrict by GameObject name
+    ///     (leave empty to accept any SnapInteractable).
     ///   • Assign <see cref="_highlightVisual"/> — shown while a compatible object
     ///     is being dragged within range.
     ///   • Assign <see cref="_occupiedVisual"/> — shown while an object is snapped.
@@ -24,6 +26,12 @@ namespace InteractionLogic
         [Header("Filter")]
         [Tooltip("Only accept SnapInteractables whose GameObject tag matches. Empty = accept any.")]
         public string acceptTag = "";
+
+        [Tooltip("Only accept SnapInteractables whose GameObject name matches. Empty = accept any.")]
+        public string acceptedGameObjectName = "";
+
+        [Tooltip("Only accept this specific GameObject. None = accept any.")]
+        public GameObject acceptedGameObject;
 
         [Header("Snap")]
         [SerializeField] private float _snapRadius = 0.1f;
@@ -76,6 +84,10 @@ namespace InteractionLogic
             if (IsOccupied && _snappedObject != candidate) return false;
 
             if (!string.IsNullOrEmpty(acceptTag) && !candidate.CompareTag(acceptTag)) return false;
+
+            if (!string.IsNullOrEmpty(acceptedGameObjectName) && candidate.name != acceptedGameObjectName) return false;
+
+            if (acceptedGameObject != null && candidate.gameObject != acceptedGameObject) return false;
 
             return Vector3.Distance(candidate.transform.position, SnapTargetPosition) <= _snapRadius;
         }

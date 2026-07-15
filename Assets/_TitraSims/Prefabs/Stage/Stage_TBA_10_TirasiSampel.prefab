@@ -9,10 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6259610011937081387}
-  - component: {fileID: 4786494167031737569}
-  - component: {fileID: 7190631582246871377}
   - component: {fileID: 4078050931674371745}
-  - component: {fileID: 8617576210583874925}
   - component: {fileID: 2412062780939716353}
   - component: {fileID: 3840085617486165302}
   m_Layer: 0
@@ -21,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6259610011937081387
 Transform:
   m_ObjectHideFlags: 0
@@ -38,77 +35,6 @@ Transform:
   - {fileID: 3609288218537819826}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4786494167031737569
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8580935959049117407}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1631628248, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PreviewVisible: 1
-  RuntimeOcclusion: 0
-  RuntimeCollider: 0
-  mTrackableName: tba10
-  mInitializedInEditor: 1
-  mDataSetPath: 
-  mAspectRatio: 1
-  mImageTargetType: 3
-  mWidth: 0.2
-  mHeight: 0.2
-  mRuntimeTexture: {fileID: 2800000, guid: 7307f15efb55cbc4c9f9bce279be13ee, type: 3}
-  mMotionHint: 1
-  mTrackingOptimization: 0
-  mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 8617576210583874925}
---- !u!114 &7190631582246871377
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8580935959049117407}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 886328de6a5c14cbb85854fdf1a5085b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  StatusFilter: 1
-  UsePoseSmoothing: 0
-  AnimationCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 3.3333333
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 0.3
-      value: 1
-      inSlope: 3.3333333
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  OnTargetFound:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTargetLost:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &4078050931674371745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,12 +49,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionDataActionMappings:
   - InteractionData: {fileID: 11400000, guid: b44e89db5e66eb144bcabeaab9bf1775, type: 2}
-    IsNeedPlayerInputToContinue: 1
+    IsAutoContinue: 1
+    IsContinueByOtherEvent: 0
     UniqueEvent:
       m_PersistentCalls:
         m_Calls: []
   - InteractionData: {fileID: 11400000, guid: f024c9373c41cd14f8c539b4418ef37e, type: 2}
-    IsNeedPlayerInputToContinue: 1
+    IsAutoContinue: 1
+    IsContinueByOtherEvent: 0
     UniqueEvent:
       m_PersistentCalls:
         m_Calls:
@@ -169,12 +97,14 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - InteractionData: {fileID: 11400000, guid: 43d4f7549ce9f60488489cae18fcb797, type: 2}
-    IsNeedPlayerInputToContinue: 1
+    IsAutoContinue: 1
+    IsContinueByOtherEvent: 0
     UniqueEvent:
       m_PersistentCalls:
         m_Calls: []
   - InteractionData: {fileID: 11400000, guid: b44e89db5e66eb144bcabeaab9bf1775, type: 2}
-    IsNeedPlayerInputToContinue: 1
+    IsAutoContinue: 1
+    IsContinueByOtherEvent: 0
     UniqueEvent:
       m_PersistentCalls:
         m_Calls:
@@ -203,7 +133,8 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - InteractionData: {fileID: 11400000, guid: f024c9373c41cd14f8c539b4418ef37e, type: 2}
-    IsNeedPlayerInputToContinue: 1
+    IsAutoContinue: 1
+    IsContinueByOtherEvent: 0
     UniqueEvent:
       m_PersistentCalls:
         m_Calls:
@@ -244,12 +175,14 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - InteractionData: {fileID: 11400000, guid: 43d4f7549ce9f60488489cae18fcb797, type: 2}
-    IsNeedPlayerInputToContinue: 1
+    IsAutoContinue: 1
+    IsContinueByOtherEvent: 0
     UniqueEvent:
       m_PersistentCalls:
         m_Calls: []
   - InteractionData: {fileID: 11400000, guid: b44e89db5e66eb144bcabeaab9bf1775, type: 2}
-    IsNeedPlayerInputToContinue: 1
+    IsAutoContinue: 1
+    IsContinueByOtherEvent: 0
     UniqueEvent:
       m_PersistentCalls:
         m_Calls:
@@ -278,7 +211,8 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - InteractionData: {fileID: 11400000, guid: f024c9373c41cd14f8c539b4418ef37e, type: 2}
-    IsNeedPlayerInputToContinue: 1
+    IsAutoContinue: 1
+    IsContinueByOtherEvent: 0
     UniqueEvent:
       m_PersistentCalls:
         m_Calls:
@@ -319,30 +253,12 @@ MonoBehaviour:
             m_BoolArgument: 1
           m_CallState: 2
   - InteractionData: {fileID: 11400000, guid: 43d4f7549ce9f60488489cae18fcb797, type: 2}
-    IsNeedPlayerInputToContinue: 0
+    IsAutoContinue: 0
+    IsContinueByOtherEvent: 0
     UniqueEvent:
       m_PersistentCalls:
         m_Calls: []
   animator: {fileID: 8284408517509583440}
---- !u!114 &8617576210583874925
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8580935959049117407}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 4786494167031737569}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: tba10
-  mDatasetName: 
-  mCastedBehaviour: {fileID: 4786494167031737569}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &2412062780939716353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -355,7 +271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d33a5177b5549f48dccbf33146e4d6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  config: {fileID: 0}
+  config: {fileID: 11400000, guid: 26c9eb73544f4324e95deaf0f4d0f9dc, type: 2}
   animClipOpenKeran: {fileID: 7400000, guid: f568fd48f48c9e9478a7b84f0cbd8e3f, type: 2}
   animClipTetes: {fileID: 7400000, guid: b93ca09fb6135e241be1dbadd9b5e7b2, type: 2}
   animClipTetesBanyak: {fileID: 7400000, guid: 411c216d8b9c1ca45b8de2e6baf89ab1, type: 2}
@@ -384,6 +300,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6259610011937081387}
     m_Modifications:
+    - target: {fileID: 14255764229619015, guid: 16355c58438d32c4b9243d00b8a7576f,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: f10e2e11fbe7a20498cef29642df6315, type: 2}
     - target: {fileID: 4673681632115003813, guid: 16355c58438d32c4b9243d00b8a7576f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -402,12 +323,12 @@ PrefabInstance:
     - target: {fileID: 4673681632115003813, guid: 16355c58438d32c4b9243d00b8a7576f,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4673681632115003813, guid: 16355c58438d32c4b9243d00b8a7576f,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4673681632115003813, guid: 16355c58438d32c4b9243d00b8a7576f,
         type: 3}
@@ -422,7 +343,7 @@ PrefabInstance:
     - target: {fileID: 4673681632115003813, guid: 16355c58438d32c4b9243d00b8a7576f,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4673681632115003813, guid: 16355c58438d32c4b9243d00b8a7576f,
         type: 3}
@@ -439,11 +360,67 @@ PrefabInstance:
       propertyPath: m_Name
       value: AnimBebasAir10
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8825762633993963382, guid: 16355c58438d32c4b9243d00b8a7576f,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 2525805187597215623, guid: 16355c58438d32c4b9243d00b8a7576f, type: 3}
+    - {fileID: 633659097890552674, guid: 16355c58438d32c4b9243d00b8a7576f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8339006293081360539, guid: 16355c58438d32c4b9243d00b8a7576f,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7254594809633390657}
+    - targetCorrespondingSourceObject: {fileID: 8339006293081360539, guid: 16355c58438d32c4b9243d00b8a7576f,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8535126246260858244}
   m_SourcePrefab: {fileID: 100100000, guid: 16355c58438d32c4b9243d00b8a7576f, type: 3}
+--- !u!1 &103756681910282124 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8339006293081360539, guid: 16355c58438d32c4b9243d00b8a7576f,
+    type: 3}
+  m_PrefabInstance: {fileID: 8271568997355974423}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7254594809633390657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103756681910282124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b52fa8955054212448be523defde7f6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.ObjectManipulator
+  canRotate: 1
+  canDrag: 0
+  canScale: 1
+  _rotateSensitivity: 0.3
+  rotateAxis: {x: 0, y: 1, z: 0}
+  lockToHorizontalPlane: 0
+  lockDragX: 0
+  lockDragY: 0
+  lockDragZ: 1
+  scaleRange: {x: 0.3, y: 3}
+--- !u!114 &8535126246260858244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103756681910282124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3215d1a77cb4e5f448638c3aa6ff25f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.ScaleReturnInteractable
+  _returnSpeed: 10
 --- !u!4 &3609288218537819826 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4673681632115003813, guid: 16355c58438d32c4b9243d00b8a7576f,

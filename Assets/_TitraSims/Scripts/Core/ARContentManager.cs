@@ -8,6 +8,8 @@ public class ARContentManager : MonoBehaviour
 {
     protected TahapanInteractionController tahapanInteractionController;
     private float autoHideNarationPanel = 3;
+    private int interactByQty;
+    private int targetInteractByQty = 2;
     
     protected virtual void Awake()
     {
@@ -115,6 +117,22 @@ public class ARContentManager : MonoBehaviour
     public void RequestContinue()
     {
         OnStartWaitingForPlayerInputToContinueHandler();
+    }
+    
+    public void RequestContinueByQty(int incVal)
+    {
+        interactByQty += incVal;
+        if (interactByQty < targetInteractByQty)
+        {
+            return;
+        }
+        OnStartWaitingForPlayerInputToContinueHandler();
+        interactByQty = 0;
+    }
+
+    public void SetContinueByQtyTarget(int qty)
+    {
+        targetInteractByQty = qty;
     }
     
     protected virtual void OnStartWaitingForPlayerInputToContinueHandler()

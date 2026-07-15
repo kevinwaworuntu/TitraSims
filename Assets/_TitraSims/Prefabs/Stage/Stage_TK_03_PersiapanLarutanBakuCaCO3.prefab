@@ -9,11 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1671565449668217234}
-  - component: {fileID: 5783399820748738303}
-  - component: {fileID: 5064038717587313633}
   - component: {fileID: 6666096006392953126}
   - component: {fileID: 3290234905625075641}
-  - component: {fileID: 1171942161851576968}
   - component: {fileID: 8599579673786952327}
   m_Layer: 0
   m_Name: Stage_TK_03_PersiapanLarutanBakuCaCO3
@@ -38,77 +35,6 @@ Transform:
   - {fileID: 4284607978781843724}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5783399820748738303
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3944323589608970512}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1631628248, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PreviewVisible: 1
-  RuntimeOcclusion: 0
-  RuntimeCollider: 0
-  mTrackableName: tk 3
-  mInitializedInEditor: 1
-  mDataSetPath: 
-  mAspectRatio: 1
-  mImageTargetType: 3
-  mWidth: 0.2
-  mHeight: 0.2
-  mRuntimeTexture: {fileID: 2800000, guid: c4be1b45927ab964593845f20be9cb93, type: 3}
-  mMotionHint: 1
-  mTrackingOptimization: 0
-  mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 1171942161851576968}
---- !u!114 &5064038717587313633
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3944323589608970512}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 886328de6a5c14cbb85854fdf1a5085b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  StatusFilter: 1
-  UsePoseSmoothing: 0
-  AnimationCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 3.3333333
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 0.3
-      value: 1
-      inSlope: 3.3333333
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  OnTargetFound:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTargetLost:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &6666096006392953126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,116 +60,73 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionDataActionMappings:
-  - InteractionData: {fileID: 11400000, guid: cb676b779e585014894a128fc705cdc5, type: 2}
-    IsNeedPlayerInputToContinue: 1
+  - InteractionData: {fileID: 11400000, guid: dff74c44105b5b14eb2680d806a0b163, type: 2}
+    IsAutoContinue: 0
+    IsContinueByOtherEvent: 1
     UniqueEvent:
       m_PersistentCalls:
         m_Calls: []
-  - InteractionData: {fileID: 11400000, guid: e4837870e12a7ea4eb688d44f9d8da07, type: 2}
-    IsNeedPlayerInputToContinue: 1
+  - InteractionData: {fileID: 11400000, guid: ec1d1f3b47470de4a91e6ffbc858c945, type: 2}
+    IsAutoContinue: 0
+    IsContinueByOtherEvent: 1
     UniqueEvent:
       m_PersistentCalls:
         m_Calls: []
-  - InteractionData: {fileID: 11400000, guid: 27053622c7b7bdd469df4cfb6a9feea9, type: 2}
-    IsNeedPlayerInputToContinue: 1
+  - InteractionData: {fileID: 11400000, guid: 8eed7d52cd94f284dbd06baf99a792df, type: 2}
+    IsAutoContinue: 0
+    IsContinueByOtherEvent: 1
     UniqueEvent:
       m_PersistentCalls:
         m_Calls: []
-  - InteractionData: {fileID: 11400000, guid: 74e6b769093373c458228b2e30c50e7c, type: 2}
-    IsNeedPlayerInputToContinue: 1
+  - InteractionData: {fileID: 11400000, guid: 8eed7d52cd94f284dbd06baf99a792df, type: 2}
+    IsAutoContinue: 1
+    IsContinueByOtherEvent: 0
     UniqueEvent:
       m_PersistentCalls:
         m_Calls: []
-  - InteractionData: {fileID: 11400000, guid: 25ddeb6bf6f4af04aa7fcbe441ef30c4, type: 2}
-    IsNeedPlayerInputToContinue: 1
+  - InteractionData: {fileID: 11400000, guid: cfdc72d921fd35742be94edd1219885b, type: 2}
+    IsAutoContinue: 0
+    IsContinueByOtherEvent: 1
     UniqueEvent:
       m_PersistentCalls:
         m_Calls: []
-  - InteractionData: {fileID: 11400000, guid: a9a445067a74ccb4d838224a8a2313aa, type: 2}
-    IsNeedPlayerInputToContinue: 1
+  - InteractionData: {fileID: 11400000, guid: 59e7242be34337a4f94a112f99b747c3, type: 2}
+    IsAutoContinue: 0
+    IsContinueByOtherEvent: 1
     UniqueEvent:
       m_PersistentCalls:
         m_Calls: []
-  - InteractionData: {fileID: 11400000, guid: c32f0e2e71565244188fdd74245c9262, type: 2}
-    IsNeedPlayerInputToContinue: 1
+  - InteractionData: {fileID: 11400000, guid: ecb789c7d171a8a4da91fafa4f7dda8e, type: 2}
+    IsAutoContinue: 0
+    IsContinueByOtherEvent: 1
     UniqueEvent:
       m_PersistentCalls:
         m_Calls: []
-  - InteractionData: {fileID: 11400000, guid: 8a72f3015ade2a54abd27529a349b8b3, type: 2}
-    IsNeedPlayerInputToContinue: 1
+  - InteractionData: {fileID: 11400000, guid: 69e9b87c3a71a1542a53e6fedc18ea86, type: 2}
+    IsAutoContinue: 0
+    IsContinueByOtherEvent: 1
     UniqueEvent:
       m_PersistentCalls:
         m_Calls: []
-  - InteractionData: {fileID: 11400000, guid: 10e64ee29f62e234a97aa20de02d48ee, type: 2}
-    IsNeedPlayerInputToContinue: 1
+  - InteractionData: {fileID: 11400000, guid: 1ef1dc0add2f1ef4a8d330d5c92ebb81, type: 2}
+    IsAutoContinue: 0
+    IsContinueByOtherEvent: 1
     UniqueEvent:
       m_PersistentCalls:
         m_Calls: []
-  - InteractionData: {fileID: 11400000, guid: c67ca608fe884f34b95ad740a8f068f0, type: 2}
-    IsNeedPlayerInputToContinue: 1
+  - InteractionData: {fileID: 11400000, guid: 351afaa5095348d49949a78c69e1682c, type: 2}
+    IsAutoContinue: 0
+    IsContinueByOtherEvent: 1
     UniqueEvent:
       m_PersistentCalls:
         m_Calls: []
-  - InteractionData: {fileID: 11400000, guid: fa18fe3052df5c7458d55bd8d7c3136a, type: 2}
-    IsNeedPlayerInputToContinue: 1
-    UniqueEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - InteractionData: {fileID: 11400000, guid: b92f4cb7357f3f942818752aeae8d80c, type: 2}
-    IsNeedPlayerInputToContinue: 1
-    UniqueEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - InteractionData: {fileID: 11400000, guid: 5f5381960d60ac345934641cdbdb1897, type: 2}
-    IsNeedPlayerInputToContinue: 1
-    UniqueEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - InteractionData: {fileID: 11400000, guid: 8ee90ee09650bd8418d6f0ad4effe26b, type: 2}
-    IsNeedPlayerInputToContinue: 1
-    UniqueEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - InteractionData: {fileID: 11400000, guid: 02c64268d5f2d984db3e4b2a049437a7, type: 2}
-    IsNeedPlayerInputToContinue: 1
-    UniqueEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - InteractionData: {fileID: 11400000, guid: 5fee13b5934d23447a8e17a534b791bf, type: 2}
-    IsNeedPlayerInputToContinue: 1
-    UniqueEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - InteractionData: {fileID: 11400000, guid: dc7ce7c695bb2b14bb51b38208fc79b8, type: 2}
-    IsNeedPlayerInputToContinue: 0
-    UniqueEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - InteractionData: {fileID: 11400000, guid: 23867df37af443d4dbfcda2d67b41d13, type: 2}
-    IsNeedPlayerInputToContinue: 0
+  - InteractionData: {fileID: 11400000, guid: cd2586a0a134b6545a782aa7dbcb56c3, type: 2}
+    IsAutoContinue: 0
+    IsContinueByOtherEvent: 1
     UniqueEvent:
       m_PersistentCalls:
         m_Calls: []
   animator: {fileID: 5675722242392433757}
---- !u!114 &1171942161851576968
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3944323589608970512}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 5783399820748738303}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: tk 3
-  mDatasetName: 
-  mCastedBehaviour: {fileID: 5783399820748738303}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &8599579673786952327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -882,8 +765,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 22100000, guid: 655f0a184bc0f8542bbbd2d6d4a86b04,
-        type: 2}
+      objectReference: {fileID: 9100000, guid: f10e2e11fbe7a20498cef29642df6315, type: 2}
     - target: {fileID: 2160823077423186549, guid: f702ea170ee46154b8ffe352ad8767b4,
         type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -912,12 +794,12 @@ PrefabInstance:
     - target: {fileID: 7305913240757037737, guid: f702ea170ee46154b8ffe352ad8767b4,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7305913240757037737, guid: f702ea170ee46154b8ffe352ad8767b4,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7305913240757037737, guid: f702ea170ee46154b8ffe352ad8767b4,
         type: 3}
@@ -932,7 +814,7 @@ PrefabInstance:
     - target: {fileID: 7305913240757037737, guid: f702ea170ee46154b8ffe352ad8767b4,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7305913240757037737, guid: f702ea170ee46154b8ffe352ad8767b4,
         type: 3}
@@ -949,7 +831,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: AnimKompleksometri3
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3338994288894772156, guid: f702ea170ee46154b8ffe352ad8767b4, type: 3}
+    - {fileID: 6003271950163459518, guid: f702ea170ee46154b8ffe352ad8767b4, type: 3}
     m_RemovedGameObjects:
     - {fileID: 503335892294378400, guid: f702ea170ee46154b8ffe352ad8767b4, type: 3}
     m_AddedGameObjects:

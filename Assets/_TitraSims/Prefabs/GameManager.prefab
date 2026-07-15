@@ -49,14 +49,14 @@ MonoBehaviour:
   markerTBAMapping:
   - {fileID: 0}
   - {fileID: 4265277453642384058, guid: 57ba72c521ee0ac4d9fcd64cbb5ec8b1, type: 3}
-  - {fileID: 0}
+  - {fileID: 534006759216576832, guid: 0573f0a53bb5d4c41940f48cba80e2a9, type: 3}
   - {fileID: 2688009289951648467, guid: e3aadc63f0968924b89e9c8e0e7a5924, type: 3}
   - {fileID: 0}
+  - {fileID: 4524111705178837209, guid: 7de45c239a0fad4489ad550e7b3f14b4, type: 3}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 7820265711004225899, guid: 9c54363f0910a4e45a098c2ebc0d5fcf, type: 3}
+  - {fileID: 9181708246364148224, guid: ff3a63db02943d4439016e7cb88809b4, type: 3}
+  - {fileID: 8580935959049117407, guid: d83bc38e49b8f384b88b11db4c40390a, type: 3}
   markerTKMapping:
   - {fileID: 0}
   - {fileID: 0}
@@ -69,6 +69,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   marker: []
+  usePlayerPrefsForProgress: 1
+  devUnlockedMaskTBA: 1
+  devUnlockedMaskKomp: 1
   animationConfig: {fileID: 11400000, guid: f3f8c3eef3f6c024ab082dad28a23265, type: 2}
 --- !u!114 &2715625287351626081
 MonoBehaviour:

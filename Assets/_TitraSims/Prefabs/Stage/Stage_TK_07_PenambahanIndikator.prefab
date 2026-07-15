@@ -9,10 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4025894400163314120}
-  - component: {fileID: 284710353167034669}
-  - component: {fileID: 664133989758003983}
   - component: {fileID: 6221418690724699248}
-  - component: {fileID: 92400625045227348}
   - component: {fileID: 7040551470969846936}
   - component: {fileID: 8804828512409544601}
   m_Layer: 0
@@ -38,77 +35,6 @@ Transform:
   - {fileID: 728364240417907240}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &284710353167034669
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7999113872945394263}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1631628248, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PreviewVisible: 1
-  RuntimeOcclusion: 0
-  RuntimeCollider: 0
-  mTrackableName: tk7
-  mInitializedInEditor: 1
-  mDataSetPath: 
-  mAspectRatio: 1
-  mImageTargetType: 3
-  mWidth: 0.19999999
-  mHeight: 0.19999999
-  mRuntimeTexture: {fileID: 2800000, guid: fa1507b92a91132409531897241e5e57, type: 3}
-  mMotionHint: 1
-  mTrackingOptimization: 0
-  mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 92400625045227348}
---- !u!114 &664133989758003983
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7999113872945394263}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 886328de6a5c14cbb85854fdf1a5085b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  StatusFilter: 1
-  UsePoseSmoothing: 0
-  AnimationCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 3.3333333
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 0.3
-      value: 1
-      inSlope: 3.3333333
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  OnTargetFound:
-    m_PersistentCalls:
-      m_Calls: []
-  OnTargetLost:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &6221418690724699248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,55 +49,42 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionDataActionMappings:
   - InteractionData: {fileID: 11400000, guid: f32f1689b0a3dae43bce14d751331d15, type: 2}
-    IsNeedPlayerInputToContinue: 1
+    IsAutoContinue: 1
+    IsContinueByOtherEvent: 0
     UniqueEvent:
       m_PersistentCalls:
         m_Calls: []
   - InteractionData: {fileID: 11400000, guid: c692d3cb0b9dc974589daf4fef2ee881, type: 2}
-    IsNeedPlayerInputToContinue: 1
+    IsAutoContinue: 1
+    IsContinueByOtherEvent: 0
     UniqueEvent:
       m_PersistentCalls:
         m_Calls: []
   - InteractionData: {fileID: 11400000, guid: 753d4468f6cc8674f9ed8c77d7a3e3f7, type: 2}
-    IsNeedPlayerInputToContinue: 1
+    IsAutoContinue: 1
+    IsContinueByOtherEvent: 0
     UniqueEvent:
       m_PersistentCalls:
         m_Calls: []
   - InteractionData: {fileID: 11400000, guid: 973b4e86f2523604aa26dbb9613d05e8, type: 2}
-    IsNeedPlayerInputToContinue: 1
+    IsAutoContinue: 1
+    IsContinueByOtherEvent: 0
     UniqueEvent:
       m_PersistentCalls:
         m_Calls: []
   - InteractionData: {fileID: 11400000, guid: 4140cc055bebd2e4b992b6804213a57a, type: 2}
-    IsNeedPlayerInputToContinue: 1
+    IsAutoContinue: 1
+    IsContinueByOtherEvent: 0
     UniqueEvent:
       m_PersistentCalls:
         m_Calls: []
   - InteractionData: {fileID: 11400000, guid: f502a72c0866b084ea778289a0961014, type: 2}
-    IsNeedPlayerInputToContinue: 1
+    IsAutoContinue: 1
+    IsContinueByOtherEvent: 0
     UniqueEvent:
       m_PersistentCalls:
         m_Calls: []
   animator: {fileID: 5133026031367975058}
---- !u!114 &92400625045227348
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7999113872945394263}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 284710353167034669}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: tk7
-  mDatasetName: 
-  mCastedBehaviour: {fileID: 284710353167034669}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &7040551470969846936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,12 +135,12 @@ PrefabInstance:
     - target: {fileID: 2813660337777463354, guid: d6ba3911a3b99d94f83cffc1776356e7,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2813660337777463354, guid: d6ba3911a3b99d94f83cffc1776356e7,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2813660337777463354, guid: d6ba3911a3b99d94f83cffc1776356e7,
         type: 3}
@@ -242,7 +155,7 @@ PrefabInstance:
     - target: {fileID: 2813660337777463354, guid: d6ba3911a3b99d94f83cffc1776356e7,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2813660337777463354, guid: d6ba3911a3b99d94f83cffc1776356e7,
         type: 3}
@@ -259,7 +172,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: AnimKompleksometri7
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7650386218032906880, guid: d6ba3911a3b99d94f83cffc1776356e7,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: f10e2e11fbe7a20498cef29642df6315, type: 2}
+    m_RemovedComponents:
+    - {fileID: -3235672675485839865, guid: d6ba3911a3b99d94f83cffc1776356e7, type: 3}
+    - {fileID: 4719953129269752186, guid: d6ba3911a3b99d94f83cffc1776356e7, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
