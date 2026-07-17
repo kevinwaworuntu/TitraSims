@@ -15,4 +15,4 @@ MonoBehaviour:
   title: Step 4
   description: Tap layar untuk mengaduk Erlenmeyer!
   audioNaration: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
-  animationClip: {fileID: 0}
+  animationClip: {fileID: 7400000, guid: 1fa668deee1f5614dbabd136079c70c8, type: 2}

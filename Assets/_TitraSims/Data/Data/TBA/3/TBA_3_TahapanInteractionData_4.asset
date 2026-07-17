@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70ed703590a34d649778d7a94ca0a261, type: 3}
   m_Name: TBA_3_TahapanInteractionData_4
   m_EditorClassIdentifier: 
-  title: 
-  description: 
+  title: Step 4
+  description: Geser gelas ukur ke mulut Erlenmeyer untuk menuangkan 50 ml asam asetat
+    glasial ke dalam Erlenmeyer
   audioNaration: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
-  animationClip: {fileID: 7400000, guid: b634b959ac328ea4dbb532fb3e788702, type: 2}
+  animationClip: {fileID: 0}
