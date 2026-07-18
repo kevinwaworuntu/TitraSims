@@ -1,6 +1,7 @@
 using System;
 using Config;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Vuforia;
 
 public class GameManager : MonoBehaviour
@@ -10,12 +11,16 @@ public class GameManager : MonoBehaviour
     [Header("Mode Saat Ini")]
     public GameMode currentMode;
 
-    [Header("Marker Object Mapping")]
-    public GameObject[] markerTBAMapping;
-    public GameObject[] markerTKMapping;
+    [FormerlySerializedAs("markerTBAMapping")] [Header("Marker Object Mapping")]
+    public GameObject[] markerTBAPrefabsMapping;
+    [FormerlySerializedAs("markerTKMapping")] public GameObject[] markerTKPrefabsMapping;
     
+    [FormerlySerializedAs("marker")]
     [Header("Marker Mapping")]
-    [SerializeField] private GameObject[] marker;
+    [SerializeField] private GameObject[] markerTBA;
+    [FormerlySerializedAs("marker")]
+    [Header("Marker Mapping")]
+    [SerializeField] private GameObject[] markerTK;
     
     [Header("Runtime State")]
     private int currentAttemptingTahapIndex = -1;
@@ -169,11 +174,32 @@ public class GameManager : MonoBehaviour
 
     public bool SpawnMarkerObject(int tahapIndex)
     {
-        if (tahapIndex >= markerTBAMapping.Length || markerTBAMapping[tahapIndex] == null)
+       
+        GameObject markerImageObject = null;
+        GameObject markerPrefab = null;
+        switch (currentMode)
         {
-            return false;
+            case GameMode.TBA:
+                if ((tahapIndex >= markerTBA.Length || markerTBA[tahapIndex] == null)  || (tahapIndex >= markerTBAPrefabsMapping.Length || markerTBAPrefabsMapping[tahapIndex] == null))
+                {
+                    return false;
+                }
+                markerImageObject = markerTBA[tahapIndex];
+                markerPrefab = markerTBAPrefabsMapping[tahapIndex];
+                break;
+            case GameMode.Kompleksometri:
+                if ((tahapIndex >= markerTK.Length || markerTK[tahapIndex] == null)  || (tahapIndex >= markerTKPrefabsMapping.Length || markerTKPrefabsMapping[tahapIndex] == null))
+                {
+                    return false;
+                }
+                markerImageObject = markerTK[tahapIndex];
+                markerPrefab = markerTKPrefabsMapping[tahapIndex];
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
         }
-        currentActiveMarkerObject = Instantiate(markerTBAMapping[tahapIndex], marker[tahapIndex].transform, false);
+   
+        currentActiveMarkerObject = Instantiate(markerPrefab, markerImageObject.transform, false);
         currentActiveMarkerObject.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
         currentActiveMarkerObject.transform.localScale = Vector3.one;
         return true;
@@ -266,23 +292,23 @@ public class GameManager : MonoBehaviour
     }
 
 #if UNITY_EDITOR
-    public int MarkerTBACount  => markerTBAMapping?.Length ?? 0;
-    public int MarkerKompCount => markerTKMapping?.Length ?? 0;
+    public int MarkerTBACount  => markerTBAPrefabsMapping?.Length ?? 0;
+    public int MarkerKompCount => markerTKPrefabsMapping?.Length ?? 0;
     public GameObject CurrentActiveMarkerObject => currentActiveMarkerObject;
     public bool UsePlayerPrefsForProgress => usePlayerPrefsForProgress;
 
     public GameObject[] GetMarkerMapping(GameMode mode)
     {
-        return mode == GameMode.TBA ? markerTBAMapping : markerTKMapping;
+        return mode == GameMode.TBA ? markerTBAPrefabsMapping : markerTKPrefabsMapping;
     }
 
     public bool DebugSpawnTahap(int tahapIndex, GameMode mode)
     {
         DestroyMarkerObject();
-        GameObject[] mapping = mode == GameMode.TBA ? markerTBAMapping : markerTKMapping;
+        GameObject[] mapping = mode == GameMode.TBA ? markerTBAPrefabsMapping : markerTKPrefabsMapping;
         if (mapping == null || tahapIndex >= mapping.Length || mapping[tahapIndex] == null) return false;
-        if (marker == null || tahapIndex >= marker.Length || marker[tahapIndex] == null) return false;
-        currentActiveMarkerObject = Instantiate(mapping[tahapIndex], marker[tahapIndex].transform, false);
+        if (markerTBA == null || tahapIndex >= markerTBA.Length || markerTBA[tahapIndex] == null) return false;
+        currentActiveMarkerObject = Instantiate(mapping[tahapIndex], markerTBA[tahapIndex].transform, false);
         currentActiveMarkerObject.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
         currentActiveMarkerObject.transform.localScale = Vector3.one;
         currentAttemptingTahapIndex = tahapIndex;

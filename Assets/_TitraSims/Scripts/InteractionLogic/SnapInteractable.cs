@@ -24,6 +24,8 @@ namespace InteractionLogic
         [Tooltip("Lerp speed toward the snap position (world units / second scale)")]
         [SerializeField, Range(1f, 30f)] private float _snapSpeed = 10f;
 
+        private bool isOneShotSnap = true;
+
         [SerializeField] bool isBackToOriginPosition;
 
         [Header("Events")]
@@ -42,6 +44,7 @@ namespace InteractionLogic
         private SnapZone          _currentZone;
         private SnapZone          _highlightedZone;
         private bool              _isBeingManipulated;
+        private bool              _hitSnapZone;
 
         // Lerp-to-snap / return-to-origin
         private bool       _isLerping;
@@ -71,6 +74,8 @@ namespace InteractionLogic
             }
             GestureController.Instance.OnManipulatorGrabbed  += HandleGrabbed;
             GestureController.Instance.OnManipulatorReleased += HandleReleased;
+
+            _hitSnapZone = false;
         }
 
         private void OnDisable()
@@ -100,6 +105,8 @@ namespace InteractionLogic
             if (m != _manipulator) return;
             _isBeingManipulated = true;
             _isLerping = false;   // cancel any in-flight lerp (snap or return-to-origin)
+            
+            if(!_manipulator.canDrag) return;
             if (IsSnapped) Unsnap();
         }
 
@@ -128,7 +135,7 @@ namespace InteractionLogic
             _lerpTargetRot = zone.snapRotation ? zone.transform.rotation : transform.rotation;
 
             _manipulator.canDrag = false;   // locked in place while snapped
-            OnSnapped.Invoke();
+            _hitSnapZone = true;
         }
 
         private void Unsnap()
@@ -207,11 +214,19 @@ namespace InteractionLogic
                 transform.rotation, _lerpTargetRot, _snapSpeed * Time.deltaTime);
 
             // Settle once close enough to avoid infinite asymptotic approach.
-            if (Vector3.Distance(transform.position, _lerpTargetPos) < 0.0005f)
+            if (Vector3.Distance(transform.position, _lerpTargetPos) < 0.1f)
             {
                 transform.position = _lerpTargetPos;
                 transform.rotation = _lerpTargetRot;
                 _isLerping = false;
+
+                // Temp fix
+                if (isOneShotSnap && _hitSnapZone)
+                {
+                    OnSnapped.Invoke();
+                    enabled = false;
+                }
+                
             }
         }
     }

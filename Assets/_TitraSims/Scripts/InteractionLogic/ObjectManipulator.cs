@@ -7,8 +7,8 @@ namespace InteractionLogic
     public class ObjectManipulator : MonoBehaviour
     {
         [Header("Permissions")]
-        public bool canRotate = true;
-        public bool canDrag   = true;
+        public bool canRotate = false;
+        public bool canDrag   = false;
         public bool canScale  = true;
 
         [Header("Rotate")]
@@ -67,7 +67,7 @@ namespace InteractionLogic
         {
             if (!canDrag || _cam == null) return;
 
-            Vector3 planeNormal = lockToHorizontalPlane ? Vector3.up : -_cam.transform.forward;
+            Vector3 planeNormal = ResolveDragPlaneNormal();
             _dragPlane = new Plane(planeNormal, transform.position);
 
             _dragStartPosition = transform.position;
@@ -87,6 +87,19 @@ namespace InteractionLogic
                 if (lockDragZ) target.z = _dragStartPosition.z;
                 transform.position = target;
             }
+        }
+
+        // Aligns the plane normal with a single locked axis so it's baked out of the raycast
+        // itself; clamping it post-hoc against a camera-tilted plane is what caused diagonal drift.
+        private Vector3 ResolveDragPlaneNormal()
+        {
+            if (lockToHorizontalPlane) return Vector3.up;
+
+            if (lockDragX && !lockDragY && !lockDragZ) return Vector3.right;
+            if (lockDragY && !lockDragX && !lockDragZ) return Vector3.up;
+            if (lockDragZ && !lockDragX && !lockDragY) return Vector3.forward;
+
+            return -_cam.transform.forward;
         }
 
         private bool RaycastDragPlane(Vector2 screenPos, out Vector3 point)
@@ -113,5 +126,7 @@ namespace InteractionLogic
             float normalised = Mathf.Clamp(current * scaleFactor, scaleRange.x, scaleRange.y);
             transform.localScale = _originalScale * normalised;
         }
+        
+        public void SetCanDrag(bool value) => canDrag = value;
     }
 }

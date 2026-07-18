@@ -119,9 +119,9 @@ public class ARContentManager : MonoBehaviour
         OnStartWaitingForPlayerInputToContinueHandler();
     }
     
-    public void RequestContinueByQty(int incVal)
+    public void RequestContinueByQty()
     {
-        interactByQty += incVal;
+        interactByQty ++;
         if (interactByQty < targetInteractByQty)
         {
             return;

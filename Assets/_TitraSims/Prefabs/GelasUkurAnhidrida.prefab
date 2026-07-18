@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5761338094593568447}
   - component: {fileID: 8706032374165921043}
   - component: {fileID: 4075873997123703633}
+  - component: {fileID: 8760768605257402213}
   m_Layer: 0
   m_Name: GelasUkurAnhidrida
   m_TagString: Untagged
@@ -71,7 +72,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.ObjectManipulator
   canRotate: 0
   canDrag: 1
-  canScale: 0
+  canScale: 1
   _rotateSensitivity: 0.3
   rotateAxis: {x: 0, y: 1, z: 0}
   lockToHorizontalPlane: 0
@@ -111,6 +112,19 @@ MonoBehaviour:
   OnUnsnapped:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8760768605257402213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5103848788468045609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3215d1a77cb4e5f448638c3aa6ff25f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.ScaleReturnInteractable
+  _returnSpeed: 10
 --- !u!1001 &866224359909238773
 PrefabInstance:
   m_ObjectHideFlags: 0
