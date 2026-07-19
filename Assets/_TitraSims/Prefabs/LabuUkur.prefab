@@ -181,7 +181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.SnapInteractable
   _snapSpeed: 10
-  isBackToOriginPosition: 0
+  isBackToOriginPosition: 1
   OnSnapped:
     m_PersistentCalls:
       m_Calls: []

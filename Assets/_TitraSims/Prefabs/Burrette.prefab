@@ -101,6 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.SnapZone
   acceptTag: 
   acceptedGameObjectName: 
+  acceptedGameObject: {fileID: 0}
   _snapRadius: 0.1
   _snapOffset: {x: 0, y: 0, z: 0}
   snapRotation: 0
@@ -683,6 +684,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.SnapZone
   acceptTag: 
   acceptedGameObjectName: 
+  acceptedGameObject: {fileID: 0}
   _snapRadius: 0.09
   _snapOffset: {x: 0, y: 0, z: 0}
   snapRotation: 1
@@ -1009,7 +1011,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6520224442860744682, guid: 88024cb0fa2d8ca4da89a67143a672ee,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4945942734821435044}
+      addedObject: {fileID: 4109166447420957908}
   m_SourcePrefab: {fileID: 100100000, guid: 88024cb0fa2d8ca4da89a67143a672ee, type: 3}
 --- !u!4 &3392012908604246561 stripped
 Transform:
@@ -1044,21 +1046,36 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.001781893, y: 0.0015629282, z: 0.00038368412}
   m_Center: {x: 0.0000026367325, y: 0.00045993365, z: 0.0000000018917883}
---- !u!114 &4945942734821435044
+--- !u!114 &4109166447420957908
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8278774091856511520}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c770ca205cd6b7b4188ba925486ab9ee, type: 3}
+  m_Script: {fileID: 11500000, guid: 17832d4d614a6714eb19b1719e1cb583, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.TapDetector
-  OnTap:
+  m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.PlayAnimOneShot
+  _animator: {fileID: 0}
+  _animationConfig: {fileID: 11400000, guid: f3f8c3eef3f6c024ab082dad28a23265, type: 2}
+  _animationClip: {fileID: 7400000, guid: 00cafad4c9f3b2c4a84c609a461cd698, type: 2}
+  OnComplete:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: ARContentManager, Assembly-CSharp
+        m_MethodName: RequestContinue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &4558193453360812301
 PrefabInstance:
   m_ObjectHideFlags: 0

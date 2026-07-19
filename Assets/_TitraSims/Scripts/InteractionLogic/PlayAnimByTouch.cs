@@ -184,21 +184,21 @@ namespace InteractionLogic
             _loopCount = 0;
             enabled = false;
             
-            if (_animator != null)
-            {
-                _animator.enabled = false;
-            }
+            // if (_animator != null)
+            // {
+            //     _animator.enabled = false;
+            // }
         }
 
-        // private void OnDisable()
-        // {
-        //     EnhancedTouchSupport.Disable();
-        //     _isTouching = false;
-        //     if (_animator != null)
-        //     {
-        //         _animator.speed = 1f;
-        //         _animator.runtimeAnimatorController = null;
-        //     }
-        // }
+        private void OnDisable()
+        {
+            EnhancedTouchSupport.Disable();
+            _isTouching = false;
+            if (_animator != null)
+            {
+                _animator.speed = 1f;
+                _runtimeOverride[_animationConfig.GetCustomAnimGenericClipEntryName()] = null;
+            }
+        }
     }
 }
