@@ -50,12 +50,14 @@ namespace InteractionLogic
                 return;
             }
 
-            _runtimeOverride = new AnimatorOverrideController(_animationConfig.GenericAnimController);
-            _animator.runtimeAnimatorController = _runtimeOverride;
-
-            if (_animationClip != null)
+            if (_animator.runtimeAnimatorController is AnimatorOverrideController existingOverride)
             {
-                _runtimeOverride[_animationConfig.GetCustomAnimGenericClipEntryName()] = _animationClip;
+                _runtimeOverride = existingOverride;
+            }
+            else
+            {
+                _runtimeOverride = new AnimatorOverrideController(_animationConfig.GenericAnimController);
+                _animator.runtimeAnimatorController = _runtimeOverride;
             }
         }
 
@@ -152,10 +154,12 @@ namespace InteractionLogic
             }
 
             var targetStateName = _animationConfig.GetCustomAnimEntryStateName();
-            if (_runtimeOverride[targetStateName] == null)
-            {
-                _runtimeOverride[targetStateName] = _animationClip;
-            }
+            // if (_runtimeOverride[targetStateName] == null)
+            // {
+            //     _runtimeOverride[targetStateName] = _animationClip;
+            // }
+            
+            _runtimeOverride[_animationConfig.GetCustomAnimGenericClipEntryName()] = _animationClip;
 
             currentProgression += progressionSpeed * Time.deltaTime;
             _animator.Play(targetStateName, 0, (currentProgression % 100) / 100f);
@@ -179,25 +183,22 @@ namespace InteractionLogic
             currentProgression = 0f;
             _loopCount = 0;
             enabled = false;
-
-            // Disable the Animator itself — otherwise it keeps re-applying its last
-            // evaluated (frozen) pose every frame and overwrites any transform reset
-            // (e.g. SnapInteractable.InstantReturnToOrigin) after this call.
+            
             if (_animator != null)
             {
                 _animator.enabled = false;
             }
         }
 
-        private void OnDisable()
-        {
-            EnhancedTouchSupport.Disable();
-            _isTouching = false;
-            if (_animator != null)
-            {
-                _animator.speed = 1f;
-                _animator.runtimeAnimatorController = null;
-            }
-        }
+        // private void OnDisable()
+        // {
+        //     EnhancedTouchSupport.Disable();
+        //     _isTouching = false;
+        //     if (_animator != null)
+        //     {
+        //         _animator.speed = 1f;
+        //         _animator.runtimeAnimatorController = null;
+        //     }
+        // }
     }
 }

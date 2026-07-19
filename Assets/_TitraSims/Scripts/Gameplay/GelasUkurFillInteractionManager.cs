@@ -169,7 +169,7 @@ namespace Gameplay
             animator.SetTrigger(animationConfig.StopAnimationParamName);
             animator.SetTrigger(animationConfig.PlayAnimationParamName);
             SetButtonEnabledState(false);
-            StartCoroutine(WaitForDuration(clip.length));
+            StartCoroutine(WaitForDuration(clip.length + 1)); // 1 sec delay to prevent button click
             IEnumerator WaitForDuration(float duration)
             {
                 yield return new WaitForSeconds(duration);
