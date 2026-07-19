@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b088c54c981c4e9a80ada42d186656ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  config: {fileID: 0}
+  config: {fileID: 11400000, guid: 3b93429a7173b364999fcf279d12f5e2, type: 2}
   timbanganObject: {fileID: 7768726210751029327}
   animator: {fileID: 9176077339769541033}
   animClipBalance: {fileID: 7400000, guid: e483012af3864e64891cf1b68d7e0786, type: 2}
@@ -214,50 +214,8 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - InteractionData: {fileID: 11400000, guid: e734b0026fbb0604caa8261f896804a5, type: 2}
-    IsAutoContinue: 1
-    IsContinueByOtherEvent: 0
-    UniqueEvent:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 8327509294287199507}
-          m_TargetAssemblyTypeName: Gameplay.TBA5Manager, Assembly-CSharp
-          m_MethodName: SetIsCheckWeightToContinue
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 8327509294287199507}
-          m_TargetAssemblyTypeName: Gameplay.TBA5Manager, Assembly-CSharp
-          m_MethodName: SetupBalanceObject
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 270563841600627722}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-  - InteractionData: {fileID: 11400000, guid: e734b0026fbb0604caa8261f896804a5, type: 2}
-    IsAutoContinue: 1
-    IsContinueByOtherEvent: 0
+    IsAutoContinue: 0
+    IsContinueByOtherEvent: 1
     UniqueEvent:
       m_PersistentCalls:
         m_Calls:
