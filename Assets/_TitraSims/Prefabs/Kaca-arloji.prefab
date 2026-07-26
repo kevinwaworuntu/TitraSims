@@ -45,8 +45,10 @@ GameObject:
   - component: {fileID: 3098848798019756275}
   - component: {fileID: 1566580296908069583}
   - component: {fileID: 8962310763467877344}
+  - component: {fileID: 7702278487223830290}
+  - component: {fileID: 3373627439157235738}
   m_Layer: 0
-  m_Name: Kaja-arloji
+  m_Name: Kaca-arloji
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -129,6 +131,38 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   OnUnsnapped:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &7702278487223830290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3471285702481461899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6f2e34cb4b148cba4554c3114ad9a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::_TitraSims.Scripts.Utility.LabelHelper
+  labelKey: 
+  labelGameObjectName: label
+--- !u!114 &3373627439157235738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3471285702481461899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17832d4d614a6714eb19b1719e1cb583, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.PlayAnimOneShot
+  _animator: {fileID: 0}
+  _animationConfig: {fileID: 0}
+  _animationClip: {fileID: 0}
+  OnComplete:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &6412816867764281020
@@ -233,7 +267,7 @@ GameObject:
   - component: {fileID: 6865798036457643398}
   - component: {fileID: 8695537984829729100}
   m_Layer: 0
-  m_Name: label lurus
+  m_Name: label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

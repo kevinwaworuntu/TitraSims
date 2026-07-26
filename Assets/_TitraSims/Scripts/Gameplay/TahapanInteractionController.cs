@@ -11,11 +11,11 @@ namespace Gameplay
     public class TahapanInteractionController : MonoBehaviour
     {
         [Serializable]
-        private struct TahapanInteractionMappingStruct
+        private class TahapanInteractionMappingStruct
         {
             public TahapanInteractionData InteractionData;
             [FormerlySerializedAs("IsNeedPlayerInputToContinue")] public bool IsAutoContinue;
-            public bool IsContinueByOtherEvent;
+            public bool IsContinueByOtherEvent = true;
             public UnityEvent UniqueEvent;
         }
         
@@ -28,7 +28,7 @@ namespace Gameplay
 
         [SerializeField] private TahapanInteractionMappingStruct[] interactionDataActionMappings;
 
-        [SerializeField] private Animator animator;
+        private Animator animator;
 
         private int currentInteractionIndex;
         private bool isPlaying;
@@ -49,6 +49,11 @@ namespace Gameplay
             if (!GameManager.Instance.AnimationConfig)
             {
                 return;
+            }
+
+            if (!animator)
+            {
+                animator = GetComponentInChildren<Animator>();
             }
             interactionPlayer.Initialize(this, animator, GameManager.Instance.AnimationConfig);
         }

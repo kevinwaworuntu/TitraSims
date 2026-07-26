@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f186e412925e37d49a50c4ee9e1bc421, type: 3}
-  m_Name: BuretteStageConfig_TBA_8
+  m_Name: BuretteStageConfig_TBA_10
   m_EditorClassIdentifier: Assembly-CSharp::Data.BuretteStageConfig
   fillObjectScaleModifier: 0.179
   fillObjectInitialScale: 90.93853
@@ -19,14 +19,14 @@ MonoBehaviour:
   initialColor: {r: 0.95539796, g: 0, b: 1, a: 1}
   targetColor: {r: 0, g: 0.8490566, b: 0.0804897, a: 1}
   weights:
-  - 700
-  - 693
-  - 707
+  - 400
+  - 396
+  - 404
   floorTargets:
-  - 6.8
-  - 6.7
-  - 6.9
+  - 20.6
+  - 20.4
+  - 20.8
   ceilTargets:
-  - 6.9
-  - 6.8
-  - 7
+  - 21
+  - 20.8
+  - 21.2

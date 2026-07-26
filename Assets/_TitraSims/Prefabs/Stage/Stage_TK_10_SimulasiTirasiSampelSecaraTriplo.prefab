@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2370143325601450390}
   - component: {fileID: 5995857978659208010}
   m_Layer: 0
-  m_Name: Stage_TK_10_TirasiSampel
+  m_Name: Stage_TK_10_SimulasiTirasiSampelSecaraTriplo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -259,7 +259,6 @@ MonoBehaviour:
     UniqueEvent:
       m_PersistentCalls:
         m_Calls: []
-  animator: {fileID: 4979688805311366525}
 --- !u!114 &2370143325601450390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,7 +271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d33a5177b5549f48dccbf33146e4d6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  config: {fileID: 11400000, guid: 26c9eb73544f4324e95deaf0f4d0f9dc, type: 2}
+  config: {fileID: 11400000, guid: 55862a0ef5f47b245828b3405188b303, type: 2}
   animClipOpenKeran: {fileID: 7400000, guid: f568fd48f48c9e9478a7b84f0cbd8e3f, type: 2}
   animClipTetes: {fileID: 7400000, guid: b93ca09fb6135e241be1dbadd9b5e7b2, type: 2}
   animClipTetesBanyak: {fileID: 7400000, guid: 411c216d8b9c1ca45b8de2e6baf89ab1, type: 2}

@@ -13,8 +13,10 @@ GameObject:
   - component: {fileID: 8706032374165921043}
   - component: {fileID: 4075873997123703633}
   - component: {fileID: 8760768605257402213}
+  - component: {fileID: 7830600396081564212}
+  - component: {fileID: 6035669586173415933}
   m_Layer: 0
-  m_Name: GelasUkurAnhidrida
+  m_Name: GelasUkurRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -65,13 +67,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5103848788468045609}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b52fa8955054212448be523defde7f6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.ObjectManipulator
   canRotate: 0
-  canDrag: 1
+  canDrag: 0
   canScale: 1
   _rotateSensitivity: 0.3
   rotateAxis: {x: 0, y: 1, z: 0}
@@ -87,7 +89,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5103848788468045609}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e24712f1c9b530f418369f88487cb997, type: 3}
   m_Name: 
@@ -125,6 +127,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.ScaleReturnInteractable
   _returnSpeed: 10
+--- !u!114 &7830600396081564212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5103848788468045609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6f2e34cb4b148cba4554c3114ad9a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::_TitraSims.Scripts.Utility.LabelHelper
+  labelKey: Aquades
+  labelGameObjectName: label
+--- !u!114 &6035669586173415933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5103848788468045609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17832d4d614a6714eb19b1719e1cb583, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.PlayAnimOneShot
+  _animator: {fileID: 0}
+  _animationConfig: {fileID: 11400000, guid: f3f8c3eef3f6c024ab082dad28a23265, type: 2}
+  _animationClip: {fileID: 7400000, guid: 6a299df0eaeddb04bab2433be977fe06, type: 2}
+  OnComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &866224359909238773
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -206,7 +240,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 01850e13adc17004ebec1f7eda84e5bf,
         type: 3}
       propertyPath: m_Name
-      value: gelas ukur anhidrida
+      value: gelas ukur
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -317,7 +351,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 6fc0b8e7a25f3604cbc3c1f666ccaf0a,
         type: 3}
       propertyPath: m_Name
-      value: label lurus
+      value: label
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -416,7 +450,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: eb3e6705e9bde884cae926e663e7b650,
         type: 3}
       propertyPath: m_Name
-      value: gelas ukur fluid anhidrida
+      value: gelas ukur
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -500,7 +534,7 @@ PrefabInstance:
     - target: {fileID: 9148835713279669916, guid: 3f9ed849320492a488f3b47e2e06637c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.075922854
+      value: 0.115
       objectReference: {fileID: 0}
     - target: {fileID: 9148835713279669916, guid: 3f9ed849320492a488f3b47e2e06637c,
         type: 3}

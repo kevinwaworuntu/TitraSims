@@ -102,6 +102,8 @@ GameObject:
   - component: {fileID: 274835606974798217}
   - component: {fileID: 4145360728822932487}
   - component: {fileID: 5776857556545341035}
+  - component: {fileID: 7056967588886357683}
+  - component: {fileID: 8861052277550190303}
   m_Layer: 0
   m_Name: LabuUkur
   m_TagString: Untagged
@@ -188,6 +190,33 @@ MonoBehaviour:
   OnUnsnapped:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7056967588886357683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5895711952283823927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3215d1a77cb4e5f448638c3aa6ff25f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.ScaleReturnInteractable
+  _returnSpeed: 10
+--- !u!114 &8861052277550190303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5895711952283823927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6f2e34cb4b148cba4554c3114ad9a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::_TitraSims.Scripts.Utility.LabelHelper
+  labelKey: 
+  labelGameObjectName: label
 --- !u!1001 &1216844572987810308
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -269,7 +298,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a2fad4e7f3cdfca49997189fc2480d95,
         type: 3}
       propertyPath: m_Name
-      value: label labu ukur
+      value: label
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

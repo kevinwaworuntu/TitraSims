@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8525500178135397849}
   - component: {fileID: 2404994667471462712}
   - component: {fileID: 1923657643159010845}
+  - component: {fileID: 7546779106487494052}
   m_Layer: 0
   m_Name: Funnel
   m_TagString: Untagged
@@ -70,7 +71,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.ObjectManipulator
   canRotate: 0
   canDrag: 1
-  canScale: 0
+  canScale: 1
   _rotateSensitivity: 0.3
   rotateAxis: {x: 0, y: 1, z: 0}
   lockToHorizontalPlane: 0
@@ -98,6 +99,19 @@ MonoBehaviour:
   OnUnsnapped:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7546779106487494052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340568212524020367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3215d1a77cb4e5f448638c3aa6ff25f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.ScaleReturnInteractable
+  _returnSpeed: 10
 --- !u!1001 &6035075806387419788
 PrefabInstance:
   m_ObjectHideFlags: 0

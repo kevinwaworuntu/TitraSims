@@ -27,13 +27,12 @@ namespace Gameplay
         [Header("Stage Config")]
         [SerializeField] private GelasUkurStageConfig config;
 
+        [FormerlySerializedAs("animClipLarutan1_1ml")]
         [Header("Animation")]
-        [SerializeField] private AnimationClip animClipLarutan1_1ml;
-        [SerializeField] private AnimationClip animClipLarutan1_10ml;
-        [SerializeField] private AnimationClip animClipLarutan2_1ml;
-        [SerializeField] private AnimationClip animClipLarutan2_10ml;
-        [SerializeField] private Animator animator;
-        [SerializeField] private AnimNotify animNotify;
+        [SerializeField] private AnimationClip animClipLarutan1_Pour;
+        [FormerlySerializedAs("animClipLarutan2_1ml")] [SerializeField] private AnimationClip animClipLarutan2_Pour;
+        private Animator animator;
+        private AnimNotify animNotify;
 
         [FormerlySerializedAs("container1")]
         [Header("Liquid Containers")]
@@ -50,6 +49,19 @@ namespace Gameplay
         private LiquidContainer CurrentContainer =>
             currentLarutanType == LarutanType.Larutan1 ? larutan1Container : larutan2Container;
 
+        protected virtual void Awake()
+        {
+            base.Awake();
+            if (!animator)
+            {
+                animator = GetComponentInChildren<Animator>();
+            }
+            if (!animNotify)
+            {
+                animNotify = GetComponentInChildren<AnimNotify>();
+            }
+        }
+        
         protected override void OnEnable()
         {
             base.OnEnable();
@@ -87,12 +99,14 @@ namespace Gameplay
         {
             currentLarutanType = LarutanType.Larutan1;
             SetupLarutan();
+            SetIsCheckWeightToContinue(true);
         }
 
         public void CreatePenambahanLarutan2Button()
         {
             currentLarutanType = LarutanType.Larutan2;
             SetupLarutan();
+            SetIsCheckWeightToContinue(true);
         }
 
         private void SetupLarutan()
@@ -100,8 +114,8 @@ namespace Gameplay
             ContextualButtonController btnController = ContextualButtonController.Instance;
             btnController.GenerateContextualButton(2);
 
-            AnimationClip clip1ml = currentLarutanType == LarutanType.Larutan1 ? animClipLarutan1_1ml : animClipLarutan2_1ml;
-            AnimationClip clip10ml = currentLarutanType == LarutanType.Larutan1 ? animClipLarutan1_10ml : animClipLarutan2_10ml;
+            AnimationClip clip1ml = currentLarutanType == LarutanType.Larutan1 ? animClipLarutan1_Pour : animClipLarutan2_Pour;
+            AnimationClip clip10ml = currentLarutanType == LarutanType.Larutan1 ? animClipLarutan1_Pour : animClipLarutan2_Pour; // Curently the use the same animation
 
             btnController.RegisterTextToButton(0, "1 ml");
             ContextualButtonController.Instance.RegisterAction(0, () =>
@@ -147,7 +161,7 @@ namespace Gameplay
         [ContextMenu( "Play Animation Test" )]
         private void PlayAnimationTest()
         {
-            PlayAnimation(animClipLarutan1_1ml);
+            PlayAnimation(animClipLarutan1_Pour);
         }
 
         private void PlayAnimation(AnimationClip clip)

@@ -13,8 +13,10 @@ GameObject:
   - component: {fileID: 8093237419681583346}
   - component: {fileID: 2283460627922619908}
   - component: {fileID: 6092563221642605038}
+  - component: {fileID: 1997723048133544288}
+  - component: {fileID: 7915121942639546107}
   m_Layer: 0
-  m_Name: GelasUkurBenzena
+  m_Name: GelasUkurLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -65,13 +67,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2833044457132012130}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b52fa8955054212448be523defde7f6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.ObjectManipulator
   canRotate: 0
-  canDrag: 1
+  canDrag: 0
   canScale: 1
   _rotateSensitivity: 0.3
   rotateAxis: {x: 0, y: 1, z: 0}
@@ -87,7 +89,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2833044457132012130}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e24712f1c9b530f418369f88487cb997, type: 3}
   m_Name: 
@@ -125,6 +127,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.ScaleReturnInteractable
   _returnSpeed: 10
+--- !u!114 &1997723048133544288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2833044457132012130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6f2e34cb4b148cba4554c3114ad9a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::_TitraSims.Scripts.Utility.LabelHelper
+  labelKey: 
+  labelGameObjectName: label
+--- !u!114 &7915121942639546107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2833044457132012130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17832d4d614a6714eb19b1719e1cb583, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.PlayAnimOneShot
+  _animator: {fileID: 0}
+  _animationConfig: {fileID: 11400000, guid: f3f8c3eef3f6c024ab082dad28a23265, type: 2}
+  _animationClip: {fileID: 7400000, guid: 6a299df0eaeddb04bab2433be977fe06, type: 2}
+  OnComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &151818598029581131
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -211,7 +245,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 6fc0b8e7a25f3604cbc3c1f666ccaf0a,
         type: 3}
       propertyPath: m_Name
-      value: label lurus
+      value: label
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6fc0b8e7a25f3604cbc3c1f666ccaf0a,
         type: 3}
@@ -310,7 +344,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 01850e13adc17004ebec1f7eda84e5bf,
         type: 3}
       propertyPath: m_Name
-      value: gelas ukur benzena
+      value: gelas ukur
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 01850e13adc17004ebec1f7eda84e5bf,
         type: 3}
@@ -406,7 +440,7 @@ PrefabInstance:
     - target: {fileID: 8947827082545304420, guid: 3f9ed849320492a488f3b47e2e06637c,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9148835713279669916, guid: 3f9ed849320492a488f3b47e2e06637c,
         type: 3}
@@ -426,12 +460,12 @@ PrefabInstance:
     - target: {fileID: 9148835713279669916, guid: 3f9ed849320492a488f3b47e2e06637c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.07287598
+      value: -0.0559
       objectReference: {fileID: 0}
     - target: {fileID: 9148835713279669916, guid: 3f9ed849320492a488f3b47e2e06637c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.08093262
+      value: 0.115
       objectReference: {fileID: 0}
     - target: {fileID: 9148835713279669916, guid: 3f9ed849320492a488f3b47e2e06637c,
         type: 3}

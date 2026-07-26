@@ -17,6 +17,7 @@ namespace InteractionLogic
     /// Tag filtering:  set the same tag on this GameObject and on the target
     /// SnapZone's <c>acceptTag</c> field to restrict which zones accept it.
     /// </summary>
+    [RequireComponent(typeof(BoxCollider))]
     [RequireComponent(typeof(ObjectManipulator))]
     public class SnapInteractable : MonoBehaviour
     {

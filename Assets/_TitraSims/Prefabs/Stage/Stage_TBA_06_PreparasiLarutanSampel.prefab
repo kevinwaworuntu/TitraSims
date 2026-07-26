@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3348031066135139551}
   - component: {fileID: 5838889969234891300}
   m_Layer: 0
-  m_Name: Stage_TBA_06_PreparasiLarutanSample
+  m_Name: Stage_TBA_06_PreparasiLarutanSampel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -324,7 +324,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-  animator: {fileID: 3106553735895253379}
 --- !u!114 &3348031066135139551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -338,16 +337,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   config: {fileID: 11400000, guid: 6e515e9e836d18b4bb0d6c8ec7ba4424, type: 2}
-  animClipLarutan1_1ml: {fileID: 7400000, guid: 96a694f6c5ae1914388b84952ab52504,
+  animClipLarutan1_Pour: {fileID: 7400000, guid: 96a694f6c5ae1914388b84952ab52504,
     type: 2}
-  animClipLarutan1_10ml: {fileID: 7400000, guid: 96a694f6c5ae1914388b84952ab52504,
+  animClipLarutan2_Pour: {fileID: 7400000, guid: 854fdfe2558f9bd458cd38e1a6bc4df1,
     type: 2}
-  animClipLarutan2_1ml: {fileID: 7400000, guid: 854fdfe2558f9bd458cd38e1a6bc4df1,
-    type: 2}
-  animClipLarutan2_10ml: {fileID: 7400000, guid: 854fdfe2558f9bd458cd38e1a6bc4df1,
-    type: 2}
-  animator: {fileID: 3106553735895253379}
-  animNotify: {fileID: 2095743388113820682}
   larutan1Container:
     fillObject: {fileID: 7557790224389520081}
     meniskusObject: {fileID: 2888033430484936148}
@@ -649,6 +642,16 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1574794857165834191, guid: f2d0e3249413e1b4da40a0b86d5d9259,
+        type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 9e8370989dd9fd84d81a2a141629429a, type: 2}
+    - target: {fileID: 1997723048133544288, guid: f2d0e3249413e1b4da40a0b86d5d9259,
+        type: 3}
+      propertyPath: labelKey
+      value: Benzene
+      objectReference: {fileID: 0}
     - target: {fileID: 2283460627922619908, guid: f2d0e3249413e1b4da40a0b86d5d9259,
         type: 3}
       propertyPath: m_Enabled
@@ -682,7 +685,7 @@ PrefabInstance:
     - target: {fileID: 2833044457132012130, guid: f2d0e3249413e1b4da40a0b86d5d9259,
         type: 3}
       propertyPath: m_Name
-      value: GelasUkurBenzena
+      value: GelasUkurLeft
       objectReference: {fileID: 0}
     - target: {fileID: 2833044457132012130, guid: f2d0e3249413e1b4da40a0b86d5d9259,
         type: 3}
@@ -899,6 +902,11 @@ PrefabInstance:
       propertyPath: OnSnapped.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 4566725259058698064, guid: 939a4a6da0e30434583f4ec990f410ef,
+        type: 3}
+      propertyPath: labelKey
+      value: AnhidridaAsetat
+      objectReference: {fileID: 0}
     - target: {fileID: 4908289949089700672, guid: 939a4a6da0e30434583f4ec990f410ef,
         type: 3}
       propertyPath: canDrag
@@ -907,13 +915,18 @@ PrefabInstance:
     - target: {fileID: 5756986634273605788, guid: 939a4a6da0e30434583f4ec990f410ef,
         type: 3}
       propertyPath: m_Name
-      value: beaker anhidrida
+      value: BeakerRight
       objectReference: {fileID: 0}
     - target: {fileID: 5756986634273605788, guid: 939a4a6da0e30434583f4ec990f410ef,
         type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7728114813493665276, guid: 939a4a6da0e30434583f4ec990f410ef,
+        type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: be83f8d9cfe588a4d97a6175b6466448, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -963,6 +976,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3738013710052132944}
     m_Modifications:
+    - target: {fileID: 878152320224247311, guid: f8d98af353a31dd4993ca1412ae27804,
+        type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: be83f8d9cfe588a4d97a6175b6466448, type: 2}
     - target: {fileID: 4075873997123703633, guid: f8d98af353a31dd4993ca1412ae27804,
         type: 3}
       propertyPath: m_Enabled
@@ -1046,12 +1064,17 @@ PrefabInstance:
     - target: {fileID: 5103848788468045609, guid: f8d98af353a31dd4993ca1412ae27804,
         type: 3}
       propertyPath: m_Name
-      value: GelasUkurAnhidrida
+      value: GelasUkurRight
       objectReference: {fileID: 0}
     - target: {fileID: 5103848788468045609, guid: f8d98af353a31dd4993ca1412ae27804,
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7830600396081564212, guid: f8d98af353a31dd4993ca1412ae27804,
+        type: 3}
+      propertyPath: labelKey
+      value: AnhidridaAsetat
       objectReference: {fileID: 0}
     - target: {fileID: 8706032374165921043, guid: f8d98af353a31dd4993ca1412ae27804,
         type: 3}
@@ -1175,13 +1198,13 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1589695625595114387, guid: 98fdde955eea4e24f86d336612c454b9,
         type: 3}
-      propertyPath: canDrag
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1589695625595114387, guid: 98fdde955eea4e24f86d336612c454b9,
-        type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1748798000034450102, guid: 98fdde955eea4e24f86d336612c454b9,
+        type: 3}
+      propertyPath: labelKey
+      value: Benzene
       objectReference: {fileID: 0}
     - target: {fileID: 6008854467753683919, guid: 98fdde955eea4e24f86d336612c454b9,
         type: 3}
@@ -1201,7 +1224,7 @@ PrefabInstance:
     - target: {fileID: 7402080078231811731, guid: 98fdde955eea4e24f86d336612c454b9,
         type: 3}
       propertyPath: m_Name
-      value: beaker benzene
+      value: BeakerLeft
       objectReference: {fileID: 0}
     - target: {fileID: 7402080078231811731, guid: 98fdde955eea4e24f86d336612c454b9,
         type: 3}

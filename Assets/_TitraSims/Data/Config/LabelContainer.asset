@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f919948efd475be43961b9e5a772889c, type: 3}
+  m_Name: LabelContainer
+  m_EditorClassIdentifier: Assembly-CSharp::_TitraSims.Scripts.Utility.LabelContainer
+  entries:
+  - key: 
+    material: {fileID: 2100000, guid: c6841804b11b1494cbaf840f3603503a, type: 2}
+  - key: Benzene
+    material: {fileID: 2100000, guid: 9e8370989dd9fd84d81a2a141629429a, type: 2}
+  - key: Limbah
+    material: {fileID: 2100000, guid: 8cc2fd1287c59d94cb34f2e90ae9a967, type: 2}
+  - key: AnhidridaAsetat
+    material: {fileID: 2100000, guid: be83f8d9cfe588a4d97a6175b6466448, type: 2}
+  - key: Aquades
+    material: {fileID: 2100000, guid: bdaee7f1785ef4b4da802de3ea2509b2, type: 2}
+  - key: 
+    material: {fileID: 2100000, guid: 8135dbeebbcbf3441ae7d1f78034c9c8, type: 2}
+  - key: AsamPerklorat
+    material: {fileID: 2100000, guid: b963d067f152a5948bd2d26d327d3d3f, type: 2}
+  - key: Aseton
+    material: {fileID: 2100000, guid: 67e9628d619a21449a25d39eb3b1fcad, type: 2}
+  - key: 
+    material: {fileID: 2100000, guid: 8135dbeebbcbf3441ae7d1f78034c9c8, type: 2}
+  - key: CaCO3
+    material: {fileID: 2100000, guid: 14d189731ccbae543af8bb00bc9307f9, type: 2}
+  - key: EDTA
+    material: {fileID: 2100000, guid: ffe4d31ef5afc91488a01a5598bc2a93, type: 2}
+  - key: 
+    material: {fileID: 2100000, guid: dc484f7bc4c32ef458face48390b48ce, type: 2}
+  - key: HCL 3N
+    material: {fileID: 2100000, guid: 38e74c66f5f7c584bb47eb901e302b9e, type: 2}
+  - key: 
+    material: {fileID: 2100000, guid: d956d1b260a23fe4a90d7c6348af78d6, type: 2}
+  - key: 
+    material: {fileID: 2100000, guid: ee4939d6c5a8f5e4eba3d227f4edf89b, type: 2}
+  - key: 
+    material: {fileID: 2100000, guid: b3e8978839db0d7408cce794eec01780, type: 2}
+  - key: 
+    material: {fileID: 2100000, guid: 6851038799a8651439958761cb098451, type: 2}
+  - key: 
+    material: {fileID: 2100000, guid: 6851038799a8651439958761cb098451, type: 2}
+  - key: NaOH 1N
+    material: {fileID: 2100000, guid: aa237bd1ab760a1429a8334a75a535c2, type: 2}

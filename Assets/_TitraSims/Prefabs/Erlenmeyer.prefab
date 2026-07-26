@@ -71,7 +71,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.ObjectManipulator
   canRotate: 0
-  canDrag: 1
+  canDrag: 0
   canScale: 1
   _rotateSensitivity: 0.3
   rotateAxis: {x: 0, y: 1, z: 0}
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8200995135454168621}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 236cc505047e8594ea746df71c2d80ac, type: 3}
   m_Name: 
@@ -416,12 +416,12 @@ PrefabInstance:
     - target: {fileID: 8947827082545304420, guid: 3f9ed849320492a488f3b47e2e06637c,
         type: 3}
       propertyPath: m_Name
-      value: SnapTargetAnhrida
+      value: SnapTargetRight
       objectReference: {fileID: 0}
     - target: {fileID: 8947827082545304420, guid: 3f9ed849320492a488f3b47e2e06637c,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9148835713279669916, guid: 3f9ed849320492a488f3b47e2e06637c,
         type: 3}
@@ -540,12 +540,12 @@ PrefabInstance:
     - target: {fileID: 8947827082545304420, guid: 3f9ed849320492a488f3b47e2e06637c,
         type: 3}
       propertyPath: m_Name
-      value: SnapTargetBenzena
+      value: SnapTargetLeft
       objectReference: {fileID: 0}
     - target: {fileID: 8947827082545304420, guid: 3f9ed849320492a488f3b47e2e06637c,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9148835713279669916, guid: 3f9ed849320492a488f3b47e2e06637c,
         type: 3}
@@ -624,7 +624,7 @@ PrefabInstance:
     - target: {fileID: 8947827082545304420, guid: 3f9ed849320492a488f3b47e2e06637c,
         type: 3}
       propertyPath: m_Name
-      value: SnapTargetTemplate
+      value: SnapTargetFunnel
       objectReference: {fileID: 0}
     - target: {fileID: 8947827082545304420, guid: 3f9ed849320492a488f3b47e2e06637c,
         type: 3}

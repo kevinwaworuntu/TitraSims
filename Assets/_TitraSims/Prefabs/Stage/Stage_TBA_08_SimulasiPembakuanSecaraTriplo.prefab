@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8307865599143820297}
   - component: {fileID: 6573235427564023909}
   m_Layer: 0
-  m_Name: Stage_TBA_08_Kalibrasi
+  m_Name: Stage_TBA_08_SimulasiPembakuanSecaraTriplo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -259,7 +259,6 @@ MonoBehaviour:
     UniqueEvent:
       m_PersistentCalls:
         m_Calls: []
-  animator: {fileID: 6920028769381608884}
 --- !u!114 &8307865599143820297
 MonoBehaviour:
   m_ObjectHideFlags: 0
