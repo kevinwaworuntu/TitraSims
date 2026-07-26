@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: TBA_5_TahapanInteractionData_1
   m_EditorClassIdentifier: 
   title: Step1
-  description: Tap layar untuk menggeser kaca arloji ke atas timbangan analitik!
+  description: Geser kaca arloji ke bagian tengah timbangan.
   audioNaration: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
   animationClip: {fileID: 0}
