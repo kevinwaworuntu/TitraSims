@@ -12,10 +12,12 @@ namespace InteractionLogic
     /// without FindObjectsByType each frame.
     ///
     /// Setup:
-    ///   • Set <see cref="acceptTag"/> to restrict which objects can snap here
-    ///     (leave empty to accept any SnapInteractable).
-    ///   • Set <see cref="acceptedGameObjectName"/> to restrict by GameObject name
-    ///     (leave empty to accept any SnapInteractable).
+    ///   • At least one of <see cref="acceptTag"/>, <see cref="acceptedGameObjectName"/>
+    ///     or <see cref="acceptedGameObject"/> must be set — a zone with none of them
+    ///     configured rejects every candidate.
+    ///   • Set <see cref="acceptTag"/> to restrict which objects can snap here by tag.
+    ///   • Set <see cref="acceptedGameObjectName"/> to restrict by GameObject name.
+    ///   • Set <see cref="acceptedGameObject"/> to restrict to one specific instance.
     ///   • Assign <see cref="_highlightVisual"/> — shown while a compatible object
     ///     is being dragged within range.
     ///   • Assign <see cref="_occupiedVisual"/> — shown while an object is snapped.
@@ -24,13 +26,13 @@ namespace InteractionLogic
     public class SnapZone : MonoBehaviour
     {
         [Header("Filter")]
-        [Tooltip("Only accept SnapInteractables whose GameObject tag matches. Empty = accept any.")]
+        [Tooltip("Only accept SnapInteractables whose GameObject tag matches. At least one filter must be set or the zone accepts nothing.")]
         public string acceptTag = "";
 
-        [Tooltip("Only accept SnapInteractables whose GameObject name matches. Empty = accept any.")]
+        [Tooltip("Only accept SnapInteractables whose GameObject name matches. At least one filter must be set or the zone accepts nothing.")]
         public string acceptedGameObjectName = "";
 
-        [Tooltip("Only accept this specific GameObject. None = accept any.")]
+        [Tooltip("Only accept this specific GameObject. At least one filter must be set or the zone accepts nothing.")]
         public GameObject acceptedGameObject;
 
         [Header("Snap")]
@@ -56,6 +58,12 @@ namespace InteractionLogic
         public float SnapRadius => _snapRadius;
         public bool  IsOccupied => _snappedObject != null;
 
+        /// True when at least one of the three filters is configured. A zone with
+        /// no filter set rejects every candidate.
+        public bool HasFilter => !string.IsNullOrEmpty(acceptTag)
+                              || !string.IsNullOrEmpty(acceptedGameObjectName)
+                              || acceptedGameObject != null;
+
         /// World-space position the snapped object should move to (zone pivot + local offset).
         public Vector3 SnapTargetPosition => transform.TransformPoint(_snapOffset);
 
@@ -69,6 +77,10 @@ namespace InteractionLogic
         {
             if(_highlightVisual) _highlightVisual.SetActive(false);
             if(_occupiedVisual) _occupiedVisual.SetActive(false);
+
+            if (!HasFilter)
+                Debug.LogWarning($"[SnapZone] '{name}' has no filter set (tag / name / GameObject) " +
+                                 "and will reject every object.", this);
         }
 
         private void OnEnable()  => All.Add(this);
@@ -82,6 +94,9 @@ namespace InteractionLogic
         {
             // A zone occupied by someone else is not available.
             if (IsOccupied && _snappedObject != candidate) return false;
+
+            // An unconfigured zone accepts nothing — at least one filter is required.
+            if (!HasFilter) return false;
 
             if (!string.IsNullOrEmpty(acceptTag) && !candidate.CompareTag(acceptTag)) return false;
 

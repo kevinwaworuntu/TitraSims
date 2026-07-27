@@ -104,6 +104,13 @@ public class GameManager : MonoBehaviour
         return PlayerPrefs.GetInt(key, -1);
     }
 
+    /// <summary>Whether a marker prefab is assigned for the given tahap index. Only relevant when usePlayerPrefsForProgress is disabled.</summary>
+    public bool HasMarkerPrefabAssigned(GameMode mode, int tahapIndex)
+    {
+        GameObject[] mapping = mode == GameMode.TBA ? markerTBAPrefabsMapping : markerTKPrefabsMapping;
+        return mapping != null && tahapIndex >= 0 && tahapIndex < mapping.Length && mapping[tahapIndex] != null;
+    }
+
     /// <summary>Whether a specific tahapan can be entered right now, under either the PlayerPrefs (sequential) or dev override (checkbox mask) model.</summary>
     public bool IsTahapUnlocked(GameMode mode, int tahapIndex)
     {
@@ -111,9 +118,7 @@ public class GameManager : MonoBehaviour
 
         if (!usePlayerPrefsForProgress)
         {
-            if (tahapIndex >= 32) return false;
-            int mask = mode == GameMode.TBA ? devUnlockedMaskTBA : devUnlockedMaskKomp;
-            return (mask & (1 << tahapIndex)) != 0;
+            return HasMarkerPrefabAssigned(mode, tahapIndex);
         }
 
         return tahapIndex <= GetLastCompletedTahapIndex(mode) + 1;

@@ -60,7 +60,7 @@ namespace InteractionLogic
                 _animator.runtimeAnimatorController = _runtimeOverride;
             }
         }
-
+        
         private void Update()
         {
             DetectTouch();
@@ -76,6 +76,12 @@ namespace InteractionLogic
             }
         }
 
+        public void Reset()
+        {
+            currentProgression = 0;
+            _loopCount = 0;
+        }
+        
         private void DetectTouch()
         {
             Touch liveTouch = default;

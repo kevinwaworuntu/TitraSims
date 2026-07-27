@@ -1074,7 +1074,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 100537113}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -5731,8 +5731,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1018789075}
   m_HandleRect: {fileID: 1018789074}
   m_Direction: 2
-  m_Value: 1.0000048
-  m_Size: 0.82135665
+  m_Value: 1.0000017
+  m_Size: 0.49734798
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -9668,7 +9668,7 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 855819556}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.17864335}
+  m_AnchorMin: {x: 0, y: 0.50265205}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
@@ -9680,7 +9680,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1018789073}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -10800,7 +10800,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -0.0009765625}
-  m_SizeDelta: {x: 0, y: 207.22626}
+  m_SizeDelta: {x: 0, y: 583.0763}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1196315864
 MonoBehaviour:
@@ -18866,8 +18866,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -296}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -187.92}
+  m_SizeDelta: {x: 0, y: -375.85}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2030063071
 MonoBehaviour:
@@ -19570,7 +19570,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 2078059238}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -20419,6 +20419,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2725533295005454670, guid: fb5a4c05217e747458b39a6040eebcfd,
         type: 3}
+      propertyPath: devUnlockedMaskTBA
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2725533295005454670, guid: fb5a4c05217e747458b39a6040eebcfd,
+        type: 3}
+      propertyPath: devUnlockedMaskKomp
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2725533295005454670, guid: fb5a4c05217e747458b39a6040eebcfd,
+        type: 3}
       propertyPath: markerTK.Array.size
       value: 10
       objectReference: {fileID: 0}
@@ -20515,7 +20525,7 @@ PrefabInstance:
     - target: {fileID: 2725533295005454670, guid: fb5a4c05217e747458b39a6040eebcfd,
         type: 3}
       propertyPath: usePlayerPrefsForProgress
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5986580887397016950, guid: fb5a4c05217e747458b39a6040eebcfd,
         type: 3}
