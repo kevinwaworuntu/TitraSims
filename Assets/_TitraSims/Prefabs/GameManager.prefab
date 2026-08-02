@@ -60,7 +60,7 @@ MonoBehaviour:
   markerTKPrefabsMapping:
   - {fileID: 0}
   - {fileID: 5966975463116463929, guid: df357fd114c8efe4ca3e6b25320fda41, type: 3}
-  - {fileID: 0}
+  - {fileID: 3944323589608970512, guid: 63887e13b83e57c4ca7fa6c825481afe, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 2717858440080403802, guid: 1ff001d523d12484ca593201d0c1a014, type: 3}

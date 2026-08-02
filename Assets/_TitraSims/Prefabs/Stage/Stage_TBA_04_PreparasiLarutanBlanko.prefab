@@ -808,6 +808,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GelasUkurRight
       objectReference: {fileID: 0}
+    - target: {fileID: 6035669586173415933, guid: f8d98af353a31dd4993ca1412ae27804,
+        type: 3}
+      propertyPath: _animator
+      value: 
+      objectReference: {fileID: 1566749992626367298}
     - target: {fileID: 7830600396081564212, guid: f8d98af353a31dd4993ca1412ae27804,
         type: 3}
       propertyPath: labelKey
@@ -985,16 +990,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2283460627922619908, guid: f2d0e3249413e1b4da40a0b86d5d9259,
         type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2283460627922619908, guid: f2d0e3249413e1b4da40a0b86d5d9259,
-        type: 3}
-      propertyPath: isBackToOriginPosition
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2283460627922619908, guid: f2d0e3249413e1b4da40a0b86d5d9259,
-        type: 3}
       propertyPath: OnSnapped.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -1078,6 +1073,11 @@ PrefabInstance:
       propertyPath: acceptedGameObject
       value: 
       objectReference: {fileID: 4243259783066026184}
+    - target: {fileID: 7915121942639546107, guid: f2d0e3249413e1b4da40a0b86d5d9259,
+        type: 3}
+      propertyPath: _animator
+      value: 
+      objectReference: {fileID: 1566749992626367298}
     - target: {fileID: 8093237419681583346, guid: f2d0e3249413e1b4da40a0b86d5d9259,
         type: 3}
       propertyPath: canDrag

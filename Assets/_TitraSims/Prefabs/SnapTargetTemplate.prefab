@@ -152,6 +152,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.SnapZone
   acceptTag: 
+  acceptedGameObjectName: 
+  acceptedGameObject: {fileID: 0}
   _snapRadius: 0.05
   _snapOffset: {x: 0, y: 0, z: 0}
   snapRotation: 1

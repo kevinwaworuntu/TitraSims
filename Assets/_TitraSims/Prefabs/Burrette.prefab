@@ -79,7 +79,7 @@ Transform:
   m_GameObject: {fileID: 226518055553395498}
   serializedVersion: 2
   m_LocalRotation: {x: -0.000000030908623, y: -0.7071068, z: -0.7071068, w: 0.000000030908623}
-  m_LocalPosition: {x: 1.146, y: 4.1379995, z: 0.0020005174}
+  m_LocalPosition: {x: 1.21, y: 4.444, z: 0.0020005174}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -445,6 +445,7 @@ GameObject:
   - component: {fileID: 5432663808697477991}
   - component: {fileID: 8407121497345590115}
   - component: {fileID: 9177159405888287761}
+  - component: {fileID: 5672384345214926826}
   m_Layer: 0
   m_Name: Burrette
   m_TagString: Untagged
@@ -532,6 +533,21 @@ MonoBehaviour:
   OnUnsnapped:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &5672384345214926826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4322490028771301315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05b22eaf39901e24ab258168596f98f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Gameplay.BuretteFillController
+  config: {fileID: 0}
+  buretteFillObject: {fileID: 7280253181799531362}
+  buretteMeniskusObject: {fileID: 0}
 --- !u!1 &4484153583671204309
 GameObject:
   m_ObjectHideFlags: 0
@@ -1321,22 +1337,22 @@ PrefabInstance:
     - target: {fileID: 9148835713279669916, guid: 3f9ed849320492a488f3b47e2e06637c,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.000000030908623
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9148835713279669916, guid: 3f9ed849320492a488f3b47e2e06637c,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.000000030908623
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9148835713279669916, guid: 3f9ed849320492a488f3b47e2e06637c,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.7071068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9148835713279669916, guid: 3f9ed849320492a488f3b47e2e06637c,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.7071068
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 9148835713279669916, guid: 3f9ed849320492a488f3b47e2e06637c,
         type: 3}
@@ -1476,6 +1492,12 @@ PrefabInstance:
 --- !u!4 &1614882519885994679 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8696127655617528144, guid: e14ad2d1e706136438219a5eb1ce327b,
+    type: 3}
+  m_PrefabInstance: {fileID: 7982609585649376231}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7280253181799531362 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 850980963991410821, guid: e14ad2d1e706136438219a5eb1ce327b,
     type: 3}
   m_PrefabInstance: {fileID: 7982609585649376231}
   m_PrefabAsset: {fileID: 0}

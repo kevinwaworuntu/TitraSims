@@ -104,6 +104,7 @@ GameObject:
   - component: {fileID: 5776857556545341035}
   - component: {fileID: 7056967588886357683}
   - component: {fileID: 8861052277550190303}
+  - component: {fileID: 1558994427296561921}
   m_Layer: 0
   m_Name: LabuUkur
   m_TagString: Untagged
@@ -217,6 +218,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::_TitraSims.Scripts.Utility.LabelHelper
   labelKey: 
   labelGameObjectName: label
+--- !u!114 &1558994427296561921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5895711952283823927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17832d4d614a6714eb19b1719e1cb583, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.PlayAnimOneShot
+  _animator: {fileID: 0}
+  _animationConfig: {fileID: 11400000, guid: f3f8c3eef3f6c024ab082dad28a23265, type: 2}
+  _animationClip: {fileID: 7400000, guid: a26699962ac72e843a7969198856f11b, type: 2}
+  OnComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1216844572987810308
 PrefabInstance:
   m_ObjectHideFlags: 0

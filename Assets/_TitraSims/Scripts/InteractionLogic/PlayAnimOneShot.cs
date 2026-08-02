@@ -86,5 +86,10 @@ namespace InteractionLogic
 
             RestoreAnimator();
         }
+
+        public void SetAnimationClip(AnimationClip clip)
+        {
+            _animationClip = clip;
+        }
     }
 }

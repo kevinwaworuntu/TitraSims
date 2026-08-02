@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5049824557375722393}
   - component: {fileID: 8067044349680184699}
-  - component: {fileID: 3929737441039534273}
   m_Layer: 0
   m_Name: AnimKompleksometri2
   m_TagString: Untagged
@@ -27,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 485512755229258762}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.144, z: -0.20409238}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -61,27 +60,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!65 &3929737441039534273
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 485512755229258762}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.27742004, y: 0.40169436, z: 0.102891326}
-  m_Center: {x: 0.008705139, y: 0.19893351, z: -0.010272205}
 --- !u!1 &5966975463116463929
 GameObject:
   m_ObjectHideFlags: 0
@@ -110,7 +88,7 @@ Transform:
   m_GameObject: {fileID: 5966975463116463929}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -570.005, y: -1951.8, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -178,6 +156,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 2472993943844439631}
+          m_TargetAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_MethodName: SetParent
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 5375147563756247176}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - InteractionData: {fileID: 11400000, guid: 2faedb57988114a46b4270c9e91d5a56, type: 2}
     IsAutoContinue: 0
     IsContinueByOtherEvent: 1
@@ -203,6 +193,18 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 2472993943844439631}
+          m_TargetAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_MethodName: SetParent
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 5049824557375722393}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -268,6 +270,19 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 466134824660228410}
+          m_TargetAssemblyTypeName: InteractionLogic.PlayAnimOneShot, Assembly-CSharp
+          m_MethodName: SetAnimationClip
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 7400000, guid: 6f24a58de1a33a74c9c8570bd6151db0,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.AnimationClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - InteractionData: {fileID: 11400000, guid: 215e992d970418a458a78be21f301ea1, type: 2}
     IsAutoContinue: 0
     IsContinueByOtherEvent: 1
@@ -310,6 +325,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 4895737544332174416}
+          m_TargetAssemblyTypeName: InteractionLogic.SnapInteractable, Assembly-CSharp
+          m_MethodName: InstantReturnToOrigin
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
 --- !u!114 &3151392038488669408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,6 +362,51 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: ffe4d31ef5afc91488a01a5598bc2a93, type: 2}
+    - target: {fileID: 1558994427296561921, guid: 39d42031afa029d4f82ed1a14ba7b7ae,
+        type: 3}
+      propertyPath: _animator
+      value: 
+      objectReference: {fileID: 8067044349680184699}
+    - target: {fileID: 1558994427296561921, guid: 39d42031afa029d4f82ed1a14ba7b7ae,
+        type: 3}
+      propertyPath: _animationClip
+      value: 
+      objectReference: {fileID: 7400000, guid: 9ec3ed4ad0818e54887f8c027d90a048, type: 2}
+    - target: {fileID: 1558994427296561921, guid: 39d42031afa029d4f82ed1a14ba7b7ae,
+        type: 3}
+      propertyPath: OnComplete.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1558994427296561921, guid: 39d42031afa029d4f82ed1a14ba7b7ae,
+        type: 3}
+      propertyPath: OnComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1558994427296561921, guid: 39d42031afa029d4f82ed1a14ba7b7ae,
+        type: 3}
+      propertyPath: OnComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8726276158191083157}
+    - target: {fileID: 1558994427296561921, guid: 39d42031afa029d4f82ed1a14ba7b7ae,
+        type: 3}
+      propertyPath: OnComplete.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1558994427296561921, guid: 39d42031afa029d4f82ed1a14ba7b7ae,
+        type: 3}
+      propertyPath: OnComplete.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RequestContinue
+      objectReference: {fileID: 0}
+    - target: {fileID: 1558994427296561921, guid: 39d42031afa029d4f82ed1a14ba7b7ae,
+        type: 3}
+      propertyPath: OnComplete.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ARContentManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1558994427296561921, guid: 39d42031afa029d4f82ed1a14ba7b7ae,
+        type: 3}
+      propertyPath: OnComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5051150200884745108, guid: 39d42031afa029d4f82ed1a14ba7b7ae,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -353,7 +425,7 @@ PrefabInstance:
     - target: {fileID: 5051150200884745108, guid: 39d42031afa029d4f82ed1a14ba7b7ae,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.11578369
+      value: -0.1634
       objectReference: {fileID: 0}
     - target: {fileID: 5051150200884745108, guid: 39d42031afa029d4f82ed1a14ba7b7ae,
         type: 3}
@@ -363,7 +435,7 @@ PrefabInstance:
     - target: {fileID: 5051150200884745108, guid: 39d42031afa029d4f82ed1a14ba7b7ae,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.031000018
+      value: -0.0028
       objectReference: {fileID: 0}
     - target: {fileID: 5051150200884745108, guid: 39d42031afa029d4f82ed1a14ba7b7ae,
         type: 3}
@@ -414,7 +486,7 @@ PrefabInstance:
         type: 3}
       propertyPath: OnSnapped.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 8795306737556813024}
+      objectReference: {fileID: 466134824660228410}
     - target: {fileID: 5776857556545341035, guid: 39d42031afa029d4f82ed1a14ba7b7ae,
         type: 3}
       propertyPath: OnSnapped.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -453,12 +525,20 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5895711952283823927, guid: 39d42031afa029d4f82ed1a14ba7b7ae,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8795306737556813024}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39d42031afa029d4f82ed1a14ba7b7ae, type: 3}
+--- !u!114 &466134824660228410 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1558994427296561921, guid: 39d42031afa029d4f82ed1a14ba7b7ae,
+    type: 3}
+  m_PrefabInstance: {fileID: 1430634007097041467}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4759008224516640012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17832d4d614a6714eb19b1719e1cb583, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.PlayAnimOneShot
 --- !u!114 &3052848538188023356 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4145360728822932487, guid: 39d42031afa029d4f82ed1a14ba7b7ae,
@@ -477,36 +557,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1430634007097041467}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8795306737556813024
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4759008224516640012}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17832d4d614a6714eb19b1719e1cb583, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.PlayAnimOneShot
-  _animator: {fileID: 8067044349680184699}
-  _animationConfig: {fileID: 11400000, guid: f3f8c3eef3f6c024ab082dad28a23265, type: 2}
-  _animationClip: {fileID: 0}
-  OnComplete:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8726276158191083157}
-        m_TargetAssemblyTypeName: ARContentManager, Assembly-CSharp
-        m_MethodName: RequestContinue
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &4895737544332174416 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5776857556545341035, guid: 39d42031afa029d4f82ed1a14ba7b7ae,
@@ -591,7 +641,7 @@ PrefabInstance:
     - target: {fileID: 4339883412849010252, guid: eea1a2e3a94610445b608ebad109c7f6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.09539795
+      value: -0.0907
       objectReference: {fileID: 0}
     - target: {fileID: 4339883412849010252, guid: eea1a2e3a94610445b608ebad109c7f6,
         type: 3}
@@ -601,7 +651,7 @@ PrefabInstance:
     - target: {fileID: 4339883412849010252, guid: eea1a2e3a94610445b608ebad109c7f6,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.03849995
+      value: -0.002
       objectReference: {fileID: 0}
     - target: {fileID: 4339883412849010252, guid: eea1a2e3a94610445b608ebad109c7f6,
         type: 3}
@@ -705,7 +755,7 @@ PrefabInstance:
     - target: {fileID: 969062265902454224, guid: fb2b31691fca7ad498874d90653b2729,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.19897461
+      value: 0.281
       objectReference: {fileID: 0}
     - target: {fileID: 969062265902454224, guid: fb2b31691fca7ad498874d90653b2729,
         type: 3}
@@ -1023,6 +1073,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5049824557375722393}
     m_Modifications:
+    - target: {fileID: 226518055553395498, guid: 66d5af58ab073cc428c691e148aed6b0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2145608464223625801, guid: 66d5af58ab073cc428c691e148aed6b0,
         type: 3}
       propertyPath: snapRotation
@@ -1051,7 +1106,7 @@ PrefabInstance:
     - target: {fileID: 3609905084996122389, guid: 66d5af58ab073cc428c691e148aed6b0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.012817383
+      value: -0.01281738
       objectReference: {fileID: 0}
     - target: {fileID: 3609905084996122389, guid: 66d5af58ab073cc428c691e148aed6b0,
         type: 3}
@@ -1133,10 +1188,20 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4905713822167476092, guid: 66d5af58ab073cc428c691e148aed6b0,
+        type: 3}
+      propertyPath: acceptedGameObject
+      value: 
+      objectReference: {fileID: 4759008224516640012}
     - target: {fileID: 5545510382260926712, guid: 66d5af58ab073cc428c691e148aed6b0,
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636430845803254246, guid: 66d5af58ab073cc428c691e148aed6b0,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
