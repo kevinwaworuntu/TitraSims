@@ -50,6 +50,7 @@ public class GameManager : MonoBehaviour
     // ─────────────────────────────────────────────────────────────────────────
 
     private GameObject currentActiveMarkerObject;
+    private GameObject currentActiveMarkerImageObject;
     private bool isTahapCompleted;
    
     private string CurrentProgressKey
@@ -76,8 +77,9 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         SetARCameraActive(false);
+        SetAllObserversEnabled(false);
     }
-    
+
     public void SetARCameraActive(bool isActive)
     {
         if (VuforiaBehaviour.Instance != null)
@@ -85,7 +87,44 @@ public class GameManager : MonoBehaviour
             VuforiaBehaviour.Instance.enabled = isActive;
         }
     }
-    
+
+    /// <summary>
+    /// Arms or disarms a single ImageTarget's observer. Vuforia's found/lost callback is edge
+    /// triggered and its state lives on the ImageTarget, which outlives the spawned content — so
+    /// the observer must be disarmed on exit and re-armed on entry, otherwise a target that was
+    /// still tracked when the previous tahapan ended never produces a new "found" edge.
+    /// </summary>
+    private void SetObserverEnabled(GameObject markerImageObject, bool isEnabled)
+    {
+        if (!markerImageObject)
+        {
+            return;
+        }
+        var observer = markerImageObject.GetComponent<ObserverBehaviour>();
+        if (observer)
+        {
+            observer.enabled = isEnabled;
+        }
+    }
+
+    private void SetAllObserversEnabled(bool isEnabled)
+    {
+        SetObserversEnabled(markerTBA, isEnabled);
+        SetObserversEnabled(markerTK, isEnabled);
+    }
+
+    private void SetObserversEnabled(GameObject[] markerImageObjects, bool isEnabled)
+    {
+        if (markerImageObjects == null)
+        {
+            return;
+        }
+        foreach (var markerImageObject in markerImageObjects)
+        {
+            SetObserverEnabled(markerImageObject, isEnabled);
+        }
+    }
+
     public int GetLastCompletedTahapIndex()
     {
         return GetLastCompletedTahapIndex(currentMode);
@@ -167,21 +206,28 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-        if (!SpawnMarkerObject(tahapIndex))
+        if (!TryResolveMarker(tahapIndex, out var markerImageObject, out var markerPrefab))
         {
             return;
         }
-        currentAttemptingTahapIndex = tahapIndex;
+
+        // Order matters: the camera and the observer must be live before the content spawns, so
+        // the ARContentManager on it reads a freshly re-armed status instead of a stale one left
+        // over from the previous tahapan.
         SetARCameraActive(true);
+        SetObserverEnabled(markerImageObject, true);
+        SpawnMarkerObject(markerImageObject, markerPrefab);
+
+        currentAttemptingTahapIndex = tahapIndex;
         OnTahapStarted?.Invoke();
         isTahapCompleted = false;
     }
 
-    public bool SpawnMarkerObject(int tahapIndex)
+    private bool TryResolveMarker(int tahapIndex, out GameObject markerImageObject, out GameObject markerPrefab)
     {
-       
-        GameObject markerImageObject = null;
-        GameObject markerPrefab = null;
+        markerImageObject = null;
+        markerPrefab = null;
+
         switch (currentMode)
         {
             case GameMode.TBA:
@@ -191,7 +237,7 @@ public class GameManager : MonoBehaviour
                 }
                 markerImageObject = markerTBA[tahapIndex];
                 markerPrefab = markerTBAPrefabsMapping[tahapIndex];
-                break;
+                return true;
             case GameMode.Kompleksometri:
                 if ((tahapIndex >= markerTK.Length || markerTK[tahapIndex] == null)  || (tahapIndex >= markerTKPrefabsMapping.Length || markerTKPrefabsMapping[tahapIndex] == null))
                 {
@@ -199,15 +245,18 @@ public class GameManager : MonoBehaviour
                 }
                 markerImageObject = markerTK[tahapIndex];
                 markerPrefab = markerTKPrefabsMapping[tahapIndex];
-                break;
+                return true;
             default:
                 throw new ArgumentOutOfRangeException();
         }
-   
+    }
+
+    private void SpawnMarkerObject(GameObject markerImageObject, GameObject markerPrefab)
+    {
+        currentActiveMarkerImageObject = markerImageObject;
         currentActiveMarkerObject = Instantiate(markerPrefab, markerImageObject.transform, false);
         currentActiveMarkerObject.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
         currentActiveMarkerObject.transform.localScale = Vector3.one;
-        return true;
     }
 
     public bool DestroyMarkerObject()
@@ -218,8 +267,15 @@ public class GameManager : MonoBehaviour
             currentActiveMarkerObject = null;
             return true;
         }
-        
+
         return false;
+    }
+
+    /// <summary>Disarms the observer for the tahapan we are leaving, so the next entry gets a clean found/lost edge.</summary>
+    private void DisarmCurrentMarker()
+    {
+        SetObserverEnabled(currentActiveMarkerImageObject, false);
+        currentActiveMarkerImageObject = null;
     }
 
     public void BackFromCurrentTahap()
@@ -233,6 +289,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogError("Failed to destroy marker object!");
         }
+        DisarmCurrentMarker();
         currentAttemptingTahapIndex = -1;
         SetARCameraActive(false);
     }
@@ -246,6 +303,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogError("Failed to destroy marker object!");
         }
+        DisarmCurrentMarker();
         if (usePlayerPrefsForProgress && PlayerPrefs.GetInt(CurrentProgressKey, -1) <= currentAttemptingTahapIndex)
         {
             PlayerPrefs.SetInt(CurrentProgressKey, currentAttemptingTahapIndex);
@@ -291,8 +349,11 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.Save();
         }
 
+        DestroyMarkerObject();
+        currentActiveMarkerImageObject = null;
         currentAttemptingTahapIndex = -1;
         SetARCameraActive(false);
+        SetAllObserversEnabled(false);
         OnProgressReset?.Invoke();
     }
 
@@ -310,12 +371,12 @@ public class GameManager : MonoBehaviour
     public bool DebugSpawnTahap(int tahapIndex, GameMode mode)
     {
         DestroyMarkerObject();
+        DisarmCurrentMarker();
         GameObject[] mapping = mode == GameMode.TBA ? markerTBAPrefabsMapping : markerTKPrefabsMapping;
         if (mapping == null || tahapIndex >= mapping.Length || mapping[tahapIndex] == null) return false;
         if (markerTBA == null || tahapIndex >= markerTBA.Length || markerTBA[tahapIndex] == null) return false;
-        currentActiveMarkerObject = Instantiate(mapping[tahapIndex], markerTBA[tahapIndex].transform, false);
-        currentActiveMarkerObject.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
-        currentActiveMarkerObject.transform.localScale = Vector3.one;
+        SetObserverEnabled(markerTBA[tahapIndex], true);
+        SpawnMarkerObject(markerTBA[tahapIndex], mapping[tahapIndex]);
         currentAttemptingTahapIndex = tahapIndex;
         isTahapCompleted = false;
         OnTahapStarted?.Invoke();

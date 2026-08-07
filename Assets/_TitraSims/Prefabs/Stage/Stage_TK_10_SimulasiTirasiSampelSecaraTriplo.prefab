@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2192282092772344083
 Transform:
   m_ObjectHideFlags: 0
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 2920288191931388374}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -562.005, y: -1951.8, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -50,13 +50,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionDataActionMappings:
   - InteractionData: {fileID: 11400000, guid: cf333dceef6a62247b78e569a4494c5e, type: 2}
-    IsAutoContinue: 1
+    IsAutoContinue: 0
     IsContinueByOtherEvent: 0
     UniqueEvent:
       m_PersistentCalls:
         m_Calls: []
   - InteractionData: {fileID: 11400000, guid: bef9b314735860d48880a060c553bebf, type: 2}
-    IsAutoContinue: 1
+    IsAutoContinue: 0
     IsContinueByOtherEvent: 0
     UniqueEvent:
       m_PersistentCalls:
@@ -98,13 +98,13 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - InteractionData: {fileID: 11400000, guid: 027c0d9a2e7bb1048992c58f0c7139b9, type: 2}
-    IsAutoContinue: 1
+    IsAutoContinue: 0
     IsContinueByOtherEvent: 0
     UniqueEvent:
       m_PersistentCalls:
         m_Calls: []
   - InteractionData: {fileID: 11400000, guid: 88b54ec2a2c1a6f44a79c8f06a84e7dc, type: 2}
-    IsAutoContinue: 1
+    IsAutoContinue: 0
     IsContinueByOtherEvent: 0
     UniqueEvent:
       m_PersistentCalls:
@@ -134,7 +134,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - InteractionData: {fileID: 11400000, guid: 195b2a868a928d343a31482cd26cb9f6, type: 2}
-    IsAutoContinue: 1
+    IsAutoContinue: 0
     IsContinueByOtherEvent: 0
     UniqueEvent:
       m_PersistentCalls:
@@ -176,13 +176,13 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - InteractionData: {fileID: 11400000, guid: 5ee65e27569ff194ab8c123e1e24bbd9, type: 2}
-    IsAutoContinue: 1
+    IsAutoContinue: 0
     IsContinueByOtherEvent: 0
     UniqueEvent:
       m_PersistentCalls:
         m_Calls: []
   - InteractionData: {fileID: 11400000, guid: c8c54b4c3b88c0b49b0c38bdb3447ae3, type: 2}
-    IsAutoContinue: 1
+    IsAutoContinue: 0
     IsContinueByOtherEvent: 0
     UniqueEvent:
       m_PersistentCalls:
@@ -212,7 +212,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - InteractionData: {fileID: 11400000, guid: fe3ceea785791454cb43a211e72e87b7, type: 2}
-    IsAutoContinue: 1
+    IsAutoContinue: 0
     IsContinueByOtherEvent: 0
     UniqueEvent:
       m_PersistentCalls:
@@ -358,7 +358,7 @@ PrefabInstance:
     - target: {fileID: 7397670616932196057, guid: 9a77d2763f3f43644a35de07589bbb78,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10452.686
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7397670616932196057, guid: 9a77d2763f3f43644a35de07589bbb78,
         type: 3}
@@ -383,7 +383,7 @@ PrefabInstance:
     - target: {fileID: 7397670616932196057, guid: 9a77d2763f3f43644a35de07589bbb78,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 581.00006
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7397670616932196057, guid: 9a77d2763f3f43644a35de07589bbb78,
         type: 3}
@@ -454,12 +454,12 @@ PrefabInstance:
     - target: {fileID: 7076822594832710056, guid: dc8b745a78379b145b733455f2fc0ce1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0970459
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7076822594832710056, guid: dc8b745a78379b145b733455f2fc0ce1,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.15799999
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7076822594832710056, guid: dc8b745a78379b145b733455f2fc0ce1,
         type: 3}

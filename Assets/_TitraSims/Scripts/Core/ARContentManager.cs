@@ -3,6 +3,7 @@ using Gameplay;
 using UI;
 using System.Collections;
 using UnityEngine;
+using Vuforia;
 
 public class ARContentManager : MonoBehaviour
 {
@@ -10,7 +11,11 @@ public class ARContentManager : MonoBehaviour
     private float autoHideNarationPanel = 3;
     private int interactByQty;
     private int targetInteractByQty = 2;
-    
+
+    private ObserverBehaviour observerBehaviour;
+    private bool isTargetFound;
+    private Coroutine autoHideNarationRoutine;
+
     protected virtual void Awake()
     {
         tahapanInteractionController = GetComponent<TahapanInteractionController>();
@@ -18,16 +23,14 @@ public class ARContentManager : MonoBehaviour
 
     protected virtual void OnEnable()
     {
-        var parentObject = transform.parent.gameObject;
-        if (!parentObject)
+        // Each spawn starts un-latched, so it computes its own found/lost edge instead of
+        // inheriting the state of the ImageTarget's shared DefaultObserverEventHandler.
+        isTargetFound = false;
+
+        observerBehaviour = ResolveObserverBehaviour();
+        if (observerBehaviour)
         {
-            return;
-        }
-        DefaultObserverEventHandler defaultObserverEventHandler = parentObject.GetComponent<DefaultObserverEventHandler>();
-        if (defaultObserverEventHandler)
-        {
-            defaultObserverEventHandler.OnTargetFound.AddListener(OnTargetFound);
-            defaultObserverEventHandler.OnTargetLost.AddListener(OnTargetLost);
+            observerBehaviour.OnTargetStatusChanged += OnObserverStatusChanged;
         }
         if (!tahapanInteractionController)
         {
@@ -39,31 +42,64 @@ public class ARContentManager : MonoBehaviour
             tahapanInteractionController.OnFinishPlayingInteraction += OnFinishPlayingTahapanInteractionHandler;
             tahapanInteractionController.OnInteractionComplete += OnInteractionCompleteHandler;
         }
-        if (!UIManager.Instance)
-        {
-            return;
-        }
         ToggleNavigationButtons(false, false);
+    }
+
+    protected virtual void Start()
+    {
+        // Vuforia only raises a status change on a transition. Seed from the live status here —
+        // after every OnEnable (ours and any subclass's) has run — so a target that is already
+        // tracked at spawn time still starts the interaction.
+        if (observerBehaviour)
+        {
+            EvaluateTargetStatus(observerBehaviour.TargetStatus.Status);
+        }
     }
 
     protected virtual void OnDisable()
     {
-        var parentObject = transform.parent.gameObject;
-        if (!parentObject)
+        if (observerBehaviour)
         {
-            return;
+            observerBehaviour.OnTargetStatusChanged -= OnObserverStatusChanged;
         }
-        DefaultObserverEventHandler defaultObserverEventHandler = parentObject.GetComponent<DefaultObserverEventHandler>();
-        if (defaultObserverEventHandler)
-        {
-            defaultObserverEventHandler.OnTargetFound.RemoveListener(OnTargetFound);
-            defaultObserverEventHandler.OnTargetLost.RemoveListener(OnTargetLost);
-        }
+        observerBehaviour = null;
+
         if (tahapanInteractionController != null)
         {
             tahapanInteractionController.OnStartWaitingForPlayerInputToContinue -= OnStartWaitingForPlayerInputToContinueHandler;
             tahapanInteractionController.OnFinishPlayingInteraction -= OnFinishPlayingTahapanInteractionHandler;
             tahapanInteractionController.OnInteractionComplete -= OnInteractionCompleteHandler;
+        }
+    }
+
+    private ObserverBehaviour ResolveObserverBehaviour()
+    {
+        var parent = transform.parent;
+        return parent ? parent.GetComponent<ObserverBehaviour>() : null;
+    }
+
+    private void OnObserverStatusChanged(ObserverBehaviour behaviour, TargetStatus targetStatus)
+    {
+        EvaluateTargetStatus(targetStatus.Status);
+    }
+
+    private void EvaluateTargetStatus(Status status)
+    {
+        // Mirrors the Tracked_ExtendedTracked filter the scene's ImageTargets are configured with.
+        bool isFound = status == Status.TRACKED || status == Status.EXTENDED_TRACKED;
+        if (isFound == isTargetFound)
+        {
+            return;
+        }
+        isTargetFound = isFound;
+
+        if (isFound)
+        {
+            OnTargetFound();
+        }
+        else
+        {
+            OnTargetLost();
         }
     }
 
@@ -85,20 +121,35 @@ public class ARContentManager : MonoBehaviour
             UIManager.Instance.ForceHideInfoPanel();
             UIManager.Instance.SetButtonNarationVisibility(true);
 
-            StartCoroutine(AutoHideNarationPanel());
-           
+            RestartAutoHideNarationPanel();
+
         }
     }
-  
+
+    private void RestartAutoHideNarationPanel()
+    {
+        if (autoHideNarationRoutine != null)
+        {
+            StopCoroutine(autoHideNarationRoutine);
+        }
+        autoHideNarationRoutine = StartCoroutine(AutoHideNarationPanel());
+    }
+
     IEnumerator AutoHideNarationPanel() // Todo : Add detection also if player intended to reopen
     {
         yield return new WaitForSeconds(autoHideNarationPanel);
-        UIManager.Instance.ForceHideNarationPanel();
+        autoHideNarationRoutine = null;
+        if (UIManager.Instance)
+        {
+            UIManager.Instance.ForceHideNarationPanel();
+        }
     }
-    
+
     public void OnTargetLost()
     {
-        if(GameManager.Instance.IsCurrentTahapCompleted())
+        // Prompt the player to re-scan while the tahapan is still in progress. Once it is
+        // completed the flow moves on and the prompt would be noise.
+        if (GameManager.Instance && !GameManager.Instance.IsCurrentTahapCompleted())
         {
             if (UIManager.Instance) // Todo : Revisit move to better place
             {
@@ -162,7 +213,7 @@ public class ARContentManager : MonoBehaviour
                 tahapanInteractionController.PlayerInteractToFinishInteraction();
                 ToggleNavigationButtons(false, false);
             });
-            StartCoroutine(AutoHideNarationPanel());
+            RestartAutoHideNarationPanel();
         });
     }
     
