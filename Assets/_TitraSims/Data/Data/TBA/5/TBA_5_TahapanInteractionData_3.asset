@@ -15,4 +15,4 @@ MonoBehaviour:
   title: Step 3
   description: Tekan tombol TARE(NEXT)!
   audioNaration: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
-  animationClip: {fileID: 0}
+  animationClip: {fileID: 7400000, guid: e483012af3864e64891cf1b68d7e0786, type: 2}

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44c951639d570164c9e41325f5c99aaf, type: 3}
   m_Name: TimbanganStageConfig
   m_EditorClassIdentifier: Assembly-CSharp::Data.TimbanganStageConfig
-  targetWeight: 0
+  targetWeight: 400
   stepAmountMg: 25
   scaleModifier: 0.1225
   initialScale: 0.02

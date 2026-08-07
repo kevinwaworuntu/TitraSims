@@ -830,6 +830,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8985603040771322876, guid: f8d98af353a31dd4993ca1412ae27804,
         type: 3}
+      propertyPath: _snapRadius
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 8985603040771322876, guid: f8d98af353a31dd4993ca1412ae27804,
+        type: 3}
       propertyPath: acceptedGameObject
       value: 
       objectReference: {fileID: 4795087982668678115}
@@ -928,6 +933,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 680872581712154483}
     m_Modifications:
+    - target: {fileID: 283427473199609327, guid: f2d0e3249413e1b4da40a0b86d5d9259,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1474320447811692041, guid: f2d0e3249413e1b4da40a0b86d5d9259,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1063,10 +1073,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: GelasUkurLeft
       objectReference: {fileID: 0}
+    - target: {fileID: 4142182760217279592, guid: f2d0e3249413e1b4da40a0b86d5d9259,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4217956144948044792, guid: f2d0e3249413e1b4da40a0b86d5d9259,
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7215732913436722136, guid: f2d0e3249413e1b4da40a0b86d5d9259,
+        type: 3}
+      propertyPath: _snapRadius
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 7215732913436722136, guid: f2d0e3249413e1b4da40a0b86d5d9259,
         type: 3}
@@ -1081,7 +1101,7 @@ PrefabInstance:
     - target: {fileID: 8093237419681583346, guid: f2d0e3249413e1b4da40a0b86d5d9259,
         type: 3}
       propertyPath: canDrag
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8093237419681583346, guid: f2d0e3249413e1b4da40a0b86d5d9259,
         type: 3}

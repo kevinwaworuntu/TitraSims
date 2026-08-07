@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: TBA_7_TahapanInteractionData_1
   m_EditorClassIdentifier: 
   title: Step 1
-  description: 'Tap layar untuk mengambil indikator kristal violet dengan pipet tetes!
-
-'
+  description: Tarik pipet tetes dari botol pipet dan geser ke mulut Erlenmeyer berisi
+    larutan blanko.
   audioNaration: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
   animationClip: {fileID: 0}

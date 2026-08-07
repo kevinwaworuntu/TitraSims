@@ -13,9 +13,7 @@ MonoBehaviour:
   m_Name: TBA_7_TahapanInteractionData_4
   m_EditorClassIdentifier: 
   title: Step 4
-  description: 'Tap layar untuk meneteskan 2-3 tetes indikator kristal violet ke
-    dalam Erlenmeyer 3 (Sampel)!
-
-'
+  description: Tap layar untuk meneteskan 2-3 tetes indikator kristal violet ke dalam
+    Erlenmeyer 2 (Baku Primer)!
   audioNaration: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
   animationClip: {fileID: 0}
