@@ -67,6 +67,7 @@ namespace Gameplay
             {
                 PlayAnimation(animClipBalance);
                 PowderFillValue(1);
+                timbanganObject.IncreaseWeight(config.StepAmountMg);
             });
         }
 
