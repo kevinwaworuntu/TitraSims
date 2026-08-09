@@ -1281,7 +1281,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
   mObserverBehaviour: {fileID: 0}
   mHiddenRoot: {fileID: 0}
-  mTargetName: tk9
+  mTargetName: 
   mDatasetName: 
   mCastedBehaviour: {fileID: 0}
   mMeshFilter: {fileID: 0}
@@ -17110,7 +17110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Vuforia.Unity.Engine.dll::Vuforia.ImageTargetPreview
   mObserverBehaviour: {fileID: 0}
   mHiddenRoot: {fileID: 0}
-  mTargetName: tk10
+  mTargetName: 
   mDatasetName: 
   mCastedBehaviour: {fileID: 0}
   mMeshFilter: {fileID: 0}
@@ -21611,6 +21611,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stage_TK_10_TirasiSampel
       objectReference: {fileID: 0}
+    - target: {fileID: 2920288191931388374, guid: f28b88bde0b5e6744978e994e539a2aa,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8345225128655792286, guid: f28b88bde0b5e6744978e994e539a2aa,
         type: 3}
       propertyPath: audioSource
@@ -21965,6 +21970,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Stage_TK_09_TitrasiBlanko
+      objectReference: {fileID: 0}
+    - target: {fileID: 8668802403459687106, guid: 267969b0242acb540bb991d4993cc9ea,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6880944475919394046, guid: 267969b0242acb540bb991d4993cc9ea, type: 3}

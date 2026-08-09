@@ -79,6 +79,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 4521042078237362078}
+        m_TargetAssemblyTypeName: Gameplay.ObjectColorChanger, Assembly-CSharp
+        m_MethodName: ChangeColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6011246271748545025}
+        m_TargetAssemblyTypeName: Gameplay.ObjectColorChanger, Assembly-CSharp
+        m_MethodName: ChangeColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &9161159905018251459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,10 +194,10 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-        - m_Target: {fileID: 3486859498926052547}
-          m_TargetAssemblyTypeName: InteractionLogic.ObjectManipulator, Assembly-CSharp
-          m_MethodName: SetCanDrag
-          m_Mode: 6
+        - m_Target: {fileID: 996341939484408480}
+          m_TargetAssemblyTypeName: InteractionLogic.SnapInteractable, Assembly-CSharp
+          m_MethodName: ResetToResnap
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -242,10 +266,10 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-        - m_Target: {fileID: 3486859498926052547}
-          m_TargetAssemblyTypeName: InteractionLogic.ObjectManipulator, Assembly-CSharp
-          m_MethodName: SetCanDrag
-          m_Mode: 6
+        - m_Target: {fileID: 996341939484408480}
+          m_TargetAssemblyTypeName: InteractionLogic.SnapInteractable, Assembly-CSharp
+          m_MethodName: ResetToResnap
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -416,6 +440,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 6399093191956461898}
   m_SourcePrefab: {fileID: 100100000, guid: cb941effe9d68b24bb4070674f6d432d, type: 3}
+--- !u!23 &121106500442789652 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 596055353809477146, guid: cb941effe9d68b24bb4070674f6d432d,
+    type: 3}
+  m_PrefabInstance: {fileID: 714907510668691726}
+  m_PrefabAsset: {fileID: 0}
 --- !u!23 &845603804897829052 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 168863794507671986, guid: cb941effe9d68b24bb4070674f6d432d,
@@ -463,7 +493,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fb65579308ec744dbf06dbcd36909f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gameplay.ObjectColorChanger
-  targetRenderer: {fileID: 845603804897829052}
+  targetRenderer: {fileID: 121106500442789652}
   colorBefore: {r: 1, g: 1, b: 1, a: 0.05490196}
   colorAfter: {r: 0.972549, g: 0, b: 1, a: 0.05490196}
   transitionDuration: 0.5
@@ -597,11 +627,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fb65579308ec744dbf06dbcd36909f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gameplay.ObjectColorChanger
-  targetRenderer: {fileID: 845603804897829052}
+  targetRenderer: {fileID: 8305112745593005934}
   colorBefore: {r: 1, g: 1, b: 1, a: 0.05490196}
   colorAfter: {r: 0.972549, g: 0, b: 1, a: 0.05490196}
   transitionDuration: 0.5
   snapArea: {fileID: 46368444384895593}
+--- !u!23 &8305112745593005934 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8838996644260834912, guid: cb941effe9d68b24bb4070674f6d432d,
+    type: 3}
+  m_PrefabInstance: {fileID: 714907510668691726}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5138695919728935714
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -848,7 +884,7 @@ PrefabInstance:
     - target: {fileID: 8947827082545304420, guid: 3f9ed849320492a488f3b47e2e06637c,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9148835713279669916, guid: 3f9ed849320492a488f3b47e2e06637c,
         type: 3}
@@ -1008,7 +1044,7 @@ PrefabInstance:
     - target: {fileID: 8947827082545304420, guid: 3f9ed849320492a488f3b47e2e06637c,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9148835713279669916, guid: 3f9ed849320492a488f3b47e2e06637c,
         type: 3}

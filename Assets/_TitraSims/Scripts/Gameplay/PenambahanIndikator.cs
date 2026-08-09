@@ -4,6 +4,7 @@ using UI;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.Events;
+using System.Diagnostics;
 
 namespace Gameplay
 {
@@ -21,6 +22,27 @@ namespace Gameplay
 
         private int currentDropCount;
         private bool isCheckDropToContinue;
+        private AnimatorOverrideController _runtimeOverride;
+
+        protected override void OnEnable()
+        {
+            base.OnEnable();
+    
+            var animationConfig = GameManager.Instance.AnimationConfig;
+            if (animationConfig?.GenericAnimController != null && animator)
+            {
+                _runtimeOverride = new AnimatorOverrideController(animationConfig.GenericAnimController);
+                animator.runtimeAnimatorController = _runtimeOverride;
+            }
+        }
+
+        protected override void OnDisable()
+        {
+            base.OnDisable();
+
+            if (animator)
+                animator.runtimeAnimatorController = null;
+        }
 
         protected override void OnStartWaitingForPlayerInputToContinueHandler()
         {
@@ -45,19 +67,39 @@ namespace Gameplay
         private void OnDropButtonClicked()
         {
             currentDropCount++;
-            PlayPipetAnimation();
+            PlayPipetAnimation(animClipPipetPress);
 
             if (currentDropCount >= requiredDropCount)
                 onDropCompleted?.Invoke();
         }
 
-        private void PlayPipetAnimation()
+        private void PlayPipetAnimation(AnimationClip clip)
         {
-            if (!animator || !animClipPipetPress)
+            // if (!animator || !animClipPipetPress)
+            //     return;
+
+            // animator.SetTrigger("Play");
+            // StartCoroutine(WaitForAnimation(animClipPipetPress.length));
+            
+            var animationConfig = GameManager.Instance.AnimationConfig;
+
+            UnityEngine.Debug.Log($"Valid: {animationConfig.IsAnimGenericClipEntryNameValid()}");
+            if (!animationConfig || !clip || !animator)
                 return;
 
-            animator.SetTrigger("Play");
-            StartCoroutine(WaitForAnimation(animClipPipetPress.length));
+            if (_runtimeOverride)
+                _runtimeOverride[animationConfig.GetAnimGenericClipEntryName()] = clip;
+
+            animator.SetTrigger(animationConfig.StopAnimationParamName);
+            animator.SetTrigger(animationConfig.PlayAnimationParamName);
+            SetButtonEnabledState(false);
+            StartCoroutine(WaitForDuration(clip.length));
+            IEnumerator WaitForDuration(float duration)
+            {
+                yield return new WaitForSeconds(duration);
+                SetButtonEnabledState(true);
+                OnStartWaitingForPlayerInputToContinueHandler();
+            }
         }
 
         private System.Collections.IEnumerator WaitForAnimation(float duration)

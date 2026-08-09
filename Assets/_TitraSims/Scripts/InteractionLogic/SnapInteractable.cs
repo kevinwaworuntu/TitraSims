@@ -170,6 +170,27 @@ namespace InteractionLogic
             transform.localRotation = _originLocalRot;
         }
 
+        public void ResetToResnap()
+        {
+            foreach (var controller in _animationPlaybackControllers)
+            {
+                controller.StopPlayback();
+            }
+
+            transform.localPosition = _originLocalPos;
+            transform.localRotation = _originLocalRot;
+
+            _currentZone?.Release();
+            _currentZone = null;
+            _hitSnapZone = false;
+            _isLerping = false;
+
+            if (_manipulator)
+                _manipulator.canDrag = true;
+
+            enabled = true;
+        }
+
         // ── Highlight (during drag) ──────────────────────────────────────────────
 
         private void UpdateHighlight()

@@ -9,19 +9,26 @@ namespace Gameplay
         [SerializeField] private Renderer targetRenderer;
 
         [Header("Colors")]
-        [SerializeField] private Color colorBefore = Color.white;
-        [SerializeField] private Color colorAfter = Color.red;
+        [SerializeField] private Color colorBefore;
+        [SerializeField] private Color colorAfter;
 
         [Header("Transition")]
         [SerializeField] private float transitionDuration = 0.5f;
         [SerializeField] private GameObject snapArea;
+        private Material titrasiMatInstance;
+        private static readonly int SideColorID = Shader.PropertyToID("_Side_Color");
+        private static readonly int TopColorID = Shader.PropertyToID("_TopColor");
 
         private Coroutine colorCoroutine;
 
         private void Awake()
         {
-            if (targetRenderer)
-                targetRenderer.material.color = colorBefore;
+            if (!targetRenderer)
+                return;
+
+            titrasiMatInstance = targetRenderer.material;
+            titrasiMatInstance.SetColor(SideColorID, colorBefore);
+            titrasiMatInstance.SetColor(TopColorID, colorBefore);
         }
 
         public void ChangeColor()
@@ -32,8 +39,8 @@ namespace Gameplay
             if (colorCoroutine != null)
                 StopCoroutine(colorCoroutine);
 
-            colorCoroutine = StartCoroutine(LerpColor(targetRenderer.material.color, colorAfter, transitionDuration));
-            UnityEngine.Debug.Log("WARNA BERUBAH");
+            colorCoroutine = StartCoroutine(LerpColor(titrasiMatInstance.GetColor(SideColorID), colorAfter, transitionDuration));
+            colorCoroutine = StartCoroutine(LerpColor(titrasiMatInstance.GetColor(TopColorID), colorAfter, transitionDuration));
         }
 
         public void ResetColor()
@@ -44,7 +51,8 @@ namespace Gameplay
             if (colorCoroutine != null)
                 StopCoroutine(colorCoroutine);
 
-            colorCoroutine = StartCoroutine(LerpColor(targetRenderer.material.color, colorBefore, transitionDuration));
+            colorCoroutine = StartCoroutine(LerpColor(titrasiMatInstance.GetColor(SideColorID), colorBefore, transitionDuration));
+            colorCoroutine = StartCoroutine(LerpColor(titrasiMatInstance.GetColor(TopColorID), colorBefore, transitionDuration));
         }
 
         private System.Collections.IEnumerator LerpColor(Color from, Color to, float duration)
@@ -53,10 +61,13 @@ namespace Gameplay
             while (elapsed < duration)
             {
                 elapsed += Time.deltaTime;
-                targetRenderer.material.color = Color.Lerp(from, to, elapsed / duration);
+                Color current = Color.Lerp(from, to, elapsed / duration);
+                titrasiMatInstance.SetColor(SideColorID, current);
+                titrasiMatInstance.SetColor(TopColorID, current);
                 yield return null;
             }
-            targetRenderer.material.color = to;
+            titrasiMatInstance.SetColor(SideColorID, to);
+            titrasiMatInstance.SetColor(TopColorID, to);
         }
     }
 }
