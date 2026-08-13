@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70ed703590a34d649778d7a94ca0a261, type: 3}
   m_Name: TK_4_TahapanInteractionData_1 1
   m_EditorClassIdentifier: 
-  title: Step 1
+  title: 
   description: 
   audioNaration: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
-  animationClip: {fileID: 7400000, guid: 33aef0b26a8036343af2b19367aaeeff, type: 2}
+  animationClip: {fileID: 7400000, guid: bcb91d12c4e5de94f8073ce134aa900d, type: 2}

@@ -13,9 +13,7 @@ MonoBehaviour:
   m_Name: TK_4_TahapanInteractionData_4
   m_EditorClassIdentifier: 
   title: Step 4
-  description: 'Tekan tombol yang sesuai untuk memulai penambahan NaOH 1N hingga
-    15 ml ke dalam gelas ukur!
-
-'
+  description: Tekan tombol yang sesuai untuk memulai penambahan aquades hingga 100
+    ml ke dalam gelas ukur!
   audioNaration: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
   animationClip: {fileID: 0}

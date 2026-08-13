@@ -13,8 +13,6 @@ MonoBehaviour:
   m_Name: TK_4_TahapanInteractionData_5
   m_EditorClassIdentifier: 
   title: Step 5
-  description: 'Tap layar untuk memasukkan 100 ml aquades ke dalam Erlenmeyer!
-
-'
+  description: Geser gelas beaker berisi NaOH ke gelas ukur.
   audioNaration: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
   animationClip: {fileID: 0}
