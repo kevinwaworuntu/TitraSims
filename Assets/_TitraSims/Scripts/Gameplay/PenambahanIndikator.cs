@@ -98,6 +98,7 @@ namespace Gameplay
             {
                 yield return new WaitForSeconds(duration);
                 SetButtonEnabledState(true);
+                _runtimeOverride[animationConfig.GetAnimGenericClipEntryName()] = animationConfig.GetAnimGenericEntryClip();
                 OnStartWaitingForPlayerInputToContinueHandler();
             }
         }

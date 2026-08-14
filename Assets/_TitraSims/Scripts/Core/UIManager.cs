@@ -95,8 +95,10 @@ public class UIManager : MonoBehaviour
     public void ShowPanelAndAddToHistory(PanelType panelType, bool hidePanelUnderStack = true)
     {
         ForceHideInfoPanel();
-        if (currentActivePanelType == panelType && currentActivePanelType != panelType) return;
-        if (currentActivePanelType != PanelType.PanelHomePage && currentActivePanelType != PanelType.PanelInfo) panelHistory.Push(currentActivePanelType);
+        if (currentActivePanelType == panelType) return;
+        // None is the startup sentinel (no panel mapped to it) and PanelInfo is a transient overlay,
+        // so neither is a valid destination for GoBack to return to.
+        if (currentActivePanelType != PanelType.None && currentActivePanelType != PanelType.PanelInfo) panelHistory.Push(currentActivePanelType);
 
         currentActivePanelType = panelType;
         OnPanelTypeChanged?.Invoke(panelType);
@@ -135,6 +137,11 @@ public class UIManager : MonoBehaviour
         }
 
         ForceHideInfoPanel();
+
+        while (panelHistory.Count > 0 && (panelHistory.Peek() == PanelType.None || panelHistory.Peek() == PanelType.PanelInfo))
+        {
+            panelHistory.Pop();
+        }
 
         if (panelHistory.Count > 0)
         {

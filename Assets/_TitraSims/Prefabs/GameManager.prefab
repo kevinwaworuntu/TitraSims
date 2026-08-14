@@ -47,24 +47,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentMode: 0
   markerTBAPrefabsMapping:
-  - {fileID: 0}
+  - {fileID: 8256442093100834575, guid: 76c9c4324ec33994f927ee5a44d6e940, type: 3}
   - {fileID: 4265277453642384058, guid: 57ba72c521ee0ac4d9fcd64cbb5ec8b1, type: 3}
   - {fileID: 534006759216576832, guid: 0573f0a53bb5d4c41940f48cba80e2a9, type: 3}
   - {fileID: 2935287954428456584, guid: e3aadc63f0968924b89e9c8e0e7a5924, type: 3}
-  - {fileID: 0}
+  - {fileID: 2888481107013980688, guid: 2dff21d8327162543890f88edc5894b4, type: 3}
   - {fileID: 4524111705178837209, guid: 7de45c239a0fad4489ad550e7b3f14b4, type: 3}
-  - {fileID: 0}
+  - {fileID: 5812122325704171721, guid: 5fa9dcb641c82134c9580a56213ffe58, type: 3}
   - {fileID: 7820265711004225899, guid: 9c54363f0910a4e45a098c2ebc0d5fcf, type: 3}
   - {fileID: 9181708246364148224, guid: ff3a63db02943d4439016e7cb88809b4, type: 3}
   - {fileID: 8580935959049117407, guid: d83bc38e49b8f384b88b11db4c40390a, type: 3}
   markerTKPrefabsMapping:
-  - {fileID: 0}
+  - {fileID: 5845703223541622902, guid: 402a8d86258770c47b1c1ac4fe475cb0, type: 3}
   - {fileID: 5966975463116463929, guid: df357fd114c8efe4ca3e6b25320fda41, type: 3}
   - {fileID: 3944323589608970512, guid: 63887e13b83e57c4ca7fa6c825481afe, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 4121496488941307746, guid: 97a6eebd2c2bcaf4fa0fbeb772552592, type: 3}
+  - {fileID: 2470600392034769467, guid: b2b877a5f9d46ec4dacc101f0fbb4fac, type: 3}
   - {fileID: 2717858440080403802, guid: 1ff001d523d12484ca593201d0c1a014, type: 3}
-  - {fileID: 0}
+  - {fileID: 360151604344000011, guid: e55159872a20a2c4486196e08c020820, type: 3}
   - {fileID: 7726193888080636848, guid: 43153e81438fb734d8528b7da3afde30, type: 3}
   - {fileID: 8668802403459687106, guid: 267969b0242acb540bb991d4993cc9ea, type: 3}
   - {fileID: 2920288191931388374, guid: f28b88bde0b5e6744978e994e539a2aa, type: 3}

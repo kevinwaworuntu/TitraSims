@@ -152,7 +152,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4087471397364324504
 Transform:
   m_ObjectHideFlags: 0
@@ -162,7 +162,7 @@ Transform:
   m_GameObject: {fileID: 1084365162888480735}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.7, y: 31.4, z: 0}
+  m_LocalPosition: {x: 1.7, y: 43.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -187,7 +187,7 @@ MonoBehaviour:
   acceptedGameObject: {fileID: 0}
   _snapRadius: 0.08
   _snapOffset: {x: 0, y: -20, z: 0}
-  snapRotation: 1
+  snapRotation: 0
   _highlightVisual: {fileID: 777035829236653655}
   _occupiedVisual: {fileID: 54613085674571859}
 --- !u!1 &1742260927589903480
@@ -260,7 +260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.ObjectManipulator
   canRotate: 0
   canDrag: 0
-  canScale: 0
+  canScale: 1
   _rotateSensitivity: 0.3
   rotateAxis: {x: 0, y: 1, z: 0}
   lockToHorizontalPlane: 0

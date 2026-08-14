@@ -111,7 +111,7 @@ MonoBehaviour:
   titrasiRenderer: {fileID: 6399505691516101634}
   textSampelWeight: {fileID: 166258032533477346}
   buretteFillObject: {fileID: 937101260974866151}
-  buretteMeniskusObject: {fileID: 937101260974866151}
+  buretteMeniskusObject: {fileID: 1598320851573056380}
 --- !u!114 &5596141520489281374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -351,6 +351,12 @@ PrefabInstance:
 --- !u!4 &937101260974866151 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5355302166007753475, guid: f25e18ad9e66a1c498088a20ab7e2220,
+    type: 3}
+  m_PrefabInstance: {fileID: 5138776858371790308}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1598320851573056380 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5872405889895577240, guid: f25e18ad9e66a1c498088a20ab7e2220,
     type: 3}
   m_PrefabInstance: {fileID: 5138776858371790308}
   m_PrefabAsset: {fileID: 0}

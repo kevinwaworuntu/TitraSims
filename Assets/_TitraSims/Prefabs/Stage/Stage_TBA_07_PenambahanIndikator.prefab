@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4742471584576994341}
   - component: {fileID: 532005401556374316}
   - component: {fileID: 9161159905018251459}
-  - component: {fileID: 691420453716019071}
   - component: {fileID: 1449343303293906120}
   m_Layer: 0
   m_Name: Stage_TBA_07_PenambahanIndikator
@@ -296,25 +295,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &691420453716019071
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5812122325704171721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 0}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: 
-  mDatasetName: 
-  mCastedBehaviour: {fileID: 0}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &1449343303293906120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -364,12 +344,12 @@ PrefabInstance:
     - target: {fileID: 6188212851796586783, guid: cb941effe9d68b24bb4070674f6d432d,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6188212851796586783, guid: cb941effe9d68b24bb4070674f6d432d,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6188212851796586783, guid: cb941effe9d68b24bb4070674f6d432d,
         type: 3}
@@ -384,7 +364,7 @@ PrefabInstance:
     - target: {fileID: 6188212851796586783, guid: cb941effe9d68b24bb4070674f6d432d,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6188212851796586783, guid: cb941effe9d68b24bb4070674f6d432d,
         type: 3}

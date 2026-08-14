@@ -34,6 +34,7 @@ namespace Gameplay
         private float currentWeight;
         private int currentIndex;
         private AnimatorOverrideController _runtimeOverride;
+        private Coroutine sampelWeightRoutine;
 
         private static readonly int SideColorID = Shader.PropertyToID("_Side_Color");
         private static readonly int TopColorID = Shader.PropertyToID("_TopColor");
@@ -47,6 +48,13 @@ namespace Gameplay
         protected override void OnEnable()
         {
             base.OnEnable();
+
+            // Disabling the object kills TetesanSequence wherever it happened to be, so the flag
+            // has to be cleared here. Left latched it silently swallows every later pour.
+            isPlaying = false;
+            currentWeight = 0;
+            sampelWeightRoutine = null;
+
             ResetBuretteFill();
             RestartErlenmeyerVisual();
 
@@ -61,6 +69,9 @@ namespace Gameplay
         protected override void OnDisable()
         {
             base.OnDisable();
+
+            isPlaying = false;
+            sampelWeightRoutine = null;
 
             if (animator)
                 animator.runtimeAnimatorController = null;
@@ -111,11 +122,44 @@ namespace Gameplay
 
         private void RestartCurrentInteraction()
         {
+            isPlaying = false;
             currentWeight = 0;
+
+            // The interaction is replayed from the top, so drop the state the overshot attempt
+            // left behind: the pending weight label, the "waiting for the right weight" gate
+            // (the mapping's UniqueEvent arms it again) and the tetesan clip still sitting in
+            // the override controller.
+            if (sampelWeightRoutine != null)
+            {
+                StopCoroutine(sampelWeightRoutine);
+                sampelWeightRoutine = null;
+            }
+            if (textSampelWeight) textSampelWeight.gameObject.SetActive(false);
+            SetIsCheckWeightToContinue(false);
+            RestoreGenericAnimClip();
+
             RestartErlenmeyerVisual();
             ResetBuretteFill();
             ContextualButtonController.Instance.DestroyButtons();
             tahapanInteractionController.RestartInteraction();
+        }
+
+        // TahapanInteractionController owns its own AnimatorOverrideController but this component
+        // overwrites animator.runtimeAnimatorController in OnEnable, so the interaction's clip is
+        // written to a controller the Animator no longer uses. Without putting the entry clip back
+        // the replayed interaction just runs whichever tetesan clip was loaded last.
+        private void RestoreGenericAnimClip()
+        {
+            var animationConfig = GameManager.Instance?.AnimationConfig;
+            if (!animationConfig || !animator) return;
+
+            if (animator.runtimeAnimatorController != _runtimeOverride)
+                _runtimeOverride = animator.runtimeAnimatorController as AnimatorOverrideController;
+
+            if (!_runtimeOverride || !animationConfig.IsAnimGenericClipEntryNameValid()) return;
+
+            animator.SetTrigger(animationConfig.StopAnimationParamName);
+            _runtimeOverride[animationConfig.GetAnimGenericClipEntryName()] = animationConfig.GetAnimGenericEntryClip();
         }
 
         public void RestartErlenmeyerVisual()
@@ -136,17 +180,23 @@ namespace Gameplay
 
             ContextualButtonController.Instance.GenerateContextualButton(2);
             ContextualButtonController.Instance.RegisterTextToButton(0, "0.1 ml");
-            ContextualButtonController.Instance.RegisterAction(0, () =>
-            {
-                currentWeight += 0.1f;
-                TetesanSequenceExecutor(1);
-            });
+            ContextualButtonController.Instance.RegisterAction(0, () => TryPlayTetesan(0.1f, 1));
             ContextualButtonController.Instance.RegisterTextToButton(1, "1 ml");
-            ContextualButtonController.Instance.RegisterAction(1, () =>
-            {
-                currentWeight += 1f;
-                TetesanSequenceExecutor(10);
-            });
+            ContextualButtonController.Instance.RegisterAction(1, () => TryPlayTetesan(1f, 10));
+        }
+
+        // TitraSims_Button defers OnClick behind the press tween, so a tap that lands just before
+        // SetButtonEnabledState(false) still fires. Adding the volume before the isPlaying guard let
+        // those taps inflate currentWeight with no tetesan played and no target check ever running.
+        private void TryPlayTetesan(float milliliter, int totalTetes)
+        {
+            if (isPlaying)
+                return;
+
+            // Snap to tenths: every step is a multiple of 0.1 ml, but accumulating 0.1f drifts far
+            // enough to miss floor/ceil windows that sit only 0.1 apart (TBA 8 is 6.8 - 6.9).
+            currentWeight = Mathf.Round((currentWeight + milliliter) * 10f) / 10f;
+            TetesanSequenceExecutor(totalTetes);
         }
 
         public void TetesanSequenceExecutor(int totalTetes)
@@ -212,7 +262,8 @@ namespace Gameplay
 
         public void SetSampelWeightTextVisible()
         {
-            StartCoroutine(DelaySetSampelWeight());
+            if (sampelWeightRoutine != null) StopCoroutine(sampelWeightRoutine);
+            sampelWeightRoutine = StartCoroutine(DelaySetSampelWeight());
             IEnumerator DelaySetSampelWeight()
             {
                 yield return new WaitForSeconds(1f);
