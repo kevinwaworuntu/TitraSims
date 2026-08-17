@@ -1023,7 +1023,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-  - InteractionData: {fileID: 11400000, guid: 9bf4e67a7d96ef0488b4105b4d0d3b1e, type: 2}
+  - InteractionData: {fileID: 11400000, guid: b47a22f9c7eedfe479f8ed918b208b11, type: 2}
     IsAutoContinue: 0
     IsContinueByOtherEvent: 1
     UniqueEvent:
@@ -1923,6 +1923,21 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.001
       objectReference: {fileID: 0}
+    - target: {fileID: 1952424358913660297, guid: 1383644401e5bf8409c585463afd807b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1952424358913660297, guid: 1383644401e5bf8409c585463afd807b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1952424358913660297, guid: 1383644401e5bf8409c585463afd807b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2930769491442009069, guid: 1383644401e5bf8409c585463afd807b,
         type: 3}
       propertyPath: m_Name
@@ -1932,6 +1947,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3704727072975812817, guid: 1383644401e5bf8409c585463afd807b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.1573
+      objectReference: {fileID: 0}
+    - target: {fileID: 3704727072975812817, guid: 1383644401e5bf8409c585463afd807b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0303
+      objectReference: {fileID: 0}
+    - target: {fileID: 3741591200524312251, guid: 1383644401e5bf8409c585463afd807b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.1524
+      objectReference: {fileID: 0}
+    - target: {fileID: 3741591200524312251, guid: 1383644401e5bf8409c585463afd807b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0283
       objectReference: {fileID: 0}
     - target: {fileID: 5058300197609293662, guid: 1383644401e5bf8409c585463afd807b,
         type: 3}
@@ -2052,6 +2087,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8895463005345596833, guid: 1383644401e5bf8409c585463afd807b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8895463005345596833, guid: 1383644401e5bf8409c585463afd807b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8895463005345596833, guid: 1383644401e5bf8409c585463afd807b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8895463005345596833, guid: 1383644401e5bf8409c585463afd807b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8895463005345596833, guid: 1383644401e5bf8409c585463afd807b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8895463005345596833, guid: 1383644401e5bf8409c585463afd807b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8895463005345596833, guid: 1383644401e5bf8409c585463afd807b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6504929996363763417, guid: 1383644401e5bf8409c585463afd807b, type: 3}
@@ -2547,8 +2617,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.08102289, y: 0.10495379, z: 0.07875261}
-  m_Center: {x: -0.12952487, y: 0.04918072, z: 0.0004485175}
+  m_Size: {x: 0.08316108, y: 0.0944363, z: 0.071949184}
+  m_Center: {x: 0.0021793656, y: 0.016510956, z: -0.0006853808}
 --- !u!114 &5496050160672518286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2562,7 +2632,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.ObjectManipulator
   canRotate: 0
-  canDrag: 1
+  canDrag: 0
   canScale: 1
   _rotateSensitivity: 0.3
   rotateAxis: {x: 0, y: 1, z: 0}
@@ -2588,7 +2658,7 @@ MonoBehaviour:
   OnSnapped:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3992346837441066932}
         m_TargetAssemblyTypeName: Gameplay.GelasUkurFillInteractionManager, Assembly-CSharp
         m_MethodName: RequestContinue
         m_Mode: 1
@@ -2783,8 +2853,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.08486122, y: 0.10495379, z: 0.07392779}
-  m_Center: {x: 0.14514437, y: 0.04918072, z: -0.001963893}
+  m_Size: {x: 0.080416664, y: 0.095009625, z: 0.07207142}
+  m_Center: {x: -0.0029938295, y: 0.016577795, z: -0.00074087083}
 --- !u!114 &5353746092613736415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2798,7 +2868,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.ObjectManipulator
   canRotate: 0
-  canDrag: 1
+  canDrag: 0
   canScale: 1
   _rotateSensitivity: 0.3
   rotateAxis: {x: 0, y: 1, z: 0}
@@ -2828,6 +2898,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: Gameplay.GelasUkurFillInteractionManager, Assembly-CSharp
         m_MethodName: RequestContinue
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5353746092613736415}
+        m_TargetAssemblyTypeName: InteractionLogic.ObjectManipulator, Assembly-CSharp
+        m_MethodName: SetCanDrag
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
