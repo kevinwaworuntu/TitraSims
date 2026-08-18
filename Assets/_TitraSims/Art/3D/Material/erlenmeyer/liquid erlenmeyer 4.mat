@@ -58,6 +58,7 @@ Material:
     - _Fill: 0.004
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _XRMotionVectorsPass: 1
     m_Colors:
     - _Side_Color: {r: 1, g: 1, b: 1, a: 0}
     - _TopColor: {r: 1, g: 1, b: 1, a: 0}

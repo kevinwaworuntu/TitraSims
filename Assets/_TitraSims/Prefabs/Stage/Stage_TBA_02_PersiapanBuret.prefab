@@ -1060,6 +1060,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1668395159839346666, guid: 66d5af58ab073cc428c691e148aed6b0,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.7244751
+      objectReference: {fileID: 0}
     - target: {fileID: 2145608464223625801, guid: 66d5af58ab073cc428c691e148aed6b0,
         type: 3}
       propertyPath: acceptedGameObject
@@ -1483,6 +1488,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5776857556545341035, guid: 39d42031afa029d4f82ed1a14ba7b7ae,
         type: 3}
+      propertyPath: OnSnapped.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5776857556545341035, guid: 39d42031afa029d4f82ed1a14ba7b7ae,
+        type: 3}
       propertyPath: OnSnapped.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 4723483131319906207}
@@ -1493,7 +1503,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5776857556545341035, guid: 39d42031afa029d4f82ed1a14ba7b7ae,
         type: 3}
+      propertyPath: OnSnapped.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5776857556545341035, guid: 39d42031afa029d4f82ed1a14ba7b7ae,
+        type: 3}
       propertyPath: OnSnapped.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 5776857556545341035, guid: 39d42031afa029d4f82ed1a14ba7b7ae,
+        type: 3}
+      propertyPath: OnSnapped.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: Play
       objectReference: {fileID: 0}
     - target: {fileID: 5776857556545341035, guid: 39d42031afa029d4f82ed1a14ba7b7ae,
@@ -1503,7 +1523,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5776857556545341035, guid: 39d42031afa029d4f82ed1a14ba7b7ae,
         type: 3}
+      propertyPath: OnSnapped.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: InteractionLogic.PlayAnimOneShot, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5776857556545341035, guid: 39d42031afa029d4f82ed1a14ba7b7ae,
+        type: 3}
       propertyPath: OnSnapped.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5776857556545341035, guid: 39d42031afa029d4f82ed1a14ba7b7ae,
+        type: 3}
+      propertyPath: OnSnapped.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5895711952283823927, guid: 39d42031afa029d4f82ed1a14ba7b7ae,
