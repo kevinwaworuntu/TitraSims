@@ -48,9 +48,7 @@ namespace Gameplay
         protected override void OnEnable()
         {
             base.OnEnable();
-
-            // Disabling the object kills TetesanSequence wherever it happened to be, so the flag
-            // has to be cleared here. Left latched it silently swallows every later pour.
+            
             isPlaying = false;
             currentWeight = 0;
             sampelWeightRoutine = null;
@@ -144,10 +142,6 @@ namespace Gameplay
             tahapanInteractionController.RestartInteraction();
         }
 
-        // TahapanInteractionController owns its own AnimatorOverrideController but this component
-        // overwrites animator.runtimeAnimatorController in OnEnable, so the interaction's clip is
-        // written to a controller the Animator no longer uses. Without putting the entry clip back
-        // the replayed interaction just runs whichever tetesan clip was loaded last.
         private void RestoreGenericAnimClip()
         {
             var animationConfig = GameManager.Instance?.AnimationConfig;
@@ -211,6 +205,9 @@ namespace Gameplay
             isPlaying = true;
             SetButtonEnabledState(false);
             var animationConfig = GameManager.Instance.AnimationConfig;
+
+            if (animator.runtimeAnimatorController != _runtimeOverride)
+                _runtimeOverride = animator.runtimeAnimatorController as AnimatorOverrideController;
 
             if (_runtimeOverride)
                 _runtimeOverride[animationConfig.GetAnimGenericClipEntryName()] = animClipOpenKeran;

@@ -205,7 +205,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-  - InteractionData: {fileID: 11400000, guid: af14a0d1d640f1d408834e913daae5de, type: 2}
+  - InteractionData: {fileID: 11400000, guid: 17d1edfc9ec963442b46fe711a0978ba, type: 2}
     IsAutoContinue: 0
     IsContinueByOtherEvent: 1
     UniqueEvent:
@@ -324,8 +324,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 22100000, guid: 655f0a184bc0f8542bbbd2d6d4a86b04,
-        type: 2}
+      objectReference: {fileID: 9100000, guid: f10e2e11fbe7a20498cef29642df6315, type: 2}
     - target: {fileID: 6188212851796586783, guid: cb941effe9d68b24bb4070674f6d432d,
         type: 3}
       propertyPath: m_LocalPosition.x

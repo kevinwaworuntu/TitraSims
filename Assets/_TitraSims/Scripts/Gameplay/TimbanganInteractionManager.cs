@@ -79,6 +79,9 @@ namespace Gameplay
 
         private void PlayAnimation(AnimationClip clip)
         {
+            if (animator.runtimeAnimatorController != _runtimeOverride)
+                _runtimeOverride = animator.runtimeAnimatorController as AnimatorOverrideController;
+
             var animationConfig = GameManager.Instance.AnimationConfig;
             if (!animationConfig || !clip || !animator)
                 return;
@@ -94,6 +97,9 @@ namespace Gameplay
             {
                 yield return new WaitForSeconds(duration);
                 SetButtonEnabledState(true);
+                animator.SetTrigger(animationConfig.StopAnimationParamName);
+                if (_runtimeOverride)
+                    _runtimeOverride[animationConfig.GetAnimGenericClipEntryName()] = animationConfig.GetAnimGenericEntryClip();
                 OnStartWaitingForPlayerInputToContinueHandler();
             }
         }

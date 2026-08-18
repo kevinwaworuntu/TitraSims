@@ -22,12 +22,16 @@ namespace Gameplay
 
         private int currentDropCount;
         private bool isCheckDropToContinue;
+        private bool isPlaying;
         private AnimatorOverrideController _runtimeOverride;
 
         protected override void OnEnable()
         {
             base.OnEnable();
-    
+            
+            isPlaying = false;
+            currentDropCount = 0;
+
             var animationConfig = GameManager.Instance.AnimationConfig;
             if (animationConfig?.GenericAnimController != null && animator)
             {
@@ -39,6 +43,8 @@ namespace Gameplay
         protected override void OnDisable()
         {
             base.OnDisable();
+
+            isPlaying = false;
 
             if (animator)
                 animator.runtimeAnimatorController = null;
@@ -66,6 +72,9 @@ namespace Gameplay
 
         private void OnDropButtonClicked()
         {
+            if (isPlaying)
+                return;
+
             currentDropCount++;
             PlayPipetAnimation(animClipPipetPress);
 
@@ -75,40 +84,42 @@ namespace Gameplay
 
         private void PlayPipetAnimation(AnimationClip clip)
         {
-            // if (!animator || !animClipPipetPress)
-            //     return;
+            if (animator.runtimeAnimatorController != _runtimeOverride)
+                _runtimeOverride = animator.runtimeAnimatorController as AnimatorOverrideController;
 
-            // animator.SetTrigger("Play");
-            // StartCoroutine(WaitForAnimation(animClipPipetPress.length));
-            
             var animationConfig = GameManager.Instance.AnimationConfig;
-
-            UnityEngine.Debug.Log($"Valid: {animationConfig.IsAnimGenericClipEntryNameValid()}");
             if (!animationConfig || !clip || !animator)
                 return;
 
             if (_runtimeOverride)
                 _runtimeOverride[animationConfig.GetAnimGenericClipEntryName()] = clip;
 
-            animator.SetTrigger(animationConfig.StopAnimationParamName);
+            isPlaying = true;
             animator.SetTrigger(animationConfig.PlayAnimationParamName);
             SetButtonEnabledState(false);
             StartCoroutine(WaitForDuration(clip.length));
             IEnumerator WaitForDuration(float duration)
             {
                 yield return new WaitForSeconds(duration);
+                isPlaying = false;
                 SetButtonEnabledState(true);
-                _runtimeOverride[animationConfig.GetAnimGenericClipEntryName()] = animationConfig.GetAnimGenericEntryClip();
+                RestoreGenericAnimClip();
                 OnStartWaitingForPlayerInputToContinueHandler();
             }
         }
 
-        private System.Collections.IEnumerator WaitForAnimation(float duration)
+        private void RestoreGenericAnimClip()
         {
-            SetButtonEnabledState(false);
-            yield return new WaitForSeconds(duration);
-            SetButtonEnabledState(true);
-            OnStartWaitingForPlayerInputToContinueHandler();
+            var animationConfig = GameManager.Instance?.AnimationConfig;
+            if (!animationConfig || !animator) return;
+
+            if (animator.runtimeAnimatorController != _runtimeOverride)
+                _runtimeOverride = animator.runtimeAnimatorController as AnimatorOverrideController;
+
+            if (!_runtimeOverride || !animationConfig.IsAnimGenericClipEntryNameValid()) return;
+
+            animator.SetTrigger(animationConfig.StopAnimationParamName);
+            _runtimeOverride[animationConfig.GetAnimGenericClipEntryName()] = animationConfig.GetAnimGenericEntryClip();
         }
 
         private void SetButtonEnabledState(bool enabled)

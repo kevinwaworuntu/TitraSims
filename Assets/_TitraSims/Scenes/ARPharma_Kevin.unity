@@ -11268,7 +11268,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.00012207031}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 583.0763}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1196315864
@@ -21264,7 +21264,7 @@ PrefabInstance:
         type: 3}
       propertyPath: 'markerTK.Array.data[3]'
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 694762570}
     - target: {fileID: 2725533295005454670, guid: fb5a4c05217e747458b39a6040eebcfd,
         type: 3}
       propertyPath: 'markerTK.Array.data[4]'
@@ -21329,7 +21329,7 @@ PrefabInstance:
         type: 3}
       propertyPath: 'markerTBA.Array.data[6]'
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1718828702}
     - target: {fileID: 2725533295005454670, guid: fb5a4c05217e747458b39a6040eebcfd,
         type: 3}
       propertyPath: 'markerTBA.Array.data[7]'
@@ -21349,16 +21349,6 @@ PrefabInstance:
         type: 3}
       propertyPath: usePlayerPrefsForProgress
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2725533295005454670, guid: fb5a4c05217e747458b39a6040eebcfd,
-        type: 3}
-      propertyPath: 'markerTKPrefabsMapping.Array.data[3]'
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2725533295005454670, guid: fb5a4c05217e747458b39a6040eebcfd,
-        type: 3}
-      propertyPath: 'markerTBAPrefabsMapping.Array.data[6]'
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5986580887397016950, guid: fb5a4c05217e747458b39a6040eebcfd,
         type: 3}

@@ -51,14 +51,20 @@ namespace Gameplay
 
             if (animationConfig != null && data.AnimationClip != null && animator != null)
             {
+                if (animator.runtimeAnimatorController != runtimeOverride)
+                    runtimeOverride = animator.runtimeAnimatorController as AnimatorOverrideController;
+
                 if (runtimeOverride != null)
                     runtimeOverride[animationConfig.GetAnimGenericClipEntryName()] = data.AnimationClip;
 
-                animator.SetTrigger(animationConfig.StopAnimationParamName);
+                //animator.SetTrigger(animationConfig.StopAnimationParamName);
                 animator.SetTrigger(animationConfig.PlayAnimationParamName);
                 animCoroutine = coroutineRunner.StartCoroutine(
                     WaitForDuration(Mathf.Max(data.AnimationClip.length, minPlayDuration), () =>
                     {
+                        RestoreGenericAnimClip();
+                        animator.SetTrigger(animationConfig.StopAnimationParamName);
+
                         isAnimationFinished = true;
                         TryFinish(isAnimationFinished, isAudioClipFinished, onFinishedCallback);
                     }));
@@ -74,6 +80,18 @@ namespace Gameplay
                         TryFinish(isAnimationFinished, isAudioClipFinished, onFinishedCallback);
                     }));
             }
+        }
+
+        private void RestoreGenericAnimClip()
+        {
+            if (animator == null || animationConfig == null) return;
+
+            if (animator.runtimeAnimatorController != runtimeOverride)
+                runtimeOverride = animator.runtimeAnimatorController as AnimatorOverrideController;
+
+            if (runtimeOverride == null || !animationConfig.IsAnimGenericClipEntryNameValid()) return;
+
+            runtimeOverride[animationConfig.GetAnimGenericClipEntryName()] = animationConfig.GetAnimGenericEntryClip();
         }
 
         public void Stop()
