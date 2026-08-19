@@ -693,6 +693,11 @@ PrefabInstance:
       objectReference: {fileID: 3412318948619893240}
     - target: {fileID: 8300034439777800407, guid: 29a2b320678a3434794de4381954a548,
         type: 3}
+      propertyPath: loopCountNeeded
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8300034439777800407, guid: 29a2b320678a3434794de4381954a548,
+        type: 3}
       propertyPath: OnLoopCountComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1750273543351029136}
