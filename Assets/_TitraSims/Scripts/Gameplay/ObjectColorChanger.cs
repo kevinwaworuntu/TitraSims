@@ -11,6 +11,7 @@ namespace Gameplay
         [Header("Colors")]
         [SerializeField] private Color colorBefore;
         [SerializeField] private Color colorAfter;
+        [SerializeField] private GameObject cairanPink;
 
         [Header("Transition")]
         [SerializeField] private float transitionDuration = 0.5f;
@@ -23,12 +24,21 @@ namespace Gameplay
 
         private void Awake()
         {
+            UnityEngine.Debug.Log($"Awake dipanggil di {gameObject.name}. targetRenderer: {targetRenderer}");
+
             if (!targetRenderer)
+            {
+                UnityEngine.Debug.LogWarning($"targetRenderer NULL di {gameObject.name}!");
                 return;
+            }
 
             titrasiMatInstance = targetRenderer.material;
+            UnityEngine.Debug.Log($"Material: {titrasiMatInstance.name}, Shader: {titrasiMatInstance.shader.name}");
+            UnityEngine.Debug.Log($"HasProperty _Side_Color: {titrasiMatInstance.HasProperty(SideColorID)}, HasProperty _TopColor: {titrasiMatInstance.HasProperty(TopColorID)}");
+
             titrasiMatInstance.SetColor(SideColorID, colorBefore);
             titrasiMatInstance.SetColor(TopColorID, colorBefore);
+            UnityEngine.Debug.Log("WARNA AWAL");
         }
 
         public void ChangeColor()
@@ -41,6 +51,8 @@ namespace Gameplay
 
             colorCoroutine = StartCoroutine(LerpColor(titrasiMatInstance.GetColor(SideColorID), colorAfter, transitionDuration));
             colorCoroutine = StartCoroutine(LerpColor(titrasiMatInstance.GetColor(TopColorID), colorAfter, transitionDuration));
+            cairanPink.SetActive(true);
+            UnityEngine.Debug.Log("WARNA BERUBAH");
         }
 
         public void ResetColor()
