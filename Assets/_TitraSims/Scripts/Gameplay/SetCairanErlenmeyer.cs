@@ -43,6 +43,6 @@ public class SetCairanErlenmeyer : MonoBehaviour
     {
         if (!config) return;
         SetCairanErlen(config.ColorValue);
-        SetFill(config.FillValue);
+        //SetFill(config.FillValue);
     }
 }
