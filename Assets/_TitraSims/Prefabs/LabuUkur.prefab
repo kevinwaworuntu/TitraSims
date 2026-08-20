@@ -105,6 +105,7 @@ GameObject:
   - component: {fileID: 7056967588886357683}
   - component: {fileID: 8861052277550190303}
   - component: {fileID: 1558994427296561921}
+  - component: {fileID: 681021850327325824}
   m_Layer: 0
   m_Name: LabuUkur
   m_TagString: Untagged
@@ -161,11 +162,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52fa8955054212448be523defde7f6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.ObjectManipulator
-  canRotate: 0
+  canRotate: 1
   canDrag: 1
-  canScale: 0
+  canScale: 1
   _rotateSensitivity: 0.3
   rotateAxis: {x: 0, y: 1, z: 0}
+  rotateSpace: 1
   lockToHorizontalPlane: 0
   lockDragX: 0
   lockDragY: 0
@@ -236,6 +238,19 @@ MonoBehaviour:
   OnComplete:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &681021850327325824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5895711952283823927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b3c9e51d2a04f6a9c18e4d73f5b6a20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.RotationReturnInteractable
+  _returnSpeed: 10
 --- !u!1001 &1216844572987810308
 PrefabInstance:
   m_ObjectHideFlags: 0

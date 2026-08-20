@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8760768605257402213}
   - component: {fileID: 7830600396081564212}
   - component: {fileID: 6035669586173415933}
+  - component: {fileID: 3836469154548788534}
   m_Layer: 0
   m_Name: GelasUkurRight
   m_TagString: Untagged
@@ -72,11 +73,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52fa8955054212448be523defde7f6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.ObjectManipulator
-  canRotate: 0
+  canRotate: 1
   canDrag: 0
   canScale: 1
   _rotateSensitivity: 0.3
   rotateAxis: {x: 0, y: 1, z: 0}
+  rotateSpace: 1
   lockToHorizontalPlane: 0
   lockDragX: 0
   lockDragY: 0
@@ -159,6 +161,19 @@ MonoBehaviour:
   OnComplete:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &3836469154548788534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5103848788468045609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b3c9e51d2a04f6a9c18e4d73f5b6a20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.RotationReturnInteractable
+  _returnSpeed: 10
 --- !u!1001 &866224359909238773
 PrefabInstance:
   m_ObjectHideFlags: 0

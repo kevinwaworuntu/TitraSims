@@ -14,6 +14,9 @@ namespace InteractionLogic
     ///
     /// This mirrors <see cref="ScaleReturnInteractable"/>, but affects only
     /// rotation — no position, scale, or snapping.
+    ///
+    /// Inert on objects that also carry an enabled <see cref="SnapInteractable"/>, which already
+    /// returns/snaps rotation itself; adding both is harmless but only one drives.
     /// </summary>
     [RequireComponent(typeof(ObjectManipulator))]
     public class RotationReturnInteractable : MonoBehaviour
@@ -25,6 +28,7 @@ namespace InteractionLogic
         // ── Internal state ───────────────────────────────────────────────────────
 
         private ObjectManipulator _manipulator;
+        private SnapInteractable  _snap;            // optional — may be null
         private bool              _isBeingManipulated;
 
         private bool       _isLerping;
@@ -35,6 +39,7 @@ namespace InteractionLogic
         private void Awake()
         {
             _manipulator = GetComponent<ObjectManipulator>();
+            _snap        = GetComponent<SnapInteractable>();
         }
 
         private void OnEnable()
@@ -82,6 +87,13 @@ namespace InteractionLogic
         {
             if (m != _manipulator) return;
             _isBeingManipulated = false;
+
+            // SnapInteractable already drives rotation on release — toward the snap zone's
+            // rotation when it snaps, toward the origin rotation when it doesn't. Both of us
+            // writing rotation each frame would fight, and worse, pull a snapped object out of
+            // its zone. Stand down and let it own rotation whenever it's active.
+            if (_snap != null && _snap.enabled) return;
+
             _isLerping = true;
         }
 

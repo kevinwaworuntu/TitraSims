@@ -1105,6 +1105,14 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 990390088139003354}
+    - targetCorrespondingSourceObject: {fileID: 1452311192706281357, guid: b3e6b93f7ea3d78498dc4c10b1952a69,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8848382164840773210}
+    - targetCorrespondingSourceObject: {fileID: 1452311192706281357, guid: b3e6b93f7ea3d78498dc4c10b1952a69,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1290687477965223351}
     - targetCorrespondingSourceObject: {fileID: 3267219300329849848, guid: b3e6b93f7ea3d78498dc4c10b1952a69,
         type: 3}
       insertIndex: -1
@@ -1117,6 +1125,14 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 7744310737813542059}
+    - targetCorrespondingSourceObject: {fileID: 3267219300329849848, guid: b3e6b93f7ea3d78498dc4c10b1952a69,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5802671594672654604}
+    - targetCorrespondingSourceObject: {fileID: 3267219300329849848, guid: b3e6b93f7ea3d78498dc4c10b1952a69,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7368981306620241674}
   m_SourcePrefab: {fileID: 100100000, guid: b3e6b93f7ea3d78498dc4c10b1952a69, type: 3}
 --- !u!4 &25906659540739317 stripped
 Transform:
@@ -1181,11 +1197,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52fa8955054212448be523defde7f6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.ObjectManipulator
-  canRotate: 0
+  canRotate: 1
   canDrag: 1
-  canScale: 0
+  canScale: 1
   _rotateSensitivity: 0.3
   rotateAxis: {x: 0, y: 1, z: 0}
+  rotateSpace: 1
   lockToHorizontalPlane: 0
   lockDragX: 0
   lockDragY: 0
@@ -1235,6 +1252,32 @@ MonoBehaviour:
   OnUnsnapped:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8848382164840773210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5271502326631137650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b3c9e51d2a04f6a9c18e4d73f5b6a20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.RotationReturnInteractable
+  _returnSpeed: 10
+--- !u!114 &1290687477965223351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5271502326631137650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3215d1a77cb4e5f448638c3aa6ff25f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.ScaleReturnInteractable
+  _returnSpeed: 10
 --- !u!1 &6013497852229264859 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1043632617067989796, guid: b3e6b93f7ea3d78498dc4c10b1952a69,
@@ -1304,11 +1347,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52fa8955054212448be523defde7f6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.ObjectManipulator
-  canRotate: 0
+  canRotate: 1
   canDrag: 1
-  canScale: 0
+  canScale: 1
   _rotateSensitivity: 0.3
   rotateAxis: {x: 0, y: 1, z: 0}
+  rotateSpace: 1
   lockToHorizontalPlane: 0
   lockDragX: 0
   lockDragY: 0
@@ -1358,3 +1402,29 @@ MonoBehaviour:
   OnUnsnapped:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &5802671594672654604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8095493691254009095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b3c9e51d2a04f6a9c18e4d73f5b6a20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.RotationReturnInteractable
+  _returnSpeed: 10
+--- !u!114 &7368981306620241674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8095493691254009095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3215d1a77cb4e5f448638c3aa6ff25f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.ScaleReturnInteractable
+  _returnSpeed: 10

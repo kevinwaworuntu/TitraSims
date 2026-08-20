@@ -18,6 +18,10 @@ namespace InteractionLogic
     ///   2 fingers translating         →  drag  focused object  (or OnTwoFingerDragDelta if no focus)
     ///
     /// Assign a GestureSettings asset to _settings to override per-gesture finger counts.
+    /// Two gestures may share a finger count of 2+; they're separated by motion in HandleMulti
+    /// (changing finger distance → pinch, travelling midpoint → drag/rotate). The one pair that
+    /// can't be separated is drag and rotate, since both are pure midpoint travel — if those two
+    /// share a count, drag wins and rotate never fires at that count.
     /// </summary>
     [DefaultExecutionOrder(-10)]
     public class GestureController : MonoBehaviour
@@ -64,7 +68,7 @@ namespace InteractionLogic
         // ── Internal types ───────────────────────────────────────────────────────
 
         private enum State          { Idle, SingleTouch, Multi }
-        private enum TwoGestureKind { Undecided, Pinch, Drag }
+        private enum TwoGestureKind { Undecided, Pinch, Drag, Rotate }
 
         // ── State ────────────────────────────────────────────────────────────────
 
@@ -142,28 +146,29 @@ namespace InteractionLogic
             int scaC  = ScaleCount;
 
             // Scale requires ≥2 touches (pinch needs two distinct points).
-            bool canScale  = count == scaC && count >= 2;
-            bool canDrag   = count == dragC;
-            bool canRotate = count == rotC && !canScale && !canDrag;
+            bool wantScale  = count == scaC && count >= 2;
+            bool wantDrag   = count == dragC;
+            bool wantRotate = count == rotC;
 
-            if (canScale || canDrag)
+            if (count >= 2 && (wantScale || wantDrag || wantRotate))
             {
-                if (count >= 2)
-                {
-                    // Multi-touch path: handles pinch / drag disambiguation.
-                    if (_state == State.SingleTouch)
-                        EnterMultiFromSingle(count, t0, t1, t2);
-                    else
-                        HandleMulti(count, t0, t1, t2);
-                }
+                // Multi-touch path. Gestures that share this finger count are told apart by
+                // how the fingers move — see HandleMulti — so rotate and scale can both live
+                // on 2 fingers: changing finger distance pinches, a travelling midpoint rotates.
+                if (_state == State.SingleTouch)
+                    EnterMultiFromSingle(count, t0, t1, t2);
                 else
-                {
-                    // Single-finger drag (dragC == 1).
-                    HandleSingleDrag(t0);
-                }
+                    HandleMulti(count, t0, t1, t2);
             }
-            else if (canRotate)
+            else if (wantDrag)
             {
+                // Single-finger drag (dragC == 1). Wins over rotate on a shared count of 1,
+                // since one finger gives no second point to disambiguate with.
+                HandleSingleDrag(t0);
+            }
+            else if (wantRotate)
+            {
+                // Single-finger rotate (rotC == 1).
                 if (_state == State.Multi)
                     EnterSingleFromMulti(t0);
                 else
@@ -300,33 +305,43 @@ namespace InteractionLogic
             float   curDist   = Vector2.Distance(t0.screenPosition, t1.screenPosition);
             Vector2 curCenter = GetCenter(t0, t1, t2, count);
 
+            int rotC  = RotateCount;
             int dragC = DragCount;
             int scaC  = ScaleCount;
 
             if (_twoKind == TwoGestureKind.Undecided)
             {
-                bool bothMatch = count == dragC && count == scaC;
+                bool eligibleScale  = count == scaC;
+                bool eligibleDrag   = count == dragC;
+                bool eligibleRotate = count == rotC;
 
-                if (bothMatch)
+                // Drag and rotate are both midpoint-translation gestures, so no amount of
+                // motion analysis separates them. If they share a count, drag wins.
+                if (eligibleDrag) eligibleRotate = false;
+
+                int eligible = (eligibleScale ? 1 : 0) + (eligibleDrag ? 1 : 0) + (eligibleRotate ? 1 : 0);
+
+                if (eligible > 1)
                 {
-                    // Disambiguate: pinch vs drag.
+                    // Ambiguous: let the motion decide. Fingers changing distance → pinch,
+                    // fingers travelling together across the screen → drag or rotate.
                     float distChange   = Mathf.Abs(curDist - _twoBaseDist) / Mathf.Max(_twoBaseDist, 0.001f);
                     float centerTravel = Vector2.Distance(curCenter, _twoBaseCenter);
 
-                    if (distChange >= _pinchCommitRatio)
+                    if (eligibleScale && distChange >= _pinchCommitRatio)
+                    {
                         _twoKind = TwoGestureKind.Pinch;
+                    }
                     else if (centerTravel >= _dragCommitPixels)
                     {
-                        _twoKind           = TwoGestureKind.Drag;
-                        _dragJustCommitted = true;
+                        _twoKind = eligibleDrag ? TwoGestureKind.Drag : TwoGestureKind.Rotate;
+                        if (_twoKind == TwoGestureKind.Drag) _dragJustCommitted = true;
                     }
+                    // else: still undecided — wait for a clearer motion rather than guessing.
                 }
-                else
-                {
-                    // No ambiguity — assign directly.
-                    _twoKind = (count == scaC) ? TwoGestureKind.Pinch : TwoGestureKind.Drag;
-                    if (_twoKind == TwoGestureKind.Drag) _dragJustCommitted = true;
-                }
+                else if (eligibleScale)  _twoKind = TwoGestureKind.Pinch;
+                else if (eligibleDrag) { _twoKind = TwoGestureKind.Drag; _dragJustCommitted = true; }
+                else if (eligibleRotate) _twoKind = TwoGestureKind.Rotate;
             }
 
             switch (_twoKind)
@@ -335,6 +350,12 @@ namespace InteractionLogic
                     float scaleFactor = _twoPrevDist > 0f ? curDist / _twoPrevDist : 1f;
                     if (_focused != null) _focused.ReceivePinchDelta(scaleFactor);
                     else                  OnPinchUpdate?.Invoke(curDist);
+                    break;
+
+                case TwoGestureKind.Rotate:
+                    // Horizontal travel of the finger midpoint drives the spin, matching the
+                    // single-finger swipe in HandleRotate.
+                    _focused?.ReceiveRotateDelta(curCenter - _twoPrevCenter);
                     break;
 
                 case TwoGestureKind.Drag:

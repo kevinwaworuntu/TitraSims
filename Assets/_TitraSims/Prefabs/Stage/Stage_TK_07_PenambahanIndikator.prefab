@@ -1368,6 +1368,14 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 3363251347987281993}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a8aa131c3d644534285e718074640ab6,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8251662881604049113}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a8aa131c3d644534285e718074640ab6,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7328347154632620235}
   m_SourcePrefab: {fileID: 100100000, guid: a8aa131c3d644534285e718074640ab6, type: 3}
 --- !u!4 &200367236031289705 stripped
 Transform:
@@ -1414,11 +1422,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52fa8955054212448be523defde7f6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.ObjectManipulator
-  canRotate: 0
+  canRotate: 1
   canDrag: 0
   canScale: 1
   _rotateSensitivity: 0.3
   rotateAxis: {x: 0, y: 1, z: 0}
+  rotateSpace: 1
   lockToHorizontalPlane: 0
   lockDragX: 0
   lockDragY: 0
@@ -1444,6 +1453,32 @@ MonoBehaviour:
   OnUnsnapped:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8251662881604049113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 687934034628953043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b3c9e51d2a04f6a9c18e4d73f5b6a20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.RotationReturnInteractable
+  _returnSpeed: 10
+--- !u!114 &7328347154632620235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 687934034628953043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3215d1a77cb4e5f448638c3aa6ff25f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.ScaleReturnInteractable
+  _returnSpeed: 10
 --- !u!1001 &1710706300814052330
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1648,6 +1683,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 8930678672649781637}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c591482a659209b40a12ed61f8e94996,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2477036965550177575}
   m_SourcePrefab: {fileID: 100100000, guid: c591482a659209b40a12ed61f8e94996, type: 3}
 --- !u!4 &1168436903804283905 stripped
 Transform:
@@ -1700,11 +1739,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52fa8955054212448be523defde7f6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.ObjectManipulator
-  canRotate: 0
+  canRotate: 1
   canDrag: 1
   canScale: 1
   _rotateSensitivity: 0.3
   rotateAxis: {x: 0, y: 1, z: 0}
+  rotateSpace: 1
   lockToHorizontalPlane: 0
   lockDragX: 0
   lockDragY: 1
@@ -1823,6 +1863,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::_TitraSims.Scripts.Utility.LabelHelper
   labelKey: 
   labelGameObjectName: label
+--- !u!114 &2477036965550177575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980686089010443963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b3c9e51d2a04f6a9c18e4d73f5b6a20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.RotationReturnInteractable
+  _returnSpeed: 10
 --- !u!1001 &1985809950117285467
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2697,6 +2750,14 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1838653012496351913}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a8aa131c3d644534285e718074640ab6,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6101759122782380147}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a8aa131c3d644534285e718074640ab6,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 735052863436260827}
   m_SourcePrefab: {fileID: 100100000, guid: a8aa131c3d644534285e718074640ab6, type: 3}
 --- !u!4 &3775626285435123418 stripped
 Transform:
@@ -2743,11 +2804,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52fa8955054212448be523defde7f6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.ObjectManipulator
-  canRotate: 0
+  canRotate: 1
   canDrag: 0
   canScale: 1
   _rotateSensitivity: 0.3
   rotateAxis: {x: 0, y: 1, z: 0}
+  rotateSpace: 1
   lockToHorizontalPlane: 0
   lockDragX: 0
   lockDragY: 0
@@ -2773,6 +2835,32 @@ MonoBehaviour:
   OnUnsnapped:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6101759122782380147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4552691406917643360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b3c9e51d2a04f6a9c18e4d73f5b6a20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.RotationReturnInteractable
+  _returnSpeed: 10
+--- !u!114 &735052863436260827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4552691406917643360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3215d1a77cb4e5f448638c3aa6ff25f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.ScaleReturnInteractable
+  _returnSpeed: 10
 --- !u!1001 &5101534143065792531
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3431,6 +3519,14 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 622425497309729635}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a8aa131c3d644534285e718074640ab6,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5989483817228826020}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a8aa131c3d644534285e718074640ab6,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7913144727727397729}
   m_SourcePrefab: {fileID: 100100000, guid: a8aa131c3d644534285e718074640ab6, type: 3}
 --- !u!4 &5791784521194216878 stripped
 Transform:
@@ -3477,11 +3573,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52fa8955054212448be523defde7f6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.ObjectManipulator
-  canRotate: 0
+  canRotate: 1
   canDrag: 0
   canScale: 1
   _rotateSensitivity: 0.3
   rotateAxis: {x: 0, y: 1, z: 0}
+  rotateSpace: 1
   lockToHorizontalPlane: 0
   lockDragX: 0
   lockDragY: 0
@@ -3507,6 +3604,32 @@ MonoBehaviour:
   OnUnsnapped:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &5989483817228826020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6569447807153030932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b3c9e51d2a04f6a9c18e4d73f5b6a20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.RotationReturnInteractable
+  _returnSpeed: 10
+--- !u!114 &7913144727727397729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6569447807153030932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3215d1a77cb4e5f448638c3aa6ff25f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.ScaleReturnInteractable
+  _returnSpeed: 10
 --- !u!1001 &6722765403361416092
 PrefabInstance:
   m_ObjectHideFlags: 0

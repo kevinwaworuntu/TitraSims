@@ -13,7 +13,9 @@ namespace InteractionLogic
     {
         [Header("Finger Count per Gesture")]
 
-        [Tooltip("Number of fingers required to rotate a focused object.")]
+        [Tooltip("Number of fingers required to rotate a focused object. May share a count of 2+ " +
+                 "with scale (pinch scales, swiping both fingers across rotates), but NOT with drag — " +
+                 "both are midpoint travel, and drag wins.")]
         [Range(1, 3)]
         public int rotateFingersNeeded = 1;
 

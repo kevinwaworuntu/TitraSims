@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 2198071352237431881}
   - component: {fileID: 1305968334777975800}
   - component: {fileID: 557218486901732365}
+  - component: {fileID: 8696637387848300}
+  - component: {fileID: 4118747869088652821}
   m_Layer: 0
   m_Name: bottle-syrum-internal
   m_TagString: Untagged
@@ -69,11 +71,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52fa8955054212448be523defde7f6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.ObjectManipulator
-  canRotate: 0
+  canRotate: 1
   canDrag: 0
   canScale: 1
   _rotateSensitivity: 0.3
   rotateAxis: {x: 0, y: 1, z: 0}
+  rotateSpace: 1
   lockToHorizontalPlane: 0
   lockDragX: 0
   lockDragY: 0
@@ -113,6 +116,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::_TitraSims.Scripts.Utility.LabelHelper
   labelKey: HCL 3N
   labelGameObjectName: label
+--- !u!114 &8696637387848300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6843884289941899079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b3c9e51d2a04f6a9c18e4d73f5b6a20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.RotationReturnInteractable
+  _returnSpeed: 10
+--- !u!114 &4118747869088652821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6843884289941899079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3215d1a77cb4e5f448638c3aa6ff25f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.ScaleReturnInteractable
+  _returnSpeed: 10
 --- !u!1001 &2964841265550552874
 PrefabInstance:
   m_ObjectHideFlags: 0

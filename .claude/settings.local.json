@@ -8,7 +8,8 @@
       "Artifact",
       "Bash(python -c \"import uuid; guid=uuid.uuid4\\(\\).hex; content='fileFormatVersion: 2\\\\nguid: '+guid+'\\\\nMonoImporter:\\\\n  externalObjects: {}\\\\n  serializedVersion: 2\\\\n  defaultReferences: []\\\\n  executionOrder: 0\\\\n  icon: {instanceID: 0}\\\\n  userData: \\\\n  assetBundleName: \\\\n  assetBundleVariant: \\\\n'; open\\('GestureSettings.cs.meta','w'\\).write\\(content\\); print\\('Created with guid:', guid\\)\")",
       "Bash(grep -n \"SnapZone$\\\\|_snapRadius\\\\|_snapOffset\\\\|acceptTag\" Assets/_TitraSims/Prefabs/Stage/Stage_TBA_02_PersiapanBuret.prefab Assets/_TitraSims/Prefabs/Stage/Stage_TBA_04_PenambahanPelarut.prefab)",
-      "Bash(xargs grep -l \"guid: 311649a2201b84847961924064f662c6\")"
+      "Bash(xargs grep -l \"guid: 311649a2201b84847961924064f662c6\")",
+      "mcp__ide__getDiagnostics"
     ]
   }
 }

@@ -354,6 +354,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1652966435801304301}
+    - targetCorrespondingSourceObject: {fileID: 2258412758228451243, guid: 0bcdceb273398d14b80b1d1ef415ed75,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1215639747282646230}
   m_SourcePrefab: {fileID: 100100000, guid: 0bcdceb273398d14b80b1d1ef415ed75, type: 3}
 --- !u!23 &5249239643460922345 stripped
 MeshRenderer:
@@ -384,6 +388,7 @@ MonoBehaviour:
   canScale: 1
   _rotateSensitivity: 0.3
   rotateAxis: {x: 0, y: 1, z: 0}
+  rotateSpace: 1
   lockToHorizontalPlane: 0
   lockDragX: 0
   lockDragY: 0
@@ -401,6 +406,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3215d1a77cb4e5f448638c3aa6ff25f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.ScaleReturnInteractable
+  _returnSpeed: 10
+--- !u!114 &1215639747282646230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7812619191148396626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b3c9e51d2a04f6a9c18e4d73f5b6a20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.RotationReturnInteractable
   _returnSpeed: 10
 --- !u!4 &7911019667503100280 stripped
 Transform:

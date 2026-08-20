@@ -7,17 +7,21 @@ namespace InteractionLogic
     public class ObjectManipulator : MonoBehaviour
     {
         [Header("Permissions")]
-        [HideInInspector] public bool canRotate = true;
+        public bool canRotate = true;
         public bool canDrag   = false;
-        [HideInInspector] public bool canScale  = true;
+        public bool canScale  = true;
 
         [Header("Rotate")]
-        [Tooltip("Degrees of world-space rotation per screen pixel of horizontal swipe")]
+        [Tooltip("Degrees of rotation per screen pixel of horizontal swipe")]
         [SerializeField, Range(0.05f, 2f)]
         private float _rotateSensitivity = 0.3f;
 
-        [Tooltip("World-space axis to rotate around. Default is Y (vertical spin).")]
+        [Tooltip("Axis to rotate around, interpreted in the chosen Space. Default is Y (vertical spin).")]
         public Vector3 rotateAxis = Vector3.up;
+
+        [Tooltip("Self: axis is the object's own local direction, so it keeps spinning upright relative to " +
+                 "whatever it sits on (e.g. a tilted AR target). World: axis is a fixed world-space direction.")]
+        public Space rotateSpace = Space.Self;
 
         [Header("Drag")]
         [Tooltip("Restrict the free axes to this object's local horizontal plane (its parent's X/Z).")]
@@ -56,12 +60,19 @@ namespace InteractionLogic
         
         // ── Called by GestureController ──────────────────────────────────────────
 
-        /// <summary>1-finger horizontal swipe → rotate around <see cref="rotateAxis"/>.</summary>
+        /// <summary>
+        /// Horizontal swipe → rotate around <see cref="rotateAxis"/> in <see cref="rotateSpace"/>.
+        /// Defaults to <see cref="Space.Self"/> so the object spins around its own up rather than
+        /// world up — under an AR target the two don't match, and a world-axis spin tips the object
+        /// over instead of turning it in place.
+        /// </summary>
         public void ReceiveRotateDelta(Vector2 screenDelta)
         {
             if (!canRotate) return;
+            if (rotateAxis.sqrMagnitude < 1e-8f) return;   // zero axis produces an undefined rotation
+
             float angle = -screenDelta.x * _rotateSensitivity;
-            transform.Rotate(rotateAxis, angle, Space.World);
+            transform.Rotate(rotateAxis.normalized, angle, rotateSpace);
         }
 
         /// <summary>
