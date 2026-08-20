@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a063bd372434209ad58cb99ffc7dda7, type: 3}
   m_Name: GestureSettings
   m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.GestureSettings
-  rotateFingersNeeded: 1
+  rotateFingersNeeded: 3
   dragFingersNeeded: 1
   scaleFingersNeeded: 2

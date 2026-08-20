@@ -41,6 +41,16 @@ namespace Gameplay
             UnityEngine.Debug.Log("WARNA AWAL");
         }
 
+        public void SetCairanPink(GameObject cairanPink)
+        { 
+            this.cairanPink = cairanPink;   
+        }
+        
+        public void SetCairanPinkVisibility(bool isVisible)
+        {
+            cairanPink.SetActive(isVisible);
+        }
+        
         public void ChangeColor()
         {
             if (!targetRenderer || !snapArea || !snapArea.activeInHierarchy)

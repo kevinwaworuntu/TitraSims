@@ -522,7 +522,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b52fa8955054212448be523defde7f6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.ObjectManipulator
-  canRotate: 0
+  canRotate: 1
   canDrag: 0
   canScale: 1
   _rotateSensitivity: 0.3
@@ -545,7 +545,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.SnapInteractable
   _snapSpeed: 10
-  isBackToOriginPosition: 0
+  isBackToOriginPosition: 1
   OnSnapped:
     m_PersistentCalls:
       m_Calls: []

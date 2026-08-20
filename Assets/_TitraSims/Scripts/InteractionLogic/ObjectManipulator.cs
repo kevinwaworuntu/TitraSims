@@ -7,9 +7,9 @@ namespace InteractionLogic
     public class ObjectManipulator : MonoBehaviour
     {
         [Header("Permissions")]
-        public bool canRotate = false;
+        [HideInInspector] public bool canRotate = true;
         public bool canDrag   = false;
-        public bool canScale  = true;
+        [HideInInspector] public bool canScale  = true;
 
         [Header("Rotate")]
         [Tooltip("Degrees of world-space rotation per screen pixel of horizontal swipe")]
