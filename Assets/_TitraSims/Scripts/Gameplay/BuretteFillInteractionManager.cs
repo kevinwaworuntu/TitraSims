@@ -234,9 +234,6 @@ namespace Gameplay
                 yield return new WaitForSeconds(animClipTetes.length);
             }
 
-            animator.SetTrigger(animationConfig.PlayAnimationParamName);
-            yield return new WaitForSeconds(totalTetes == 1 ? animClipTetes.length : animClipTetesBanyak.length);
-
             SetButtonEnabledState(true);
             isPlaying = false;
 

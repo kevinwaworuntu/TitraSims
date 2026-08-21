@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7341564420503706816}
   - component: {fileID: 3460858213396597225}
   - component: {fileID: 1529773247539962614}
+  - component: {fileID: 3052745931640267272}
   m_Layer: 0
   m_Name: Stage_TK_09_TitrasiBlanko
   m_TagString: Untagged
@@ -51,10 +52,22 @@ MonoBehaviour:
   interactionDataActionMappings:
   - InteractionData: {fileID: 11400000, guid: 367b23df7fcd23346a145b4eb44877e8, type: 2}
     IsAutoContinue: 0
-    IsContinueByOtherEvent: 0
+    IsContinueByOtherEvent: 1
     UniqueEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 3052745931640267272}
+          m_TargetAssemblyTypeName: Gameplay.TriggerEventByTimer, Assembly-CSharp
+          m_MethodName: StartCounting
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - InteractionData: {fileID: 11400000, guid: 254db4960ab68cb4ba82dd3cfd72ed37, type: 2}
     IsAutoContinue: 0
     IsContinueByOtherEvent: 0
@@ -99,10 +112,22 @@ MonoBehaviour:
           m_CallState: 2
   - InteractionData: {fileID: 11400000, guid: e051895483ebc3345b4c7d6ff05fae95, type: 2}
     IsAutoContinue: 0
-    IsContinueByOtherEvent: 0
+    IsContinueByOtherEvent: 1
     UniqueEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 3052745931640267272}
+          m_TargetAssemblyTypeName: Gameplay.TriggerEventByTimer, Assembly-CSharp
+          m_MethodName: StartCounting
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &3460858213396597225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,6 +161,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d19bb3b44f8925c4f9fb94703d1dc6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI.TahapanInteractionUI
+--- !u!114 &3052745931640267272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8668802403459687106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac14e2323b394aaeb4654309a89a2a3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Gameplay.TriggerEventByTimer
+  timer: 3
+  OnTimerEndAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3460858213396597225}
+        m_TargetAssemblyTypeName: Gameplay.BuretteFillInteractionManager, Assembly-CSharp
+        m_MethodName: RequestContinue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &6278583423002770102
 PrefabInstance:
   m_ObjectHideFlags: 0

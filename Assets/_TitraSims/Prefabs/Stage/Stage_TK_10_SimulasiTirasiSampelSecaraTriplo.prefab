@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8345225128655792286}
   - component: {fileID: 2370143325601450390}
   - component: {fileID: 5995857978659208010}
+  - component: {fileID: 7927541680260416858}
   m_Layer: 0
   m_Name: Stage_TK_10_SimulasiTirasiSampelSecaraTriplo
   m_TagString: Untagged
@@ -51,10 +52,22 @@ MonoBehaviour:
   interactionDataActionMappings:
   - InteractionData: {fileID: 11400000, guid: cf333dceef6a62247b78e569a4494c5e, type: 2}
     IsAutoContinue: 0
-    IsContinueByOtherEvent: 0
+    IsContinueByOtherEvent: 1
     UniqueEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 7927541680260416858}
+          m_TargetAssemblyTypeName: Gameplay.TriggerEventByTimer, Assembly-CSharp
+          m_MethodName: StartCounting
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - InteractionData: {fileID: 11400000, guid: bef9b314735860d48880a060c553bebf, type: 2}
     IsAutoContinue: 0
     IsContinueByOtherEvent: 0
@@ -99,13 +112,25 @@ MonoBehaviour:
           m_CallState: 2
   - InteractionData: {fileID: 11400000, guid: 027c0d9a2e7bb1048992c58f0c7139b9, type: 2}
     IsAutoContinue: 0
-    IsContinueByOtherEvent: 0
+    IsContinueByOtherEvent: 1
     UniqueEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 7927541680260416858}
+          m_TargetAssemblyTypeName: Gameplay.TriggerEventByTimer, Assembly-CSharp
+          m_MethodName: StartCounting
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - InteractionData: {fileID: 11400000, guid: 88b54ec2a2c1a6f44a79c8f06a84e7dc, type: 2}
     IsAutoContinue: 0
-    IsContinueByOtherEvent: 0
+    IsContinueByOtherEvent: 1
     UniqueEvent:
       m_PersistentCalls:
         m_Calls:
@@ -124,6 +149,18 @@ MonoBehaviour:
         - m_Target: {fileID: 2370143325601450390}
           m_TargetAssemblyTypeName: Gameplay.BuretteFillInteractionManager, Assembly-CSharp
           m_MethodName: RestartErlenmeyerVisual
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 7927541680260416858}
+          m_TargetAssemblyTypeName: Gameplay.TriggerEventByTimer, Assembly-CSharp
+          m_MethodName: StartCounting
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -177,13 +214,25 @@ MonoBehaviour:
           m_CallState: 2
   - InteractionData: {fileID: 11400000, guid: 5ee65e27569ff194ab8c123e1e24bbd9, type: 2}
     IsAutoContinue: 0
-    IsContinueByOtherEvent: 0
+    IsContinueByOtherEvent: 1
     UniqueEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 7927541680260416858}
+          m_TargetAssemblyTypeName: Gameplay.TriggerEventByTimer, Assembly-CSharp
+          m_MethodName: StartCounting
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - InteractionData: {fileID: 11400000, guid: c8c54b4c3b88c0b49b0c38bdb3447ae3, type: 2}
     IsAutoContinue: 0
-    IsContinueByOtherEvent: 0
+    IsContinueByOtherEvent: 1
     UniqueEvent:
       m_PersistentCalls:
         m_Calls:
@@ -202,6 +251,18 @@ MonoBehaviour:
         - m_Target: {fileID: 2370143325601450390}
           m_TargetAssemblyTypeName: Gameplay.BuretteFillInteractionManager, Assembly-CSharp
           m_MethodName: RestartErlenmeyerVisual
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 7927541680260416858}
+          m_TargetAssemblyTypeName: Gameplay.TriggerEventByTimer, Assembly-CSharp
+          m_MethodName: StartCounting
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -255,10 +316,22 @@ MonoBehaviour:
           m_CallState: 2
   - InteractionData: {fileID: 11400000, guid: 5425d50a9190bfc4e851c60efa3f8477, type: 2}
     IsAutoContinue: 0
-    IsContinueByOtherEvent: 0
+    IsContinueByOtherEvent: 1
     UniqueEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 7927541680260416858}
+          m_TargetAssemblyTypeName: Gameplay.TriggerEventByTimer, Assembly-CSharp
+          m_MethodName: StartCounting
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &2370143325601450390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,6 +365,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d19bb3b44f8925c4f9fb94703d1dc6ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI.TahapanInteractionUI
+--- !u!114 &7927541680260416858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2920288191931388374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac14e2323b394aaeb4654309a89a2a3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Gameplay.TriggerEventByTimer
+  timer: 3
+  OnTimerEndAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2370143325601450390}
+        m_TargetAssemblyTypeName: Gameplay.BuretteFillInteractionManager, Assembly-CSharp
+        m_MethodName: RequestContinue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1624015535470154628
 PrefabInstance:
   m_ObjectHideFlags: 0

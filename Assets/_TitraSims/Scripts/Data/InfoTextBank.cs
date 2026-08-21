@@ -141,8 +141,7 @@ Bahan:
 5. Masukkan 15 mL NaOH 1N ke dalam Erlenmeyer!
 6. Larutkan sampel dengan mengaduk Erlenmeyer!",
 
-        @"1. Timbang sebanyak 300 mg indikator biru hidroksinfatol!
-2. Tambahkan indikator biru hidroksinaftol yang telah ditimbang ke dalam Erlenmeyer!",
+        @"1. Tambahkan 300 mg indikator biru hidroksinaftol yang telah ditimbang ke dalam Erlenmeyer",
 
         @"1. Perhatikan dan catat volume awal buret sebelum titrasi pada activity book!
 2. Lakukan titrasi terhadap larutan baku primer CaCO<sub>3</sub>!

@@ -175,12 +175,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-  - InteractionData: {fileID: 11400000, guid: 0853a5508a6f23547ae1f4296bbe3d2b, type: 2}
-    IsAutoContinue: 1
-    IsContinueByOtherEvent: 0
-    UniqueEvent:
-      m_PersistentCalls:
-        m_Calls: []
   - InteractionData: {fileID: 11400000, guid: daa820b8a8f5df740ac1ab2ae0eb35ef, type: 2}
     IsAutoContinue: 0
     IsContinueByOtherEvent: 1
@@ -295,12 +289,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-  - InteractionData: {fileID: 11400000, guid: 4d9407140cf58e949abb46e2e1161f01, type: 2}
-    IsAutoContinue: 1
-    IsContinueByOtherEvent: 0
-    UniqueEvent:
-      m_PersistentCalls:
-        m_Calls: []
   - InteractionData: {fileID: 11400000, guid: 8674c3b211eb05a489c9d4b24620eace, type: 2}
     IsAutoContinue: 0
     IsContinueByOtherEvent: 1

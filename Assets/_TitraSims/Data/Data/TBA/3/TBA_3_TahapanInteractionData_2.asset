@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TBA_3_TahapanInteractionData_2
   m_EditorClassIdentifier: 
   title: Step 2
-  description: Geser kaca arloji berisi baku primer dan masukkan ke dalam Erlenmeyer
+  description: Geser kaca arloji berisi 700 mg kalium biftalat ke dalam Erlenmeyer
     melalui corong kaca
   audioNaration: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
   animationClip: {fileID: 0}
