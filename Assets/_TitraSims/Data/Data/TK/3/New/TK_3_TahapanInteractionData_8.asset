@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TK_3_TahapanInteractionData_8
   m_EditorClassIdentifier: 
   title: Step 8
-  description: Tap untuk memulai animasi penambahan 30 mL larutan standar EDTA melalui
-    buret ke dalam Erlenmeyer
+  description: Geser Erlenmeyer ke posisi bawah buret untuk memasukkan 30 ml larutan
+    standar EDTA ke dalam Erlenmeyer
   audioNaration: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
   animationClip: {fileID: 0}
