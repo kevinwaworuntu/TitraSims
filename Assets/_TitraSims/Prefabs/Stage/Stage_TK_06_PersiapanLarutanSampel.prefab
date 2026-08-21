@@ -1152,6 +1152,11 @@ PrefabInstance:
       objectReference: {fileID: 1941978341428305761}
     - target: {fileID: 7915121942639546107, guid: f2d0e3249413e1b4da40a0b86d5d9259,
         type: 3}
+      propertyPath: _animationClip
+      value: 
+      objectReference: {fileID: 7400000, guid: 2a87a72de8c2fe846ae20eab03f9a00f, type: 2}
+    - target: {fileID: 7915121942639546107, guid: f2d0e3249413e1b4da40a0b86d5d9259,
+        type: 3}
       propertyPath: OnComplete.m_PersistentCalls.m_Calls.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -1449,7 +1454,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _animationClip
       value: 
-      objectReference: {fileID: 7400000, guid: b451f56166606264196d9d71135c0570, type: 2}
+      objectReference: {fileID: 7400000, guid: 31c01b856a11ed9479b2da51b8bb8846, type: 2}
     - target: {fileID: 6035669586173415933, guid: f8d98af353a31dd4993ca1412ae27804,
         type: 3}
       propertyPath: OnComplete.m_PersistentCalls.m_Calls.Array.size
