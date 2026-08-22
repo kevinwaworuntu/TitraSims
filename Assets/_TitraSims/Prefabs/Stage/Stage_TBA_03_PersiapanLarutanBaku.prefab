@@ -175,12 +175,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-  - InteractionData: {fileID: 11400000, guid: 0853a5508a6f23547ae1f4296bbe3d2b, type: 2}
-    IsAutoContinue: 1
-    IsContinueByOtherEvent: 0
-    UniqueEvent:
-      m_PersistentCalls:
-        m_Calls: []
   - InteractionData: {fileID: 11400000, guid: daa820b8a8f5df740ac1ab2ae0eb35ef, type: 2}
     IsAutoContinue: 0
     IsContinueByOtherEvent: 1
@@ -295,12 +289,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-  - InteractionData: {fileID: 11400000, guid: 4d9407140cf58e949abb46e2e1161f01, type: 2}
-    IsAutoContinue: 1
-    IsContinueByOtherEvent: 0
-    UniqueEvent:
-      m_PersistentCalls:
-        m_Calls: []
   - InteractionData: {fileID: 11400000, guid: 8674c3b211eb05a489c9d4b24620eace, type: 2}
     IsAutoContinue: 0
     IsContinueByOtherEvent: 1
@@ -568,7 +556,7 @@ Animator:
   m_GameObject: {fileID: 1635584784308410989}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: 655f0a184bc0f8542bbbd2d6d4a86b04, type: 2}
+  m_Controller: {fileID: 9100000, guid: f10e2e11fbe7a20498cef29642df6315, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1174,6 +1162,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 161371229472178305}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 01850e13adc17004ebec1f7eda84e5bf,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 607301357487948303}
   m_SourcePrefab: {fileID: 100100000, guid: 01850e13adc17004ebec1f7eda84e5bf, type: 3}
 --- !u!1 &2432060480793902972 stripped
 GameObject:
@@ -1242,9 +1234,9 @@ MonoBehaviour:
   OnSnapped:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2995577895237918612}
-        m_TargetAssemblyTypeName: ARContentManager, Assembly-CSharp
-        m_MethodName: RequestContinue
+      - m_Target: {fileID: 607301357487948303}
+        m_TargetAssemblyTypeName: InteractionLogic.PlayAnimOneShot, Assembly-CSharp
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1283,6 +1275,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.ScaleReturnInteractable
   _returnSpeed: 10
+--- !u!114 &607301357487948303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2432060480793902972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17832d4d614a6714eb19b1719e1cb583, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.PlayAnimOneShot
+  _animator: {fileID: 2841141385119688319}
+  _animationConfig: {fileID: 11400000, guid: f3f8c3eef3f6c024ab082dad28a23265, type: 2}
+  _animationClip: {fileID: 7400000, guid: af88f009fda12a74db1b4da361256ce4, type: 2}
+  OnComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2995577895237918612}
+        m_TargetAssemblyTypeName: ARContentManager, Assembly-CSharp
+        m_MethodName: RequestContinue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!4 &3065749252527105478 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 01850e13adc17004ebec1f7eda84e5bf,
@@ -1584,6 +1606,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 6753875765989714914}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c591482a659209b40a12ed61f8e94996,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3746333567676695139}
   m_SourcePrefab: {fileID: 100100000, guid: c591482a659209b40a12ed61f8e94996, type: 3}
 --- !u!1 &3700495992126666767 stripped
 GameObject:
@@ -1652,9 +1678,9 @@ MonoBehaviour:
   OnSnapped:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2995577895237918612}
-        m_TargetAssemblyTypeName: ARContentManager, Assembly-CSharp
-        m_MethodName: RequestContinue
+      - m_Target: {fileID: 3746333567676695139}
+        m_TargetAssemblyTypeName: InteractionLogic.PlayAnimOneShot, Assembly-CSharp
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1693,6 +1719,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.ScaleReturnInteractable
   _returnSpeed: 10
+--- !u!114 &3746333567676695139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3700495992126666767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17832d4d614a6714eb19b1719e1cb583, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.PlayAnimOneShot
+  _animator: {fileID: 2841141385119688319}
+  _animationConfig: {fileID: 11400000, guid: f3f8c3eef3f6c024ab082dad28a23265, type: 2}
+  _animationClip: {fileID: 7400000, guid: a8354d8f3335ec94b8dbb580181384fc, type: 2}
+  OnComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2995577895237918612}
+        m_TargetAssemblyTypeName: ARContentManager, Assembly-CSharp
+        m_MethodName: RequestContinue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &4040043133705593525 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c591482a659209b40a12ed61f8e94996,

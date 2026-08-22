@@ -1,0 +1,22 @@
+Type,Details,FeedbackTime,State
+TBA,"Marker 3 - Teks Step 3 dan Step 5 (tap layar untuk...) dapat dihilangkan karena masing-masing sudah terpenuhi pada step sebelumnya: Step 3 sudah dilakukan pada Step 2, Step 5 sudah dilakukan pada Step 4",2026-08-21,Undone
+TBA,"Marker 4 - Cairan pada gelas beaker belum/tidak terlihat dengan jelas",2026-08-21,Undone
+TBA,"Marker 4 - Step 6: ketika pengguna melakukan gerakan jari berputar untuk mengaduk Erlenmeyer, aset Erlenmeyer sebaiknya tetap berada pada posisi yang sama dan tidak berpindah, hanya animasi mengaduk/berputar yang berjalan (acuan: Marker 3 - Step 6 yang sudah sesuai)",2026-08-21,Undone
+TBA,"Marker 6 - Cairan pada gelas beaker belum/tidak terlihat dengan jelas (sama seperti Marker 4)",2026-08-21,Undone
+TBA,"Marker 6 - Step 6: aset Erlenmeyer sebaiknya tetap pada posisi yang sama saat diaduk, tidak berpindah (sama seperti Marker 4)",2026-08-21,Undone
+TBA,"Marker 9 - Teks pada Step 3 langsung menghilang setelah Step 2 selesai",2026-08-21,Undone
+TBA,"Marker 8, 9, 10 - Animasi penambahan titran dapat dipercepat untuk mengurangi durasi titrasi",2026-08-21,Undone
+General,"Titrasi Kompleksometri - Umum: Teks sulit di-scroll",2026-08-21,Undone
+TK,"Tahap 2: Preparasi Buret - Aset EDTA tidak terlihat dalam buret setelah dituangkan",2026-08-21,Undone
+TK,"Tahap 3: Preparasi Larutan Baku Primer - Baku primer tidak nampak dalam Erlenmeyer setelah dituang",2026-08-21,Undone
+TK,"Tahap 3: Preparasi Larutan Baku Primer - Terdapat 2 aquades dalam 2 volume yang berbeda, sebaiknya label diberi keterangan volumenya (100 ml dan 10 ml)",2026-08-21,Undone
+TK,"Tahap 3: Preparasi Larutan Baku Primer - Step 8: ganti teks menjadi ""Geser Erlenmeyer ke posisi bawah buret untuk memasukkan 30 ml larutan standar EDTA ke dalam Erlenmeyer""",2026-08-21,Undone
+TK,"Tahap 5: Penimbangan Sampel - Label pada spatel masih ""kafein"", seharusnya sampel CaCO3",2026-08-21,Undone
+TK,"Tahap 6 - Sampel CaCO3 tidak nampak di dalam Erlenmeyer setelah dituangkan",2026-08-21,Undone
+TK,"Tahap 6 - Cairan tidak nampak di dalam Erlenmeyer setelah dituangkan",2026-08-21,Undone
+TK,"Tahap 6 - Step 4: ganti teks menjadi ""Geser gelas ukur berisi aquades untuk memulai penambahan aquades hingga 100 ml ke dalam gelas ukur dengan cara menekan tombol yang sesuai (pilihan tombol: 1 ml dan 10 ml)""",2026-08-21,Undone
+TK,"Tahap 6 - Step 5: ganti teks menjadi ""Geser gelas ukur berisi NaOH 1N untuk memulai penambahan NaOH 1 N hingga 15 ml ke dalam gelas ukur dengan cara menekan tombol yang sesuai (pilihan tombol: 1 ml dan 10 ml)""",2026-08-21,Undone
+TK,"Tahap 7 - Hilangkan teks ""timbang 300 mg biru hidroksinaftol"", ganti menjadi ""Tambahkan 300 mg indikator biru hidroksinaftol yang telah ditimbang ke dalam Erlenmeyer""",2026-08-21,Undone
+TK,"Tahap 7 - Pergantian warna pada larutan tidak menetap (kembali ke bening)",2026-08-21,Undone
+TK,"Tahap 8 dan 10 - Animasi penambahan titran berjalan lambat, dapat di-speedup untuk mengurangi durasi titrasi (mengingat titran yang ditambahkan cukup banyak)",2026-08-21,Undone
+TK,"Tahap 9 - Warna larutan tidak berubah ketika mencapai titik akhir titrasi",2026-08-21,Undone

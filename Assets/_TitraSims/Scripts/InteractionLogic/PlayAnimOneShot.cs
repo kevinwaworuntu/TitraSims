@@ -69,6 +69,7 @@ namespace InteractionLogic
 
         private void RestoreAnimator()
         {
+            _runtimeOverride[_animationConfig.GetCustomAnimGenericClipEntryName()] = null;
             if (_animator != null)
             {
                 _animator.runtimeAnimatorController = _originalController;
@@ -90,6 +91,14 @@ namespace InteractionLogic
         public void SetAnimationClip(AnimationClip clip)
         {
             _animationClip = clip;
+        }
+
+        public void TemporaryScaleOneHelper(GameObject go)
+        {
+            go.SetActive(true);
+            go.transform.localScale = Vector3.one;
+            go.transform.localPosition = Vector3.zero;
+            go.transform.localRotation = Quaternion.identity;
         }
     }
 }
