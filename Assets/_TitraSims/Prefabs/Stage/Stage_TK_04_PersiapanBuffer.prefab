@@ -926,7 +926,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-  - InteractionData: {fileID: 11400000, guid: c4d93ced8858ed34b9be7af6c5aedbe1, type: 2}
+  - InteractionData: {fileID: 11400000, guid: fe65d085231a12745b8ac2db0ef1f289, type: 2}
     IsAutoContinue: 0
     IsContinueByOtherEvent: 1
     UniqueEvent:
@@ -956,7 +956,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-  - InteractionData: {fileID: 11400000, guid: fe65d085231a12745b8ac2db0ef1f289, type: 2}
+  - InteractionData: {fileID: 11400000, guid: 9bf4e67a7d96ef0488b4105b4d0d3b1e, type: 2}
     IsAutoContinue: 0
     IsContinueByOtherEvent: 1
     UniqueEvent:
@@ -975,18 +975,6 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
         - m_Target: {fileID: 1158739053599811206}
-          m_TargetAssemblyTypeName: InteractionLogic.ObjectManipulator, Assembly-CSharp
-          m_MethodName: SetCanDrag
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 2536928676353106158}
           m_TargetAssemblyTypeName: InteractionLogic.ObjectManipulator, Assembly-CSharp
           m_MethodName: SetCanDrag
           m_Mode: 6
@@ -2214,6 +2202,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.x
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 9190393362597269382, guid: 1383644401e5bf8409c585463afd807b,
+        type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f8f0512ce34de3e4d8680da955b2615b, type: 2}
     m_RemovedComponents:
     - {fileID: 6504929996363763417, guid: 1383644401e5bf8409c585463afd807b, type: 3}
     - {fileID: 565597730446136135, guid: 1383644401e5bf8409c585463afd807b, type: 3}
@@ -2258,6 +2251,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2509526532687870467}
+    - targetCorrespondingSourceObject: {fileID: 7900647532353979718, guid: 1383644401e5bf8409c585463afd807b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7287342969312348622}
     - targetCorrespondingSourceObject: {fileID: 95881732428020119, guid: 1383644401e5bf8409c585463afd807b,
         type: 3}
       insertIndex: -1
@@ -2624,6 +2621,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2536928676353106158}
+        m_TargetAssemblyTypeName: InteractionLogic.ObjectManipulator, Assembly-CSharp
+        m_MethodName: SetCanDrag
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &2762309045902116622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2817,6 +2826,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.ScaleReturnInteractable
   _returnSpeed: 10
+--- !u!114 &7287342969312348622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7279783808817239282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6f2e34cb4b148cba4554c3114ad9a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::_TitraSims.Scripts.Utility.LabelHelper
+  labelKey: aquades 5mL
+  labelGameObjectName: label lurus
 --- !u!1 &8187196459183362100 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8736000393902965120, guid: 1383644401e5bf8409c585463afd807b,

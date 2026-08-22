@@ -244,6 +244,24 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+  - InteractionData: {fileID: 11400000, guid: 3cef3cfd219d40649bf6b1f77cec31f9, type: 2}
+    IsAutoContinue: 0
+    IsContinueByOtherEvent: 1
+    UniqueEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7134988883507846544}
+          m_TargetAssemblyTypeName: Gameplay.GelasUkurFillInteractionManager, Assembly-CSharp
+          m_MethodName: CreatePenambahanLarutan1Button
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - InteractionData: {fileID: 11400000, guid: fc5446c3c6b18e14bbe5e330d242ff9a, type: 2}
     IsAutoContinue: 0
     IsContinueByOtherEvent: 1
@@ -273,6 +291,24 @@ MonoBehaviour:
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 1
+          m_CallState: 2
+  - InteractionData: {fileID: 11400000, guid: d34ad7dca09139746a5d9d8018dd6a6a, type: 2}
+    IsAutoContinue: 0
+    IsContinueByOtherEvent: 1
+    UniqueEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7134988883507846544}
+          m_TargetAssemblyTypeName: Gameplay.GelasUkurFillInteractionManager, Assembly-CSharp
+          m_MethodName: CreatePenambahanLarutan2Button
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
           m_CallState: 2
   - InteractionData: {fileID: 11400000, guid: f5a80ea83a5882a45b0a91798bfa8fa7, type: 2}
     IsAutoContinue: 0
@@ -412,7 +448,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8330848058363608551
 Transform:
   m_ObjectHideFlags: 0
@@ -794,7 +830,7 @@ PrefabInstance:
     - target: {fileID: 6008854467753683919, guid: 98fdde955eea4e24f86d336612c454b9,
         type: 3}
       propertyPath: OnSnapped.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CreatePenambahanLarutan2Button
+      value: RequestContinue
       objectReference: {fileID: 0}
     - target: {fileID: 6008854467753683919, guid: 98fdde955eea4e24f86d336612c454b9,
         type: 3}
@@ -1734,7 +1770,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _animationClip
       value: 
-      objectReference: {fileID: 7400000, guid: 66be7fdc7c198e0469819554885556de, type: 2}
+      objectReference: {fileID: 7400000, guid: 16bfa31cb3418a54b91f9c2c3aefaaf7, type: 2}
     - target: {fileID: 3373627439157235738, guid: 3791dece5405b684fa08805a6a6d46c0,
         type: 3}
       propertyPath: _animationConfig
@@ -1744,7 +1780,7 @@ PrefabInstance:
     - target: {fileID: 3373627439157235738, guid: 3791dece5405b684fa08805a6a6d46c0,
         type: 3}
       propertyPath: OnComplete.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3373627439157235738, guid: 3791dece5405b684fa08805a6a6d46c0,
         type: 3}
@@ -1759,6 +1795,11 @@ PrefabInstance:
     - target: {fileID: 3373627439157235738, guid: 3791dece5405b684fa08805a6a6d46c0,
         type: 3}
       propertyPath: OnComplete.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3373627439157235738, guid: 3791dece5405b684fa08805a6a6d46c0,
+        type: 3}
+      propertyPath: OnComplete.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3373627439157235738, guid: 3791dece5405b684fa08805a6a6d46c0,
@@ -1778,6 +1819,11 @@ PrefabInstance:
       objectReference: {fileID: 4245922503630387248}
     - target: {fileID: 3373627439157235738, guid: 3791dece5405b684fa08805a6a6d46c0,
         type: 3}
+      propertyPath: OnComplete.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 5873465868620718729}
+    - target: {fileID: 3373627439157235738, guid: 3791dece5405b684fa08805a6a6d46c0,
+        type: 3}
       propertyPath: OnComplete.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
@@ -1789,6 +1835,11 @@ PrefabInstance:
     - target: {fileID: 3373627439157235738, guid: 3791dece5405b684fa08805a6a6d46c0,
         type: 3}
       propertyPath: OnComplete.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3373627439157235738, guid: 3791dece5405b684fa08805a6a6d46c0,
+        type: 3}
+      propertyPath: OnComplete.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3373627439157235738, guid: 3791dece5405b684fa08805a6a6d46c0,
@@ -1808,6 +1859,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3373627439157235738, guid: 3791dece5405b684fa08805a6a6d46c0,
         type: 3}
+      propertyPath: OnComplete.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 3373627439157235738, guid: 3791dece5405b684fa08805a6a6d46c0,
+        type: 3}
       propertyPath: OnComplete.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: InteractionLogic.SnapInteractable, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -1823,6 +1879,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3373627439157235738, guid: 3791dece5405b684fa08805a6a6d46c0,
         type: 3}
+      propertyPath: OnComplete.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3373627439157235738, guid: 3791dece5405b684fa08805a6a6d46c0,
+        type: 3}
+      propertyPath: OnComplete.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3373627439157235738, guid: 3791dece5405b684fa08805a6a6d46c0,
+        type: 3}
+      propertyPath: OnComplete.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3373627439157235738, guid: 3791dece5405b684fa08805a6a6d46c0,
+        type: 3}
       propertyPath: OnComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
@@ -1834,6 +1905,11 @@ PrefabInstance:
     - target: {fileID: 3373627439157235738, guid: 3791dece5405b684fa08805a6a6d46c0,
         type: 3}
       propertyPath: OnComplete.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3373627439157235738, guid: 3791dece5405b684fa08805a6a6d46c0,
+        type: 3}
+      propertyPath: OnComplete.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3471285702481461899, guid: 3791dece5405b684fa08805a6a6d46c0,
@@ -2046,7 +2122,7 @@ PrefabInstance:
     - target: {fileID: 2190756994011191279, guid: 939a4a6da0e30434583f4ec990f410ef,
         type: 3}
       propertyPath: OnSnapped.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CreatePenambahanLarutan1Button
+      value: RequestContinue
       objectReference: {fileID: 0}
     - target: {fileID: 2190756994011191279, guid: 939a4a6da0e30434583f4ec990f410ef,
         type: 3}
