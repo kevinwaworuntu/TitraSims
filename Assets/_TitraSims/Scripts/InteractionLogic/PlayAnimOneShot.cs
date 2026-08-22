@@ -92,5 +92,13 @@ namespace InteractionLogic
         {
             _animationClip = clip;
         }
+
+        public void TemporaryScaleOneHelper(GameObject go)
+        {
+            go.SetActive(true);
+            go.transform.localScale = Vector3.one;
+            go.transform.localPosition = Vector3.zero;
+            go.transform.localRotation = Quaternion.identity;
+        }
     }
 }
