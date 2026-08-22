@@ -49,7 +49,7 @@ MonoBehaviour:
   acceptTag: 
   acceptedGameObjectName: 
   acceptedGameObject: {fileID: 5271502326631137650}
-  _snapRadius: 0.1
+  _snapRadius: 0.03
   _snapOffset: {x: 0, y: 0, z: 0}
   snapRotation: 0
   _highlightVisual: {fileID: 1051140019376048734}
@@ -514,7 +514,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 5381607509236152846}
           m_TargetAssemblyTypeName: InteractionLogic.ObjectManipulator, Assembly-CSharp
-          m_MethodName: set_enabled
+          m_MethodName: SetCanDrag
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -532,7 +532,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 6767082631096387334}
           m_TargetAssemblyTypeName: InteractionLogic.ObjectManipulator, Assembly-CSharp
-          m_MethodName: set_enabled
+          m_MethodName: SetCanDrag
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1198,7 +1198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.ObjectManipulator
   canRotate: 1
-  canDrag: 1
+  canDrag: 0
   canScale: 1
   _rotateSensitivity: 0.3
   rotateAxis: {x: 0, y: 1, z: 0}
@@ -1348,7 +1348,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.ObjectManipulator
   canRotate: 1
-  canDrag: 1
+  canDrag: 0
   canScale: 1
   _rotateSensitivity: 0.3
   rotateAxis: {x: 0, y: 1, z: 0}
