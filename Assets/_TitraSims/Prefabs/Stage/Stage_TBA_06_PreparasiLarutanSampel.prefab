@@ -234,18 +234,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-        - m_Target: {fileID: 8693453662049710089}
-          m_TargetAssemblyTypeName: InteractionLogic.ObjectManipulator, Assembly-CSharp
-          m_MethodName: SetCanDrag
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
         - m_Target: {fileID: 3348031066135139551}
           m_TargetAssemblyTypeName: Gameplay.GelasUkurFillInteractionManager, Assembly-CSharp
           m_MethodName: SetContinueByQtyTarget
@@ -911,6 +899,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1676981533633982207}
+        m_TargetAssemblyTypeName: InteractionLogic.SnapInteractable, Assembly-CSharp
+        m_MethodName: InstantReturnToOrigin
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &3914661012912069703 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4514302227593985212, guid: f2d0e3249413e1b4da40a0b86d5d9259,
@@ -1337,6 +1337,30 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8693453662049710089}
+        m_TargetAssemblyTypeName: InteractionLogic.ObjectManipulator, Assembly-CSharp
+        m_MethodName: SetCanDrag
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 2581793301026975457}
+        m_TargetAssemblyTypeName: InteractionLogic.SnapInteractable, Assembly-CSharp
+        m_MethodName: InstantReturnToOrigin
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &7175989900545138851 stripped
 MonoBehaviour:

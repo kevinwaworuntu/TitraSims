@@ -69,7 +69,7 @@ namespace InteractionLogic
 
         private void RestoreAnimator()
         {
-            _runtimeOverride[_animationConfig.GetCustomAnimGenericClipEntryName()] = null;
+            //_runtimeOverride[_animationConfig.GetCustomAnimGenericClipEntryName()] = null;
             if (_animator != null)
             {
                 _animator.runtimeAnimatorController = _originalController;
