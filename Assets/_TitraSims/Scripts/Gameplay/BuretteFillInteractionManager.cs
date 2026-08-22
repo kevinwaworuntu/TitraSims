@@ -295,5 +295,19 @@ namespace Gameplay
             pos.y = config.MeniskusInitPos;
             buretteMeniskusObject.localPosition = pos;
         }
+
+        [ContextMenu("Test Cairan Before")]
+        void TestCairanBefore()
+        {
+            titrasiMatInstance.SetColor(SideColorID, config.InitialColor);
+            titrasiMatInstance.SetColor(TopColorID, config.InitialColor);
+        }
+
+        [ContextMenu("Test Cairan After")]
+        void TestCairanAfter()
+        {
+            titrasiMatInstance.SetColor(SideColorID, config.TargetColor);
+            titrasiMatInstance.SetColor(TopColorID, config.TargetColor);
+        }
     }
 }
