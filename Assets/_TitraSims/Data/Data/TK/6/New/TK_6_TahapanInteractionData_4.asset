@@ -14,9 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Step 4
   description: 'Geser gelas ukur berisi aquades untuk memulai penambahan aquades
-    ke dalam gelas ukur dengan cara menekan tombol yang sesuai (pilihan tombol: 1
-    ml dan 10 ml)
-
-'
+    hingga 100 ml ke dalam gelas ukur dengan cara menekan tombol yang sesuai (pilihan
+    tombol: 1 ml dan 10 ml)'
   audioNaration: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
   animationClip: {fileID: 0}

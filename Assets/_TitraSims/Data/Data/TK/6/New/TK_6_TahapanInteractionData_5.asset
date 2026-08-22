@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: TK_6_TahapanInteractionData_5
   m_EditorClassIdentifier: 
   title: Step 5
-  description: 'Geser gelas ukur berisi NaOH untuk memulai penambahan NaOH 1 N ke
-    dalam gelas ukur (pilihan tombol: 1 ml dan 10 ml)
-
-'
+  description: 'Geser gelas ukur berisi NaOH 1N untuk memulai penambahan NaOH 1 N
+    hingga 15 ml ke dalam gelas ukur dengan cara menekan tombol yang sesuai (pilihan
+    tombol: 1 ml dan 10 ml)'
   audioNaration: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
   animationClip: {fileID: 0}
