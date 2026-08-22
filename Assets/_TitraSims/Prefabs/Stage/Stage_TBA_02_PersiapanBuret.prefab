@@ -693,6 +693,11 @@ PrefabInstance:
       objectReference: {fileID: 3412318948619893240}
     - target: {fileID: 8300034439777800407, guid: 29a2b320678a3434794de4381954a548,
         type: 3}
+      propertyPath: _animationClip
+      value: 
+      objectReference: {fileID: 7400000, guid: 657c649fa75a3ac46b102d8727386c3b, type: 2}
+    - target: {fileID: 8300034439777800407, guid: 29a2b320678a3434794de4381954a548,
+        type: 3}
       propertyPath: loopCountNeeded
       value: 1
       objectReference: {fileID: 0}
@@ -700,7 +705,17 @@ PrefabInstance:
         type: 3}
       propertyPath: OnLoopCountComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1750273543351029136}
+      objectReference: {fileID: 6563785019344676355}
+    - target: {fileID: 8300034439777800407, guid: 29a2b320678a3434794de4381954a548,
+        type: 3}
+      propertyPath: OnLoopCountComplete.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 8300034439777800407, guid: 29a2b320678a3434794de4381954a548,
+        type: 3}
+      propertyPath: OnLoopCountComplete.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: InteractionLogic.PlayAnimOneShot, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -709,6 +724,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 6250752060619774135}
+    - targetCorrespondingSourceObject: {fileID: 7732645139756682051, guid: 29a2b320678a3434794de4381954a548,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6563785019344676355}
   m_SourcePrefab: {fileID: 100100000, guid: 29a2b320678a3434794de4381954a548, type: 3}
 --- !u!114 &2027749505807078717 stripped
 MonoBehaviour:
@@ -766,6 +785,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::_TitraSims.Scripts.Utility.LabelHelper
   labelKey: Aseton
   labelGameObjectName: label
+--- !u!114 &6563785019344676355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7903024627604663365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17832d4d614a6714eb19b1719e1cb583, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.PlayAnimOneShot
+  _animator: {fileID: 3412318948619893240}
+  _animationConfig: {fileID: 11400000, guid: f3f8c3eef3f6c024ab082dad28a23265, type: 2}
+  _animationClip: {fileID: 7400000, guid: ead7fcf8974be814ca676bbf53d004dd, type: 2}
+  OnComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1750273543351029136}
+        m_TargetAssemblyTypeName: ARContentManager, Assembly-CSharp
+        m_MethodName: RequestContinue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8488534980306532305 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8300034439777800407, guid: 29a2b320678a3434794de4381954a548,
