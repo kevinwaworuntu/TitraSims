@@ -708,6 +708,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: erlenmeyer
       objectReference: {fileID: 0}
+    - target: {fileID: 8200995135454168621, guid: 42e142bee3524e6459200ed594a391bc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9054110467243564846, guid: 42e142bee3524e6459200ed594a391bc,
         type: 3}
       propertyPath: acceptedGameObject
