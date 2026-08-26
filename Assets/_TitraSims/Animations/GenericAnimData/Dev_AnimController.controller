@@ -1362,6 +1362,32 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!1102 &5669077741862821169
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: TK4_1_AquadesToErlen
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: bcb91d12c4e5de94f8073ce134aa900d, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
 --- !u!1102 &5746806508988333528
 AnimatorState:
   serializedVersion: 6
@@ -1844,6 +1870,9 @@ AnimatorStateMachine:
   - serializedVersion: 1
     m_State: {fileID: -66959437317820864}
     m_Position: {x: 2628.37, y: 701.6772, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 5669077741862821169}
+    m_Position: {x: 2728.7913, y: 868.74805, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: 8442065357306398964}

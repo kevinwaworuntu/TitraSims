@@ -205,7 +205,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-  - InteractionData: {fileID: 11400000, guid: 17d1edfc9ec963442b46fe711a0978ba, type: 2}
+  - InteractionData: {fileID: 11400000, guid: af14a0d1d640f1d408834e913daae5de, type: 2}
     IsAutoContinue: 0
     IsContinueByOtherEvent: 1
     UniqueEvent:
@@ -704,7 +704,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gameplay.ObjectColorChanger
   targetRenderer: {fileID: 845603804897829052}
-  colorBefore: {r: 1, g: 1, b: 1, a: 0.05490196}
+  colorBefore: {r: 0, g: 0, b: 0, a: 0.39215687}
   colorAfter: {r: 0.972549, g: 0, b: 1, a: 0.05490196}
   cairanPink: {fileID: 6497329807595265818}
   transitionDuration: 0.5
@@ -742,7 +742,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gameplay.ObjectColorChanger
   targetRenderer: {fileID: 121106500442789652}
-  colorBefore: {r: 1, g: 1, b: 1, a: 0.05490196}
+  colorBefore: {r: 0, g: 0, b: 0, a: 0.39215687}
   colorAfter: {r: 0.972549, g: 0, b: 1, a: 0.05490196}
   cairanPink: {fileID: 1022943662677790200}
   transitionDuration: 0.5
@@ -904,7 +904,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gameplay.ObjectColorChanger
   targetRenderer: {fileID: 8305112745593005934}
-  colorBefore: {r: 1, g: 1, b: 1, a: 0.05490196}
+  colorBefore: {r: 0, g: 0, b: 0, a: 0.39215687}
   colorAfter: {r: 0.972549, g: 0, b: 1, a: 0.05490196}
   cairanPink: {fileID: 620426266136707020}
   transitionDuration: 0.5

@@ -40,12 +40,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Alpha: 0.135
+    - _Alpha: 0.25
     - _AlphaClip: 1
-    - _Fill: -0.08
+    - _Fill: -0.048
     - _Fillfadfa: 0
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _XRMotionVectorsPass: 1
     m_Colors:
     - _Side_Color: {r: 0, g: 0, b: 0, a: 1}
     - _TopColor: {r: 0, g: 0, b: 0, a: 1}
