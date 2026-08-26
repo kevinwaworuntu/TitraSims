@@ -926,7 +926,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-  - InteractionData: {fileID: 11400000, guid: c4d93ced8858ed34b9be7af6c5aedbe1, type: 2}
+  - InteractionData: {fileID: 11400000, guid: fe65d085231a12745b8ac2db0ef1f289, type: 2}
     IsAutoContinue: 0
     IsContinueByOtherEvent: 1
     UniqueEvent:
@@ -956,7 +956,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-  - InteractionData: {fileID: 11400000, guid: fe65d085231a12745b8ac2db0ef1f289, type: 2}
+  - InteractionData: {fileID: 11400000, guid: 9bf4e67a7d96ef0488b4105b4d0d3b1e, type: 2}
     IsAutoContinue: 0
     IsContinueByOtherEvent: 1
     UniqueEvent:
@@ -1961,7 +1961,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: ec7471e10021fa84da89b24844d2223c, type: 2}
+      objectReference: {fileID: 9100000, guid: f10e2e11fbe7a20498cef29642df6315, type: 2}
     - target: {fileID: 1042791396919935149, guid: 1383644401e5bf8409c585463afd807b,
         type: 3}
       propertyPath: m_LocalPosition.x

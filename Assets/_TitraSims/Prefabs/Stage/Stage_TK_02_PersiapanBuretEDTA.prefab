@@ -156,18 +156,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-        - m_Target: {fileID: 2472993943844439631}
-          m_TargetAssemblyTypeName: UnityEngine.Transform, UnityEngine
-          m_MethodName: SetParent
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 5375147563756247176}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
   - InteractionData: {fileID: 11400000, guid: 2faedb57988114a46b4270c9e91d5a56, type: 2}
     IsAutoContinue: 0
     IsContinueByOtherEvent: 1
@@ -199,6 +187,18 @@ MonoBehaviour:
             m_BoolArgument: 1
           m_CallState: 2
         - m_Target: {fileID: 2206434430966721088}
+          m_TargetAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_MethodName: SetParent
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 5375147563756247176}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 2472993943844439631}
           m_TargetAssemblyTypeName: UnityEngine.Transform, UnityEngine
           m_MethodName: SetParent
           m_Mode: 2
