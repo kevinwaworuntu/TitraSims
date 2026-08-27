@@ -100,6 +100,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4284607978781843724}
   - component: {fileID: 5675722242392433757}
+  - component: {fileID: 793500582335182219}
   m_Layer: 0
   m_Name: AnimKompleksometri3
   m_TagString: Untagged
@@ -155,6 +156,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &793500582335182219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2328804444293417216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38fd747ed1b14429b59216946735f3fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Animation.AnimNotify
 --- !u!1 &3944323589608970512
 GameObject:
   m_ObjectHideFlags: 0
@@ -4734,7 +4747,7 @@ PrefabInstance:
     - target: {fileID: 9160465593555841535, guid: 42e142bee3524e6459200ed594a391bc,
         type: 3}
       propertyPath: OnLoopCountComplete.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9160465593555841535, guid: 42e142bee3524e6459200ed594a391bc,
         type: 3}
@@ -4756,11 +4769,6 @@ PrefabInstance:
       propertyPath: OnLoopCountComplete.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 2132680663869277791}
-    - target: {fileID: 9160465593555841535, guid: 42e142bee3524e6459200ed594a391bc,
-        type: 3}
-      propertyPath: OnLoopCountComplete.m_PersistentCalls.m_Calls.Array.data[2].m_Target
-      value: 
-      objectReference: {fileID: 4615966491387163262}
     - target: {fileID: 9160465593555841535, guid: 42e142bee3524e6459200ed594a391bc,
         type: 3}
       propertyPath: OnLoopCountComplete.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
@@ -4833,11 +4841,7 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 6507324388527510974}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2359885261675656900, guid: 42e142bee3524e6459200ed594a391bc,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4615966491387163262}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42e142bee3524e6459200ed594a391bc, type: 3}
 --- !u!114 &35686273935056297 stripped
 MonoBehaviour:
@@ -4875,12 +4879,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e24712f1c9b530f418369f88487cb997, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractionLogic.SnapInteractable
---- !u!23 &4963329362618235719 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 4305163429619226385, guid: 42e142bee3524e6459200ed594a391bc,
-    type: 3}
-  m_PrefabInstance: {fileID: 9177855100617813078}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &5336745240317980900 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3842035657735937202, guid: 42e142bee3524e6459200ed594a391bc,
@@ -4899,26 +4897,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 9177855100617813078}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &6909003079951030930 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2359885261675656900, guid: 42e142bee3524e6459200ed594a391bc,
-    type: 3}
-  m_PrefabInstance: {fileID: 9177855100617813078}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &4615966491387163262
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6909003079951030930}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d1e48f18320a614a903f93d17031ebc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SetCairanErlenmeyer
-  targetRenderer: {fileID: 4963329362618235719}
-  colorAfter: {r: 1, g: 1, b: 1, a: 0.59607846}
 --- !u!4 &7594935617004723763 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1601288199996682853, guid: 42e142bee3524e6459200ed594a391bc,

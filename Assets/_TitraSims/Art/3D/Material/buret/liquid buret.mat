@@ -42,7 +42,7 @@ Material:
     m_Floats:
     - _Alpha: 0.25
     - _AlphaClip: 1
-    - _Fill: -0.048
+    - _Fill: -0.018
     - _Fillfadfa: 0
     - _QueueControl: 0
     - _QueueOffset: 0
