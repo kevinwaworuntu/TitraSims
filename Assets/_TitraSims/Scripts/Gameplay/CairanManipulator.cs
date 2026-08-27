@@ -1,4 +1,5 @@
 using Animation;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -6,14 +7,17 @@ namespace Gameplay
 {
     public class CairanManipulator : MonoBehaviour
     {
-        [Header("Target")]
-        [SerializeField] private Renderer cairanRenderer;
+        [Header("Target")] [SerializeField] private Renderer cairanRenderer;
 
-        [Header("Notify")]
-        [Tooltip("Only notifies with this name trigger the event. Leave empty to react to any notify.")]
+        [Header("Notify")] [Tooltip("Only notifies with this name trigger the event. Leave empty to react to any notify.")]
         private string notifyFilter = "Erlenmeyer";
 
         [SerializeField] private UnityEvent OnNotifyHitEvent;
+
+        [Header("Fill Tween")] [SerializeField]
+        private float fillTweenDuration = 0.35f;
+
+        [SerializeField] private Ease fillTweenEase = Ease.OutQuad;
 
         private AnimNotify animNotify;
         private float originalFillValue;
@@ -33,20 +37,17 @@ namespace Gameplay
         private void OnEnable()
         {
             animNotify = FindObjectOfType<AnimNotify>();
-            if (animNotify)
-            {
-                animNotify.OnNotify += OnNotifyHit;
-            }
+            if (animNotify) animNotify.OnNotify += OnNotifyHit;
 
             ResetFillValue();
         }
 
         private void OnDisable()
         {
-            if (animNotify)
-            {
-                animNotify.OnNotify -= OnNotifyHit;
-            }
+            if (animNotify) animNotify.OnNotify -= OnNotifyHit;
+
+
+            if (cairanMatInstance) cairanMatInstance.DOKill();
         }
 
         public void OnNotifyHit(string notifyName)
@@ -59,29 +60,34 @@ namespace Gameplay
 
         public void SetFillValue(float value)
         {
-            if (!cairanMatInstance)
-                return;
-
-            cairanMatInstance.SetFloat(FillID, value);
+            TweenFillTo(value);
         }
-        
+
         public void IncreaseFillValue(float value)
         {
-            if (!cairanMatInstance)
-                return;
+            TweenFillTo(cairanMatInstance.GetFloat(FillID) + value);
+        }
 
-            var init = cairanMatInstance.GetFloat(FillID);
-            cairanMatInstance.SetFloat(FillID, value + init);
+        private void TweenFillTo(float value)
+        {
+            if (!cairanMatInstance) return;
+            cairanMatInstance.DOKill();
+            cairanMatInstance.DOFloat(value, FillID, fillTweenDuration).SetEase(fillTweenEase);
         }
 
         [ContextMenu("Test Fill Value")]
-        void TestFillValue()
+        private void TestFillValue()
         {
-            IncreaseFillValue(0.2f);
+            IncreaseFillValue(0.01f);
         }
+
         public void ResetFillValue()
         {
-            SetFillValue(originalFillValue);
+            if (!cairanMatInstance)
+                return;
+            
+            cairanMatInstance.DOKill();
+            cairanMatInstance.SetFloat(FillID, originalFillValue);
         }
     }
 }

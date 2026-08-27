@@ -195,6 +195,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  fillTweenDuration: 4
+  fillTweenEase: 6
 --- !u!1001 &1275172213438207374
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1542,6 +1542,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  fillTweenDuration: 4
+  fillTweenEase: 6
 --- !u!1 &5984552607123565975
 GameObject:
   m_ObjectHideFlags: 0
